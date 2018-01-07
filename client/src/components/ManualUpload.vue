@@ -17,7 +17,20 @@
       <v-btn color="primary" @click="onPickFile">ฮัพโหลดคู่มือ
         <v-icon right>cloud_upload</v-icon>
       </v-btn>
-      <input type="file" style="display:none;" ref="fileInput" accept=".pdf">
+      <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
+    </v-flex>
+    <v-flex xs10 offset-xs1 class="pt-3">
+      <v-list two-line>
+        <v-list-tile avatar v-if="manualFiles.hasFile">
+          <v-list-tile-avatar>
+            <v-icon>picture_as_pdf</v-icon>
+          </v-list-tile-avatar>
+          <v-list-tile-content>
+            <v-list-tile-title>ชื่อไฟล์ : {{ manualFiles.files[0].name }}</v-list-tile-title>
+            <v-list-tile-sub-title>ขนาดไฟล์ : {{ (manualFiles.files[0].size >= 1048567) ? (manualFiles.files[0].size / 1048567) + "MB" : (manualFiles.files[0].size / 1024) + " kB"}}</v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
     </v-flex>
   </v-layout>
 </v-container>
@@ -36,6 +49,10 @@ export default {
   data: () => {
     return {
       year: tmp,
+      manualFiles: {
+        hasFile: false,
+        files: null
+      },
       institute: [{
         text: 'สำนักงานคณะกรรมการการอุดมศึกษา',
         value: 1
@@ -61,6 +78,13 @@ export default {
   methods: {
     onPickFile () {
       this.$refs.fileInput.click()
+    },
+    onFilePicked (evt) {
+      if (evt.target.files[0].type !== evt.accept) {
+        return alert('ชนิดของไฟล์ต้องเป็น PDF เท่านั้น')
+      }
+      this.manualFiles.files = evt.target.files
+      this.manualFiles.hasFile = true
     }
   }
 }
