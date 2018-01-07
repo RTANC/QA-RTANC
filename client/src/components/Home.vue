@@ -1,11 +1,13 @@
 <template>
-<v-layout column align-center>
-  <img src="/static/logo_v.png" class="mb-5 mt-5">
-  <blockquote>
-    <h1>ระบบประกันคุณภาพการศึกษา</h1>
-    <h4>วิทยาลัยพยาบาลกองทัพบก</h4>
-  </blockquote>
-</v-layout>
+<v-container fluid fill-height grid-list-xs>
+  <v-layout column align-center>
+    <img src="/static/logo_v.png" class="mb-5 mt-5">
+    <blockquote>
+      <h1>ระบบประกันคุณภาพการศึกษา</h1>
+      <h4>วิทยาลัยพยาบาลกองทัพบก</h4>
+    </blockquote>
+  </v-layout>
+</v-container>
 </template>
 
 <script>

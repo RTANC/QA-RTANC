@@ -59,9 +59,7 @@
     <v-toolbar-title><span class="body-2">{{name}}</span></v-toolbar-title>
   </v-toolbar>
   <v-content>
-    <v-container fluid fill-height grid-list-xs>
-        <router-view></router-view>
-    </v-container>
+    <router-view></router-view>
   </v-content>
   <v-footer app fixed>
     <span>วิทยาลัยพยาบาลกองทัพบก &copy; ๒๕๖๑</span>
