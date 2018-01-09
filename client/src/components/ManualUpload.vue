@@ -14,8 +14,8 @@
       </v-select>
     </v-flex>
     <v-flex xs5 offset-xs1>
-      <v-btn color="primary" @click="onPickFile">ฮัพโหลดคู่มือ
-        <v-icon right>cloud_upload</v-icon>
+      <v-btn color="primary" @click="onPickFile">เลือกไฟล์
+        <v-icon right>folder</v-icon>
       </v-btn>
       <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
     </v-flex>
@@ -31,6 +31,11 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+    </v-flex>
+    <v-flex xs5 offset-xs1 class="pt-3">
+      <v-btn color="success" v-if=manualFiles.hasFile>อัพโหลดไฟล์
+        <v-icon right>cloude_upload</v-icon>
+      </v-btn>
     </v-flex>
   </v-layout>
 </v-container>
@@ -80,7 +85,7 @@ export default {
       this.$refs.fileInput.click()
     },
     onFilePicked (evt) {
-      if (evt.target.files[0].type !== evt.accept) {
+      if (evt.target.files[0].type !== evt.target.accept) {
         return alert('ชนิดของไฟล์ต้องเป็น PDF เท่านั้น')
       }
       this.manualFiles.files = evt.target.files
