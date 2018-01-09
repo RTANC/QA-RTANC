@@ -26,7 +26,7 @@
           <v-list-tile-title>อัพโหลดคู่มือ</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile @click="">
+      <v-list-tile to="/ManualDownload">
         <v-list-tile-action>
           <v-icon>archive</v-icon>
         </v-list-tile-action>
@@ -42,7 +42,7 @@
           <v-list-tile-title>เขียนผลการดำเนินงาน</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile @click="">
+      <v-list-tile @click="backToMIS">
         <v-list-tile-action>
           <v-icon>exit_to_app</v-icon>
         </v-list-tile-action>
@@ -68,14 +68,19 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    drawer: false,
-    title: 'ระบบประกันคุณภาพการศึกษา',
-    name: 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
-  }),
-  props: {
-    source: String
+  export default {
+    data: () => ({
+      drawer: false,
+      title: 'ระบบประกันคุณภาพการศึกษา',
+      name: 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
+    }),
+    methods: {
+      backToMIS () {
+        window.location.href = 'http://192.168.100.10/'
+      }
+    },
+    props: {
+      source: String
+    }
   }
-}
 </script>
