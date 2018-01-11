@@ -78,9 +78,6 @@
       backToMIS () {
         window.location.href = 'http://192.168.100.10/'
       }
-    },
-    props: {
-      source: String
     }
   }
 </script>
