@@ -32,9 +32,9 @@
         </v-list-tile>
       </v-list>
     </v-flex>
-    <v-flex xs5 offset-xs1 class="pt-3">
+    <v-flex xs3 offset-xs9 class="pt-3">
       <v-btn color="success" v-if=manualFiles.hasFile>อัพโหลดไฟล์
-        <v-icon right>cloude_upload</v-icon>
+        <v-icon right >unarchive</v-icon>
       </v-btn>
     </v-flex>
   </v-layout>

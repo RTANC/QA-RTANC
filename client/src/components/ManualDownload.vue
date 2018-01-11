@@ -31,9 +31,9 @@
         </v-list-tile>
       </v-list>
     </v-flex>
-    <v-flex xs5 offset-xs1 class="pt-3">
+    <v-flex xs3 offset-xs9 class="pt-3">
       <v-btn color="success" v-if=manualFiles.hasFile>ดาวน์โหลดไฟล์
-        <v-icon right>cloude_download</v-icon>
+        <v-icon right>archive</v-icon>
       </v-btn>
     </v-flex>
   </v-layout>
