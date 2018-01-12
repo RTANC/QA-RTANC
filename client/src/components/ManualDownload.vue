@@ -1,7 +1,15 @@
 <template>
 <v-container fluid grid-list-xs>
-  <manualFilter v-on:onYearChange="getYear($event)" v-on:onInstituteChange="getInstitute($event)" v-on:onManLvlChange="getManLvl($event)"></manualFilter>
-  <v-layout row wrap>
+  <v-layout class="pt-5" row wrap>
+    <v-flex xs2 offset-xs1>
+    <selectYear v-on:onYearChange="getYear($event)"></selectYear>
+    </v-flex>
+    <v-flex xs3 offset-xs1>
+      <selectInstitute v-on:onInstituteChange="getInstitute($event)"></selectInstitute>
+    </v-flex>
+    <v-flex xs4 offset-xs1>
+      <selectManLvl v-on:onManLvlChange="getManLvl($event)"></selectManLvl>
+    </v-flex>
     <v-flex xs5 offset-xs1>
       <v-btn color="primary" @click="onSearchFile">ค้นหาไฟล์
         <v-icon right>search</v-icon>
@@ -30,11 +38,15 @@
 </template>
 
 <script>
-  import manualFilter from '@/components/manualFilter'
+  import selectYear from './selectYear'
+  import selectInstitute from './selectInstitute'
+  import selectManLvl from './selectManLvl'
   export default {
     name: 'ManualDownload',
     components: {
-      'manualFilter': manualFilter
+      'selectYear': selectYear,
+      'selectInstitute': selectInstitute,
+      'selectManLvl': selectManLvl
     },
     data: () => {
       return {
