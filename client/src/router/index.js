@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import ManualUpload from '@/components/ManualUpload'
 import ManualDownload from '@/components/ManualDownload'
+import ManageStd from '@/components/ManageStd'
 Vue.use(Router)
 
 export default new Router({
@@ -16,6 +17,11 @@ export default new Router({
       path: '/Home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/ManageStd',
+      name: 'ManageStd',
+      component: ManageStd
     },
     {
       path: '/ManualUpload',

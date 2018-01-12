@@ -10,7 +10,7 @@
           <v-list-tile-title>หน้าหลัก</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile @click="">
+      <v-list-tile to="/ManageStd">
         <v-list-tile-action>
           <v-icon>content_paste</v-icon>
         </v-list-tile-action>
