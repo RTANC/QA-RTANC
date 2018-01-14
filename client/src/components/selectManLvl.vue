@@ -1,5 +1,5 @@
 <template>
-    <v-select @change="onManLvlChange" v-bind:items="allManLvl" label="ระดับของคู่มือ" class="input-group--focused">
+    <v-select @change="onManLvlChange" v-bind:items="allManLvl" label="ระดับของคู่มือ">
     </v-select>
 </template>
 

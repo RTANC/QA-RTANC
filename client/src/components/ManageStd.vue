@@ -1,5 +1,5 @@
 <template>
-<v-container fluid grid-list-xs>
+<v-container fluid>
   <v-layout class="pt-5" row wrap>
     <v-flex xs2 offset-xs1>
     <selectYear v-on:onYearChange="getYear($event)"></selectYear>
@@ -7,11 +7,11 @@
     <v-flex xs3 offset-xs1>
       <selectInstitute v-on:onInstituteChange="getInstitute($event)"></selectInstitute>
     </v-flex>
-    <v-flex xs10 offset-xs1>
+    <v-flex xs5 offset-xs1>
       <radStd v-on:onStdChange="getStd($event)"></radStd>
     </v-flex>
     <v-flex xs-12>
-      <v-btn fixed dark fab bottom right color="pink">
+      <v-btn to="/StdForm" fixed dark fab bottom right color="pink">
         <v-icon>add</v-icon>
       </v-btn>
     </v-flex>

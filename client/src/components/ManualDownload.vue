@@ -1,5 +1,5 @@
 <template>
-<v-container fluid grid-list-xs>
+<v-container fluid>
   <v-layout class="pt-5" row wrap>
     <v-flex xs2 offset-xs1>
     <selectYear v-on:onYearChange="getYear($event)"></selectYear>

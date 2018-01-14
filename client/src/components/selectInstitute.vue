@@ -1,5 +1,5 @@
 <template>
-    <v-select @change="onInstituteChange" v-bind:items="allInstitute" label="เลือกสถาบันผู้ประเมิน" class="input-group--focused">
+    <v-select @change="onInstituteChange" v-bind:items="allInstitute" label="เลือกสถาบันผู้ประเมิน">
     </v-select>
 </template>
 

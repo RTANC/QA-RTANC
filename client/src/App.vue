@@ -15,7 +15,7 @@
           <v-icon>content_paste</v-icon>
         </v-list-tile-action>
         <v-list-tile-content>
-          <v-list-tile-title>จัดการมาตรฐาน</v-list-tile-title>
+          <v-list-tile-title>จัดการองค์ประกอบมาตรฐาน</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
       <v-list-tile to="/ManualUpload">

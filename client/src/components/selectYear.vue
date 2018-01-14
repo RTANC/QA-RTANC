@@ -1,5 +1,5 @@
 <template>
-    <v-select @change="onYearChange" v-bind:items="allYear" label="เลือกปีงบประมาณ" class="input-group--focused">
+    <v-select @change="onYearChange" v-bind:items="allYear" label="เลือกปีงบประมาณ">
     </v-select>
 </template>
 
