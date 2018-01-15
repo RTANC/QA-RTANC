@@ -8,13 +8,54 @@
       <selectInstitute v-on:onInstituteChange="getInstitute($event)"></selectInstitute>
     </v-flex>
     <v-flex xs5 offset-xs1>
-      <radStd v-on:onStdChange="getStd($event)"></radStd>
+      <v-radio-group row v-model="stdLvl" label="ระดับองค์ประกอบ*" :rules="[v => !!v]">
+        <v-radio label="ระดับบหลักสูตร" value="0" color="primary"></v-radio>
+        <v-radio label="ระดับสถาบัน" value="1" color="primary"></v-radio>
+      </v-radio-group>
     </v-flex>
     <v-flex xs-12>
-      <v-btn to="/StdForm" fixed dark fab bottom right color="pink">
+      <v-btn @click="openAddDialog" fixed dark fab bottom right color="pink">
         <v-icon>add</v-icon>
       </v-btn>
     </v-flex>
+    <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
+        <v-card>
+          <v-toolbar dark color="primary">
+            <v-icon>details</v-icon>
+            <v-toolbar-title>ข้อมูลองค์ประกอบ</v-toolbar-title>
+            <v-spacer></v-spacer>
+          </v-toolbar>
+          <v-form v-model="valid" ref="form">
+            <v-container fluid>
+              <v-layout row wrap>
+                <v-flex xs1 offset-xs1>
+                  <v-text-field v-model.number="stdNo" type="number" label="ลำดับที่่" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
+                </v-flex>
+                <v-flex xs7 offset-xs1>
+                  <v-text-field label="ชื่อองค์ประกอบ" v-model="stdName" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
+                </v-flex>
+                <v-flex xs10 offset-xs1>
+                  <v-text-field label="คำอธิบายองค์ประกอบ" v-model="stdInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" multi-line required></v-text-field>
+                </v-flex>
+                <v-flex xs5 offset-xs1>
+                  <v-card flat>
+                    <v-card-text>
+                      <v-radio-group row v-model="stdLvl" label="ระดับองค์ประกอบ*" :rules="[v => !!v]">
+                        <v-radio label="ระดับบหลักสูตร" value="0" color="primary"></v-radio>
+                        <v-radio label="ระดับสถาบัน" value="1" color="primary"></v-radio>
+                      </v-radio-group>
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs10 offset-xs1>
+                  <v-btn @click="submit" :disabled="!valid" color="primary">ยืนยัน</v-btn>
+                  <v-btn @click="clear" color="error">ยกเลิก</v-btn>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-form>
+        </v-card>
+      </v-dialog>
   </v-layout>
 </v-container>
 </template>
@@ -22,19 +63,24 @@
 <script>
   import selectYear from './selectYear'
   import selectInstitute from './selectInstitute'
-  import radStd from './radStd'
+  // import axios from 'axios'
   export default {
     name: 'ManageStd',
     components: {
       'selectYear': selectYear,
-      'selectInstitute': selectInstitute,
-      'radStd': radStd
+      'selectInstitute': selectInstitute
     },
     data: () => {
       return {
         year: null,
         institute: null,
-        std: null
+        dialog: false,
+        edit: false,
+        valid: false,
+        stdNo: 1,
+        stdName: null,
+        stdInfo: null,
+        stdLvl: '0'
       }
     },
     methods: {
@@ -44,19 +90,31 @@
       getInstitute (val) {
         this.institute = val
       },
-      getStd (val) {
-        this.std = val
-      }
-    },
-    watch: {
-      year: function (val) {
-        console.log(val)
+      openAddDialog () {
+        this.dialog = true
+        this.edit = false
+        this.stdNo = 1
       },
-      institute: function (val) {
-        console.log(val)
+      openEditDialog () {
+        this.dialog = true
+        this.edit = true
       },
-      std: function (val) {
-        console.log(val)
+      submit () {
+        if (this.$refs.form.validate()) {
+          // Native form submission is not yet supported
+          // axios.post('/api/submit', {
+          //   stdNo: this.stdNo,
+          //   stdName: this.stdName,
+          //   stdInfo: this.stdInfo,
+          //   stdLvl: this.stdLvl
+          // })
+          console.log(this.stdNo + ' ' + this.stdName + ' ' + this.stdInfo + ' ' + this.stdLvl)
+        }
+      },
+      clear () {
+        this.dialog = false
+        this.$refs.form.inputs[1].reset()
+        this.$refs.form.inputs[2].reset()
       }
     }
   }

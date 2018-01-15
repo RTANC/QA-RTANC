@@ -4,25 +4,29 @@
 </template>
 
 <script>
-  var tmp = []
-  var nowYear = ((new Date()).getFullYear()) + 543
-  for (var i = nowYear - 3; i <= nowYear + 3; i++) {
-    tmp.push({
-      text: i,
-      value: i
-    })
-  }
   export default {
     name: 'selectYear',
     data: () => {
       return {
-        allYear: tmp
+        allYear: []
       }
     },
     methods: {
       onYearChange (val) {
         this.$emit('onYearChange', val)
+      },
+      initYearSelect () {
+        var nowYear = ((new Date()).getFullYear()) + 543
+        for (var i = nowYear - 3; i <= nowYear + 3; i++) {
+          this.allYear.push({
+            text: i,
+            value: i
+          })
+        }
       }
+    },
+    beforeMount () {
+      this.initYearSelect()
     }
   }
 </script>

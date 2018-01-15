@@ -4,7 +4,7 @@ import Home from '@/components/Home'
 import ManualUpload from '@/components/ManualUpload'
 import ManualDownload from '@/components/ManualDownload'
 import ManageStd from '@/components/ManageStd'
-import StdForm from '@/components/StdForm'
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,11 +33,6 @@ export default new Router({
       path: '/ManualDownload',
       name: 'ManualDownload',
       component: ManualDownload
-    },
-    {
-      path: '/StdForm',
-      name: 'StdForm',
-      component: StdForm
     }
   ]
 })
