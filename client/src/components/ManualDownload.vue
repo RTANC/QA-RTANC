@@ -56,7 +56,8 @@
         },
         year: null,
         institute: null,
-        manLvl: null
+        manLvl: null,
+        manDept: null
       }
     },
     methods: {
@@ -70,7 +71,8 @@
         this.institute = val
       },
       getManLvl (val) {
-        this.manLvl = val
+        this.manLvl = val.lvl
+        this.manDept = val.dept
       }
     },
     watch: {
@@ -81,6 +83,9 @@
         console.log(val)
       },
       manLvl: function (val) {
+        console.log(val)
+      },
+      manDept: function (val) {
         console.log(val)
       }
     }

@@ -21,7 +21,7 @@
     <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
         <v-card>
           <v-toolbar dark color="primary">
-            <v-icon>details</v-icon>
+            <v-icon>content_paste</v-icon>
             <v-toolbar-title>ข้อมูลองค์ประกอบ</v-toolbar-title>
             <v-spacer></v-spacer>
           </v-toolbar>
@@ -33,9 +33,6 @@
                 </v-flex>
                 <v-flex xs7 offset-xs1>
                   <v-text-field label="ชื่อองค์ประกอบ" v-model="stdName" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
-                </v-flex>
-                <v-flex xs10 offset-xs1>
-                  <v-text-field label="คำอธิบายองค์ประกอบ" v-model="stdInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" multi-line required></v-text-field>
                 </v-flex>
                 <v-flex xs5 offset-xs1>
                   <v-card flat>
@@ -79,7 +76,6 @@
         valid: false,
         stdNo: 1,
         stdName: null,
-        stdInfo: null,
         stdLvl: '0'
       }
     },
@@ -114,7 +110,6 @@
       clear () {
         this.dialog = false
         this.$refs.form.inputs[1].reset()
-        this.$refs.form.inputs[2].reset()
       }
     }
   }
