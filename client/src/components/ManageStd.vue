@@ -2,16 +2,29 @@
 <v-container fluid>
   <v-layout class="pt-5" row wrap>
     <v-flex xs2 offset-xs1>
-    <selectYear v-on:onYearChange="getYear($event)"></selectYear>
+      <selectYear v-on:onYearChange="getYear($event)"></selectYear>
     </v-flex>
     <v-flex xs4 offset-xs1>
       <selectInstitute v-on:onInstituteChange="getInstitute($event)"></selectInstitute>
     </v-flex>
-    <v-flex xs5 offset-xs1>
+    <v-flex xs6 offset-xs1>
       <v-radio-group row v-model="stdLvl" label="ระดับองค์ประกอบ*" :rules="[v => !!v]">
         <v-radio label="ระดับบหลักสูตร" value="0" color="primary"></v-radio>
         <v-radio label="ระดับสถาบัน" value="1" color="primary"></v-radio>
       </v-radio-group>
+    </v-flex>
+    <v-flex xs10 offset-xs1>
+      <v-data-table v-bind:headers="headers" v-bind:items="items" v-bind:pagination.sync="pagination" class="elevation-1">
+        <template slot="items" slot-scope="props">
+          <tr :active="props.selected" @click="props.selected = !props.selected">
+            <td class="text-xs-center">{{ props.item.stdNo }}</td>
+            <td class="text-xs-right">{{ props.item.stdName }}</td>
+            <td class="text-xs-right">
+              <v-btn color="primary"><v-icon>create</v-icon></v-btn>
+            </td>
+          </tr>
+        </template>
+      </v-data-table>
     </v-flex>
     <v-flex xs-12>
       <v-btn @click="openAddDialog" fixed dark fab bottom right color="pink">
@@ -19,120 +32,126 @@
       </v-btn>
     </v-flex>
     <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
-        <v-card>
-          <v-toolbar dark color="primary">
-            <v-icon>content_paste</v-icon>
-            <v-toolbar-title>ข้อมูลองค์ประกอบ</v-toolbar-title>
-            <v-spacer></v-spacer>
-          </v-toolbar>
-          <v-form v-model="valid" ref="form">
-            <v-container fluid>
-              <v-layout row wrap>
-                <v-flex xs1 offset-xs1>
-                  <v-text-field v-model.number="stdNo" type="number" label="ลำดับที่่" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
-                </v-flex>
-                <v-flex xs7 offset-xs1>
-                  <v-text-field label="ชื่อองค์ประกอบ" v-model="stdName" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
-                </v-flex>
-                <v-flex xs5 offset-xs1>
-                  <v-card flat>
-                    <v-card-text>
-                      <v-radio-group row v-model="stdLvl" label="ระดับองค์ประกอบ*" :rules="[v => !!v]">
-                        <v-radio label="ระดับบหลักสูตร" value="0" color="primary"></v-radio>
-                        <v-radio label="ระดับสถาบัน" value="1" color="primary"></v-radio>
-                      </v-radio-group>
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs10 offset-xs1>
-                  <v-btn @click="submit" :disabled="!valid" color="primary">ยืนยัน</v-btn>
-                  <v-btn @click="clear" color="error">ยกเลิก</v-btn>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-form>
-        </v-card>
-      </v-dialog>
+      <v-card>
+        <v-toolbar dark color="primary">
+          <v-icon>content_paste</v-icon>
+          <v-toolbar-title>ข้อมูลองค์ประกอบ</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-form v-model="valid" ref="form">
+          <v-container fluid>
+            <v-layout row wrap>
+              <v-flex xs1 offset-xs1>
+                <v-text-field v-model.number="stdNo" type="number" label="ลำดับที่่" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
+              </v-flex>
+              <v-flex xs7 offset-xs1>
+                <v-text-field label="ชื่อองค์ประกอบ" v-model="stdName" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
+              </v-flex>
+              <v-flex xs5 offset-xs1>
+                <v-card flat>
+                  <v-card-text>
+                    <v-radio-group row v-model="stdLvl" label="ระดับองค์ประกอบ*" :rules="[v => !!v]">
+                      <v-radio label="ระดับบหลักสูตร" value="0" color="primary"></v-radio>
+                      <v-radio label="ระดับสถาบัน" value="1" color="primary"></v-radio>
+                    </v-radio-group>
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+              <v-flex xs10 offset-xs1>
+                <v-btn @click="submit" :disabled="!valid" color="primary">ยืนยัน</v-btn>
+                <v-btn @click="clear" color="error">ยกเลิก</v-btn>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-form>
+      </v-card>
+    </v-dialog>
   </v-layout>
 </v-container>
 </template>
 
 <script>
-  import selectYear from './selectYear'
-  import selectInstitute from './selectInstitute'
-  // import axios from 'axios'
-  export default {
-    name: 'ManageStd',
-    components: {
-      'selectYear': selectYear,
-      'selectInstitute': selectInstitute
+import selectYear from './selectYear'
+import selectInstitute from './selectInstitute'
+// import axios from 'axios'
+export default {
+  name: 'ManageStd',
+  components: {
+    'selectYear': selectYear,
+    'selectInstitute': selectInstitute
+  },
+  data: () => {
+    return {
+      year: null,
+      institute: null,
+      dialog: false,
+      edit: false,
+      valid: false,
+      stdNo: 1,
+      stdName: null,
+      stdLvl: '0',
+      pagination: {
+        sortBy: 'stdNo'
+      },
+      headers: [ {text: 'องค์ประกอบที่', value: 'stdNo', align: 'center'}, {text: 'ชื่อองค์ประกอบ', value: 'stdName'} ],
+      items: [ {stdNo: 2, stdName: 'การผลิตบัณฑิต'},
+                {stdNo: 1, stdName: 'นักศึกษา'}]
+    }
+  },
+  methods: {
+    getYear (val) {
+      this.year = val
     },
-    data: () => {
-      return {
-        year: null,
-        institute: null,
-        dialog: false,
-        edit: false,
-        valid: false,
-        stdNo: 1,
-        stdName: null,
-        stdLvl: '0'
+    getInstitute (val) {
+      this.institute = val
+    },
+    openAddDialog () {
+      this.dialog = true
+      this.edit = false
+      this.stdNo = 1
+    },
+    openEditDialog () {
+      this.dialog = true
+      this.edit = true
+    },
+    submit () {
+      if (this.$refs.form.validate()) {
+        // Native form submission is not yet supported
+        // axios.post('/api/submit', {
+        //   stdNo: this.stdNo,
+        //   stdName: this.stdName,
+        //   stdInfo: this.stdInfo,
+        //   stdLvl: this.stdLvl
+        // })
+        console.log(this.stdNo + ' ' + this.stdName + ' ' + this.stdInfo + ' ' + this.stdLvl)
       }
     },
-    methods: {
-      getYear (val) {
-        this.year = val
-      },
-      getInstitute (val) {
-        this.institute = val
-      },
-      openAddDialog () {
-        this.dialog = true
-        this.edit = false
-        this.stdNo = 1
-      },
-      openEditDialog () {
-        this.dialog = true
-        this.edit = true
-      },
-      submit () {
-        if (this.$refs.form.validate()) {
-          // Native form submission is not yet supported
-          // axios.post('/api/submit', {
-          //   stdNo: this.stdNo,
-          //   stdName: this.stdName,
-          //   stdInfo: this.stdInfo,
-          //   stdLvl: this.stdLvl
-          // })
-          console.log(this.stdNo + ' ' + this.stdName + ' ' + this.stdInfo + ' ' + this.stdLvl)
-        }
-      },
-      clear () {
-        this.dialog = false
-        this.$refs.form.inputs[1].reset()
-      }
+    clear () {
+      this.dialog = false
+      this.$refs.form.inputs[1].reset()
     }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1,
-  h2 {
-    font-weight: normal;
-  }
+h1,
+h2 {
+  font-weight: normal;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
 
-  a {
-    color: #42b983;
-  }
+a {
+  color: #42b983;
+}
 </style>
