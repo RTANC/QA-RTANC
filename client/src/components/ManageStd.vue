@@ -16,11 +16,12 @@
     <v-flex xs10 offset-xs1>
       <v-data-table v-bind:headers="headers" v-bind:items="items" v-bind:pagination.sync="pagination" class="elevation-1" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
         <template slot="items" slot-scope="props">
-          <tr :active="props.selected" @click="props.selected = !props.selected">
+          <tr>
             <td class="text-xs-center">{{ props.item.stdNo }}</td>
             <td class="text-xs-left">{{ props.item.stdName }}</td>
             <td class="text-xs-right">
-              <v-btn color="primary"><v-icon>create</v-icon></v-btn>
+              <v-btn color="primary" @click="openEditDialog"><v-icon>create</v-icon></v-btn>
+              <v-btn color="error" @click="delStd(props)"><v-icon>delete</v-icon></v-btn>
             </td>
           </tr>
         </template>
@@ -124,6 +125,9 @@ export default {
       this.dialog = true
       this.edit = true
     },
+    delStd (val) {
+      console.log(val)
+    },
     submit () {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
@@ -140,6 +144,9 @@ export default {
       this.dialog = false
       this.$refs.form.inputs[1].reset()
     }
+  },
+  beforeMount () {
+    this.items = this.recordset1
   }
 }
 </script>
