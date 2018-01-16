@@ -14,11 +14,11 @@
       </v-radio-group>
     </v-flex>
     <v-flex xs10 offset-xs1>
-      <v-data-table v-bind:headers="headers" v-bind:items="items" v-bind:pagination.sync="pagination" class="elevation-1">
+      <v-data-table v-bind:headers="headers" v-bind:items="items" v-bind:pagination.sync="pagination" class="elevation-1" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
         <template slot="items" slot-scope="props">
           <tr :active="props.selected" @click="props.selected = !props.selected">
             <td class="text-xs-center">{{ props.item.stdNo }}</td>
-            <td class="text-xs-right">{{ props.item.stdName }}</td>
+            <td class="text-xs-left">{{ props.item.stdName }}</td>
             <td class="text-xs-right">
               <v-btn color="primary"><v-icon>create</v-icon></v-btn>
             </td>
@@ -90,12 +90,22 @@ export default {
       stdNo: 1,
       stdName: null,
       stdLvl: '0',
+      recordset1: [ {stdId: 1, year: 2559, institute: 1, stdNo: 1, stdName: 'การกำกับมาตรฐาน', stdLvl: 0},
+                    {stdId: 2, year: 2559, institute: 1, stdNo: 2, stdName: 'บัณฑิต', stdLvl: 0},
+                    {stdId: 3, year: 2559, institute: 1, stdNo: 3, stdName: 'นักศึกษา', stdLvl: 0},
+                    {stdId: 4, year: 2559, institute: 1, stdNo: 4, stdName: 'อาจารย์', stdLvl: 0},
+                    {stdId: 5, year: 2559, institute: 1, stdNo: 5, stdName: 'หลักสูตรการเรียนการสอน การประเมินผู้เรียน', stdLvl: 0},
+                    {stdId: 6, year: 2559, institute: 1, stdNo: 6, stdName: 'สิ่งสนับสนุนการเรียนรู้', stdLvl: 0}],
+      recordset2: [ {stdId: 7, year: 2559, institute: 1, stdNo: 1, stdName: 'การผลิตบัณฑิต', stdLvl: 1},
+                    {stdId: 8, year: 2559, institute: 1, stdNo: 2, stdName: 'การวิจัย', stdLvl: 1},
+                    {stdId: 9, year: 2559, institute: 1, stdNo: 3, stdName: 'การบริการวิชาการ', stdLvl: 1},
+                    {stdId: 10, year: 2559, institute: 1, stdNo: 4, stdName: 'การทำนุบำรุงศิลปะและวัฒนธรรม', stdLvl: 1},
+                    {stdId: 11, year: 2559, institute: 1, stdNo: 5, stdName: 'การบริการจัดการ', stdLvl: 1}],
       pagination: {
         sortBy: 'stdNo'
       },
-      headers: [ {text: 'องค์ประกอบที่', value: 'stdNo', align: 'center'}, {text: 'ชื่อองค์ประกอบ', value: 'stdName'} ],
-      items: [ {stdNo: 2, stdName: 'การผลิตบัณฑิต'},
-                {stdNo: 1, stdName: 'นักศึกษา'}]
+      headers: [ {text: 'องค์ประกอบที่', value: 'stdNo', align: 'center'}, {text: 'ชื่อองค์ประกอบ', value: 'stdName', align: 'center'} ],
+      items: []
     }
   },
   methods: {
