@@ -78,6 +78,14 @@
       backToMIS () {
         window.location.href = 'http://192.168.100.10/'
       }
+    },
+    beforeMount () {
+      // get name form database here
+      // if (this.$route.query.pid === '54') {
+      //   this.name = 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
+      // } else {
+      //   this.name = 'ไม่รู้จัก'
+      // }
     }
   }
 </script>

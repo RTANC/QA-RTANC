@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import ManualUpload from '@/components/ManualUpload'
 import ManualDownload from '@/components/ManualDownload'
 import ManageStd from '@/components/ManageStd'
+import ManageInd from '@/components/ManageInd'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/ManageStd',
       name: 'ManageStd',
       component: ManageStd
+    },
+    {
+      path: '/ManageInd',
+      name: 'ManageInd',
+      component: ManageInd
     },
     {
       path: '/ManualUpload',

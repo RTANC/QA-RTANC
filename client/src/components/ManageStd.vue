@@ -20,8 +20,9 @@
             <td class="text-xs-center">{{ props.item.stdNo }}</td>
             <td class="text-xs-left">{{ props.item.stdName }}</td>
             <td class="text-xs-right">
-              <v-btn color="primary" @click="openEditDialog"><v-icon>create</v-icon></v-btn>
-              <v-btn color="error" @click="delStd(props)"><v-icon>delete</v-icon></v-btn>
+              <v-btn color="primary" @click="openEditDialog(props.item)"><v-icon>create</v-icon></v-btn>
+              <v-btn color="error" @click="delStd(props.item)"><v-icon>delete</v-icon></v-btn>
+              <v-btn color="success" :to="{ path: '/ManageInd', query: { stdId: props.item.stdId, stdNo: props.item.stdNo ,stdName: props.item.stdName }}"><v-icon>launch</v-icon></v-btn>
             </td>
           </tr>
         </template>
@@ -88,24 +89,25 @@ export default {
       dialog: false,
       edit: false,
       valid: false,
+      stdId: null,
       stdNo: 1,
       stdName: null,
       stdLvl: '0',
-      recordset1: [ {stdId: 1, year: 2559, institute: 1, stdNo: 1, stdName: 'การกำกับมาตรฐาน', stdLvl: 0},
-                    {stdId: 2, year: 2559, institute: 1, stdNo: 2, stdName: 'บัณฑิต', stdLvl: 0},
-                    {stdId: 3, year: 2559, institute: 1, stdNo: 3, stdName: 'นักศึกษา', stdLvl: 0},
-                    {stdId: 4, year: 2559, institute: 1, stdNo: 4, stdName: 'อาจารย์', stdLvl: 0},
-                    {stdId: 5, year: 2559, institute: 1, stdNo: 5, stdName: 'หลักสูตรการเรียนการสอน การประเมินผู้เรียน', stdLvl: 0},
-                    {stdId: 6, year: 2559, institute: 1, stdNo: 6, stdName: 'สิ่งสนับสนุนการเรียนรู้', stdLvl: 0}],
-      recordset2: [ {stdId: 7, year: 2559, institute: 1, stdNo: 1, stdName: 'การผลิตบัณฑิต', stdLvl: 1},
-                    {stdId: 8, year: 2559, institute: 1, stdNo: 2, stdName: 'การวิจัย', stdLvl: 1},
-                    {stdId: 9, year: 2559, institute: 1, stdNo: 3, stdName: 'การบริการวิชาการ', stdLvl: 1},
-                    {stdId: 10, year: 2559, institute: 1, stdNo: 4, stdName: 'การทำนุบำรุงศิลปะและวัฒนธรรม', stdLvl: 1},
-                    {stdId: 11, year: 2559, institute: 1, stdNo: 5, stdName: 'การบริการจัดการ', stdLvl: 1}],
+      recordset1: [ {stdId: 1, year: 2559, institute: 1, stdNo: 1, stdName: 'การกำกับมาตรฐาน', stdLvl: '0'},
+                    {stdId: 2, year: 2559, institute: 1, stdNo: 2, stdName: 'บัณฑิต', stdLvl: '0'},
+                    {stdId: 3, year: 2559, institute: 1, stdNo: 3, stdName: 'นักศึกษา', stdLvl: '0'},
+                    {stdId: 4, year: 2559, institute: 1, stdNo: 4, stdName: 'อาจารย์', stdLvl: '0'},
+                    {stdId: 5, year: 2559, institute: 1, stdNo: 5, stdName: 'หลักสูตรการเรียนการสอน การประเมินผู้เรียน', stdLvl: '0'},
+                    {stdId: 6, year: 2559, institute: 1, stdNo: 6, stdName: 'สิ่งสนับสนุนการเรียนรู้', stdLvl: '0'}],
+      recordset2: [ {stdId: 7, year: 2559, institute: 1, stdNo: 1, stdName: 'การผลิตบัณฑิต', stdLvl: '1'},
+                    {stdId: 8, year: 2559, institute: 1, stdNo: 2, stdName: 'การวิจัย', stdLvl: '1'},
+                    {stdId: 9, year: 2559, institute: 1, stdNo: 3, stdName: 'การบริการวิชาการ', stdLvl: '1'},
+                    {stdId: 10, year: 2559, institute: 1, stdNo: 4, stdName: 'การทำนุบำรุงศิลปะและวัฒนธรรม', stdLvl: '1'},
+                    {stdId: 11, year: 2559, institute: 1, stdNo: 5, stdName: 'การบริการจัดการ', stdLvl: '1'}],
       pagination: {
         sortBy: 'stdNo'
       },
-      headers: [ {text: 'องค์ประกอบที่', value: 'stdNo', align: 'center'}, {text: 'ชื่อองค์ประกอบ', value: 'stdName', align: 'center'} ],
+      headers: [ {text: 'องค์ประกอบที่', value: 'stdNo', align: 'center'}, {text: 'องค์ประกอบ', value: 'stdName', align: 'center'} ],
       items: []
     }
   },
@@ -121,12 +123,15 @@ export default {
       this.edit = false
       this.stdNo = 1
     },
-    openEditDialog () {
+    openEditDialog (std) {
       this.dialog = true
       this.edit = true
+      this.stdId = std.stdId
+      this.stdName = std.stdName
+      this.stdLvl = std.stdLvl
     },
-    delStd (val) {
-      console.log(val)
+    delStd (std) {
+
     },
     submit () {
       if (this.$refs.form.validate()) {
@@ -134,10 +139,9 @@ export default {
         // axios.post('/api/submit', {
         //   stdNo: this.stdNo,
         //   stdName: this.stdName,
-        //   stdInfo: this.stdInfo,
         //   stdLvl: this.stdLvl
         // })
-        console.log(this.stdNo + ' ' + this.stdName + ' ' + this.stdInfo + ' ' + this.stdLvl)
+
       }
     },
     clear () {
