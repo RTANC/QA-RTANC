@@ -71,23 +71,22 @@
         </v-toolbar>
         <v-container fluid>
           <v-layout row wrap>
-            <v-flex offset-xs1>
+            <v-flex xs3 offset-xs1>
+              <selectSarLvl v-on:onSarLvlChange="getSarLvl($event)"></selectSarLvl>
+            </v-flex>
+            <v-flex xs4 offset-xs1>
+              <selectPerson v-on:onPickPerson="getPerson($event)"></selectPerson>
+            </v-flex>
+            <v-flex xs2 offset-xs1>
+              <v-btn color="pink" @click="addPerson" dark><v-icon>add</v-icon></v-btn>
+            </v-flex>
+            <v-flex xs11 offset-xs1>
               <v-data-table v-bind:headers="headersRole" v-bind:items="itemsRole" v-bind:pagination.sync="paginationRole" class="elevation-1" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
                 <template slot="items" slot-scope="props">
                   <tr>
                     <td class="text-xs-left">{{ props.item.fullName }}</td>
                     <td class="text-xs-right">
                       <v-btn color="error"><v-icon>delete</v-icon></v-btn>
-                    </td>
-                  </tr>
-                </template>
-                <template slot="footer">
-                  <tr>
-                    <td>
-                      <v-select :items="persons" v-model="p1" item-text="fullName" item-value="personId" label="เลือกบุคลากร" autocomplete allow-overflow></v-select>
-                    </td>
-                    <td>
-                      <v-btn color="pink" @click="addPerson"><v-icon>add</v-icon></v-btn>
                     </td>
                   </tr>
                 </template>
@@ -103,8 +102,14 @@
 
 <script>
 // import axios from 'axios'
+import selectPerson from './selectPerson'
+import selectSarLvl from './selectSarLvl'
 export default {
   name: 'ManageStd',
+  components: {
+    'selectPerson': selectPerson,
+    'selectSarLvl': selectSarLvl
+  },
   data: () => {
     return {
       dialog: false,
@@ -136,10 +141,8 @@ export default {
       itemsRole: [{roleId: 1, fullName: 'ร.ต.วงศธร นาคสุวรรณ์'},
                   {roleId: 2, fullName: 'ส.ต.สุธิวัตร กาญจนอุทัย'},
                   {roleId: 3, fullName: 'ร.อ.หญิง ภัทริกา วงศ์อนันต์นนท์'}],
-      persons: [{personId: 1, fullName: 'ร.ต.วงศธร นาคสุวรรณ์'},
-                {personId: 2, fullName: 'ส.ต.สุธิวัตร กาญจนอุทัย'},
-                {personId: 3, fullName: 'ร.อ.หญิง ภัทริกา วงศ์อนันต์นนท์'}],
-      p1: null
+      newPerson: null,
+      sarLvl: null
     }
   },
   methods: {
@@ -177,7 +180,18 @@ export default {
       this.$refs.form.inputs[2].reset()
     },
     addPerson () {
-      console.log(this.p1)
+      console.log(this.newPerson)
+    },
+    getPerson (val) {
+      this.newPerson = val
+    },
+    getSarLvl (val) {
+      this.sarLvl = val
+    }
+  },
+  watch: {
+    sarLvl: function (val) {
+      console.log(val)
     }
   },
   beforeMount () {
