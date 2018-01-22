@@ -10,46 +10,46 @@
       return {
         allManLvl: [{
           text: 'วิทยาลัยพยาบาลกองทัพบก',
-          value: {lvl: 3, dept: 1}
+          value: 0
         }, {
           text: 'กองอำนวยการ',
-          value: {lvl: 2, dept: 1}
+          value: 1
         }, {
           text: 'กองการศึกษา',
-          value: {lvl: 2, dept: 2}
+          value: 2
         }, {
           text: 'กองการปกครอง',
-          value: {lvl: 2, dept: 3}
+          value: 3
         }, {
           text: 'แผนกเตรียมการ',
-          value: {lvl: 1, dept: 1}
+          value: 4
         }, {
           text: 'แผนกสนับสนุน',
-          value: {lvl: 1, dept: 2}
+          value: 5
         }, {
           text: 'แผนกธุรการ/กำลังพล',
-          value: {lvl: 1, dept: 3}
+          value: 6
         }, {
           text: 'ภาควิชาความรู้พื้นฐาน',
-          value: {lvl: 1, dept: 4}
+          value: 7
         }, {
           text: 'ภาควิชาการพยาบาลเบื้องต้น',
-          value: {lvl: 1, dept: 5}
+          value: 8
         }, {
           text: 'ภาควิชาการพยาบาลอายุรศาสตร์และศัลยศาสตร์',
-          value: {lvl: 1, dept: 6}
+          value: 9
         }, {
           text: 'ภาควิชาพยาบาลสูติศาสตร์',
-          value: {lvl: 1, dept: 7}
+          value: 10
         }, {
           text: 'ภาควิชาการพยาบาลกุมารเวชศาสตร์',
-          value: {lvl: 1, dept: 8}
+          value: 11
         }, {
           text: 'ภาควิชาสุขภาพจิตและการพยาบาลจิตเวชศาสตร์',
-          value: {lvl: 1, dept: 9}
+          value: 12
         }, {
           text: 'ภาควิชาการพยาบาลอนามัยชุมชน',
-          value: {lvl: 1, dept: 10}
+          value: 13
         }]
       }
     },

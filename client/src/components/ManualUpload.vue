@@ -8,7 +8,7 @@
       <selectInstitute v-on:onInstituteChange="getInstitute($event)"></selectInstitute>
     </v-flex>
     <v-flex xs4 offset-xs1>
-      <selectManLvl v-on:onManLvlChange="getManLvl($event)"></selectManLvl>
+      <selectManDept v-on:onManLvlChange="getManDept($event)"></selectManDept>
     </v-flex>
     <v-flex xs5 offset-xs1>
       <v-btn color="primary" @click="onPickFile">เลือกไฟล์
@@ -30,7 +30,7 @@
       </v-list>
     </v-flex>
     <v-flex xs3 offset-xs9 class="pt-3">
-      <v-btn color="success" v-if=manualFiles.hasFile>อัพโหลดไฟล์
+      <v-btn color="success" v-if=manualFiles.hasFile @click="uploadManual">อัพโหลดไฟล์
         <v-icon right >unarchive</v-icon>
       </v-btn>
     </v-flex>
@@ -41,13 +41,14 @@
 <script>
   import selectYear from './selectYear'
   import selectInstitute from './selectInstitute'
-  import selectManLvl from './selectManLvl'
+  import selectManDept from './selectManDept'
+  import ManualService from '@/services/ManualService'
   export default {
     name: 'ManualUpload',
     components: {
       'selectYear': selectYear,
       'selectInstitute': selectInstitute,
-      'selectManLvl': selectManLvl
+      'selectManDept': selectManDept
     },
     data: () => {
       return {
@@ -55,10 +56,11 @@
           hasFile: false,
           files: null
         },
-        year: null,
-        institute: null,
-        manLvl: null,
-        manDept: null
+        manProps: {
+          year: null,
+          institute: null,
+          manDept: null
+        }
       }
     },
     methods: {
@@ -72,29 +74,20 @@
         this.manualFiles.files = evt.target.files
         this.manualFiles.hasFile = true
       },
+      async uploadManual () {
+        const formData = new FormData()
+        formData.append('instituteId', 13)
+        const response = await ManualService.upload(formData)
+        console.log(response.data)
+      },
       getYear (val) {
-        this.year = val
+        this.manProps.year = val
       },
       getInstitute (val) {
-        this.institute = val
+        this.manProps.institute = val
       },
-      getManLvl (val) {
-        this.manLvl = val.lvl
-        this.manDept = val.dept
-      }
-    },
-    watch: {
-      year: function (val) {
-        console.log(val)
-      },
-      institute: function (val) {
-        console.log(val)
-      },
-      manLvl: function (val) {
-        console.log(val)
-      },
-      manDept: function (val) {
-        console.log(val)
+      getManDept (val) {
+        this.manProps.manDept = val
       }
     }
   }

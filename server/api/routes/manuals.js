@@ -1,20 +1,36 @@
 const express = require('express')
 const router = express.Router()
-router.get('/:param1/:param2', (req,res,next) => {
-  const param1 = req.params.param1
-  const param2 = req.params.param2
+const multer = require('multer')
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, 'uploads/manuals/')
+  },
+  filename: function(req, file, cb) {
+    cb(null, new Date().toISOString() + '.' + file.originalname.split('.').pop())
+  }
+})
+
+const upload = multer({
+  storage: storage
+})
+
+router.get('/', (req, res, next) => {
+  const year = req.query.year
+  const institute = req.query.institute
+  const manDept = req.query.manDept
   res.status(200).json({
-    message: 'Manual downloading... with '+ param1+ ' & '+param2
+    message: 'Manual downloading... in ' + year + ' & ' + institute + ' & ' + manDept
   })
 })
 
-router.post('/', (req,res,next) => {
+router.post('/', upload.single('man'), (req, res, next) => {
+  const instituteId = req.body.instituteId
   res.status(200).json({
-    message: 'Manual uploading...'
+    message: 'Manual uploading...' + instituteId
   })
 })
 
-router.delete('/', (req,res,next) => {
+router.delete('/', (req, res, next) => {
   res.status(200).json({
     message: 'Manual deleted'
   })
