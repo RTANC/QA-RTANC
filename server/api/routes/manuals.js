@@ -27,12 +27,18 @@ router.get('/', (req, res, next) => {
       manualDept: manDept
     }
   }).then(man => {
-    if (mans.length === 0) {
-      res.status(404)
+    if (man === null) {
+      res.status(404).send({
+        message: 'ไม่พบไฟลที่ท่านค้นหา'
+      })
     } else {
-      res.send(man[0].get({
+      var obj = man.get({
         plain: true
-      }))
+      })
+      res.status(200).send({
+        manual: man,
+        url: 'http://localhost:3000/uploads/manuals/' + man.fileName
+      })
     }
   }).catch(err => {
     console.log(err);

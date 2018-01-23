@@ -6,6 +6,7 @@ const manualRoutes = require('./api/routes/manuals')
 
 const app = express()
 
+app.use('/uploads/manuals/',express.static('uploads/manuals/'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(cors())
