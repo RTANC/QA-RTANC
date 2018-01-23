@@ -17,19 +17,19 @@
     </v-flex>
     <v-flex xs10 offset-xs1 class="pt-3">
       <v-list two-line>
-        <v-list-tile avatar v-if="manualFiles.hasFile">
+        <v-list-tile avatar v-if="manualFiles.fileURL !== null">
           <v-list-tile-avatar>
             <v-icon>picture_as_pdf</v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title>ชื่อไฟล์ : {{ manualFiles.files[0].name }}</v-list-tile-title>
-            <v-list-tile-sub-title>ขนาดไฟล์ : {{ (manualFiles.files[0].size >= 1048567) ? (manualFiles.files[0].size / 1048567) + "MB" : (manualFiles.files[0].size / 1024) + " kB"}}</v-list-tile-sub-title>
+            <v-list-tile-title>ชื่อไฟล์ : {{ manualFiles.originalName }}</v-list-tile-title>
+            <v-list-tile-sub-title>ขนาดไฟล์ : {{ (manualFiles.fileSize >= 1048567) ? (manualFiles.fileSize / 1048567) + "MB" : (manualFiles.fileSize / 1024) + " kB"}}</v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-flex>
     <v-flex xs3 offset-xs9 class="pt-3">
-      <v-btn color="success" v-if=manualFiles.hasFile>ดาวน์โหลดไฟล์
+      <v-btn color="success" v-if='manualFiles.fileURL !== null' @click="onDownload">ดาวน์โหลดไฟล์
         <v-icon right>archive</v-icon>
       </v-btn>
     </v-flex>
@@ -52,8 +52,9 @@
     data: () => {
       return {
         manualFiles: {
-          hasFile: false,
-          files: null
+          originalName: null,
+          fileSize: null,
+          fileURL: null
         },
         manProps: {
           year: null,
@@ -65,7 +66,20 @@
     methods: {
       async onSearchFile () {
         const respones = await ManualService.download(this.manProps)
-        console.log(respones.data)
+        if (respones.status === 200) {
+          const data = respones.data
+          this.manualFiles.originalName = data.manual.originalName
+          this.manualFiles.fileSize = data.manual.fileSize
+          this.manualFiles.fileURL = data.url
+        } else {
+          this.manualFiles.originalName = null
+          this.manualFiles.fileSize = null
+          this.manualFiles.fileURL = null
+        }
+      },
+      onDownload () {
+        const win = window.open(this.manualFiles.fileURL, '_blank')
+        win.focus()
       },
       getYear (val) {
         this.manProps.year = val
