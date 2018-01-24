@@ -62,7 +62,7 @@ router.post('/', upload.single('man'), (req, res, next) => {
     res.status(200).send({
       message: 'Upload ไฟล์คู่มือสำเร็จ'
     })
-  }).error(err => {
+  }).catch(err => {
     res.status(500).send({
       message: 'Upload ไฟล์คู่มือล้มเหลว'
     })

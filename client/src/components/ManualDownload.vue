@@ -33,6 +33,9 @@
         <v-icon right>archive</v-icon>
       </v-btn>
     </v-flex>
+    <v-snackbar :timeout='3000' :color="snackbar.color" v-model="snackbar.show">
+      {{ snackbar.message }}
+    </v-snackbar>
   </v-layout>
 </v-container>
 </template>
@@ -60,21 +63,34 @@
           year: null,
           institute: null,
           manDept: null
+        },
+        snackbar: {
+          show: false,
+          message: 'ไม่พบไฟล์ที่ท่านค้นหา',
+          color: 'error'
         }
       }
     },
     methods: {
       async onSearchFile () {
-        const respones = await ManualService.download(this.manProps)
-        if (respones.status === 200) {
-          const data = respones.data
-          this.manualFiles.originalName = data.manual.originalName
-          this.manualFiles.fileSize = data.manual.fileSize
-          this.manualFiles.fileURL = data.url
-        } else {
+        try {
+          const respones = await ManualService.download(this.manProps)
+          if (respones.status === 200) {
+            const data = respones.data
+            this.manualFiles.originalName = data.manual.originalName
+            this.manualFiles.fileSize = data.manual.fileSize
+            this.manualFiles.fileURL = data.url
+          } else {
+            this.manualFiles.originalName = null
+            this.manualFiles.fileSize = null
+            this.manualFiles.fileURL = null
+            this.snackbar.show = true
+          }
+        } catch (e) {
           this.manualFiles.originalName = null
           this.manualFiles.fileSize = null
           this.manualFiles.fileURL = null
+          this.snackbar.show = true
         }
       },
       onDownload () {

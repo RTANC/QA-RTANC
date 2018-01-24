@@ -10,16 +10,16 @@
       return {
         allInstitute: [{
           text: 'สำนักงานคณะกรรมการการอุดมศึกษา',
-          value: 1
+          value: 0
         }, {
           text: 'สภาการพยาบาล',
-          value: 2
+          value: 1
         }, {
           text: 'สถาบันวิชาการป้องกันประเทศ',
-          value: 3
+          value: 2
         }, {
           text: 'กรมยุทธศึกษาทหารบก',
-          value: 4
+          value: 3
         }]
       }
     },

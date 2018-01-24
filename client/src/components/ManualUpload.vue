@@ -34,6 +34,9 @@
         <v-icon right >unarchive</v-icon>
       </v-btn>
     </v-flex>
+    <v-snackbar :timeout='3000' :color="snackbar.color" v-model="snackbar.show">
+      {{ snackbar.message }}
+    </v-snackbar>
   </v-layout>
 </v-container>
 </template>
@@ -60,6 +63,11 @@
           year: null,
           institute: null,
           manDept: null
+        },
+        snackbar: {
+          show: false,
+          message: null,
+          color: null
         }
       }
     },
@@ -76,9 +84,29 @@
       },
       async uploadManual () {
         const formData = new FormData()
-        formData.append('instituteId', 13)
-        const response = await ManualService.upload(formData)
-        console.log(response.data)
+        formData.append('year', this.manProps.year)
+        formData.append('institute', this.manProps.institute)
+        formData.append('manDept', this.manProps.manDept)
+        formData.append('man', this.manualFiles.files[0])
+        try {
+          const response = await ManualService.upload(formData)
+
+          if (response.status === 200) {
+            this.snackbar.color = 'success'
+            this.snackbar.message = 'Upload ไฟล์คู่มือสำเร็จ'
+            this.snackbar.show = true
+            this.manualFiles.files = null
+            this.manualFiles.hasFile = false
+          } else {
+            this.snackbar.color = 'error'
+            this.snackbar.message = 'Upload ไฟล์คู่มือล้มเหลว'
+            this.snackbar.show = true
+          }
+        } catch (e) {
+          this.snackbar.color = 'error'
+          this.snackbar.message = 'Upload ไฟล์คู่มือล้มเหลว'
+          this.snackbar.show = true
+        }
       },
       getYear (val) {
         this.manProps.year = val
