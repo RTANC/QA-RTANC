@@ -5,7 +5,7 @@ import ManualUpload from '@/components/ManualUpload'
 import ManualDownload from '@/components/ManualDownload'
 import ManageStd from '@/components/ManageStd'
 import ManageInd from '@/components/ManageInd'
-
+import ManageRoleGroup from '@/components/ManageRoleGroup'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +29,11 @@ export default new Router({
       path: '/ManageInd',
       name: 'ManageInd',
       component: ManageInd
+    },
+    {
+      path: '/ManageRoleGroup',
+      name: 'ManageRoleGroup',
+      component: ManageRoleGroup
     },
     {
       path: '/ManualUpload',

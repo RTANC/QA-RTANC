@@ -8,7 +8,7 @@
       <selectInstitute v-on:onInstituteChange="getInstitute($event)"></selectInstitute>
     </v-flex>
     <v-flex xs4 offset-xs1>
-      <selectManDept v-on:onManLvlChange="getManDept($event)"></selectManDept>
+      <selectDept lbl="ระดับของคู่มือ" v-on:onDeptChange="getManDept($event)"></selectDept>
     </v-flex>
     <v-flex xs5 offset-xs1>
       <v-btn color="primary" @click="onPickFile">เลือกไฟล์
@@ -44,14 +44,14 @@
 <script>
   import selectYear from './selectYear'
   import selectInstitute from './selectInstitute'
-  import selectManDept from './selectManDept'
+  import selectDept from './selectDept'
   import ManualService from '@/services/ManualService'
   export default {
     name: 'ManualUpload',
     components: {
       'selectYear': selectYear,
       'selectInstitute': selectInstitute,
-      'selectManDept': selectManDept
+      'selectDept': selectDept
     },
     data: () => {
       return {

@@ -1,14 +1,16 @@
 <template>
-    <v-select @change="onManLvlChange" v-bind:items="allManLvl" label="ระดับของคู่มือ">
+    <v-select v-bind:items="allDept" v-model="dept" :label="lbl">
     </v-select>
 </template>
 
 <script>
   export default {
-    name: 'selectManLvl',
+    name: 'selectDept',
+    props: ['lbl'],
     data: () => {
       return {
-        allManLvl: [{
+        dept: null,
+        allDept: [{
           text: 'วิทยาลัยพยาบาลกองทัพบก',
           value: 0
         }, {
@@ -53,9 +55,9 @@
         }]
       }
     },
-    methods: {
-      onManLvlChange (val) {
-        this.$emit('onManLvlChange', val)
+    watch: {
+      dept: function (val) {
+        this.$emit('onDeptChange', val)
       }
     }
   }

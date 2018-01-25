@@ -1,5 +1,5 @@
 <template>
-    <v-select v-model="sarLvl" v-bind:items="allSarLvl" label="ระดับการประเมินตนเอง">
+    <v-select v-model="sarLvl" v-bind:items="allSarLvl" label="กลุ่มผู้รับผิดชอบ">
     </v-select>
 </template>
 

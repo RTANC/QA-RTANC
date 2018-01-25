@@ -13,12 +13,16 @@
             <td class="text-xs-center">
               <v-btn color="primary" @click="openEditDialog(props.item)"><v-icon>create</v-icon></v-btn>
               <v-btn color="error" @click="delInd(props.item)"><v-icon>delete</v-icon></v-btn>
-              <v-btn color="deep-purple" @click.native="roleDialog = !roleDialog; p1 = null" dark><v-icon>person_pin</v-icon></v-btn>
+              <v-btn color="deep-purple" :to="{ path: '/ManageRoleGroup', query: { indId: props.item.indId, indNo: std.stdNo + '.' + props.item.indNo ,indName: props.item.indName }}" dark >
+                <v-icon>people</v-icon>
+              </v-btn>
             </td>
           </tr>
         </template>
         <template slot="expand" slot-scope="props">
           <v-card flat>
+            <v-card-title primary-title class="title">ชนิดของตัวบ่งชี้</v-card-title>
+            <v-card-text>{{ (props.item.indType === '0') ? 'เชิงปริมาณ' : 'เชิงคุณภาพ' }}</v-card-text>
             <v-card-title primary-title class="title">คำอธิบาย</v-card-title>
             <v-card-text>{{ props.item.indInfo }}</v-card-text>
           </v-card>
@@ -51,6 +55,12 @@
               <v-flex xs9 offset-xs1>
                 <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field>
               </v-flex>
+              <v-flex xs5 offset-xs1>
+                <v-radio-group row v-model="ind.indType" label="ชนิดของตัวบ่งชี้*" :rules="[v => !!v]">
+                  <v-radio label="เชิงปริมาณ" value="0" color="primary"></v-radio>
+                  <v-radio label="เชิงคุณภาพ" value="1" color="primary"></v-radio>
+                </v-radio-group>
+              </v-flex>
               <v-flex xs10 offset-xs1>
                 <v-btn @click="submit" :disabled="!valid" color="primary">ยืนยัน</v-btn>
                 <v-btn @click="clear" color="error">ยกเลิก</v-btn>
@@ -58,42 +68,6 @@
             </v-layout>
           </v-container>
         </v-form>
-      </v-card>
-    </v-dialog>
-    <v-dialog v-model="roleDialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
-      <v-card>
-        <v-toolbar dark color="deep-purple">
-          <v-btn icon @click.native="roleDialog = !roleDialog" dark>
-            <v-icon>close</v-icon>
-          </v-btn>
-          <v-toolbar-title>จัดการผู้รับผิดชอบตัวบ่งชี้</v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
-        <v-container fluid>
-          <v-layout row wrap>
-            <v-flex xs3 offset-xs1>
-              <selectSarLvl v-on:onSarLvlChange="getSarLvl($event)"></selectSarLvl>
-            </v-flex>
-            <v-flex xs4 offset-xs1>
-              <selectPerson v-on:onPickPerson="getPerson($event)"></selectPerson>
-            </v-flex>
-            <v-flex xs2 offset-xs1>
-              <v-btn color="pink" @click="addPerson" dark><v-icon>add</v-icon></v-btn>
-            </v-flex>
-            <v-flex xs11 offset-xs1>
-              <v-data-table v-bind:headers="headersRole" v-bind:items="itemsRole" v-bind:pagination.sync="paginationRole" class="elevation-1" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
-                <template slot="items" slot-scope="props">
-                  <tr>
-                    <td class="text-xs-left">{{ props.item.fullName }}</td>
-                    <td class="text-xs-right">
-                      <v-btn color="error"><v-icon>delete</v-icon></v-btn>
-                    </td>
-                  </tr>
-                </template>
-              </v-data-table>
-            </v-flex>
-          </v-layout>
-        </v-container>
       </v-card>
     </v-dialog>
   </v-layout>
@@ -105,7 +79,7 @@
 import selectPerson from './selectPerson'
 import selectSarLvl from './selectSarLvl'
 export default {
-  name: 'ManageStd',
+  name: 'ManageInd',
   components: {
     'selectPerson': selectPerson,
     'selectSarLvl': selectSarLvl
@@ -113,7 +87,6 @@ export default {
   data: () => {
     return {
       dialog: false,
-      roleDialog: false,
       edit: false,
       valid: false,
       pagination: {
@@ -121,28 +94,20 @@ export default {
       },
       headers: [{text: 'ตัวบ่งชี้ที่', value: 'indNo', align: 'center'},
       {text: 'ตัวบ่งชี้', value: 'indName', align: 'center'}],
-      items: [{indId: 1, indNo: 1, indName: 'คุณภาพบัณฑิตรามกรอบมาตรฐานคุณวุฒิระดับอุดมศึกษาแห่งชาติ', indInfo: 'ผลประเมินคุณภาพบัณฑิตตามกรอบมาตรฐานคุณวุฒิระดับอุดมศึกษาแห่งชาติ(โดยผู้ใช้บัณฑิต/ผู้มีส่วนได้ส่วนเสีย)', stdId: this.stdId},
-      {indId: 1, indNo: 2, indName: 'การได้งานทำหรือผลงานวิจัยของผู้สำเร็จการศึกษา', indInfo: 'ผลบัณฑิตปริญญาตรีที่ได้งานทำหรือประกอบอาชีพอิสระ', stdId: this.stdId}],
+      items: [{indId: 1, indNo: 1, indName: 'คุณภาพบัณฑิตรามกรอบมาตรฐานคุณวุฒิระดับอุดมศึกษาแห่งชาติ', indInfo: 'ผลประเมินคุณภาพบัณฑิตตามกรอบมาตรฐานคุณวุฒิระดับอุดมศึกษาแห่งชาติ(โดยผู้ใช้บัณฑิต/ผู้มีส่วนได้ส่วนเสีย)', indType: '0', stdId: this.stdId},
+      {indId: 2, indNo: 2, indName: 'การได้งานทำหรือผลงานวิจัยของผู้สำเร็จการศึกษา', indInfo: 'ผลบัณฑิตปริญญาตรีที่ได้งานทำหรือประกอบอาชีพอิสระ', indType: '1', stdId: this.stdId}],
       ind: {
         indId: null,
         indNo: null,
         indName: null,
-        indInfo: null
+        indInfo: null,
+        indType: '0'
       },
       std: {
         stdId: null,
         stdNo: null,
         stdName: null
-      },
-      paginationRole: {
-        sortBy: 'roleId'
-      },
-      headersRole: [{text: 'ชื่อ-นามสกุล', value: 'fullName', align: 'center'}],
-      itemsRole: [{roleId: 1, fullName: 'ร.ต.วงศธร นาคสุวรรณ์'},
-                  {roleId: 2, fullName: 'ส.ต.สุธิวัตร กาญจนอุทัย'},
-                  {roleId: 3, fullName: 'ร.อ.หญิง ภัทริกา วงศ์อนันต์นนท์'}],
-      newPerson: null,
-      sarLvl: null
+      }
     }
   },
   methods: {
@@ -150,6 +115,7 @@ export default {
       this.dialog = true
       this.edit = false
       this.ind.indNo = 1
+      this.ind.indType = '0'
     },
     openEditDialog (val) {
       this.dialog = true
@@ -158,6 +124,7 @@ export default {
       this.ind.indNo = val.indNo
       this.ind.indName = val.indName
       this.ind.indInfo = val.indInfo
+      this.ind.indType = val.indType
       console.log(this.ind)
     },
     delInd (val) {
@@ -178,20 +145,6 @@ export default {
       this.dialog = false
       this.$refs.form.inputs[1].reset()
       this.$refs.form.inputs[2].reset()
-    },
-    addPerson () {
-      console.log(this.newPerson)
-    },
-    getPerson (val) {
-      this.newPerson = val
-    },
-    getSarLvl (val) {
-      this.sarLvl = val
-    }
-  },
-  watch: {
-    sarLvl: function (val) {
-      console.log(val)
     }
   },
   beforeMount () {
