@@ -1,23 +1,31 @@
 <template>
-    <v-select :items="persons" v-model="p1" item-text="fullName" item-value="personId" label="เลือกบุคลากร" autocomplete allow-overflow>
+    <v-select :items="persons" v-model="p1" item-text="person_fullname" item-value="person_id" label="เลือกบุคลากร" autocomplete>
     </v-select>
 </template>
 
 <script>
+  import PersonService from '@/services/PersonService'
   export default {
     name: 'selectPerson',
     data: () => {
       return {
-        persons: [{personId: 1, fullName: 'ร.ต.วงศธร นาคสุวรรณ์'},
-                  {personId: 2, fullName: 'ส.ต.สุธิวัตร กาญจนอุทัย'},
-                  {personId: 3, fullName: 'ร.อ.หญิง ภัทริกา วงศ์อนันต์นนท์'}],
+        persons: [],
         p1: null
+      }
+    },
+    methods: {
+      async getAllPerson () {
+        const respones = await PersonService.getAllPerson()
+        this.persons = respones.data
       }
     },
     watch: {
       p1: function (val) {
         this.$emit('onPickPerson', val)
       }
+    },
+    beforeMount () {
+      this.getAllPerson()
     }
   }
 </script>

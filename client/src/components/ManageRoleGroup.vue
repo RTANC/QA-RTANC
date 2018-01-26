@@ -35,11 +35,9 @@
         </v-toolbar>
         <v-container fluid>
           <v-layout row wrap>
-            <v-flex xs4 offset-xs1>
-              <selectPerson v-on:onPickPerson="getPerson($event)"></selectPerson>
+            <v-flex xs10 offset-xs1>
+            
             </v-flex>
-            <v-flex xs1 offset-xs1></v-flex>
-            <v-flex xs10 offset-xs1></v-flex>
           </v-layout>
         </v-container>
       </v-card>
@@ -49,13 +47,10 @@
 </template>
 
 <script>
-  // import axios from 'axios'
-  import selectPerson from './selectPerson'
   import selectDept from './selectDept'
   export default {
     name: 'ManageRoleGroup',
     components: {
-      'selectPerson': selectPerson,
       'selectDept': selectDept
     },
     data: () => {
@@ -67,22 +62,16 @@
         },
         headers: [{text: 'กลุ่มผู้รับผิดชอบ', align: 'center', value: 'roleGroup'}],
         items: [],
-        item2: [],
         ind: {
           indId: null,
           indNo: null,
           indName: null
-        },
-        personId: null
+        }
       }
     },
     methods: {
       getDept (val) {
         this.dept = val
-      },
-      getPerson (val) {
-        this.personId = val
-        console.log(this.personId)
       },
       addRoleGroup () {
         this.items.push({
