@@ -24,6 +24,26 @@
         </template>
       </v-data-table>
     </v-flex>
+    <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay="false">
+      <v-card>
+        <v-toolbar dark color="deep-purple">
+          <v-btn dark icon @click.native="dialog = !dialog">
+            <v-icon>close</v-icon>
+          </v-btn>
+          <v-toolbar-title>จัดการสมาชิก</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-container fluid>
+          <v-layout row wrap>
+            <v-flex xs4 offset-xs1>
+              <selectPerson v-on:onPickPerson="getPerson($event)"></selectPerson>
+            </v-flex>
+            <v-flex xs1 offset-xs1></v-flex>
+            <v-flex xs10 offset-xs1></v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-dialog>
   </v-layout>
 </v-container>
 </template>
@@ -41,6 +61,7 @@
     data: () => {
       return {
         dept: null,
+        dialog: false,
         pagination: {
           sortBy: null
         },
@@ -51,18 +72,26 @@
           indId: null,
           indNo: null,
           indName: null
-        }
+        },
+        personId: null
       }
     },
     methods: {
       getDept (val) {
         this.dept = val
       },
+      getPerson (val) {
+        this.personId = val
+        console.log(this.personId)
+      },
       addRoleGroup () {
         this.items.push({
           deptName: this.$refs.roleGroup.allDept[this.dept].text,
           value: this.dept
         })
+      },
+      addGroupMember () {
+        this.dialog = true
       }
     },
     beforeMount () {
