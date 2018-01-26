@@ -17,6 +17,9 @@
         <template slot="items" slot-scope="props">
           <tr>
             <td class="text-xs-center">{{ props.item.deptName }}</td>
+            <td class="text-xs-center">
+              <v-btn color="deep-purple" @click="addGroupMember" dark><v-icon>account_circle</v-icon></v-btn>
+            </td>
           </tr>
         </template>
       </v-data-table>
