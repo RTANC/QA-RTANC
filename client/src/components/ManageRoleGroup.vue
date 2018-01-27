@@ -36,7 +36,7 @@
         <v-container fluid>
           <v-layout row wrap>
             <v-flex xs10 offset-xs1>
-            
+              <dtGroupMember></dtGroupMember>
             </v-flex>
           </v-layout>
         </v-container>
@@ -48,10 +48,12 @@
 
 <script>
   import selectDept from './selectDept'
+  import dtGroupMember from './dtGroupMember'
   export default {
     name: 'ManageRoleGroup',
     components: {
-      'selectDept': selectDept
+      'selectDept': selectDept,
+      'dtGroupMember': dtGroupMember
     },
     data: () => {
       return {
