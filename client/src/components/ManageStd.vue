@@ -17,8 +17,8 @@
       <v-data-table v-bind:headers="headers" v-bind:items="items" v-bind:pagination.sync="pagination" class="elevation-1" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
         <template slot="items" slot-scope="props">
           <tr>
-            <td class="text-xs-center">{{ props.item.stdNo }}</td>
-            <td class="text-xs-left">{{ props.item.stdName }}</td>
+            <td class="text-xs-center">{{ props.item.standardNo }}</td>
+            <td class="text-xs-left">{{ props.item.standardName }}</td>
             <td class="text-xs-right">
               <v-btn color="primary" @click="openEditDialog(props.item)"><v-icon>create</v-icon></v-btn>
               <v-btn color="error" @click="delStd(props.item)"><v-icon>delete</v-icon></v-btn>
@@ -75,7 +75,7 @@
 <script>
 import selectYear from './selectYear'
 import selectInstitute from './selectInstitute'
-// import axios from 'axios'
+import StandardService from '@/services/StandardService'
 export default {
   name: 'ManageStd',
   components: {
@@ -107,7 +107,7 @@ export default {
       pagination: {
         sortBy: 'stdNo'
       },
-      headers: [ {text: 'องค์ประกอบที่', value: 'stdNo', align: 'center'}, {text: 'องค์ประกอบ', value: 'stdName', align: 'center'} ],
+      headers: [ {text: 'องค์ประกอบที่', value: 'standardNo', align: 'center'}, {text: 'องค์ประกอบ', value: 'standardName', align: 'center'} ],
       items: []
     }
   },
@@ -130,6 +130,14 @@ export default {
       this.stdName = std.stdName
       this.stdLvl = std.stdLvl
     },
+    async getStd () {
+      const respones = await StandardService.getStandards({
+        year: this.year,
+        institute: this.institute,
+        standardLvl: this.stdLvl
+      })
+      this.items = respones.data
+    },
     delStd (std) {
 
     },
@@ -149,8 +157,16 @@ export default {
       this.$refs.form.inputs[1].reset()
     }
   },
-  beforeMount () {
-    this.items = this.recordset1
+  watch: {
+    year: function () {
+      this.getStd()
+    },
+    institute: function () {
+      this.getStd()
+    },
+    stdLvl: function () {
+      this.getStd()
+    }
   }
 }
 </script>

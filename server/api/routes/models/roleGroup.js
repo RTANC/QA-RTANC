@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../connection')
 
-const roleGroup =  sequelize.define('roleGroupId', {
+const roleGroup =  sequelize.define('roleGroup', {
     roleGroupId: {
         type: Sequelize.INTEGER,
         primaryKey: true,

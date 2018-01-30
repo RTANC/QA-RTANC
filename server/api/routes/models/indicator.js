@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../connection')
 
-const indicator = sequelize.define('indicator', {
+const indicator = sequelize.define('indicators', {
     indicatorId: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -9,6 +9,10 @@ const indicator = sequelize.define('indicator', {
     },
     standardId: {
         type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    indicatorNo: {
+        type: Sequelize.TINYINT,
         allowNull: false
     },
     indicatorName: {

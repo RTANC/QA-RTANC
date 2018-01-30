@@ -15,6 +15,10 @@ const standard = sequelize.define('standard', {
         type: Sequelize.TINYINT,
         allowNull: false
     },
+    standardNo: {
+        type: Sequelize.TINYINT,
+        allowNull: false
+    },
     standardName: {
         type: Sequelize.TEXT,
         allowNull: false
