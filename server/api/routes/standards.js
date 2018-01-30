@@ -51,11 +51,11 @@ router.patch('/', multer().array(), (req, res, next) => {
     })
 })
 
-router.delete('/', multer().array(), (req, res, next) => {
-    const std = req.body
+router.delete('/', (req, res, next) => {
+    const stdId = req.query.standardId
     standard.destroy({
         where: {
-            standardId: std.standardId
+            standardId: stdId
         }
     }).then( result => {
         res.status(200).send('Delete Success')

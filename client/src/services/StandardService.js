@@ -17,6 +17,10 @@ export default {
     return api().patch('api/standards', std)
   },
   delStandard (stdId) {
-    return api().delete('api/standards', stdId)
+    return api().delete('api/standards', {
+      params: {
+        standardId: stdId 
+      }
+    })
   }
 }
