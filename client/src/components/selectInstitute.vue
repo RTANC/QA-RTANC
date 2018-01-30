@@ -1,5 +1,5 @@
 <template>
-    <v-select @change="onInstituteChange" v-bind:items="allInstitute" label="เลือกสถาบันผู้ประเมิน">
+    <v-select @change="onInstituteChange" v-bind:items="allInstitute" label="เลือกสถาบันผู้ประเมิน" v-model="institute">
     </v-select>
 </template>
 
@@ -20,7 +20,8 @@
         }, {
           text: 'กรมยุทธศึกษาทหารบก',
           value: 3
-        }]
+        }],
+        institute: null
       }
     },
     methods: {

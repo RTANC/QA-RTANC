@@ -1,5 +1,5 @@
 <template>
-    <v-select @change="onYearChange" v-bind:items="allYear" label="เลือกปีงบประมาณ">
+    <v-select @change="onYearChange" v-bind:items="allYear" label="เลือกปีงบประมาณ" v-model="year">
     </v-select>
 </template>
 
@@ -8,7 +8,8 @@
     name: 'selectYear',
     data: () => {
       return {
-        allYear: []
+        allYear: [],
+        year: null
       }
     },
     methods: {

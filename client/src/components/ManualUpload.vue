@@ -4,7 +4,7 @@
     <v-flex xs2 offset-xs1>
     <selectYear v-on:onYearChange="getYear($event)"></selectYear>
     </v-flex>
-    <v-flex xs3 offset-xs1>
+    <v-flex xs4 offset-xs1>
       <selectInstitute v-on:onInstituteChange="getInstitute($event)"></selectInstitute>
     </v-flex>
     <v-flex xs4 offset-xs1>

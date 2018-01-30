@@ -12,5 +12,11 @@ export default {
   },
   addStandard (std) {
     return api().post('api/standards', std)
+  },
+  editStandard (std) {
+    return api().patch('api/standards', std)
+  },
+  delStandard (stdId) {
+    return api().delete('api/standards', stdId)
   }
 }

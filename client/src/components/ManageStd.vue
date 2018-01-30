@@ -36,7 +36,9 @@
     <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
       <v-card>
         <v-toolbar dark color="primary">
-          <v-icon>content_paste</v-icon>
+          <v-btn icon @click.native="clear" dark>
+            <v-icon>close</v-icon>
+          </v-btn>
           <v-toolbar-title>ข้อมูลองค์ประกอบ</v-toolbar-title>
           <v-spacer></v-spacer>
         </v-toolbar>
@@ -68,6 +70,9 @@
         </v-form>
       </v-card>
     </v-dialog>
+    <v-snackbar v-model="snackbar.show" :timeout="3000" :color="snackbar.color">
+      {{ snackbar.text }}
+    </v-snackbar>
   </v-layout>
 </v-container>
 </template>
@@ -108,7 +113,12 @@ export default {
         sortBy: 'stdNo'
       },
       headers: [ {text: 'องค์ประกอบที่', value: 'standardNo', align: 'center'}, {text: 'องค์ประกอบ', value: 'standardName', align: 'center'} ],
-      items: []
+      items: [],
+      snackbar: {
+        show: false,
+        text: null,
+        color: null
+      }
     }
   },
   methods: {
@@ -121,14 +131,17 @@ export default {
     openAddDialog () {
       this.dialog = true
       this.edit = false
-      this.stdNo = 1
+      this.stdNo = (this.items.length !== 0) ? Math.max.apply(Math, this.items.map(function (o) {
+        return o.standardNo + 1
+      })) : 1
     },
     openEditDialog (std) {
       this.dialog = true
       this.edit = true
-      this.stdId = std.stdId
-      this.stdName = std.stdName
-      this.stdLvl = std.stdLvl
+      this.stdId = std.standardId
+      this.stdNo = std.standardNo
+      this.stdName = std.standardName
+      this.stdLvl = (std.standardLvl) ? '1' : '0'
     },
     async getStd () {
       const respones = await StandardService.getStandards({
@@ -138,18 +151,49 @@ export default {
       })
       this.items = respones.data
     },
-    delStd (std) {
-
+    async delStd (std) {
+      this.stdId = std.standardId
+      try {
+        await StandardService.delStandard(this.stdId)
+        this.snackbar.text = 'ลบองค์ประกอบมาตรฐานสำเร็จ'
+        this.snackbar.color = 'success'
+        this.snackbar.show = true
+        await this.getStd()
+      } catch (error) {
+        this.snackbar.text = 'ลบองค์ประกอบมาตรฐานล้มเหลว'
+        this.snackbar.color = 'error'
+        this.snackbar.show = true
+      }
     },
-    submit () {
+    async submit () {
       if (this.$refs.form.validate()) {
-        // Native form submission is not yet supported
-        // axios.post('/api/submit', {
-        //   stdNo: this.stdNo,
-        //   stdName: this.stdName,
-        //   stdLvl: this.stdLvl
-        // })
-
+        try {
+          const formData = new FormData()
+          formData.append('year', this.year)
+          formData.append('institute', this.institute)
+          formData.append('standardNo', this.stdNo)
+          formData.append('standardName', this.stdName)
+          formData.append('standardLvl', this.stdLvl)
+          if (!this.edit) {
+            await StandardService.addStandard(formData)
+            this.snackbar.text = 'เพิ่มองค์ประกอบมาตรฐานสำเร็จ'
+          } else {
+            formData.append('standardId', this.stdId)
+            await StandardService.editStandard(formData)
+            this.snackbar.text = 'แก้ไของค์ประกอบมาตรฐานสำเร็จ'
+          }
+          this.snackbar.show = true
+          this.snackbar.color = 'success'
+          await this.getStd()
+        } catch (error) {
+          if (!this.edit) {
+            this.snackbar.text = 'เพิ่มองค์ประกอบมาตรฐานล้มเหลว'
+          } else {
+            this.snackbar.text = 'แก้ไของค์ประกอบมาตรฐานล้มเหลว'
+          }
+          this.snackbar.show = true
+          this.snackbar.color = 'error'
+        }
       }
     },
     clear () {

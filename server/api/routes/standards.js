@@ -32,4 +32,36 @@ router.post('/', multer().array(),(req, res, next) => {
     })   
 })
 
+router.patch('/', multer().array(), (req, res, next) => {
+    const std = req.body
+    standard.update({
+        year: std.year,
+        institute: std.institute,
+        standardNo: std.standardNo,
+        standardName: std.standardName,
+        standardLvl: std.standardLvl
+    }, {
+        where: {
+            standardId: std.standardId
+        }
+    }).then( result => {
+        res.status(200).send('Update Success')
+    }).catch( err => {
+        res.status(500).send('Update fail')
+    })
+})
+
+router.delete('/', multer().array(), (req, res, next) => {
+    const std = req.body
+    standard.destroy({
+        where: {
+            standardId: std.standardId
+        }
+    }).then( result => {
+        res.status(200).send('Delete Success')
+    }).catch( err => {
+        res.status(500).send('Delete fail')
+    })
+})
+
 module.exports = router
