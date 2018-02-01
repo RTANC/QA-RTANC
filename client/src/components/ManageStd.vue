@@ -22,7 +22,7 @@
             <td class="text-xs-right">
               <v-btn color="primary" @click="openEditDialog(props.item)"><v-icon>create</v-icon></v-btn>
               <v-btn color="error" @click="delStd(props.item)"><v-icon>delete</v-icon></v-btn>
-              <v-btn color="success" :to="{ path: '/ManageInd', query: { stdId: props.item.stdId, stdNo: props.item.stdNo ,stdName: props.item.stdName }}"><v-icon>launch</v-icon></v-btn>
+              <v-btn color="success" :to="{ path: '/ManageInd', query: { stdId: props.item.standardId, stdNo: props.item.standardNo ,stdName: props.item.standardName }}"><v-icon>launch</v-icon></v-btn>
             </td>
           </tr>
         </template>

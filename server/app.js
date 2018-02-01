@@ -5,6 +5,7 @@ const cors = require('cors');
 const manualRoutes = require('./api/routes/manuals')
 const personRoutes = require('./api/routes/persons')
 const standardRoutes = require('./api/routes/standards')
+const indicatorRoutes = require('./api/routes/indicators')
 const roleGroupRoutes = require('./api/routes/roleGroups')
 const groupMemberRoutes = require('./api/routes/groupMembers')
 
@@ -18,6 +19,7 @@ app.use(cors())
 app.use('/api/manuals', manualRoutes)
 app.use('/api/persons', personRoutes)
 app.use('/api/standards', standardRoutes)
+app.use('/api/indicators', indicatorRoutes)
 app.use('/api/roleGroup', roleGroupRoutes)
 app.use('/api/groupMember', groupMemberRoutes)
 

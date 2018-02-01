@@ -1,0 +1,24 @@
+import api from '@/services/api'
+
+export default {
+  getIndicator (stdId) {
+    return api().get('api/indicators', {
+      params: {
+        standardId: stdId
+      }
+    })
+  },
+  addIndicator (ind) {
+    return api().post('api/indicators', ind)
+  },
+  editIndicator (ind) {
+    return api().patch('api/indicators', ind)
+  },
+  delIndicator (indId) {
+    return api().delete('api/indicators', {
+      params: {
+        indicatorId: indId
+      }
+    })
+  }
+}

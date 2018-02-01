@@ -19,7 +19,7 @@ export default {
   delStandard (stdId) {
     return api().delete('api/standards', {
       params: {
-        standardId: stdId 
+        standardId: stdId
       }
     })
   }
