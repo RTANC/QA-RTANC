@@ -1,5 +1,5 @@
 <template>
-    <v-select @change="onYearChange" v-bind:items="allYear" label="เลือกปีงบประมาณ" v-model="year">
+    <v-select v-bind:items="allYear" label="เลือกปีงบประมาณ" v-model="year">
     </v-select>
 </template>
 
@@ -13,9 +13,6 @@
       }
     },
     methods: {
-      onYearChange (val) {
-        this.$emit('onYearChange', val)
-      },
       initYearSelect () {
         var nowYear = ((new Date()).getFullYear()) + 543
         for (var i = nowYear - 3; i <= nowYear + 3; i++) {
@@ -24,6 +21,11 @@
             value: i
           })
         }
+      }
+    },
+    watch: {
+      year: function (val) {
+        this.$emit('onYearChange', val)
       }
     },
     beforeMount () {

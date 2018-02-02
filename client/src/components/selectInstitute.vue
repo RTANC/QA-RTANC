@@ -1,5 +1,5 @@
 <template>
-    <v-select @change="onInstituteChange" v-bind:items="allInstitute" label="เลือกสถาบันผู้ประเมิน" v-model="institute">
+    <v-select v-bind:items="allInstitute" label="เลือกสถาบันผู้ประเมิน" v-model="institute">
     </v-select>
 </template>
 
@@ -24,8 +24,8 @@
         institute: null
       }
     },
-    methods: {
-      onInstituteChange (val) {
+    watch: {
+      institute: function (val) {
         this.$emit('onInstituteChange', val)
       }
     }

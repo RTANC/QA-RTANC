@@ -4,7 +4,7 @@
     <v-flex xs10 offset-xs1>
       <h1>องค์ประกอบที่ {{ std.stdNo }} : {{ std.stdName }}</h1>
     </v-flex>
-    <v-flex xs11 offset-xs1>
+    <v-flex xs11 offset-xs1 class="pt-3">
       <v-data-table v-bind:headers="headers" item-key="indicatorNo" v-bind:items="items" v-bind:pagination.sync="pagination" class="elevation-1" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
         <template slot="items" slot-scope="props">
           <tr>
@@ -80,13 +80,11 @@
 <script>
 // import axios from 'axios'
 import selectPerson from './selectPerson'
-import selectSarLvl from './selectSarLvl'
 import IndicatorService from '@/services/IndicatorService'
 export default {
   name: 'ManageInd',
   components: {
-    'selectPerson': selectPerson,
-    'selectSarLvl': selectSarLvl
+    'selectPerson': selectPerson
   },
   data: () => {
     return {

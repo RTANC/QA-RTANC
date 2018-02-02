@@ -20,7 +20,7 @@ app.use('/api/manuals', manualRoutes)
 app.use('/api/persons', personRoutes)
 app.use('/api/standards', standardRoutes)
 app.use('/api/indicators', indicatorRoutes)
-app.use('/api/roleGroup', roleGroupRoutes)
-app.use('/api/groupMember', groupMemberRoutes)
+app.use('/api/roleGroups', roleGroupRoutes)
+app.use('/api/groupMembers', groupMemberRoutes)
 
 module.exports = app;

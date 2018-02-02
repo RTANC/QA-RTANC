@@ -5,10 +5,13 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.css'
 
+import VueCookie from 'vue-cookie'
+
 import App from './App'
 import router from './router'
 
 Vue.use(Vuetify)
+Vue.use(VueCookie)
 
 Vue.config.productionTip = false
 

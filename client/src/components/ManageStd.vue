@@ -98,17 +98,6 @@ export default {
       stdNo: 1,
       stdName: null,
       stdLvl: '0',
-      recordset1: [ {stdId: 1, year: 2559, institute: 1, stdNo: 1, stdName: 'การกำกับมาตรฐาน', stdLvl: '0'},
-                    {stdId: 2, year: 2559, institute: 1, stdNo: 2, stdName: 'บัณฑิต', stdLvl: '0'},
-                    {stdId: 3, year: 2559, institute: 1, stdNo: 3, stdName: 'นักศึกษา', stdLvl: '0'},
-                    {stdId: 4, year: 2559, institute: 1, stdNo: 4, stdName: 'อาจารย์', stdLvl: '0'},
-                    {stdId: 5, year: 2559, institute: 1, stdNo: 5, stdName: 'หลักสูตรการเรียนการสอน การประเมินผู้เรียน', stdLvl: '0'},
-                    {stdId: 6, year: 2559, institute: 1, stdNo: 6, stdName: 'สิ่งสนับสนุนการเรียนรู้', stdLvl: '0'}],
-      recordset2: [ {stdId: 7, year: 2559, institute: 1, stdNo: 1, stdName: 'การผลิตบัณฑิต', stdLvl: '1'},
-                    {stdId: 8, year: 2559, institute: 1, stdNo: 2, stdName: 'การวิจัย', stdLvl: '1'},
-                    {stdId: 9, year: 2559, institute: 1, stdNo: 3, stdName: 'การบริการวิชาการ', stdLvl: '1'},
-                    {stdId: 10, year: 2559, institute: 1, stdNo: 4, stdName: 'การทำนุบำรุงศิลปะและวัฒนธรรม', stdLvl: '1'},
-                    {stdId: 11, year: 2559, institute: 1, stdNo: 5, stdName: 'การบริการจัดการ', stdLvl: '1'}],
       pagination: {
         sortBy: 'stdNo'
       },
@@ -144,12 +133,14 @@ export default {
       this.stdLvl = (std.standardLvl) ? '1' : '0'
     },
     async getStd () {
-      const respones = await StandardService.getStandards({
-        year: this.year,
-        institute: this.institute,
-        standardLvl: this.stdLvl
-      })
-      this.items = respones.data
+      if (this.year !== null && this.institute !== null && this.stdLvl !== null) {
+        const respones = await StandardService.getStandards({
+          year: this.year,
+          institute: this.institute,
+          standardLvl: this.stdLvl
+        })
+        this.items = respones.data
+      }
     },
     async delStd (std) {
       this.stdId = std.standardId
