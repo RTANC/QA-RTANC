@@ -19,7 +19,7 @@
             <td class="text-xs-center">{{ groupName[props.item.groupId].text }}</td>
             <td class="text-xs-center">
               <v-btn color="error" @click="delRoleGroup(props.item.roleGroupId)"><v-icon>delete</v-icon></v-btn>
-              <v-btn color="deep-purple" @click="addGroupMember" dark><v-icon>account_circle</v-icon></v-btn>
+              <v-btn color="deep-purple" @click="addGroupMember(props.item.roleGroupId)" dark><v-icon>account_circle</v-icon></v-btn>
             </td>
           </tr>
         </template>
@@ -45,7 +45,7 @@
         <v-container fluid>
           <v-layout row wrap>
             <v-flex xs10 offset-xs1>
-              <dtGroupMember></dtGroupMember>
+              <dtGroupMember :roleGroupId="roleGid"></dtGroupMember>
             </v-flex>
           </v-layout>
         </v-container>
@@ -72,6 +72,7 @@
       return {
         deptId: null,
         dialog: false,
+        roleGid: null,
         pagination: {
           sortBy: null
         },
@@ -171,7 +172,8 @@
         this.snackbar.show = true
         this.getRoleGroup()
       },
-      addGroupMember () {
+      addGroupMember (val) {
+        this.roleGid = val
         this.dialog = true
       }
     },
