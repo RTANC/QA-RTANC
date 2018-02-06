@@ -5,7 +5,8 @@ import ManualUpload from '@/components/ManualUpload'
 import ManualDownload from '@/components/ManualDownload'
 import ManageStd from '@/components/ManageStd'
 import ManageInd from '@/components/ManageInd'
-import ManageRoleGroup from '@/components/ManageRoleGroup'
+import MakeSAR from '@/components/MakeSAR'
+
 Vue.use(Router)
 
 export default new Router({
@@ -31,11 +32,6 @@ export default new Router({
       component: ManageInd
     },
     {
-      path: '/ManageRoleGroup',
-      name: 'ManageRoleGroup',
-      component: ManageRoleGroup
-    },
-    {
       path: '/ManualUpload',
       name: 'ManualUpload',
       component: ManualUpload
@@ -44,6 +40,11 @@ export default new Router({
       path: '/ManualDownload',
       name: 'ManualDownload',
       component: ManualDownload
+    },
+    {
+      path: '/MakeSAR',
+      name: 'MakeSAR',
+      component: MakeSAR
     }
   ]
 })

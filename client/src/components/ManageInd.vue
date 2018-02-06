@@ -13,9 +13,6 @@
             <td class="text-xs-left">
               <v-btn color="primary" @click="openEditDialog(props.item)"><v-icon>create</v-icon></v-btn>
               <v-btn color="error" @click="delInd(props.item)"><v-icon>delete</v-icon></v-btn>
-              <v-btn color="deep-purple" :to="{ path: '/ManageRoleGroup', query: { indId: props.item.indicatorId, indNo: std.stdNo + '.' + props.item.indicatorNo ,indName: props.item.indicatorName }}" dark >
-                <v-icon>people</v-icon>
-              </v-btn>
             </td>
           </tr>
         </template>
@@ -78,14 +75,9 @@
 </template>
 
 <script>
-// import axios from 'axios'
-import selectPerson from './selectPerson'
 import IndicatorService from '@/services/IndicatorService'
 export default {
   name: 'ManageInd',
-  components: {
-    'selectPerson': selectPerson
-  },
   data: () => {
     return {
       dialog: false,
