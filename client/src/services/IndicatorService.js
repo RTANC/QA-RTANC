@@ -8,6 +8,15 @@ export default {
       }
     })
   },
+  getFullIndicator (obj) {
+    return api().get('api/indicators/full', {
+      params: {
+        year: obj.year,
+        institute: obj.institute,
+        standardLvl: obj.standardLvl
+      }
+    })
+  },
   addIndicator (ind) {
     return api().post('api/indicators', ind)
   },

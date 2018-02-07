@@ -40,10 +40,7 @@ router.get('/', (req, res, next) => {
         url: 'http://localhost:3000/uploads/manuals/' + man.fileName
       })
     }
-  }).catch(err => {
-    console.log(err);
   })
-
 })
 
 router.post('/', upload.single('man'), (req, res, next) => {
@@ -62,12 +59,7 @@ router.post('/', upload.single('man'), (req, res, next) => {
     res.status(200).send({
       message: 'Upload ไฟล์คู่มือสำเร็จ'
     })
-  }).catch(err => {
-    res.status(500).send({
-      message: 'Upload ไฟล์คู่มือล้มเหลว'
-    })
   })
-
 })
 
 

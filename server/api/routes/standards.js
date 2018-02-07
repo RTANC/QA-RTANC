@@ -16,6 +16,8 @@ router.get('/', (req, res, next) => {
         }
     }).then(std => {
         res.send(std)
+    }).catch(err =>{
+        next(err)
     })
 })
 
@@ -29,7 +31,9 @@ router.post('/', multer().array(),(req, res, next) => {
         standardLvl: std.standardLvl
     }).then(nRow => {
         res.send(nRow.dataValues)
-    })   
+    }).catch(err =>{
+        next(err)
+    })
 })
 
 router.patch('/', multer().array(), (req, res, next) => {
@@ -46,8 +50,8 @@ router.patch('/', multer().array(), (req, res, next) => {
         }
     }).then( result => {
         res.status(200).send('Update Success')
-    }).catch( err => {
-        res.status(500).send('Update fail')
+    }).catch(err =>{
+        next(err)
     })
 })
 
@@ -59,8 +63,8 @@ router.delete('/', (req, res, next) => {
         }
     }).then( result => {
         res.status(200).send('Delete Success')
-    }).catch( err => {
-        res.status(500).send('Delete fail')
+    }).catch(err =>{
+        next(err)
     })
 })
 

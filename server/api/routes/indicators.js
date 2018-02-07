@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const indicator = require('./models/indicator')
-
+const standard = require('./models/standard')
+const Op = require('sequelize').Op
 router.get('/', (req, res, next) => {
     indicator.findAll({
         where: {
@@ -10,9 +11,30 @@ router.get('/', (req, res, next) => {
         }
     }).then(inds => {
         res.status(200).send(inds)
-    }).catch(err => {
-        res.status(500).send('fatch data fail')
+    }).catch(err =>{
+        next(err)
     })
+})
+
+router.get('/:param', (req, res, next) => {
+    standard.hasMany(indicator, {foreignKey: 'standardId'})
+    standard.findAll({
+        where: {
+            year: req.query.year,
+            institute: req.query.institute,
+            standardLvl: req.query.standardLvl
+        },
+        include: [{
+            model: indicator,
+            where: {
+                standardId: {
+                    [Op.ne]: null
+                }
+            }
+        }]
+    }).then(inds => {
+        res.json(inds)
+    })   
 })
 
 router.post('/', multer().array(), (req, res, next) => {
@@ -24,8 +46,8 @@ router.post('/', multer().array(), (req, res, next) => {
         indicatorType: req.body.indicatorType
     }).then(succ => {
         res.status(200).send('create indicator successful')
-    }).catch(err => {
-        res.status(500).send('create indicator fail')
+    }).catch(err =>{
+        next(err)
     })
 })
 
@@ -41,8 +63,8 @@ router.patch('/', multer().array(), (req, res, next) => {
         }
     }).then(succ => {
         res.status(200).send('indicator updated')
-    }).catch(err => {
-        res.status(500).send('indicator update fail')
+    }).catch(err =>{
+        next(err)
     })
 })
 
@@ -53,8 +75,8 @@ router.delete('/', (req, res, next) => {
         }
     }).then(succ => {
         res.status(200).send('incdicator deleeted')
-    }).catch(err => {
-        res.status(500).send('indicator delete fail')
+    }).catch(err =>{
+        next(err)
     })
 })
 

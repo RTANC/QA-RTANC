@@ -6,6 +6,7 @@ import ManualDownload from '@/components/ManualDownload'
 import ManageStd from '@/components/ManageStd'
 import ManageInd from '@/components/ManageInd'
 import MakeSAR from '@/components/MakeSAR'
+import WriteSAR from '@/components/WriteSAR'
 
 Vue.use(Router)
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/MakeSAR',
       name: 'MakeSAR',
       component: MakeSAR
+    },
+    {
+      path: '/WriteSAR',
+      name: 'WriteSAR',
+      component: WriteSAR
     }
   ]
 })
