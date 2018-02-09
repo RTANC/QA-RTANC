@@ -1,22 +1,65 @@
 <template>
-  <v-container fluid>
+  <v-container fluid grid-list-md>
       <v-layout row wrap>
           <v-flex xs10 offset-xs1>
               <v-card>
-                <v-card-title primary-title>
-                  <h3 class="headline">รายงานการประเมินตนเอง {{dept[0].text}}</h3> <br>
+                <v-card-title primary-title class="d-block">
+                  <h3 class="headline">รายงานการประเมินตนเอง {{dept[0].text}}</h3>
                   <h3>ตัวบ่งชี้ที่ {{indicator.indicatorNo}} : {{indicator.indicatorName}}</h3>
                 </v-card-title>
-                  <v-list>
-                    <v-divider></v-divider>
-                      <v-list-tile>
-                          <v-list-tile-content>
-                              <v-list-tile-title></v-list-tile-title>
-                          </v-list-tile-content>
-                      </v-list-tile>
-                  </v-list>
               </v-card>
           </v-flex>
+          <v-flex xs10 offset-xs1>
+            <h6 class="subheading">ผลการดำเนินงาน
+              <v-btn icon color="orange" dark @click="writeSAR">
+                <v-icon>create</v-icon>
+              </v-btn>
+            </h6>         
+          </v-flex>
+          <v-flex xs10 offset-xs1>
+            <v-card>
+              <v-list>
+                  <v-list-tile>
+                    <v-list-tile-content>
+                      <v-list-tile-title></v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+              </v-list>
+            </v-card>
+          </v-flex>
+          <v-flex xs10 offset-xs1>
+            <h6 class="subheading">ผลการประเมินตนเอง
+              <v-btn color="success" icon>
+                <v-icon>save</v-icon>
+              </v-btn>
+            </h6>
+          </v-flex>
+          <v-flex xs5 offset-xs1>
+            <v-card class="px-3">
+              <v-text-field v-model="sar.goal" multi-line label="เป้าหมาย"></v-text-field>
+            </v-card>
+          </v-flex>
+          <v-flex xs5>
+            <v-card class="px-3">
+              <v-text-field v-model="sar.sumResult" multi-line label="สรุป ผลการดำเนินงาน"></v-text-field>
+            </v-card>
+          </v-flex>
+          <v-flex xs10 offset-xs1>
+            <v-card class="pt-3 px-3 d-flex">
+              <v-switch label="การบรรลุเป้าหมาย" v-model="sar.goalCk" color="success" class="pt-4"></v-switch>
+              <v-text-field v-model="sar.score" type="number" label="คะแนนการประเมินตนเอง"></v-text-field>
+            </v-card>
+          </v-flex>
+          <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" scrollble>
+            <v-card>
+              <v-toolbar dark color="orange">
+                <v-btn icon @click.native="dialog = false" dark>
+                  <v-icon>close</v-icon>
+                </v-btn>
+                <v-toolbar-title>เขียนผลการดำเนินงาน</v-toolbar-title>
+              </v-toolbar>
+            </v-card>
+          </v-dialog>
           <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
             {{snackbar.text}}
           </v-snackbar>
@@ -31,6 +74,7 @@ export default {
   name: 'WriteSAR',
   data: () => {
     return {
+      dialog: false,
       indicator: {
         indicatorId: null,
         indicatorNo: null,
@@ -69,7 +113,6 @@ export default {
           this.createSAR()
         } else {
           this.sar = respones.data
-          console.log(this.sar)
         }
       } catch (error) {
       }
@@ -83,6 +126,8 @@ export default {
         this.sar.sarId = respones.data.sarId
         this.sar.sarLvl = respones.data.sarLvl
         this.sar.indicatorId = respones.data.indicatorId
+        this.sar.goalCk = respones.data.goalCk
+        this.sar.score = respones.data.score
         this.snackbar.text = 'สร้าง SAR สำเร็จ'
         this.snackbar.color = 'success'
       } catch (error) {
@@ -90,6 +135,14 @@ export default {
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true
+    },
+    writeSAR () {
+      this.dialog = true
+    }
+  },
+  watch: {
+    'sar.goalCk': function (val) {
+      console.log(val)
     }
   },
   beforeMount () {

@@ -19,7 +19,9 @@ router.get('/', (req, res, next) => {
 router.post('/create', multer().array(), (req, res, next) => {
     sar.create({
         indicatorId: req.body.indicatorId,
-        sarLvl: req.body.sarLvl
+        sarLvl: req.body.sarLvl,
+        goalCk: false,
+        score: 0
     }).then(created => {
         res.status(200).send(created)
     }).catch(err => {

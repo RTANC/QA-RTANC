@@ -26,11 +26,13 @@ module.exports = conn.define('qaSAR', {
     },
     goalCk: {
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        defaultValue: false
     },
     score: {
         type: Sequelize.TINYINT,
-        allowNull: true
+        allowNull: true,
+        defaultValue: 0
     },
     str: {
         type: Sequelize.TEXT,
