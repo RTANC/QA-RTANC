@@ -18,12 +18,20 @@
           </v-flex>
           <v-flex xs10 offset-xs1>
             <v-card>
-              <v-list>
-                  <v-list-tile>
-                    <v-list-tile-content>
-                      <v-list-tile-title></v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
+              <v-list two-line>
+                  <template v-for="item in sar.sarResults">
+                    <v-list-tile :key="item.sarResultId">
+                      <v-list-tile-content>
+                        <v-list-tile-title>{{dept[0].text}}</v-list-tile-title>
+                        <v-list-tile-sub-title v-html="item.sarResultText"></v-list-tile-sub-title>
+                      </v-list-tile-content>
+                      <v-list-tile-action>
+                        <v-btn icon ripple>
+                          <v-icon color="orange">create</v-icon>
+                        </v-btn>
+                      </v-list-tile-action>
+                    </v-list-tile>
+                  </template>
               </v-list>
             </v-card>
           </v-flex>
@@ -92,7 +100,8 @@ export default {
         str: null,
         strEnchance: null,
         weak: null,
-        weakEnchance: null
+        weakEnchance: null,
+        sarResults: []
       },
       snackbar: {
         show: false,

@@ -1,14 +1,19 @@
 const express = require('express')
 const multer = require('multer')
 const sar = require('./models/qaSAR')
+const sarResult = require('./models/sarResult')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
+    sar.hasMany(sarResult, {foreignKey: 'sarId'})
     sar.findOne({
         where: {
             indicatorId: req.query.indicatorId,
             sarLvl: req.query.sarLvl
-        }
+        },
+        include: [{
+            model: sarResult
+        }]
     }).then(sar => {
         res.status(200).send(sar)   
     }).catch(err => {
