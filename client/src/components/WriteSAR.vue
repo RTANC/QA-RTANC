@@ -11,8 +11,8 @@
           </v-flex>
           <v-flex xs10 offset-xs1>
             <h6 class="subheading">ผลการดำเนินงาน
-              <v-btn icon color="orange" dark @click="writeSAR">
-                <v-icon>create</v-icon>
+              <v-btn icon color="pink" dark @click="writeSAR">
+                <v-icon>add</v-icon>
               </v-btn>
             </h6>         
           </v-flex>
@@ -60,12 +60,19 @@
           </v-flex>
           <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" scrollble>
             <v-card>
-              <v-toolbar dark color="orange">
+              <v-toolbar dark color="pink">
                 <v-btn icon @click.native="dialog = false" dark>
                   <v-icon>close</v-icon>
                 </v-btn>
                 <v-toolbar-title>เขียนผลการดำเนินงาน</v-toolbar-title>
               </v-toolbar>
+              <v-container fluid>
+                <v-layout row wrap>
+                  <v-flex xs10 offset-xs1>
+                    <quill-editor></quill-editor>
+                  </v-flex>
+                </v-layout>
+              </v-container>
             </v-card>
           </v-dialog>
           <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
@@ -76,10 +83,17 @@
 </template>
 
 <script>
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+import { quillEditor } from 'vue-quill-editor'
 import SarService from '@/services/SarService'
 import Dept from '@/services/DeptService'
 export default {
   name: 'WriteSAR',
+  components: {
+    quillEditor
+  },
   data: () => {
     return {
       dialog: false,
@@ -108,7 +122,8 @@ export default {
         text: null,
         color: null
       },
-      dept: Dept.Dept
+      dept: Dept.Dept,
+      content: null
     }
   },
   methods: {
