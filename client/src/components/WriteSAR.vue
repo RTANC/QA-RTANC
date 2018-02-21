@@ -66,10 +66,10 @@
                 </v-btn>
                 <v-toolbar-title>เขียนผลการดำเนินงาน</v-toolbar-title>
               </v-toolbar>
-              <v-container fluid>
+              <v-container>
                 <v-layout row wrap>
                   <v-flex xs10 offset-xs1>
-                    <quill-editor></quill-editor>
+                    <quill-editor v-model="content" :options="editorOption"></quill-editor>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -88,6 +88,7 @@ import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import { quillEditor } from 'vue-quill-editor'
 import SarService from '@/services/SarService'
+import SarResultService from '@/services/SarResultService'
 import Dept from '@/services/DeptService'
 export default {
   name: 'WriteSAR',
@@ -97,6 +98,9 @@ export default {
   data: () => {
     return {
       dialog: false,
+      editorOption: {
+        placeholder: 'เขียนผลการดำเนินงานที่นี้...'
+      },
       indicator: {
         indicatorId: null,
         indicatorNo: null,
