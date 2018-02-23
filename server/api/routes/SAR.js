@@ -5,8 +5,9 @@ const sarResult = require('./models/sarResult')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    sar.hasMany(sarResult, {foreignKey: 'sarId'})
-    sar.findOne({
+    sar.hasMany(sarResult, {foreignKey: 'sarId', sourceKey: 'sarId'})
+    sarResult.belongsTo(sar, {foreignKey: 'sarId', targetKey: 'sarId'})
+    sar.findAll({
         where: {
             indicatorId: req.query.indicatorId,
             sarLvl: req.query.sarLvl

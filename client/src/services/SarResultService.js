@@ -15,6 +15,10 @@ export default {
     return api().patch('/api/sarResult', sarResult)
   },
   delSarResult (sarResultId) {
-    return api().delete('/api/sarResult', sarResultId)
+    return api().delete('/api/sarResult', {
+      params: {
+        sarResultId: sarResultId
+      }
+    })
   }
 }

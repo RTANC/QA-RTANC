@@ -61,7 +61,7 @@
           <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" scrollble>
             <v-card>
               <v-toolbar dark color="pink">
-                <v-btn icon @click.native="dialog = false" dark>
+                <v-btn icon @click.native="dialog = false;content = null" dark>
                   <v-icon>close</v-icon>
                 </v-btn>
                 <v-toolbar-title>เขียนผลการดำเนินงาน</v-toolbar-title>
@@ -70,6 +70,10 @@
                 <v-layout row wrap>
                   <v-flex xs10 offset-xs1>
                     <quill-editor v-model="content" :options="editorOption"></quill-editor>
+                  </v-flex>
+                  <v-flex xs10 offset-xs1>
+                    <v-btn color="primary" @click="addSarResult">ยืนยัน</v-btn>
+                    <v-btn>ยกเลิก</v-btn>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -140,7 +144,7 @@ export default {
         if (respones.data.length === 0) {
           this.createSAR()
         } else {
-          this.sar = respones.data
+          this.sar = respones.data[0]
         }
       } catch (error) {
       }
@@ -166,11 +170,31 @@ export default {
     },
     writeSAR () {
       this.dialog = true
+    },
+    async getSarResult () {
+      try {
+        const respones = await SarResultService.getSarResult()
+        const rows = respones.data
+      } catch (error) {
+      }
+    },
+    async addSarResult () {
+      try {
+        const formData = new FormData()
+        formData.append('sarId', this.sar.sarId)
+        formData.append('sarResultText', this.content)
+        await SarResultService.addSarResult(formData)
+        this.snackbar.text = 'เพิ่มผลการดำเนินงานสำเร็จ'
+        this.snackbar.color = 'success'
+      } catch (error) {
+        this.snackbar.text = 'เพิ่มผลการดำเนินงานล้มเหลว'
+        this.snackbar.color = 'error'
+      }
+      this.snackbar.show = true
     }
   },
   watch: {
     'sar.goalCk': function (val) {
-      console.log(val)
     }
   },
   beforeMount () {
