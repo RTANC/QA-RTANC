@@ -3,18 +3,6 @@ const multer = require('multer')
 const sarResult = require('./models/sarResult')
 const router = express.Router()
 
-router.get('/', (req, res, next) => {
-    sarResult.findAll({
-        where: {
-            sarId: req.query.sarId
-        }
-    }).then(rows => {
-        res.status(200).json(rows)
-    }).catch(err => {
-        next(err)
-    })
-})
-
 router.post('/', multer().array(), (req, res, next) => {
     sarResult.create({
         sarId: req.body.sarId,
@@ -28,7 +16,6 @@ router.post('/', multer().array(), (req, res, next) => {
 
 router.patch('/', multer().array(), (req, res, next) => {
     sarResult.update({
-        sarId: req.body.sarId,
         sarResultText: req.body.sarResultText
     }, {
         where: {
