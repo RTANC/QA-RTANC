@@ -46,7 +46,7 @@ router.post('/', upload.single('docRef'), (req, res, next) => {
     })
 })
 
-router.delete('/', multer().array(), (req, res, next) => {
+router.put('/', multer().array(), (req, res, next) => {
     sarDocRef.destroy({
         where: {
             docRefId: req.body.docRefId
