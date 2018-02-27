@@ -39,14 +39,14 @@ router.post('/upsert', multer().array(), (req, res, next) => {
     sar.upsert({
         indicatorId: req.body.indicatorId,
         sarLvl: req.body.sarLvl,
-        goal: req.body.goal,
-        sumResult: req.body.sumResult,
+        goal: (req.body.goal === 'null') ? null : req.body.goal,
+        sumResult: (req.body.sumResult === 'null') ? null : req.body.sumResult,
         goalCk: req.body.goalCk,
         score: req.body.score,
-        str: req.body.str,
-        strEnchance: req.body.strEnchance,
-        weak: req.body.weak,
-        weakEnchance: req.body.weakEnchance
+        str: (req.body.str === 'null') ? null : req.body.str,
+        strEnchance: (req.body.strEnchance === 'null') ? null : req.body.strEnchance,
+        weak: (req.body.weak === 'null') ? null : req.body.weak,
+        weakEnchance: (req.body.weakEnchance === 'null') ? null : req.body.weakEnchance
     }).then(upserted => {
         res.status(200).send(upserted)
     }).catch(err => {

@@ -11,7 +11,7 @@
           </v-flex>
           <v-flex xs10 offset-xs1>
             <h6 class="subheading">ผลการดำเนินงาน
-              <v-btn icon color="pink" dark @click.native="content = null;edit = false;dialog = true;">
+              <v-btn icon color="pink" dark @click.native="content = null;doc = false;edit = false;dialogTitle = 'เขียนผลการดำเนินงาน';dialogColor = 'pink';dialog = true;">
                 <v-icon>add</v-icon>
               </v-btn>
             </h6>         
@@ -25,13 +25,18 @@
                         <v-list-tile-sub-title v-html="'<span class=text--primary>' + dept[sar.sarLvl].text + '</span>' + item.sarResultText"></v-list-tile-sub-title>
                       </v-list-tile-content>
                       <v-list-tile-action>
-                        <v-btn icon @click.native="content = item.sarResultText;sarResultId = item.sarResultId;edit = true;dialog = true;">
-                          <v-icon color="primary">create</v-icon>
+                        <v-btn icon @click.native="content = item.sarResultText;sarResultId = item.sarResultId;doc = false;edit = true;dialogTitle = 'เขียนผลการดำเนินงาน';dialogColor = 'orange';dialog = true;">
+                          <v-icon color="orange">create</v-icon>
                         </v-btn>
                       </v-list-tile-action>
                     <v-list-tile-action>
                       <v-btn icon @click="delSarResult(item.sarResultId)">
                           <v-icon color="error">delete</v-icon>
+                      </v-btn>
+                    </v-list-tile-action>
+                    <v-list-tile-action>
+                      <v-btn icon @click.native="sarResultId = item.sarResultId;doc = true;dialogTitle = 'หลักฐานเอกสารอ้างอิง';dialogColor = 'deep-purple';dialog = true;">
+                        <v-icon color="deep-purple">insert_drive_file</v-icon>
                       </v-btn>
                     </v-list-tile-action>
                     </v-list-tile>
@@ -62,23 +67,67 @@
               <v-text-field v-model="sar.score" type="number" max="5" min="0" label="คะแนนการประเมินตนเอง" :rules="[v => (v > 5) ? 'คะแนนเต็ม 5 คะแนน' : true ]"></v-text-field>
             </v-card>
           </v-flex>
+          <v-flex xs5 offset-xs1>
+            <v-card class="px-3">
+              <v-text-field v-model="sar.str" multi-line label="จุดแข็ง"></v-text-field>
+            </v-card>
+          </v-flex>
+          <v-flex xs5>
+            <v-card class="px-3">
+              <v-text-field v-model="sar.strEnchance" multi-line label="แนวทางการเสริมจุดแข็ง"></v-text-field>
+            </v-card>
+          </v-flex>
+          <v-flex xs5 offset-xs1>
+            <v-card class="px-3">
+              <v-text-field v-model="sar.weak" multi-line label="จุดที่ควรพัฒนา"></v-text-field>
+            </v-card>
+          </v-flex>
+          <v-flex xs5>
+            <v-card class="px-3">
+              <v-text-field v-model="sar.weakEnchance" multi-line label="ข้อเสนอแนะในการปรับปรุง"></v-text-field>
+            </v-card>
+          </v-flex>
           <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" scrollble>
             <v-card>
-              <v-toolbar dark color="pink">
-                <v-btn icon @click.native="dialog = false;content = null" dark>
+              <v-toolbar dark :color="dialogColor">
+                <v-btn icon @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;" dark>
                   <v-icon>close</v-icon>
                 </v-btn>
-                <v-toolbar-title>เขียนผลการดำเนินงาน</v-toolbar-title>
+                <v-toolbar-title>{{dialogTitle}}</v-toolbar-title>
               </v-toolbar>
               <v-container>
                 <v-layout row wrap>
-                  <v-flex xs10 offset-xs1>
+                  <v-flex v-if="!doc" xs10 offset-xs1>
                     <quill-editor v-model="content" :options="editorOption"></quill-editor>
                   </v-flex>
-                  <v-flex xs10 offset-xs1>
+                  <v-flex v-if="!doc" xs10 offset-xs1>
                     <v-btn color="primary" @click="addSarResult" v-if="!edit"><v-icon left>add</v-icon>เพิ่มผลการดำเนินงาน</v-btn>
-                    <v-btn color="primary" @click="editSarResult" v-if="edit"><v-icon left>create</v-icon>แก้ไขผลการดำเนินงาน</v-btn>
-                    <v-btn>ยกเลิก</v-btn>
+                    <v-btn color="orange" @click="editSarResult" v-if="edit"><v-icon left>create</v-icon>แก้ไขผลการดำเนินงาน</v-btn>
+                    <v-btn @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;">ยกเลิก</v-btn>
+                  </v-flex>
+                  <v-flex v-if="doc" xs10 offset-xs1 class="pt-3">
+                    <v-divider></v-divider>
+                    <v-subheader>อัพโหลด หลักฐานเอกสารอ้างอิง</v-subheader>
+                    <v-list two-line>
+                      <v-list-tile avatar v-if="Files.hasFile">
+                        <v-list-tile-avatar>
+                          <v-icon>picture_as_pdf</v-icon>
+                        </v-list-tile-avatar>
+                        <v-list-tile-content>
+                          <v-list-tile-title>ชื่อไฟล์ : {{ Files.files[0].name }}</v-list-tile-title>
+                          <v-list-tile-sub-title>ขนาดไฟล์ : {{ (Files.files[0].size >= 1048567) ? (Files.files[0].size / 1048567) + "MB" : (Files.files[0].size / 1024) + " kB"}}</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+                    </v-list>
+                    <v-btn color="primary" @click="onPickFile">
+                      <v-icon left>folder</v-icon>
+                      เลือกไฟล์
+                    </v-btn>
+                    <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
+                    <v-btn v-if="Files.hasFile" color="success">
+                      <v-icon left>cloud_upload</v-icon>
+                      อัพโหลด
+                    </v-btn>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -107,7 +156,10 @@ export default {
   data: () => {
     return {
       dialog: false,
+      dialogTitle: null,
+      dialogColor: null,
       edit: false,
+      doc: false,
       editorOption: {
         placeholder: 'เขียนผลการดำเนินงานที่นี้...'
       },
@@ -138,7 +190,11 @@ export default {
       },
       dept: Dept.Dept,
       content: null,
-      sarResultId: null
+      sarResultId: null,
+      Files: {
+        hasFile: false,
+        files: null
+      }
     }
   },
   methods: {
@@ -175,7 +231,28 @@ export default {
       }
       this.snackbar.show = true
     },
-    editSAR () {
+    async editSAR () {
+      try {
+        const formData = new FormData()
+        formData.append('indicatorId', this.sar.indicatorId)
+        formData.append('sarLvl', this.sar.sarLvl)
+        formData.append('goal', this.sar.goal)
+        formData.append('sumResult', this.sar.sumResult)
+        formData.append('goalCk', this.sar.goalCk)
+        formData.append('score', this.sar.score)
+        formData.append('str', this.sar.str)
+        formData.append('strEnchance', this.sar.strEnchance)
+        formData.append('weak', this.sar.weak)
+        formData.append('weakEnchance', this.sar.weakEnchance)
+        await SarService.upsert(formData)
+        this.getSAR()
+        this.snackbar.text = 'บันทึกผลการประเมินตยเองสำเร็จ'
+        this.snackbar.color = 'success'
+      } catch (error) {
+        this.snackbar.text = 'บันทึกผลการประเมินตยเองล้มเหลว'
+        this.snackbar.color = 'error'
+      }
+      this.snackbar.show = true
     },
     async addSarResult () {
       try {
@@ -218,6 +295,16 @@ export default {
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true
+    },
+    onPickFile () {
+      this.$refs.fileInput.click()
+    },
+    onFilePicked (evt) {
+      if (evt.target.files[0].type !== evt.target.accept) {
+        return alert('ชนิดของไฟล์ต้องเป็น PDF เท่านั้น')
+      }
+      this.Files.files = evt.target.files
+      this.Files.hasFile = true
     }
   },
   watch: {

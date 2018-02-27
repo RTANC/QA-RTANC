@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const multer = require('multer')
-const QAmanual = require('./models/QAmanual');
+const QAmanual = require('./models/QAmanual')
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, 'uploads/manuals/')
