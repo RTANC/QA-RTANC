@@ -11,7 +11,7 @@
           </v-flex>
           <v-flex xs10 offset-xs1>
             <h6 class="subheading">ผลการดำเนินงาน
-              <v-btn icon color="pink" dark @click.native="content = null;doc = false;edit = false;dialogTitle = 'เขียนผลการดำเนินงาน';dialogColor = 'pink';dialog = true;">
+              <v-btn icon color="pink" dark @click.native="content = null;edit = false;docs = [];dialog = true;">
                 <v-icon>add</v-icon>
               </v-btn>
             </h6>         
@@ -25,18 +25,13 @@
                         <v-list-tile-sub-title v-html="'<span class=text--primary>' + dept[sar.sarLvl].text + '</span>' + item.sarResultText"></v-list-tile-sub-title>
                       </v-list-tile-content>
                       <v-list-tile-action>
-                        <v-btn icon @click.native="content = item.sarResultText;sarResultId = item.sarResultId;doc = false;edit = true;dialogTitle = 'เขียนผลการดำเนินงาน';dialogColor = 'orange';dialog = true;">
+                        <v-btn icon @click.native="content = item.sarResultText;sarResultId = item.sarResultId;edit = true;getDoc();dialog = true;">
                           <v-icon color="orange">create</v-icon>
                         </v-btn>
                       </v-list-tile-action>
                     <v-list-tile-action>
                       <v-btn icon @click="delSarResult(item.sarResultId)">
                           <v-icon color="error">delete</v-icon>
-                      </v-btn>
-                    </v-list-tile-action>
-                    <v-list-tile-action>
-                      <v-btn icon @click.native="sarResultId = item.sarResultId;doc = true;dialogTitle = 'หลักฐานเอกสารอ้างอิง';dialogColor = 'deep-purple';getDoc();dialog = true;">
-                        <v-icon color="deep-purple">insert_drive_file</v-icon>
                       </v-btn>
                     </v-list-tile-action>
                     </v-list-tile>
@@ -89,23 +84,32 @@
           </v-flex>
           <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" scrollble>
             <v-card>
-              <v-toolbar dark :color="dialogColor">
+              <v-toolbar dark color="pink">
                 <v-btn icon @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;" dark>
                   <v-icon>close</v-icon>
                 </v-btn>
-                <v-toolbar-title>{{dialogTitle}}</v-toolbar-title>
+                <v-toolbar-title>ผลการดำเนินงาน</v-toolbar-title>
               </v-toolbar>
               <v-container>
                 <v-layout row wrap>
-                  <v-flex v-if="!doc" xs10 offset-xs1>
-                    <quill-editor v-model="content" :options="editorOption"></quill-editor>
+                  <v-flex xs10 offset-xs1 v-if="edit && sar.sarLvl >= 0 && sar.sarLvl <= 3">
+                  <v-list two-line>
+                    <template v-for="item in otherSarResult">
+                      <v-list-tile :key="item.sarResultId"></v-list-tile>
+                    </template>
+                  </v-list>
+                  <v-subheader>ผลการดำเนินงานจาก แผนก / ภาควิชา</v-subheader>
+                  <v-divider></v-divider>
                   </v-flex>
-                  <v-flex v-if="!doc" xs10 offset-xs1>
+                  <v-flex xs10 offset-xs1>
+                    <v-subheader>เขียนผลการดำเนินงาน</v-subheader>
+                    <quill-editor v-model="content" :options="editorOption"></quill-editor>
                     <v-btn color="primary" @click="addSarResult" v-if="!edit"><v-icon left>add</v-icon>เพิ่มผลการดำเนินงาน</v-btn>
                     <v-btn color="orange" @click="editSarResult" v-if="edit"><v-icon left>create</v-icon>แก้ไขผลการดำเนินงาน</v-btn>
                     <v-btn @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;">ยกเลิก</v-btn>
                   </v-flex>
-                  <v-flex v-if="doc" xs10 offset-xs1 class="pt-3">
+                  <v-flex xs10 offset-xs1 class="pt-3">
+                    <v-divider></v-divider>
                     <v-subheader>รายการ หลักฐานเอกสารอ้างอิง</v-subheader>
                     <v-list two-line>
                       <template v-for="item in docs">
@@ -130,7 +134,6 @@
                         </v-list-tile>
                       </template>
                     </v-list>
-                    <v-divider></v-divider>
                     <v-subheader>อัพโหลด หลักฐานเอกสารอ้างอิง</v-subheader>
                     <v-list two-line>
                       <v-list-tile avatar v-if="Files.hasFile">
@@ -181,10 +184,7 @@ export default {
   data: () => {
     return {
       dialog: false,
-      dialogTitle: null,
-      dialogColor: null,
       edit: false,
-      doc: false,
       editorOption: {
         placeholder: 'เขียนผลการดำเนินงานที่นี้...'
       },
@@ -220,7 +220,8 @@ export default {
         hasFile: false,
         files: null
       },
-      docs: []
+      docs: [],
+      otherSarResult: []
     }
   },
   methods: {
@@ -337,6 +338,7 @@ export default {
         const respones = await DocRefService.getDoc(this.sarResultId)
         this.docs = respones.data
       } catch (error) {
+        this.docs = []
         this.snackbar.text = 'ไม่พบเอกสารที่ท่านค้นหา'
         this.snackbar.color = 'error'
         this.snackbar.show = true
