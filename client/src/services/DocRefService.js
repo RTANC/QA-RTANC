@@ -11,6 +11,9 @@ export default {
   uploadDoc (doc) {
     return api().post('api/docRefs', doc)
   },
+  updateDoc (doc) {
+    return api().patch('api/docRefs', doc)
+  },
   delDoc (doc) {
     return api().put('api/docRefs', doc)
   }

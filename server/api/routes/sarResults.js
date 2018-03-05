@@ -1,7 +1,44 @@
 const express = require('express')
-const multer = require('multer')
+const sequelize = require('./connection')
+const sar = require('./models/qaSAR')
 const sarResult = require('./models/sarResult')
+const sarDocRef = require('./models/sarDocRef')
+const multer = require('multer')
 const router = express.Router()
+const Op = require('sequelize').Op
+
+router.get('/other', (req, res, next) => {
+    // sequelize.query('spGetOtherSarResult @indId = 2,@lvl = 0').then(p => {
+    //     res.json(p)     
+    // }).catch(err =>{
+    //     next(err)
+    // })
+    sar.hasMany(sarResult, {foreignKey: 'sarId', sourceKey: 'sarId'})
+    sarResult.belongsTo(sar, {foreignKey: 'sarId', targetKey: 'sarId'})
+
+    sarResult.hasMany(sarDocRef, {foreignKey: 'sarResultId'})
+    sarDocRef.belongsTo(sarResult, {foreignKey: 'sarResultId'})
+
+    sar.findAll({
+        attributes: [],
+        where: {
+            indicatorId: 2,
+            sarLvl: {
+                [Op.gte]: 0
+            }
+        },
+        include: {
+            model: sarResult,
+            include: {
+                model: sarDocRef
+            }
+        }
+    }).then(rows => {
+        res.status(200).send(rows)
+    }).catch(err => {
+        next(err)
+    })
+})
 
 router.post('/', multer().array(), (req, res, next) => {
     sarResult.create({

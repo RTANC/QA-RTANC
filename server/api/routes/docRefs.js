@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
     cb(null, 'uploads/DocumentRefs/')
   },
   filename: function(req, file, cb) {
-    cb(null, new Date().toISOString() + '.' + file.originalname.split('.').pop())
+    cb(null, (req.body.fileName) ? req.body.fileName : new Date().toISOString() + '.' + file.originalname.split('.').pop())
   }
 })
 
@@ -41,6 +41,23 @@ router.post('/', upload.single('docRef'), (req, res, next) => {
         fileType: req.file.mimetype
     }).then(succ => {
         res.status(200).json('upload file success')
+    }).catch(err => {
+        next(err)
+    })
+})
+
+router.patch('/', upload.single('docRef'), (req, res, next) => {
+    sarDocRef.update({
+        docName: req.file.originalname,
+        fileName: req.file.filename,
+        fileSize: req.file.size,
+        fileType: req.file.mimetype
+    }, {
+        where: {
+            docRefId: req.body.docRefId
+        }
+    }).then(succ => {
+        res.status(200).json('Document updated')
     }).catch(err => {
         next(err)
     })

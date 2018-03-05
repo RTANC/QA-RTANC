@@ -98,7 +98,7 @@
                       <v-list-tile :key="item.sarResultId"></v-list-tile>
                     </template>
                   </v-list>
-                  <v-subheader>ผลการดำเนินงานจาก แผนก / ภาควิชา</v-subheader>
+                  <v-subheader>ผลการดำเนินงานจาก แผนก / ภาควิชา อื่นๆ</v-subheader>
                   <v-divider></v-divider>
                   </v-flex>
                   <v-flex xs10 offset-xs1>
@@ -122,6 +122,11 @@
                             <v-list-tile-sub-title>ขนาดไฟล์ : {{ (item.fileSize >= 1048567) ? (item.fileSize / 1048567) + "MB" : (item.fileSize / 1024) + " kB"}}</v-list-tile-sub-title>
                           </v-list-tile-content>
                           <v-list-tile-action>
+                            <v-btn icon @click.native="edit = true;docRefId = item.docRefId;fileName = item.fileName;onPickFile();">
+                              <v-icon color="orange" >create</v-icon>
+                            </v-btn>
+                          </v-list-tile-action>
+                          <v-list-tile-action>
                             <v-btn :href="'http://localhost:3000/uploads/DocumentRefs/' + item.fileName" target="_blank" icon>
                               <v-icon color="success">launch</v-icon>
                             </v-btn>
@@ -135,26 +140,11 @@
                       </template>
                     </v-list>
                     <v-subheader>อัพโหลด หลักฐานเอกสารอ้างอิง</v-subheader>
-                    <v-list two-line>
-                      <v-list-tile avatar v-if="Files.hasFile">
-                        <v-list-tile-avatar>
-                          <v-icon>picture_as_pdf</v-icon>
-                        </v-list-tile-avatar>
-                        <v-list-tile-content>
-                          <v-list-tile-title>ชื่อไฟล์ : {{ Files.files[0].name }}</v-list-tile-title>
-                          <v-list-tile-sub-title>ขนาดไฟล์ : {{ (Files.files[0].size >= 1048567) ? (Files.files[0].size / 1048567) + "MB" : (Files.files[0].size / 1024) + " kB"}}</v-list-tile-sub-title>
-                        </v-list-tile-content>
-                      </v-list-tile>
-                    </v-list>
-                    <v-btn color="primary" @click="onPickFile">
+                    <v-btn color="primary" @click.native="edit = false;onPickFile();">
                       <v-icon left>folder</v-icon>
                       เลือกไฟล์
                     </v-btn>
                     <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
-                    <v-btn @click="uploadDoc" v-if="Files.hasFile" color="success">
-                      <v-icon left>cloud_upload</v-icon>
-                      อัพโหลด
-                    </v-btn>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -221,6 +211,8 @@ export default {
         files: null
       },
       docs: [],
+      docRefId: null,
+      fileName: null,
       otherSarResult: []
     }
   },
@@ -332,6 +324,7 @@ export default {
       }
       this.Files.files = evt.target.files
       this.Files.hasFile = true
+      this.uploadDoc()
     },
     async getDoc () {
       try {
@@ -347,9 +340,16 @@ export default {
     async uploadDoc () {
       try {
         const formData = new FormData()
-        formData.append('sarResultId', this.sarResultId)
-        formData.append('docRef', this.Files.files[0])
-        await DocRefService.uploadDoc(formData)
+        if (!this.edit) {
+          formData.append('sarResultId', this.sarResultId)
+          formData.append('docRef', this.Files.files[0])
+          await DocRefService.uploadDoc(formData)
+        } else {
+          formData.append('docRefId', this.docRefId)
+          formData.append('fileName', this.fileName)
+          formData.append('docRef', this.Files.files[0])
+          await DocRefService.updateDoc(formData)
+        }
         this.getDoc()
         this.snackbar.text = 'อัพโหลดหลักฐานเอกสารอ้างอิงสำเร็จ'
         this.snackbar.color = 'success'
