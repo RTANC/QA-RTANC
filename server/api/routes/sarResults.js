@@ -19,13 +19,22 @@ router.get('/other', (req, res, next) => {
     sarResult.hasMany(sarDocRef, {foreignKey: 'sarResultId'})
     sarDocRef.belongsTo(sarResult, {foreignKey: 'sarResultId'})
 
+    var cause = null
+    if (req.query.sarLvl == 0) {
+        cause = {
+          [Op.between]: [1, 3]  
+        }       
+    } else if (req.query.sarLvl >= 1 && req.query.sarLvl <= 3) {
+        cause = {
+            [Op.between]: [4, 13]
+        }
+    }
+
     sar.findAll({
-        attributes: [],
+        attributes: ['sarLvl'],
         where: {
-            indicatorId: 2,
-            sarLvl: {
-                [Op.gte]: 0
-            }
+            indicatorId: req.query.indicatorId,
+            sarLvl: cause
         },
         include: {
             model: sarResult,
