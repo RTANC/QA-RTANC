@@ -72,7 +72,7 @@
     data: () => ({
       drawer: false,
       title: 'ระบบประกันคุณภาพการศึกษา',
-      name: 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
+      name: null
     }),
     methods: {
       backToMIS () {
@@ -86,6 +86,7 @@
       // } else {
       //   this.name = 'ไม่รู้จัก'
       // }
+      this.name = this.$store.state.user.fullname
     }
   }
 </script>

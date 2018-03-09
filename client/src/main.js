@@ -9,6 +9,7 @@ import VueCookie from 'vue-cookie'
 
 import App from './App'
 import router from './router'
+import { store } from './store/store'
 
 Vue.use(Vuetify)
 Vue.use(VueCookie)
@@ -17,6 +18,7 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
+  store: store,
   el: '#app',
   router,
   template: '<App/>',
