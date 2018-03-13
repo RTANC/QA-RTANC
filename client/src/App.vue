@@ -77,6 +77,14 @@
     methods: {
       backToMIS () {
         window.location.href = 'http://192.168.100.10/'
+      },
+      login () {
+        // alert(this.$route.query.pid)
+        this.$store.dispatch('setUser', {
+          person_id: 54,
+          fullname: 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
+        })
+        this.name = this.$store.state.user.fullname
       }
     },
     beforeMount () {
@@ -86,7 +94,7 @@
       // } else {
       //   this.name = 'ไม่รู้จัก'
       // }
-      this.name = this.$store.state.user.fullname
+      this.login()
     }
   }
 </script>
