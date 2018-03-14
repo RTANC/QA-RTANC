@@ -8,6 +8,7 @@ import ManageStd from '@/components/ManageStd'
 import ManageInd from '@/components/ManageInd'
 import MakeSAR from '@/components/MakeSAR'
 import WriteSAR from '@/components/WriteSAR'
+import UserMgr from '@/components/UserMgr'
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/WriteSAR',
       name: 'WriteSAR',
       component: WriteSAR
+    },
+    {
+      path: '/UserMgr',
+      name: 'UserMgr',
+      component: UserMgr
     }
   ]
 })

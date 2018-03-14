@@ -50,6 +50,14 @@
           <v-list-tile-title>เขียนผลการดำเนินงาน</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
+      <v-list-tile to="/UserMgr">
+        <v-list-tile-action>
+          <v-icon>settings</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>ตั้งค่าผู้ใช้งานระบบ</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
       <v-list-tile @click="backToMIS">
         <v-list-tile-action>
           <v-icon>exit_to_app</v-icon>
