@@ -18,6 +18,14 @@
           <v-list-tile-title>จัดการองค์ประกอบมาตรฐาน</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
+      <v-list-tile to="/CommonDoc">
+        <v-list-tile-action>
+          <v-icon>file_upload</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>อัพโหลดเอกสารส่วนกลาง</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
       <v-list-tile to="/ManualUpload">
         <v-list-tile-action>
           <v-icon>unarchive</v-icon>

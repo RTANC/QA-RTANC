@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+import CommonDoc from '@/components/CommonDoc'
 import ManualUpload from '@/components/ManualUpload'
 import ManualDownload from '@/components/ManualDownload'
 import ManageStd from '@/components/ManageStd'
@@ -26,6 +27,11 @@ export default new Router({
       path: '/ManageStd',
       name: 'ManageStd',
       component: ManageStd
+    },
+    {
+      path: '/CommonDoc',
+      name: CommonDoc,
+      component: CommonDoc
     },
     {
       path: '/ManageInd',
