@@ -2,10 +2,10 @@
   <v-container fluid>
       <v-layout row wrap>
           <v-flex xs10 offset-xs1>
-              <v-data-table :headers="headers" :items="items" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
+              <v-data-table :headers="headers" :items="items" :pagination.sync="pagination" no-results-text="ไม่มีผลลัพธ์ปรากฏในหน้านี้" no-data-text="ไม่มีผลัพธิ์ที่จะแสดง">
                   <template slot="items" slot-scope="props">
                       <tr>
-                          <td class="text-left">{{ props.item.full_name }}</td>
+                          <td class="text-left">{{ props.item.person_fullname }}</td>
                           <td class="text-center">
                               <v-checkbox v-model="props.item.standardMgr"></v-checkbox>
                           </td>
@@ -17,7 +17,6 @@
                           </td>
                       </tr>
                   </template>
-                  <template slot="items" slot-scope="props"></template>
               </v-data-table>
           </v-flex>
       </v-layout>
@@ -25,6 +24,7 @@
 </template>
 
 <script>
+import UserSerivce from '@/services/UserService'
 export default {
   name: 'UserMgr',
   data: () => {
@@ -56,6 +56,15 @@ export default {
       ],
       items: []
     }
+  },
+  methods: {
+    async getAllUser () {
+      const response = await UserSerivce.getAllUser()
+      this.items = response.data[0]
+    }
+  },
+  beforeMount () {
+    this.getAllUser()
   }
 }
 </script>

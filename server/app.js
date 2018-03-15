@@ -10,6 +10,7 @@ const indicatorRoutes = require('./api/routes/indicators')
 const sarRoutes = require('./api/routes/SAR')
 const sarResultRoutes = require('./api/routes/sarResults')
 const docRefRoutes = require('./api/routes/docRefs')
+const users = require('./api/routes/qaUsers')
 const app = express()
 
 app.use('/uploads/manuals/',express.static('uploads/manuals/'))
@@ -26,6 +27,7 @@ app.use('/api/indicators', indicatorRoutes)
 app.use('/api/sar', sarRoutes)
 app.use('/api/sarResult', sarResultRoutes)
 app.use('/api/docRefs', docRefRoutes)
+app.use('/api/users', users)
 app.use((err, req, res, next) => {
     res.status(err.status || 422).send({
         error: {
