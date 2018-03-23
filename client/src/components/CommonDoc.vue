@@ -40,6 +40,11 @@ export default {
     getDept: (val) => {
       console.log(val)
     }
+  },
+  beforeMount () {
+    if (!this.$store.getters.getUser.commonDoc) {
+      this.$router.push('Home')
+    }
   }
 }
 </script>

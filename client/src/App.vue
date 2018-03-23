@@ -2,7 +2,7 @@
 <v-app id="inspire" light>
   <v-navigation-drawer clipped fixed v-model="drawer" app>
     <v-list dense>
-      <v-list-tile to="/Home">
+      <v-list-tile v-if="user.home" to="/Home">
         <v-list-tile-action>
           <v-icon>home</v-icon>
         </v-list-tile-action>
@@ -10,7 +10,7 @@
           <v-list-tile-title>หน้าหลัก</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile to="/ManageStd">
+      <v-list-tile v-if="user.standardMgr" to="/ManageStd">
         <v-list-tile-action>
           <v-icon>content_paste</v-icon>
         </v-list-tile-action>
@@ -18,7 +18,7 @@
           <v-list-tile-title>จัดการองค์ประกอบมาตรฐาน</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile to="/CommonDoc">
+      <v-list-tile v-if="user.commonDoc" to="/CommonDoc">
         <v-list-tile-action>
           <v-icon>file_upload</v-icon>
         </v-list-tile-action>
@@ -26,7 +26,7 @@
           <v-list-tile-title>อัพโหลดเอกสารส่วนกลาง</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile to="/ManualUpload">
+      <v-list-tile v-if="user.manualUpload" to="/ManualUpload">
         <v-list-tile-action>
           <v-icon>unarchive</v-icon>
         </v-list-tile-action>
@@ -34,7 +34,7 @@
           <v-list-tile-title>อัพโหลดคู่มือ</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile to="/ManualDownload">
+      <v-list-tile v-if="user.manualDownload" to="/ManualDownload">
         <v-list-tile-action>
           <v-icon>archive</v-icon>
         </v-list-tile-action>
@@ -42,7 +42,7 @@
           <v-list-tile-title>ดาวน์โหลดคู่มือ</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile to="/MakeSAR">
+      <v-list-tile v-if="user.writeSAR" to="/MakeSAR">
         <v-list-tile-action>
           <v-icon>create</v-icon>
         </v-list-tile-action>
@@ -50,7 +50,7 @@
           <v-list-tile-title>เขียนผลการดำเนินงาน</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile to="/UserMgr">
+      <v-list-tile v-if="user.userMgr" to="/UserMgr">
         <v-list-tile-action>
           <v-icon>settings</v-icon>
         </v-list-tile-action>
@@ -58,7 +58,7 @@
           <v-list-tile-title>ตั้งค่าผู้ใช้งานระบบ</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
-      <v-list-tile @click="backToMIS">
+      <v-list-tile v-if="user.backToMIS" @click="backToMIS">
         <v-list-tile-action>
           <v-icon>exit_to_app</v-icon>
         </v-list-tile-action>
@@ -72,7 +72,7 @@
     <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     <v-toolbar-title>{{title}}</v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-toolbar-title><span class="body-2">{{name}}</span></v-toolbar-title>
+    <v-toolbar-title><span class="body-2">{{user.person_fullname}}</span></v-toolbar-title>
   </v-toolbar>
   <v-content>
     <router-view/>
@@ -84,33 +84,47 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
+import UserService from '@/services/UserService'
+export default {
+  data: () => {
+    return {
       drawer: false,
       title: 'ระบบประกันคุณภาพการศึกษา',
-      name: null
-    }),
-    methods: {
-      backToMIS () {
-        window.location.href = 'http://192.168.100.10/'
-      },
-      login () {
-        // alert(this.$route.query.pid)
-        this.$store.dispatch('setUser', {
-          person_id: 54,
-          fullname: 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
-        })
-        this.name = this.$store.state.user.fullname
+      user: {
+        person_id: null,
+        person_fullname: null,
+        home: null,
+        standardMgr: null,
+        manualUpload: null,
+        manualDownload: null,
+        writeSAR: null,
+        commonDoc: null,
+        userMgr: null,
+        backToMIS: null
       }
-    },
-    beforeMount () {
-      // get name form database here
-      // if (this.$route.query.pid === '54') {
-      //   this.name = 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
-      // } else {
-      //   this.name = 'ไม่รู้จัก'
-      // }
-      this.login()
     }
+  },
+  methods: {
+    backToMIS () {
+      window.location.href = 'http://192.168.100.10/'
+    },
+    async login () {
+      // alert(this.$route.query.pid)
+      const response = await UserService.login(54)
+      const usr = response.data[0]
+      this.$store.dispatch('setUser', usr)
+      this.user = this.$store.getters.getUser
+      console.log(this.user)
+    }
+  },
+  beforeMount () {
+    // get name form database here
+    // if (this.$route.query.pid === '54') {
+    //   this.name = 'ร้อยเอกหญิง ภัทริกา วงศ์อนันต์นนท์'
+    // } else {
+    //   this.name = 'ไม่รู้จัก'
+    // }
+    this.login()
   }
+}
 </script>

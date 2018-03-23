@@ -64,7 +64,11 @@ export default {
     }
   },
   beforeMount () {
-    this.getAllUser()
+    if (!this.$store.getters.getUser.userMgr) {
+      this.$router.push('Home')
+    } else {
+      this.getAllUser()
+    }
   }
 }
 </script>

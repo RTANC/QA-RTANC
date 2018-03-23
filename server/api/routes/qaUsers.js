@@ -10,4 +10,12 @@ router.get('/all', (req, res, next) => {
     })
 })
 
+router.get('/', (req, res, next) => {
+    con.query('spQaUserLogin @pid=' + req.query.pid).then(usr => {
+        res.status(200).send(usr[0])
+    }).catch(err => {
+        next(err)
+    })
+})
+
 module.exports = router
