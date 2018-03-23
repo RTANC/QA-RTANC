@@ -10,5 +10,11 @@ export default {
         pid: pid
       }
     })
+  },
+  editPermission (permiss) {
+    return api().patch('/api/users', permiss)
+  },
+  addUser (person) {
+    return api().post('/api/users', person)
   }
 }

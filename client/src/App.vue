@@ -114,7 +114,6 @@ export default {
       const usr = response.data[0]
       this.$store.dispatch('setUser', usr)
       this.user = this.$store.getters.getUser
-      console.log(this.user)
     }
   },
   beforeMount () {
