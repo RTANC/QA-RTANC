@@ -1,5 +1,5 @@
 <template>
-    <v-select v-bind:items="allDept" v-model="dept" :label="lbl">
+    <v-select :items="allDept" v-model="dept" :label="lbl">
     </v-select>
 </template>
 

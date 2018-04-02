@@ -64,5 +64,6 @@ export default new Router({
       name: 'UserMgr',
       component: UserMgr
     }
-  ]
+  ],
+  mode: 'history'
 })

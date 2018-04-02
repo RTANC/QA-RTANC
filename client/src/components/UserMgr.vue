@@ -15,12 +15,15 @@
                           <td>
                               <v-checkbox @change="editPermission(props.item)" v-model="props.item.manualUpload"></v-checkbox>
                           </td>
+                          <td>
+                            <v-btn color="error" @click="delUser(props.item.person_id)"><v-icon>delete</v-icon></v-btn>
+                          </td>
                       </tr>
                   </template>
               </v-data-table>
           </v-flex>
       </v-layout>
-      <v-snackbar v-model="snackbar.show" :color="snackbar.color">{{snackbar.text}}</v-snackbar>  
+      <v-snackbar v-model="snackbar.show" :color="snackbar.color">{{snackbar.text}}</v-snackbar>
       <v-dialog v-model="dialog" persistent max-width="500">
         <v-btn @click.native="dialog = true" fixed dark fab bottom right color="pink" slot="activator">
           <v-icon>add</v-icon>
@@ -73,6 +76,10 @@ export default {
           text: 'อัพโหลดคู่มือ',
           value: 'manualUpload',
           align: 'center'
+        }, {
+          text: 'ลบผู้ใช้งาน',
+          value: 'delUser',
+          align: 'center'
         }
       ],
       items: [],
@@ -123,6 +130,18 @@ export default {
       } catch (error) {
         this.snackbar.color = 'success'
         this.snackbar.text = 'เพิ่มผู้ใช้งานล้มเหลว'
+      }
+      this.snackbar.show = true
+    },
+    async delUser (pid) {
+      try {
+        await UserSerivce.delUser(pid)
+        this.snackbar.text = 'ลบผู้ใช้งานสำเร็จ'
+        this.snackbar.color = 'success'
+        this.getAllUser()
+      } catch (e) {
+        this.snackbar.text = 'ลบผู้ใช้งานล้มเหลว'
+        this.snackbar.color = 'error'
       }
       this.snackbar.show = true
     }

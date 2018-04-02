@@ -16,7 +16,7 @@ const app = express()
 app.use('/uploads/manuals/',express.static('uploads/manuals/'))
 app.use('/uploads/DocumentRefs/',express.static('uploads/DocumentRefs/'))
 app.use(compression())
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(cors())
 

@@ -16,5 +16,12 @@ export default {
   },
   addUser (person) {
     return api().post('/api/users', person)
+  },
+  delUser (pid) {
+    return api().delete('/api/users', {
+      params: {
+        pid: pid
+      }
+    })
   }
 }

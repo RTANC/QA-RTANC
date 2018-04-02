@@ -45,4 +45,16 @@ router.post('/', (req, res, next) => {
     })
 })
 
+router.delete('/', (req, res, next) => {
+  user.destroy({
+    where: {
+      person_id: req.query.pid
+    }
+  }).then(() => {
+    res.status(200).send('user has been delete')
+  }).catch(err => {
+    next(err)
+  })
+})
+
 module.exports = router

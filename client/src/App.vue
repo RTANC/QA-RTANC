@@ -75,11 +75,13 @@
     <v-toolbar-title><span class="body-2">{{user.person_fullname}}</span></v-toolbar-title>
   </v-toolbar>
   <v-content>
-    <router-view/>
+    <v-fade-transition mode="out-in">
+      <router-view/>
+    </v-fade-transition>
   </v-content>
-  <v-footer app fixed>
+  <!-- <v-footer app fixed>
     <span>วิทยาลัยพยาบาลกองทัพบก &copy; ๒๕๖๑</span>
-  </v-footer>
+  </v-footer> -->
 </v-app>
 </template>
 
