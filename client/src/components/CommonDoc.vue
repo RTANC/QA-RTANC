@@ -11,7 +11,7 @@
       <select-dept lbl="เลือกแผนก / ภาควิชา" @onDeptChange="getDept($event)"></select-dept>
     </v-flex>
     <v-flex xs10 offset-xs1>
-      <v-subheader>รายการไฟล์เอกสาร</v-subheader>
+      <v-subheader>รายการไฟล์เอกสารส่วนกลาง</v-subheader>
       <v-list two-line>
         <template v-for="doc in docs">
           <v-list-tile avatar>
@@ -27,7 +27,7 @@
       </v-list>
     </v-flex>
     <v-flex xs10 offset-xs1 v-if="upload">
-      <v-subheader>ส่วนอัพโหลดไฟล์เอกสาร</v-subheader>
+      <v-subheader>ส่วนอัพโหลดไฟล์เอกสารส่วนกลาง</v-subheader>
       <v-list two-line v-if="files">
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -39,8 +39,6 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-flex>
-    <v-flex xs10 offset-xs1 class="mt-3">
       <v-btn color="primary" @click="onPickFile">เลือกไฟล์
         <v-icon right>folder</v-icon>
       </v-btn>

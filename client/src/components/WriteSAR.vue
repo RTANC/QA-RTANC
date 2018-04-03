@@ -14,7 +14,7 @@
               <v-btn icon color="pink" dark @click.native="content = null;edit = false;docs = [];dialog = true;">
                 <v-icon>add</v-icon>
               </v-btn>
-            </h6>         
+            </h6>
           </v-flex>
           <v-flex xs10 offset-xs1>
             <v-card>
@@ -145,9 +145,24 @@
                       เลือกไฟล์
                     </v-btn>
                     <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
+                    <v-btn color="primary" @click.native.stop="dialogCommonDoc = true">
+                      <v-icon left>folder</v-icon>
+                      เลือกไฟล์เอกสารส่วนกลาง
+                    </v-btn>
                   </v-flex>
                 </v-layout>
               </v-container>
+            </v-card>
+          </v-dialog>
+          <v-dialog v-model="dialogCommonDoc" persistent scrollable>
+            <v-card>
+              <v-card-title primary-title>เลือกไฟล์เอกสารส่วนกลาง
+                <v-spacer></v-spacer>
+                <v-btn flat icon @click.native="dialogCommonDoc = false"><v-icon>close</v-icon></v-btn>
+              </v-card-title>
+              <v-card-text>
+                <common-doc :upload="false"></common-doc>
+              </v-card-text>
             </v-card>
           </v-dialog>
           <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
@@ -166,14 +181,17 @@ import SarService from '@/services/SarService'
 import SarResultService from '@/services/SarResultService'
 import DocRefService from '@/services/DocRefService'
 import Dept from '@/services/DeptService'
+import CommonDoc from '@/components/CommonDoc'
 export default {
   name: 'WriteSAR',
   components: {
-    quillEditor
+    quillEditor,
+    'common-doc': CommonDoc
   },
   data: () => {
     return {
       dialog: false,
+      dialogCommonDoc: false,
       edit: false,
       editorOption: {
         placeholder: 'เขียนผลการดำเนินงานที่นี้...'
