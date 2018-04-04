@@ -2,6 +2,7 @@ const express = require('express')
 const multer = require('multer')
 const sar = require('./models/qaSAR')
 const sarResult = require('./models/sarResult')
+const sarDocRef = require('./models/sarDocRef')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
@@ -16,10 +17,37 @@ router.get('/', (req, res, next) => {
             model: sarResult
         }]
     }).then(sar => {
-        res.status(200).send(sar)   
+        res.status(200).send(sar)
     }).catch(err => {
         next(err)
     })
+})
+
+router.get('/report', (req, res, next) => {
+  sar.hasMany(sarResult, {foreignKey: 'sarId', sourceKey: 'sarId'})
+  sarResult.belongsTo(sar, {foreignKey: 'sarId', targetKey: 'sarId'})
+
+  sarResult.hasMany(sarDocRef, {foreignKey: 'sarResultId'})
+  sarDocRef.belongsTo(sarResult, {foreignKey: 'sarResultId'})
+
+  sar.findAll({
+      where: {
+          sarId: req.query.sarId
+      },
+      include: [{
+          model: sarResult,
+          include: [{
+            model: sarDocRef
+          }]
+      }]
+  }).then(rows => {
+      const sar = {
+        sar: rows[0]
+      }
+      res.status(200).send(sar)
+  }).catch(err => {
+      next(err)
+  })
 })
 
 router.post('/create', multer().array(), (req, res, next) => {

@@ -7,6 +7,10 @@
                   <h3 class="headline">รายงานการประเมินตนเอง {{dept[0].text}}</h3>
                   <h3>ตัวบ่งชี้ที่ {{indicator.indicatorNo}} : {{indicator.indicatorName}}</h3>
                 </v-card-title>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="primary" :to="{ path: '/Report',query: {sarId: sar.sarId}}">SAR</v-btn>
+                </v-card-actions>
               </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
