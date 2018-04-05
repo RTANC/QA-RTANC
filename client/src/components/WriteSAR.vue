@@ -9,7 +9,7 @@
                 </v-card-title>
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="primary" :to="{ path: '/Report',query: {sarId: sar.sarId}}">SAR</v-btn>
+                  <v-btn color="primary" @click.native.stop="dialogSar = true">SAR</v-btn>
                 </v-card-actions>
               </v-card>
           </v-flex>
@@ -169,6 +169,22 @@
               </v-card-text>
             </v-card>
           </v-dialog>
+            <v-dialog v-model="dialogSar" scrollable persistent>
+              <v-card>
+                <v-card-title>
+                  <v-subheader>Self Assessment Report</v-subheader>
+                </v-card-title>
+                <v-divider></v-divider>
+                <v-card-text style="height: 300px;">
+                  <sar-report :sarId="sar.sarId"></sar-report>
+                </v-card-text>
+                <v-divider></v-divider>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="error" @click.native="dialogSar = false">ปิด</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
           <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
             {{snackbar.text}}
           </v-snackbar>
@@ -186,16 +202,21 @@ import SarResultService from '@/services/SarResultService'
 import DocRefService from '@/services/DocRefService'
 import Dept from '@/services/DeptService'
 import CommonDoc from '@/components/CommonDoc'
+import Report from '@/components/report'
+
 export default {
   name: 'WriteSAR',
   components: {
     quillEditor,
-    'common-doc': CommonDoc
+    'common-doc': CommonDoc,
+    'sar-report': Report
   },
   data: () => {
     return {
       dialog: false,
       dialogCommonDoc: false,
+      dialogSar: false,
+      dialogm1: null,
       edit: false,
       editorOption: {
         placeholder: 'เขียนผลการดำเนินงานที่นี้...'
@@ -398,7 +419,8 @@ export default {
     }
   },
   watch: {
-    'sar.goalCk': function (val) {
+    'sar.sarId': function (val) {
+      console.log(val)
     }
   },
   beforeMount () {

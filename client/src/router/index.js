@@ -9,7 +9,6 @@ import ManageInd from '@/components/ManageInd'
 import MakeSAR from '@/components/MakeSAR'
 import WriteSAR from '@/components/WriteSAR'
 import UserMgr from '@/components/UserMgr'
-import Report from '@/components/report'
 
 Vue.use(Router)
 
@@ -64,11 +63,6 @@ export default new Router({
       path: '/UserMgr',
       name: 'UserMgr',
       component: UserMgr
-    },
-    {
-      path: '/Report',
-      name: 'report',
-      component: Report
     }
   ],
   mode: 'history'

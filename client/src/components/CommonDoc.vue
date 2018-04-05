@@ -7,9 +7,6 @@
     <v-flex xs2 offset-xs1>
       <v-select :items="docCatalog" v-model="catalog" label="เลือกหมวดหมู่เอกสาร"></v-select>
     </v-flex>
-    <v-flex xs4 offset-xs1>
-      <select-dept lbl="เลือกแผนก / ภาควิชา" @onDeptChange="getDept($event)"></select-dept>
-    </v-flex>
     <v-flex xs10 offset-xs1>
       <v-subheader>รายการไฟล์เอกสารส่วนกลาง</v-subheader>
       <v-list two-line>
@@ -69,7 +66,6 @@ export default {
   data: () => {
     return {
       year: null,
-      dept: null,
       catalog: null,
       docCatalog: DocCatalogService.docCatalog,
       docs: [],
@@ -79,9 +75,6 @@ export default {
   methods: {
     getYear: (val) => {
       this.year = val
-    },
-    getDept: (val) => {
-      console.log(val)
     },
     onPickFile () {
       this.$refs.fileInput.click()
