@@ -16,9 +16,18 @@
               <v-icon>picture_as_pdf</v-icon>
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title>ชื่อไฟล์ {{doc.originalName}}</v-list-tile-title>
+              <v-list-tile-title>ชื่อไฟล์ {{doc.docName}}</v-list-tile-title>
               <v-list-tile-sub-title>ขนาดไฟล์ : {{ (doc.fileSize >= 1048567) ? (doc.fileSize / 1048567) + "MB" : (doc.fileSize / 1024) + " kB"}}</v-list-tile-sub-title>
             </v-list-tile-content>
+            <v-list-tile-action v-if="!upload">
+              <v-btn color="primary" icon flat><v-icon>done</v-icon></v-btn>
+            </v-list-tile-action>
+            <v-list-tile-action v-if="upload">
+              <v-btn color="orange" icon flat><v-icon>create</v-icon></v-btn>
+            </v-list-tile-action>
+            <v-list-tile-action v-if="upload">
+              <v-btn color="error" icon flat @click="delDoc(doc.commonDocId, doc.fileName)"><v-icon>delete</v-icon></v-btn>
+            </v-list-tile-action>
           </v-list-tile>
         </template>
       </v-list>
@@ -40,8 +49,10 @@
         <v-icon right>folder</v-icon>
       </v-btn>
       <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
-      <v-btn color="success" style="float: right;">อัพโหลดไฟล์<v-icon right="">file_upload</v-icon></v-btn>
     </v-flex>
+    <v-snackbar :timeout='3000' :color="snackbar.color" v-model="snackbar.show">
+      {{ snackbar.text }}
+    </v-snackbar>
   </v-layout>
 </v-container>
 
@@ -51,6 +62,7 @@
 import selectYear from './selectYear'
 import selectDept from './selectDept'
 import DocCatalogService from '@/services/DocCatalogService'
+import CommonDocService from '@/services/CommonDocService'
 export default {
   name: 'CommonDoc',
   components: {
@@ -69,11 +81,16 @@ export default {
       catalog: null,
       docCatalog: DocCatalogService.docCatalog,
       docs: [],
-      files: null
+      files: null,
+      snackbar: {
+        show: false,
+        text: null,
+        color: null
+      }
     }
   },
   methods: {
-    getYear: (val) => {
+    getYear (val) {
       this.year = val
     },
     onPickFile () {
@@ -83,8 +100,58 @@ export default {
       if (evt.target.files[0].type !== evt.target.accept) {
         return alert('ชนิดของไฟล์ต้องเป็น PDF เท่านั้น')
       }
-      console.log(evt.target.files)
       this.files = evt.target.files[0]
+      this.uploadDoc()
+    },
+    async getDoc () {
+      try {
+        const response = await CommonDocService.getDoc(this.year, this.catalog)
+        this.docs = response.data
+      } catch (e) {
+        this.docs = []
+      }
+    },
+    async uploadDoc () {
+      try {
+        const formData = new FormData()
+        console.log(this.year)
+        formData.append('year', this.year)
+        formData.append('catalog', this.catalog)
+        formData.append('commonDoc', this.files)
+        await CommonDocService.uploadDoc(formData)
+        this.snackbar.text = 'Upload เอกสารส่วนกลางสำเร็จ'
+        this.snackbar.color = 'success'
+        this.getDoc()
+      } catch (e) {
+        this.snackbar.text = 'Upload เอกสารส่วนกลางล้มเหลว'
+        this.snackbar.color = 'error'
+      }
+      this.snackbar.show = true
+    },
+    async delDoc (docId, docName) {
+      console.log(docName)
+      try {
+        await CommonDocService.delDoc(docId, docName)
+        this.snackbar.text = 'ลบเอกสารส่วนกลางสำเร็จ'
+        this.snackbar.color = 'success'
+        this.getDoc()
+      } catch (e) {
+        this.snackbar.text = 'ลบเอกสารส่วนกลางล้มเหลว'
+        this.snackbar.color = 'error'
+      }
+      this.snackbar.show = true
+    }
+  },
+  watch: {
+    year: function (val) {
+      if (this.year !== null && this.catalog !== null) {
+        this.getDoc()
+      }
+    },
+    catalog: function (val) {
+      if (this.year !== null && this.catalog !== null) {
+        this.getDoc()
+      }
     }
   },
   beforeMount () {
