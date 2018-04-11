@@ -22,5 +22,8 @@ export default {
         filename: filename
       }
     })
+  },
+  selectDoc (doc) {
+    return api().post('api/commonDoc/select', doc)
   }
 }

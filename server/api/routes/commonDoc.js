@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const commonDoc = require('./models/commonDoc')
+const sarDocRef = require('./models/sarDocRef')
 const fs = require('fs')
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -46,6 +47,20 @@ router.post('/', upload.single('commonDoc'), (req, res, next) => {
     }).catch(err => {
         next(err)
     })
+})
+
+router.post('/select', (req, res, next) => {
+  sarDocRef.create({
+    sarResultId: req.body.sarResultId,
+    docName: req.body.docName,
+    fileName: req.body.fileName,
+    fileSize: req.body.fileSize,
+    fileType: req.body.fileType
+  }).then(() => {
+    res.status(200).send('DocRef created')
+  }).catch(err => {
+    next(err)
+  })
 })
 
 router.patch('/', upload.single('commonDoc'), (req, res, next) => {

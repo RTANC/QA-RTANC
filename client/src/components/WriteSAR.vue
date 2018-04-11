@@ -112,7 +112,7 @@
                     <v-btn color="orange" @click="editSarResult" v-if="edit"><v-icon left>create</v-icon>แก้ไขผลการดำเนินงาน</v-btn>
                     <v-btn @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;">ยกเลิก</v-btn>
                   </v-flex>
-                  <v-flex xs10 offset-xs1 class="pt-3">
+                  <v-flex xs10 offset-xs1 class="pt-3" v-if="edit">
                     <v-divider></v-divider>
                     <v-subheader>รายการ หลักฐานเอกสารอ้างอิง</v-subheader>
                     <v-list two-line>
@@ -165,7 +165,7 @@
                 <v-btn flat icon @click.native="dialogCommonDoc = false"><v-icon>close</v-icon></v-btn>
               </v-card-title>
               <v-card-text>
-                <common-doc :upload="false"></common-doc>
+                <common-doc :upload="false" :sarResultId="sarResultId"></common-doc>
               </v-card-text>
             </v-card>
           </v-dialog>
