@@ -35,7 +35,8 @@ export default {
   name: 'report',
   props: {
     sarId: {
-      type: Number
+      type: Number,
+      default: null
     }
   },
   data: () => {

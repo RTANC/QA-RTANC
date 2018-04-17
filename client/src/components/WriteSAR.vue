@@ -144,11 +144,11 @@
                       </template>
                     </v-list>
                     <v-subheader>อัพโหลด หลักฐานเอกสารอ้างอิง</v-subheader>
-                    <v-btn color="primary" @click.native="edit = false;onPickFile();">
+                    <v-btn color="primary" @click.native="edit = false;onPickFile();" :loading="uploading" :disabled="uploading">
                       <v-icon left>folder</v-icon>
                       เลือกไฟล์
                     </v-btn>
-                    <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
+                    <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">              
                     <v-btn color="primary" @click.native.stop="dialogCommonDoc = true">
                       <v-icon left>folder</v-icon>
                       เลือกไฟล์เอกสารส่วนกลาง
@@ -256,7 +256,8 @@ export default {
       docs: [],
       docRefId: null,
       fileName: null,
-      otherSarResult: []
+      otherSarResult: [],
+      uploading: false
     }
   },
   methods: {
@@ -382,6 +383,7 @@ export default {
     },
     async uploadDoc () {
       try {
+        this.uploading = true
         const formData = new FormData()
         if (!this.edit) {
           formData.append('sarResultId', this.sarResultId)
@@ -401,6 +403,7 @@ export default {
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true
+      this.uploading = false
     },
     async delDoc (docRefId, filename) {
       try {

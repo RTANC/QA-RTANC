@@ -23,10 +23,10 @@
               <v-btn color="primary" icon flat @click="selectDoc(doc)"><v-icon>done</v-icon></v-btn>
             </v-list-tile-action>
             <v-list-tile-action v-if="upload">
-              <v-btn color="orange" icon flat><v-icon>create</v-icon></v-btn>
+              <v-btn color="orange" icon flat :loading="editing" :disabled="editing" @click.native="edit = true;commonDocId = doc.commonDocId;fileName = doc.fileName;onPickFile();"><v-icon>create</v-icon></v-btn>
             </v-list-tile-action>
             <v-list-tile-action v-if="upload">
-              <v-btn color="error" icon flat @click="delDoc(doc.commonDocId, doc.fileName)"><v-icon>delete</v-icon></v-btn>
+              <v-btn color="error" icon flat @click.native="commonDocId = doc.commonDocId;fileName = doc.fileName;delDoc();"><v-icon>delete</v-icon></v-btn>
             </v-list-tile-action>
           </v-list-tile>
         </template>
@@ -45,7 +45,7 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-      <v-btn color="primary" @click="onPickFile">เลือกไฟล์
+      <v-btn color="primary" @click.native="edit = false;onPickFile();" :loading="uploading" :disabled="uploading">เลือกไฟล์
         <v-icon right>folder</v-icon>
       </v-btn>
       <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
@@ -90,7 +90,12 @@ export default {
         show: false,
         text: null,
         color: null
-      }
+      },
+      uploading: false,
+      editing: false,
+      edit: false,
+      commonDocId: null,
+      fileName: null
     }
   },
   methods: {
@@ -105,7 +110,11 @@ export default {
         return alert('ชนิดของไฟล์ต้องเป็น PDF เท่านั้น')
       }
       this.files = evt.target.files[0]
-      this.uploadDoc()
+      if (!this.edit) {
+        this.uploadDoc()
+      } else {
+        this.updateDoc()
+      }
     },
     async getDoc () {
       try {
@@ -115,10 +124,29 @@ export default {
         this.docs = []
       }
     },
+    async updateDoc () {
+      try {
+        this.editing = true
+        const formData = new FormData()
+        formData.append('fileName', this.fileName)
+        formData.append('commonDocId', this.commonDocId)
+        formData.append('commonDoc', this.files)
+        await CommonDocService.updateDoc(formData)
+        this.snackbar.text = 'แก้ไข เอกสารส่วนกลางสำเร็จ'
+        this.snackbar.color = 'success'
+        this.getDoc()
+      } catch (e) {
+        this.snackbar.text = 'แก้ไข เอกสารส่วนกลางล้มเหลว'
+        this.snackbar.color = 'error'
+      }
+      this.snackbar.show = true
+      this.editing = false
+      this.files = null
+    },
     async uploadDoc () {
       try {
+        this.uploading = true
         const formData = new FormData()
-        console.log(this.year)
         formData.append('year', this.year)
         formData.append('catalog', this.catalog)
         formData.append('commonDoc', this.files)
@@ -131,10 +159,12 @@ export default {
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true
+      this.uploading = false
+      this.files = null
     },
-    async delDoc (docId, docName) {
+    async delDoc () {
       try {
-        await CommonDocService.delDoc(docId, docName)
+        await CommonDocService.delDoc(this.commonDocId, this.fileName)
         this.snackbar.text = 'ลบเอกสารส่วนกลางสำเร็จ'
         this.snackbar.color = 'success'
         this.getDoc()
