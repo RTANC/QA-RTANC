@@ -14,6 +14,11 @@
               </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
+            <sar-doc-ref></sar-doc-ref>
+          </v-flex>
+          <v-flex xs10 offset-xs1>
+          </v-flex>
+          <v-flex xs10 offset-xs1>
             <h6 class="subheading">ผลการดำเนินงาน
               <v-btn icon color="pink" dark @click.native="content = null;edit = false;docs = [];dialog = true;">
                 <v-icon>add</v-icon>
@@ -112,48 +117,6 @@
                     <v-btn color="orange" @click="editSarResult" v-if="edit"><v-icon left>create</v-icon>แก้ไขผลการดำเนินงาน</v-btn>
                     <v-btn @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;">ยกเลิก</v-btn>
                   </v-flex>
-                  <v-flex xs10 offset-xs1 class="pt-3" v-if="edit">
-                    <v-divider></v-divider>
-                    <v-subheader>รายการ หลักฐานเอกสารอ้างอิง</v-subheader>
-                    <v-list two-line>
-                      <template v-for="item in docs">
-                        <v-list-tile avatar :key="item.docRefId">
-                          <v-list-tile-avatar>
-                            <v-icon>picture_as_pdf</v-icon>
-                          </v-list-tile-avatar>
-                          <v-list-tile-content>
-                            <v-list-tile-title>ชื่อไฟล์ : {{item.docName}}</v-list-tile-title>
-                            <v-list-tile-sub-title>ขนาดไฟล์ : {{ (item.fileSize >= 1048567) ? (item.fileSize / 1048567) + "MB" : (item.fileSize / 1024) + " kB"}}</v-list-tile-sub-title>
-                          </v-list-tile-content>
-                          <v-list-tile-action>
-                            <v-btn icon @click.native="edit = true;docRefId = item.docRefId;fileName = item.fileName;onPickFile();">
-                              <v-icon color="orange" >create</v-icon>
-                            </v-btn>
-                          </v-list-tile-action>
-                          <v-list-tile-action>
-                            <v-btn :href="'http://localhost:3000/uploads/DocumentRefs/' + item.fileName" target="_blank" icon>
-                              <v-icon color="success">launch</v-icon>
-                            </v-btn>
-                          </v-list-tile-action>
-                          <v-list-tile-action>
-                            <v-btn @click="delDoc(item.docRefId, item.fileName)" icon>
-                              <v-icon color="error">delete</v-icon>
-                            </v-btn>
-                          </v-list-tile-action>
-                        </v-list-tile>
-                      </template>
-                    </v-list>
-                    <v-subheader>อัพโหลด หลักฐานเอกสารอ้างอิง</v-subheader>
-                    <v-btn color="primary" @click.native="edit = false;onPickFile();" :loading="uploading" :disabled="uploading">
-                      <v-icon left>folder</v-icon>
-                      เลือกไฟล์
-                    </v-btn>
-                    <input @change="onFilePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">              
-                    <v-btn color="primary" @click.native.stop="dialogCommonDoc = true">
-                      <v-icon left>folder</v-icon>
-                      เลือกไฟล์เอกสารส่วนกลาง
-                    </v-btn>
-                  </v-flex>
                 </v-layout>
               </v-container>
             </v-card>
@@ -203,13 +166,14 @@ import DocRefService from '@/services/DocRefService'
 import Dept from '@/services/DeptService'
 import CommonDoc from '@/components/CommonDoc'
 import Report from '@/components/report'
-
+import sarDocRef from '@/components/sarDocRef'
 export default {
   name: 'WriteSAR',
   components: {
     quillEditor,
     'common-doc': CommonDoc,
-    'sar-report': Report
+    'sar-report': Report,
+    sarDocRef
   },
   data: () => {
     return {
@@ -253,7 +217,6 @@ export default {
         hasFile: false,
         files: null
       },
-      docs: [],
       docRefId: null,
       fileName: null,
       otherSarResult: [],
@@ -355,67 +318,6 @@ export default {
         this.getSAR()
       } catch (error) {
         this.snackbar.text = 'ลบผลการดำเนินงานล้มเหลว'
-        this.snackbar.color = 'error'
-      }
-      this.snackbar.show = true
-    },
-    onPickFile () {
-      this.$refs.fileInput.click()
-    },
-    onFilePicked (evt) {
-      if (evt.target.files[0].type !== evt.target.accept) {
-        return alert('ชนิดของไฟล์ต้องเป็น PDF เท่านั้น')
-      }
-      this.Files.files = evt.target.files
-      this.Files.hasFile = true
-      this.uploadDoc()
-    },
-    async getDoc () {
-      try {
-        const respones = await DocRefService.getDoc(this.sarResultId)
-        this.docs = respones.data
-      } catch (error) {
-        this.docs = []
-        this.snackbar.text = 'ไม่พบเอกสารที่ท่านค้นหา'
-        this.snackbar.color = 'error'
-        this.snackbar.show = true
-      }
-    },
-    async uploadDoc () {
-      try {
-        this.uploading = true
-        const formData = new FormData()
-        if (!this.edit) {
-          formData.append('sarResultId', this.sarResultId)
-          formData.append('docRef', this.Files.files[0])
-          await DocRefService.uploadDoc(formData)
-        } else {
-          formData.append('docRefId', this.docRefId)
-          formData.append('fileName', this.fileName)
-          formData.append('docRef', this.Files.files[0])
-          await DocRefService.updateDoc(formData)
-        }
-        this.getDoc()
-        this.snackbar.text = 'อัพโหลดหลักฐานเอกสารอ้างอิงสำเร็จ'
-        this.snackbar.color = 'success'
-      } catch (error) {
-        this.snackbar.text = 'อัพโหลดหลักฐานเอกสารอ้างอิงล้มเหลว'
-        this.snackbar.color = 'error'
-      }
-      this.snackbar.show = true
-      this.uploading = false
-    },
-    async delDoc (docRefId, filename) {
-      try {
-        const formData = new FormData()
-        formData.append('docRefId', docRefId)
-        formData.append('filename', filename)
-        await DocRefService.delDoc(formData)
-        this.getDoc()
-        this.snackbar.text = 'ลบหลักฐานเอกสารอ้างอิงสำเร็จ'
-        this.snackbar.color = 'success'
-      } catch (error) {
-        this.snackbar.text = 'ลบหลักฐานเอกสารอ้างอิงล้มเหลว'
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true

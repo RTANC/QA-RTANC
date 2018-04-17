@@ -7,6 +7,10 @@ module.exports = con.define('sarDocRef', {
         primaryKey: true,
         autoIncrement: true
     },
+    sarId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
     sarResultId: {
         type: Sequelize.INTEGER,
         allowNull: false

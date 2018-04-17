@@ -1,10 +1,10 @@
 import api from './api'
 
 export default {
-  getDoc (sarResultId) {
+  getDoc (sarId) {
     return api().get('api/docRefs', {
       params: {
-        sarResultId: sarResultId
+        sarId: sarId
       }
     })
   },
