@@ -13,7 +13,7 @@ module.exports = con.define('sarDocRef', {
     },
     sarResultId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
     },
     docName: {
         type: Sequelize.TEXT,

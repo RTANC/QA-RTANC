@@ -14,7 +14,7 @@
               </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
-            <sar-doc-ref></sar-doc-ref>
+            <sar-doc-ref :sarId="sar.sarId"></sar-doc-ref>
           </v-flex>
           <v-flex xs10 offset-xs1>
           </v-flex>
@@ -34,7 +34,7 @@
                         <v-list-tile-sub-title v-html="'<span class=text--primary>' + dept[sar.sarLvl].text + '</span>' + item.sarResultText"></v-list-tile-sub-title>
                       </v-list-tile-content>
                       <v-list-tile-action>
-                        <v-btn icon @click.native="content = item.sarResultText;sarResultId = item.sarResultId;edit = true;getDoc();dialog = true;">
+                        <v-btn icon @click.native="content = item.sarResultText;sarResultId = item.sarResultId;edit = true;dialog = true;">
                           <v-icon color="orange">create</v-icon>
                         </v-btn>
                       </v-list-tile-action>
@@ -117,6 +117,10 @@
                     <v-btn color="orange" @click="editSarResult" v-if="edit"><v-icon left>create</v-icon>แก้ไขผลการดำเนินงาน</v-btn>
                     <v-btn @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;">ยกเลิก</v-btn>
                   </v-flex>
+                  <v-flex xs10 offset-xs1>
+                    <v-divider class="my-3"></v-divider>
+                    <sar-doc-ref :sarId="sar.sarId" :sarResultId="sarResultId"></sar-doc-ref>
+                  </v-flex>
                 </v-layout>
               </v-container>
             </v-card>
@@ -162,7 +166,6 @@ import 'quill/dist/quill.bubble.css'
 import { quillEditor } from 'vue-quill-editor'
 import SarService from '@/services/SarService'
 import SarResultService from '@/services/SarResultService'
-import DocRefService from '@/services/DocRefService'
 import Dept from '@/services/DeptService'
 import CommonDoc from '@/components/CommonDoc'
 import Report from '@/components/report'

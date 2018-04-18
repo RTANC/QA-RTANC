@@ -32,25 +32,9 @@ router.get('/', (req, res, next) => {
     })
 })
 
-router.get('/:sarResultId', (req, res, next) => {
-    sarDocRef.findAll({
-        where: {
-            sarResultId: req.params.sarResultId
-        }
-    }).then(docs => {
-        if(docs.length === 0){
-            res.status(404).send('File Not Found')
-        }else{
-            res.status(200).send(docs)
-        }
-    }).catch(err => {
-        next(err)
-    })
-})
-
 router.post('/', upload.single('docRef'), (req, res, next) => {
     sarDocRef.create({
-        sarResultId: req.body.sarId,
+        sarId: req.body.sarId,
         docName: req.file.originalname,
         fileName: req.file.filename,
         fileSize: req.file.size,
@@ -68,6 +52,20 @@ router.patch('/', upload.single('docRef'), (req, res, next) => {
         fileName: req.file.filename,
         fileSize: req.file.size,
         fileType: req.file.mimetype
+    }, {
+        where: {
+            docRefId: req.body.docRefId
+        }
+    }).then(succ => {
+        res.status(200).json('Document updated')
+    }).catch(err => {
+        next(err)
+    })
+})
+
+router.patch('/select', (req, res, next) => {
+    sarDocRef.update({
+      sarResultId: req.body.sarResultId
     }, {
         where: {
             docRefId: req.body.docRefId

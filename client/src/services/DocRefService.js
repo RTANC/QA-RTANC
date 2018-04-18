@@ -1,7 +1,7 @@
 import api from './api'
 
 export default {
-  getDoc (sarId) {
+  getDocBySar (sarId) {
     return api().get('api/docRefs', {
       params: {
         sarId: sarId
@@ -12,6 +12,9 @@ export default {
     return api().post('api/docRefs', doc)
   },
   updateDoc (doc) {
+    return api().patch('api/docRefs', doc)
+  },
+  selectDoc (doc) {
     return api().patch('api/docRefs', doc)
   },
   delDoc (doc) {
