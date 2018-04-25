@@ -16,6 +16,10 @@ module.exports = conn.define('qaSAR', {
         type: Sequelize.TINYINT,
         primaryKey: true
     },
+    sarResult: {
+      type: Sequelize.TEXT,
+      allowNull: true
+    },
     goal: {
         type: Sequelize.TEXT,
         allowNull: true

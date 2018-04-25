@@ -63,20 +63,6 @@ router.patch('/', upload.single('docRef'), (req, res, next) => {
     })
 })
 
-router.patch('/select', (req, res, next) => {
-    sarDocRef.update({
-      sarResultId: req.body.sarResultId
-    }, {
-        where: {
-            docRefId: req.body.docRefId
-        }
-    }).then(succ => {
-        res.status(200).json('Document updated')
-    }).catch(err => {
-        next(err)
-    })
-})
-
 router.put('/', multer().array(), (req, res, next) => {
     sarDocRef.destroy({
         where: {

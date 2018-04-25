@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <h6 class="subheading">หลักฐานเอกสารอ้างอิง
-          <v-btn v-if="!sarResultId" icon color="primary" @click.native="edit.docRefId = null;edit.fileName = null;pickFile();" :disabled="snackbar.show"><v-icon>file_upload</v-icon></v-btn>
+          <v-btn icon color="primary" @click.native="edit.docRefId = null;edit.fileName = null;pickFile();" :disabled="snackbar.show"><v-icon>file_upload</v-icon></v-btn>
     </h6>
     <input @change="filePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
     <v-card>
@@ -21,17 +21,12 @@
                   <v-icon color="success">launch</v-icon>
                 </v-btn>
               </v-list-tile-action>
-              <v-list-tile-action v-if="sarResultId">
-                <v-btn icon @click="selectDoc(item.docRefId)">
-                  <v-icon color="primary" >done</v-icon>
-                </v-btn>
-              </v-list-tile-action>
-              <v-list-tile-action v-if="!sarResultId">
+              <v-list-tile-action>
                 <v-btn icon @click="edit.docRefId = item.docRefId;edit.fileName = item.fileName;pickFile();" :disabled="snackbar.show">
                   <v-icon color="orange" >create</v-icon>
                 </v-btn>
               </v-list-tile-action>
-              <v-list-tile-action v-if="!sarResultId">
+              <v-list-tile-action>
                 <v-btn @click="delDoc(item.docRefId, item.fileName)" icon>
                   <v-icon color="error">delete</v-icon>
                 </v-btn>
@@ -51,10 +46,6 @@ export default {
   name: 'sarDocRef',
   props: {
     sarId: {
-      type: Number,
-      default: null
-    },
-    sarResultId: {
       type: Number,
       default: null
     }
@@ -110,20 +101,6 @@ export default {
         this.getDocBySar()
       } catch (e) {
         this.snackbar.text = 'แก้ไขเอกสารอ้างล้มเหลว'
-        this.snackbar.color = 'error'
-      }
-      this.snackbar.show = true
-    },
-    async selectDoc (docRefId) {
-      try {
-        await DocRefService.selectDoc({
-          docRefId: this.docRefId,
-          sarResultId: this.sarResultId
-        })
-        this.snackbar.text = 'เลือกเอกสารอ้างสำเร็จ'
-        this.snackbar.color = 'success'
-      } catch (e) {
-        this.snackbar.text = 'เลือกเอกสารอ้างล้มเหลว'
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true

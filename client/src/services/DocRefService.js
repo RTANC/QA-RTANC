@@ -14,9 +14,6 @@ export default {
   updateDoc (doc) {
     return api().patch('api/docRefs', doc)
   },
-  selectDoc (doc) {
-    return api().patch('api/docRefs', doc)
-  },
   delDoc (doc) {
     return api().put('api/docRefs', doc)
   }

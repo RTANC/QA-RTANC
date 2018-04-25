@@ -11,10 +11,6 @@ module.exports = con.define('sarDocRef', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    sarResultId: {
-        type: Sequelize.INTEGER,
-        allowNull: true
-    },
     docName: {
         type: Sequelize.TEXT,
         allowNull: false

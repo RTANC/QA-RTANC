@@ -20,32 +20,14 @@
           </v-flex>
           <v-flex xs10 offset-xs1>
             <h6 class="subheading">ผลการดำเนินงาน
-              <v-btn icon color="pink" dark @click.native="content = null;edit = false;docs = [];dialog = true;">
-                <v-icon>add</v-icon>
+              <v-btn icon color="success" dark @click="">
+                <v-icon>save</v-icon>
               </v-btn>
             </h6>
           </v-flex>
           <v-flex xs10 offset-xs1>
             <v-card>
-              <v-list>
-                  <template v-for="item in sar.sarResults">
-                    <v-list-tile :key="item.sarResultId">
-                      <v-list-tile-content>
-                        <v-list-tile-sub-title v-html="'<span class=text--primary>' + dept[sar.sarLvl].text + '</span>' + item.sarResultText"></v-list-tile-sub-title>
-                      </v-list-tile-content>
-                      <v-list-tile-action>
-                        <v-btn icon @click.native="content = item.sarResultText;sarResultId = item.sarResultId;edit = true;dialog = true;">
-                          <v-icon color="orange">create</v-icon>
-                        </v-btn>
-                      </v-list-tile-action>
-                    <v-list-tile-action>
-                      <v-btn icon @click="delSarResult(item.sarResultId)">
-                          <v-icon color="error">delete</v-icon>
-                      </v-btn>
-                    </v-list-tile-action>
-                    </v-list-tile>
-                  </template>
-              </v-list>
+              <editor v-model="sar.sarResult" :init="editorOption" api-key="sclhhconedzzd6ze9f3qvqgqlhvie7y2cqykydtyqu3o8qla"></editor>
             </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
@@ -91,40 +73,6 @@
               <v-text-field v-model="sar.weakEnchance" multi-line label="ข้อเสนอแนะในการปรับปรุง"></v-text-field>
             </v-card>
           </v-flex>
-          <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" scrollble>
-            <v-card>
-              <v-toolbar dark color="pink">
-                <v-btn icon @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;" dark>
-                  <v-icon>close</v-icon>
-                </v-btn>
-                <v-toolbar-title>ผลการดำเนินงาน</v-toolbar-title>
-              </v-toolbar>
-              <v-container>
-                <v-layout row wrap>
-                  <v-flex xs10 offset-xs1 v-if="edit && sar.sarLvl >= 0 && sar.sarLvl <= 3">
-                  <v-list two-line>
-                    <template v-for="item in otherSarResult">
-                      <v-list-tile :key="item.sarResultId"></v-list-tile>
-                    </template>
-                  </v-list>
-                  <v-subheader>ผลการดำเนินงานจาก แผนก / ภาควิชา อื่นๆ</v-subheader>
-                  <v-divider></v-divider>
-                  </v-flex>
-                  <v-flex xs10 offset-xs1>
-                    <v-subheader>เขียนผลการดำเนินงาน</v-subheader>
-                    <quill-editor v-model="content" :options="editorOption"></quill-editor>
-                    <v-btn color="primary" @click="addSarResult" v-if="!edit"><v-icon left>add</v-icon>เพิ่มผลการดำเนินงาน</v-btn>
-                    <v-btn color="orange" @click="editSarResult" v-if="edit"><v-icon left>create</v-icon>แก้ไขผลการดำเนินงาน</v-btn>
-                    <v-btn @click.native="dialog = false;content = null;Files.files = null;Files.hasFile = false;">ยกเลิก</v-btn>
-                  </v-flex>
-                  <v-flex xs10 offset-xs1>
-                    <v-divider class="my-3"></v-divider>
-                    <sar-doc-ref :sarId="sar.sarId" :sarResultId="sarResultId"></sar-doc-ref>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card>
-          </v-dialog>
           <v-dialog v-model="dialogCommonDoc" persistent scrollable>
             <v-card>
               <v-card-title primary-title>เลือกไฟล์เอกสารส่วนกลาง
@@ -132,26 +80,10 @@
                 <v-btn flat icon @click.native="dialogCommonDoc = false"><v-icon>close</v-icon></v-btn>
               </v-card-title>
               <v-card-text>
-                <common-doc :upload="false" :sarResultId="sarResultId"></common-doc>
+                <!-- <common-doc :upload="false" :sarResultId="sarResultId"></common-doc> -->
               </v-card-text>
             </v-card>
           </v-dialog>
-            <v-dialog v-model="dialogSar" scrollable persistent>
-              <v-card>
-                <v-card-title>
-                  <v-subheader>Self Assessment Report</v-subheader>
-                </v-card-title>
-                <v-divider></v-divider>
-                <v-card-text style="height: 300px;">
-                  <sar-report :sarId="sar.sarId"></sar-report>
-                </v-card-text>
-                <v-divider></v-divider>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn color="error" @click.native="dialogSar = false">ปิด</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-dialog>
           <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
             {{snackbar.text}}
           </v-snackbar>
@@ -160,33 +92,24 @@
 </template>
 
 <script>
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
-import { quillEditor } from 'vue-quill-editor'
 import SarService from '@/services/SarService'
-import SarResultService from '@/services/SarResultService'
 import Dept from '@/services/DeptService'
 import CommonDoc from '@/components/CommonDoc'
-import Report from '@/components/report'
 import sarDocRef from '@/components/sarDocRef'
 export default {
   name: 'WriteSAR',
   components: {
-    quillEditor,
     'common-doc': CommonDoc,
-    'sar-report': Report,
     sarDocRef
   },
   data: () => {
     return {
       dialog: false,
       dialogCommonDoc: false,
-      dialogSar: false,
-      dialogm1: null,
       edit: false,
       editorOption: {
-        placeholder: 'เขียนผลการดำเนินงานที่นี้...'
+        plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
+        height: '300'
       },
       indicator: {
         indicatorId: null,
@@ -198,6 +121,7 @@ export default {
         sarId: null,
         indicatorId: null,
         sarLvl: null,
+        sarResult: null,
         goal: null,
         sumResult: null,
         goalCk: null,
@@ -205,8 +129,7 @@ export default {
         str: null,
         strEnchance: null,
         weak: null,
-        weakEnchance: null,
-        sarResults: []
+        weakEnchance: null
       },
       snackbar: {
         show: false,
@@ -214,15 +137,12 @@ export default {
         color: null
       },
       dept: Dept.Dept,
-      content: null,
-      sarResultId: null,
       Files: {
         hasFile: false,
         files: null
       },
       docRefId: null,
       fileName: null,
-      otherSarResult: [],
       uploading: false
     }
   },
@@ -282,52 +202,13 @@ export default {
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true
-    },
-    async addSarResult () {
-      try {
-        const formData = new FormData()
-        formData.append('sarId', this.sar.sarId)
-        formData.append('sarResultText', this.content)
-        await SarResultService.addSarResult(formData)
-        this.snackbar.text = 'เพิ่มผลการดำเนินงานสำเร็จ'
-        this.snackbar.color = 'success'
-        this.getSAR()
-      } catch (error) {
-        this.snackbar.text = 'เพิ่มผลการดำเนินงานล้มเหลว'
-        this.snackbar.color = 'error'
-      }
-      this.snackbar.show = true
-    },
-    async editSarResult () {
-      try {
-        const formData = new FormData()
-        formData.append('sarResultId', this.sarResultId)
-        formData.append('sarResultText', this.content)
-        await SarResultService.editSarResult(formData)
-        this.snackbar.text = 'แก้ไขผลการดำเนินงานสำเร็จ'
-        this.snackbar.color = 'success'
-        this.getSAR()
-      } catch (error) {
-        this.snackbar.text = 'แก้ไขผลการดำเนินงานล้มเหลว'
-        this.snackbar.color = 'error'
-      }
-      this.snackbar.show = true
-    },
-    async delSarResult (sarResultId) {
-      try {
-        await SarResultService.delSarResult(sarResultId)
-        this.snackbar.text = 'ลบผลการดำเนินงานสำเร็จ'
-        this.snackbar.color = 'success'
-        this.getSAR()
-      } catch (error) {
-        this.snackbar.text = 'ลบผลการดำเนินงานล้มเหลว'
-        this.snackbar.color = 'error'
-      }
-      this.snackbar.show = true
     }
   },
   watch: {
     'sar.sarId': function (val) {
+      console.log(val)
+    },
+    'sar.sarResult': function (val) {
       console.log(val)
     }
   },
