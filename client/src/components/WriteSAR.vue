@@ -19,11 +19,7 @@
           <v-flex xs10 offset-xs1>
           </v-flex>
           <v-flex xs10 offset-xs1>
-            <h6 class="subheading">ผลการดำเนินงาน
-              <v-btn icon color="success" dark @click="">
-                <v-icon>save</v-icon>
-              </v-btn>
-            </h6>
+            <h6 class="subheading">ผลการดำเนินงาน</h6>
           </v-flex>
           <v-flex xs10 offset-xs1>
             <v-card>
@@ -185,6 +181,7 @@ export default {
         const formData = new FormData()
         formData.append('indicatorId', this.sar.indicatorId)
         formData.append('sarLvl', this.sar.sarLvl)
+        formData.append('sarResult', this.sar.sarResult)
         formData.append('goal', this.sar.goal)
         formData.append('sumResult', this.sar.sumResult)
         formData.append('goalCk', this.sar.goalCk)
@@ -207,10 +204,11 @@ export default {
   watch: {
     'sar.sarId': function (val) {
       console.log(val)
-    },
-    'sar.sarResult': function (val) {
-      console.log(val)
     }
+    // 'sar.sarResult': function (val) {
+    //   var bodyHtml = /<body.*?>([\s\S]*)<\/body>/.exec(val)[1]
+    //   console.log(bodyHtml)
+    // }
   },
   beforeMount () {
     this.sar.sarLvl = this.$route.query.sarLvl
