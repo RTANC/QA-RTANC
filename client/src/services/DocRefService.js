@@ -16,5 +16,8 @@ export default {
   },
   delDoc (doc) {
     return api().put('api/docRefs', doc)
+  },
+  selectDoc (doc) {
+    return api().post('api/docRefs/select', doc)
   }
 }

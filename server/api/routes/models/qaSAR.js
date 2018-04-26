@@ -34,7 +34,7 @@ module.exports = conn.define('qaSAR', {
         defaultValue: false
     },
     score: {
-        type: Sequelize.TINYINT,
+        type: Sequelize.FLOAT,
         allowNull: true,
         defaultValue: 0
     },

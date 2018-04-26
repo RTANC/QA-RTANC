@@ -21,12 +21,17 @@
                   <v-icon color="success">launch</v-icon>
                 </v-btn>
               </v-list-tile-action>
-              <v-list-tile-action>
+              <v-list-tile-action v-if="readonly">
+                <v-btn icon @click="selectDoc(item)">
+                  <v-icon color="primary">done</v-icon>
+                </v-btn>
+              </v-list-tile-action>
+              <v-list-tile-action v-if="!readonly">
                 <v-btn icon @click="edit.docRefId = item.docRefId;edit.fileName = item.fileName;pickFile();" :disabled="snackbar.show">
                   <v-icon color="orange" >create</v-icon>
                 </v-btn>
               </v-list-tile-action>
-              <v-list-tile-action>
+              <v-list-tile-action v-if="!readonly">
                 <v-btn @click="delDoc(item.docRefId, item.fileName)" icon>
                   <v-icon color="error">delete</v-icon>
                 </v-btn>
@@ -48,6 +53,10 @@ export default {
     sarId: {
       type: Number,
       default: null
+    },
+    readonly: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => {
@@ -71,6 +80,7 @@ export default {
         const response = await DocRefService.getDocBySar(this.sarId)
         this.docs = response.data
       } catch (e) {
+        this.docs = []
       }
     },
     async uploadFile () {
@@ -119,6 +129,18 @@ export default {
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true
+    },
+    async selectDoc (doc) {
+      doc.sarId = this.sarId
+      console.log(doc)
+      // try {
+      //   await DocRefService.selectDoc()
+      // } catch (e) {
+      //   this.snackbar.text = 'เลือกเอกสารอ้างล้มเหลว'
+      //   this.snackbar.color = 'error'
+      // } finally {
+      //   this.snackbar.show = true
+      // }
     },
     pickFile () {
       this.$refs.fileInput.click()

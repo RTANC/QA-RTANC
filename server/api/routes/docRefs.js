@@ -46,6 +46,20 @@ router.post('/', upload.single('docRef'), (req, res, next) => {
     })
 })
 
+router.post('/select', (req, res, next) => {
+     sarDocRef.create({
+        sarId: req.body.sarId,
+        docName: req.body.docName,
+        fileName: req.body.fileName,
+        fileSize: req.body.fileSize,
+        fileType: req.body.fileType
+    }).then(succ => {
+        res.status(200).json('upload file success')
+    }).catch(err => {
+        next(err)
+    })
+})
+
 router.patch('/', upload.single('docRef'), (req, res, next) => {
     sarDocRef.update({
         docName: req.file.originalname,

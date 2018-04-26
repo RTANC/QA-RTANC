@@ -1,16 +1,20 @@
 <template>
   <v-container fluid grid-list-md>
       <v-layout row wrap>
+        <v-flex xs10 offset-xs1>
+          <v-card>
+            <v-card-actions>
+              <v-btn color="primary" @click.native="dialogOther = true"><v-icon left>search</v-icon>ดูผลการดำเนินงานอื่นๆ</v-btn>
+              <v-btn color="cyan" dark><v-icon left>description</v-icon>ออกรายงานผลการดำเนินงาน</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
           <v-flex xs10 offset-xs1>
               <v-card>
                 <v-card-title primary-title class="d-block">
-                  <h3 class="headline">รายงานการประเมินตนเอง {{dept[0].text}}</h3>
+                  <h3 class="headline">รายงานการประเมินตนเอง {{dept[sar.sarLvl].text}}</h3>
                   <h3>ตัวบ่งชี้ที่ {{indicator.indicatorNo}} : {{indicator.indicatorName}}</h3>
                 </v-card-title>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn color="primary" @click.native.stop="dialogSar = true">SAR</v-btn>
-                </v-card-actions>
               </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
@@ -69,6 +73,19 @@
               <v-text-field v-model="sar.weakEnchance" multi-line label="ข้อเสนอแนะในการปรับปรุง"></v-text-field>
             </v-card>
           </v-flex>
+          <v-dialog v-model="dialogOther" fullscreen transition="dialog-bottom-transition">
+            <v-card>
+              <v-toolbar dark color="primary">
+                <v-btn icon @click.native="dialogOther = false" dark>
+                  <v-icon>close</v-icon>
+                </v-btn>
+                <v-toolbar-title>ดูผลการดำเนินงานอื่นๆ</v-toolbar-title>
+              </v-toolbar>
+              <v-card-text class="grey lighten-4">
+                <other-sar :indicator="indicator" :dept="sar.sarLvl"></other-sar>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
           <v-dialog v-model="dialogCommonDoc" persistent scrollable>
             <v-card>
               <v-card-title primary-title>เลือกไฟล์เอกสารส่วนกลาง
@@ -90,19 +107,20 @@
 <script>
 import SarService from '@/services/SarService'
 import Dept from '@/services/DeptService'
-import CommonDoc from '@/components/CommonDoc'
+import commonDoc from '@/components/CommonDoc'
 import sarDocRef from '@/components/sarDocRef'
+import otherSar from '@/components/OtherSar'
 export default {
   name: 'WriteSAR',
   components: {
-    'common-doc': CommonDoc,
-    sarDocRef
+    commonDoc,
+    sarDocRef,
+    otherSar
   },
   data: () => {
     return {
-      dialog: false,
+      dialogOther: false,
       dialogCommonDoc: false,
-      edit: false,
       editorOption: {
         plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
         height: '300'
@@ -132,14 +150,7 @@ export default {
         text: null,
         color: null
       },
-      dept: Dept.Dept,
-      Files: {
-        hasFile: false,
-        files: null
-      },
-      docRefId: null,
-      fileName: null,
-      uploading: false
+      dept: Dept.Dept
     }
   },
   methods: {
