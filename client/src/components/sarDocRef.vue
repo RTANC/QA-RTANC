@@ -1,7 +1,8 @@
 <template lang="html">
   <div>
     <h6 class="subheading">หลักฐานเอกสารอ้างอิง
-          <v-btn icon color="primary" @click.native="edit.docRefId = null;edit.fileName = null;pickFile();" :disabled="snackbar.show"><v-icon>file_upload</v-icon></v-btn>
+          <v-btn icon color="primary" @click.native="edit.docRefId = null;edit.fileName = null;pickFile();" :disabled="snackbar.show" v-if="!readonly"><v-icon>file_upload</v-icon></v-btn>
+          <v-btn icon color="deep-purple" @click.native="dialog = true" v-if="!readonly" dark><v-icon>folder</v-icon></v-btn>
     </h6>
     <input @change="filePicked" type="file" style="display:none;" ref="fileInput" accept="application/pdf">
     <v-card>
@@ -41,12 +42,26 @@
         </v-list>
       </v-card-text>
     </v-card>
+      <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay="false">
+        <v-card>
+          <v-toolbar dark color="deep-purple">
+            <v-btn icon @click.native="dialog = false;getDocBySar();" dark>
+              <v-icon>close</v-icon>
+            </v-btn>
+            <v-toolbar-title>เลือกไฟล์จากเอกสารส่วนกลาง</v-toolbar-title>
+          </v-toolbar>
+          <v-card-text>
+            <common-doc :upload="false" :sarId="sarId"></common-doc>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
     <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">{{snackbar.text}}</v-snackbar>
   </div>
 </template>
 
 <script type="text/javascript">
 import DocRefService from '@/services/DocRefService'
+import commonDoc from '@/components/CommonDoc'
 export default {
   name: 'sarDocRef',
   props: {
@@ -57,11 +72,19 @@ export default {
     readonly: {
       type: Boolean,
       default: false
+    },
+    selectSarId: {
+      type: Number,
+      default: 0
     }
+  },
+  components: {
+    commonDoc
   },
   data: () => {
     return {
       docs: [],
+      dialog: false,
       files: null,
       snackbar: {
         show: false,
@@ -131,16 +154,17 @@ export default {
       this.snackbar.show = true
     },
     async selectDoc (doc) {
-      doc.sarId = this.sarId
-      console.log(doc)
-      // try {
-      //   await DocRefService.selectDoc()
-      // } catch (e) {
-      //   this.snackbar.text = 'เลือกเอกสารอ้างล้มเหลว'
-      //   this.snackbar.color = 'error'
-      // } finally {
-      //   this.snackbar.show = true
-      // }
+      try {
+        doc.sarId = this.selectSarId
+        await DocRefService.selectDoc(doc)
+        this.snackbar.text = 'เลือกเอกสารอ้างสำเร็จ'
+        this.snackbar.color = 'success'
+      } catch (e) {
+        this.snackbar.text = 'เลือกเอกสารอ้างล้มเหลว'
+        this.snackbar.color = 'error'
+      } finally {
+        this.snackbar.show = true
+      }
     },
     pickFile () {
       this.$refs.fileInput.click()

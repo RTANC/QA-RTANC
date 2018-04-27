@@ -83,7 +83,9 @@ router.put('/', multer().array(), (req, res, next) => {
             docRefId: req.body.docRefId
         }
     }).then(succ => {
-        fs.unlinkSync('uploads/DocumentRefs/' + req.body.filename)
+        if (fs.existsSync('uploads/DocumentRefs/' + req.body.filename)) {
+          fs.unlinkSync('uploads/DocumentRefs/' + req.body.filename)
+        }
         res.status(200).json('Documents deleted')
     }).catch(err => {
         next(err)

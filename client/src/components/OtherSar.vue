@@ -17,7 +17,7 @@
               </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
-            <sar-doc-ref :sarId="sar.sarId" readonly></sar-doc-ref>
+            <sar-doc-ref :sarId="sar.sarId" :selectSarId="sarId" readonly></sar-doc-ref>
           </v-flex>
           <v-flex xs10 offset-xs1>
           </v-flex>
@@ -85,6 +85,11 @@ export default {
       type: Object
     },
     dept: {
+      type: Number,
+      default: 0
+    },
+    sarId: {
+      type: Number,
       default: 0
     }
   },

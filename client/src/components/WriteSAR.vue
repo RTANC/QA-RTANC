@@ -18,7 +18,7 @@
               </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
-            <sar-doc-ref :sarId="sar.sarId"></sar-doc-ref>
+            <sar-doc-ref :sarId="sar.sarId" ref="listDocs"></sar-doc-ref>
           </v-flex>
           <v-flex xs10 offset-xs1>
           </v-flex>
@@ -76,24 +76,13 @@
           <v-dialog v-model="dialogOther" fullscreen transition="dialog-bottom-transition">
             <v-card>
               <v-toolbar dark color="primary">
-                <v-btn icon @click.native="dialogOther = false" dark>
+                <v-btn icon @click.native="dialogOther = false;getDocBySar();" dark>
                   <v-icon>close</v-icon>
                 </v-btn>
                 <v-toolbar-title>ดูผลการดำเนินงานอื่นๆ</v-toolbar-title>
               </v-toolbar>
               <v-card-text class="grey lighten-4">
-                <other-sar :indicator="indicator" :dept="sar.sarLvl"></other-sar>
-              </v-card-text>
-            </v-card>
-          </v-dialog>
-          <v-dialog v-model="dialogCommonDoc" persistent scrollable>
-            <v-card>
-              <v-card-title primary-title>เลือกไฟล์เอกสารส่วนกลาง
-                <v-spacer></v-spacer>
-                <v-btn flat icon @click.native="dialogCommonDoc = false"><v-icon>close</v-icon></v-btn>
-              </v-card-title>
-              <v-card-text>
-                <!-- <common-doc :upload="false" :sarResultId="sarResultId"></common-doc> -->
+                <other-sar :indicator="indicator" :dept="sar.sarLvl" :sarId="sar.sarId"></other-sar>
               </v-card-text>
             </v-card>
           </v-dialog>
@@ -107,20 +96,17 @@
 <script>
 import SarService from '@/services/SarService'
 import Dept from '@/services/DeptService'
-import commonDoc from '@/components/CommonDoc'
 import sarDocRef from '@/components/sarDocRef'
 import otherSar from '@/components/OtherSar'
 export default {
   name: 'WriteSAR',
   components: {
-    commonDoc,
     sarDocRef,
     otherSar
   },
   data: () => {
     return {
       dialogOther: false,
-      dialogCommonDoc: false,
       editorOption: {
         plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
         height: '300'
@@ -210,6 +196,9 @@ export default {
         this.snackbar.color = 'error'
       }
       this.snackbar.show = true
+    },
+    getDocBySar () {
+      this.$refs.listDocs.getDocBySar()
     }
   },
   watch: {
@@ -222,9 +211,9 @@ export default {
     // }
   },
   beforeMount () {
-    this.sar.sarLvl = this.$route.query.sarLvl
-    this.sar.indicatorId = this.indicator.indicatorId = this.$route.query.indicatorId
-    this.indicator.indicatorNo = this.$route.query.indicatorNo
+    this.sar.sarLvl = parseInt(this.$route.query.sarLvl)
+    this.sar.indicatorId = this.indicator.indicatorId = parseInt(this.$route.query.indicatorId)
+    this.indicator.indicatorNo = parseInt(this.$route.query.indicatorNo)
     this.indicator.indicatorName = this.$route.query.indicatorName
     this.indicator.indicatorType = this.$route.query.indicatorType
     this.getSAR()

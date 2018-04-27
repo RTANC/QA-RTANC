@@ -19,7 +19,7 @@
               <v-list-tile-title>ชื่อไฟล์ {{doc.docName}}</v-list-tile-title>
               <v-list-tile-sub-title>ขนาดไฟล์ : {{ (doc.fileSize >= 1048567) ? (doc.fileSize / 1048567) + "MB" : (doc.fileSize / 1024) + " kB"}}</v-list-tile-sub-title>
             </v-list-tile-content>
-            <v-list-tile-action v-if="sarResultId">
+            <v-list-tile-action v-if="sarId">
               <v-btn color="primary" icon flat @click="selectDoc(doc)"><v-icon>done</v-icon></v-btn>
             </v-list-tile-action>
             <v-list-tile-action v-if="upload">
@@ -63,6 +63,7 @@ import selectYear from './selectYear'
 import selectDept from './selectDept'
 import DocCatalogService from '@/services/DocCatalogService'
 import CommonDocService from '@/services/CommonDocService'
+import DocRefService from '@/services/DocRefService'
 export default {
   name: 'CommonDoc',
   components: {
@@ -74,7 +75,7 @@ export default {
       type: Boolean,
       default: true
     },
-    sarResultId: {
+    sarId: {
       type: Number,
       default: 0
     }
@@ -177,13 +178,13 @@ export default {
     async selectDoc (doc) {
       try {
         const docFile = {
-          sarResultId: this.sarResultId,
+          sarId: this.sarId,
           docName: doc.docName,
           fileName: doc.fileName,
           fileSize: doc.fileSize,
           fileType: doc.fileType
         }
-        await CommonDocService.selectDoc(docFile)
+        await DocRefService.selectDoc(docFile)
         this.snackbar.text = 'เลือกไฟล์เอกสารส่วนกลางสำเร็จ'
         this.snackbar.color = 'success'
       } catch (e) {
