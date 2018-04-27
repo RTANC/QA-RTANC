@@ -21,7 +21,7 @@
             <td class="text-xs-left">{{ props.item.standardName }}</td>
             <td class="text-xs-right">
               <v-btn color="primary" @click="openEditDialog(props.item)"><v-icon>create</v-icon></v-btn>
-              <v-btn color="error" @click="delStd(props.item)"><v-icon>delete</v-icon></v-btn>
+              <v-btn color="error" @click.native.stop="confirm = true;stdId = props.item.standardId;"><v-icon>delete</v-icon></v-btn>
               <v-btn color="success" :to="{ path: '/ManageInd', query: { stdId: props.item.standardId, stdNo: props.item.standardNo ,stdName: props.item.standardName }}"><v-icon>launch</v-icon></v-btn>
             </td>
           </tr>
@@ -70,6 +70,17 @@
         </v-form>
       </v-card>
     </v-dialog>
+      <v-dialog v-model="confirm" max-width="290">
+        <v-card>
+          <v-card-title class="headline">ยืนยัน</v-card-title>
+          <v-card-text>ท่านยืนยันที่จะลบ องค์ประกอบมาตรฐาน นี้หรือไม่?</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="error" flat="flat" @click.native="confirm = false">ไม่ใช่</v-btn>
+            <v-btn color="primary" flat="flat" @click.native="delStd();confirm = false;">ใช่</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     <v-snackbar v-model="snackbar.show" :timeout="3000" :color="snackbar.color">
       {{ snackbar.text }}
     </v-snackbar>
@@ -92,6 +103,7 @@ export default {
       year: null,
       institute: null,
       dialog: false,
+      confirm: false,
       edit: false,
       valid: false,
       stdId: null,
@@ -101,7 +113,7 @@ export default {
       pagination: {
         sortBy: 'stdNo'
       },
-      headers: [ {text: 'องค์ประกอบที่', value: 'standardNo', align: 'center'}, {text: 'องค์ประกอบ', value: 'standardName', align: 'center'} ],
+      headers: [ {text: 'องค์ประกอบที่', value: 'standardNo', align: 'center'}, {text: 'องค์ประกอบ', value: 'standardName', align: 'center'}, {text: '', value: 'btn', align: 'center'} ],
       items: [],
       snackbar: {
         show: false,
@@ -142,8 +154,7 @@ export default {
         this.items = respones.data
       }
     },
-    async delStd (std) {
-      this.stdId = std.standardId
+    async delStd () {
       try {
         await StandardService.delStandard(this.stdId)
         this.snackbar.text = 'ลบองค์ประกอบมาตรฐานสำเร็จ'

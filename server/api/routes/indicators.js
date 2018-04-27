@@ -34,7 +34,7 @@ router.get('/:param', (req, res, next) => {
         }]
     }).then(inds => {
         res.json(inds)
-    })   
+    })
 })
 
 router.post('/', multer().array(), (req, res, next) => {
@@ -43,7 +43,8 @@ router.post('/', multer().array(), (req, res, next) => {
         indicatorNo: req.body.indicatorNo,
         indicatorName: req.body.indicatorName,
         indicatorInfo: req.body.indicatorInfo,
-        indicatorType: req.body.indicatorType
+        indicatorType: req.body.indicatorType,
+        indicatorGain: req.body.indicatorGain
     }).then(succ => {
         res.status(200).send('create indicator successful')
     }).catch(err =>{
@@ -56,7 +57,8 @@ router.patch('/', multer().array(), (req, res, next) => {
         indicatorNo: req.body.indicatorNo,
         indicatorName: req.body.indicatorName,
         indicatorInfo: req.body.indicatorInfo,
-        indicatorType: req.body.indicatorType
+        indicatorType: req.body.indicatorType,
+        indicatorGain: req.body.indicatorGain
     },{
         where: {
             indicatorId: req.body.indicatorId

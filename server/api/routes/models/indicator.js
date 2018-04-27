@@ -26,6 +26,10 @@ const indicator = sequelize.define('indicators', {
     indicatorType: {
         type: Sequelize.BOOLEAN,
         allowNull: false
+    },
+    indicatorGain: {
+      type: Sequelize.TEXT,
+      allowNull: true
     }
 })
 

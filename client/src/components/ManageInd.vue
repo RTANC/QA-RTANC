@@ -49,16 +49,23 @@
               <v-flex xs7 offset-xs1>
                 <v-text-field label="ตัวบ่งชี้" v-model="ind.indName" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
               </v-flex>
-              <v-flex xs9 offset-xs1>
-                <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field>
-              </v-flex>
               <v-flex xs5 offset-xs1>
                 <v-radio-group row v-model="ind.indType" label="ชนิดของตัวบ่งชี้*" :rules="[v => !!v]">
                   <v-radio label="เชิงปริมาณ" value="0" color="primary"></v-radio>
                   <v-radio label="เชิงคุณภาพ" value="1" color="primary"></v-radio>
                 </v-radio-group>
               </v-flex>
-              <v-flex xs10 offset-xs1>
+              <v-flex xs9 offset-xs1>
+                <!-- <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field> -->
+                <h4 class="subheading mb-1">คำอธิบายตัวบ่งชี้*</h4>
+                <editor v-model="ind.indInfo" :init="opt" api-key="sclhhconedzzd6ze9f3qvqgqlhvie7y2cqykydtyqu3o8qla"></editor>
+              </v-flex>
+              <v-flex xs9 offset-xs1>
+                <!-- <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field> -->
+                <h4 class="subheading mt-3 mb-2">เกณฑ์การประเมิน*</h4>
+                <editor v-model="ind.indGain" :init="opt" api-key="sclhhconedzzd6ze9f3qvqgqlhvie7y2cqykydtyqu3o8qla"></editor>
+              </v-flex>
+              <v-flex xs10 offset-xs1 class="my-2">
                 <v-btn @click="submit" :disabled="!valid" color="primary">ยืนยัน</v-btn>
                 <v-btn @click="clear" color="error">ยกเลิก</v-btn>
               </v-flex>
@@ -87,14 +94,16 @@ export default {
         sortBy: 'indicatorNo'
       },
       headers: [{text: 'ตัวบ่งชี้ที่', value: 'indicatorNo', align: 'center'},
-      {text: 'ตัวบ่งชี้', value: 'indicatorName', align: 'center'}],
+      {text: 'ตัวบ่งชี้', value: 'indicatorName', align: 'center'},
+      {text: '', value: 'btn', align: 'center'}],
       items: [],
       ind: {
         indId: null,
         indNo: null,
         indName: null,
         indInfo: null,
-        indType: '0'
+        indType: '0',
+        indGain: null
       },
       std: {
         stdId: null,
@@ -105,6 +114,10 @@ export default {
         show: false,
         text: null,
         color: null
+      },
+      opt: {
+        plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
+        height: '300'
       }
     }
   },
@@ -116,6 +129,8 @@ export default {
         return o.indicatorNo + 1
       })) : 1
       this.ind.indType = '0'
+      this.ind.indInfo = ''
+      this.ind.indGain = ''
     },
     openEditDialog (val) {
       this.dialog = true
@@ -125,6 +140,7 @@ export default {
       this.ind.indName = val.indicatorName
       this.ind.indInfo = val.indicatorInfo
       this.ind.indType = (!val.indicatorType) ? '0' : '1'
+      this.ind.indGain = val.indicatorGain
     },
     async delInd (val) {
       try {
@@ -146,6 +162,7 @@ export default {
         formData.append('indicatorName', this.ind.indName)
         formData.append('indicatorInfo', this.ind.indInfo)
         formData.append('indicatorType', this.ind.indType)
+        formData.append('indicatorGain', this.ind.indGain)
         try {
           if (!this.edit) {
             formData.append('standardId', this.std.stdId)
@@ -176,8 +193,9 @@ export default {
     },
     clear () {
       this.dialog = false
+      // console.log(this.$refs.form)
       this.$refs.form.inputs[1].reset()
-      this.$refs.form.inputs[2].reset()
+      // this.$refs.form.inputs[2].reset()
     },
     async getIndicator () {
       const respones = await IndicatorService.getIndicator(this.std.stdId)
