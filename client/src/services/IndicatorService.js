@@ -17,6 +17,9 @@ export default {
       }
     })
   },
+  getOneIndicator (id) {
+    return api().get('api/indicators/indicator/' + id)
+  },
   addIndicator (ind) {
     return api().post('api/indicators', ind)
   },

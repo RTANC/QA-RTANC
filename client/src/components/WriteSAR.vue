@@ -14,6 +14,11 @@
                 <v-card-title primary-title class="d-block">
                   <h3 class="headline">รายงานการประเมินตนเอง {{dept[sar.sarLvl].text}}</h3>
                   <h3>ตัวบ่งชี้ที่ {{indicator.indicatorNo}} : {{indicator.indicatorName}}</h3>
+                  <h3 class="d-inline-flex">ชนิดของตัวบ่งชี้ : </h3><span class="subheading">   {{(!indicator.indicatorType) ? 'เชิงปริมาณ' : 'เชิงคุณภาพ'}}</span>
+                  <h3>คำอธิบายตัวบ่งชี้</h3>
+                  <p v-html="indicator.indicatorInfo"></p>
+                  <h3>เกณฑ์การประเมิน</h3>
+                  <p v-html="indicator.indicatorGain"></p>
                 </v-card-title>
               </v-card>
           </v-flex>
@@ -95,6 +100,7 @@
 
 <script>
 import SarService from '@/services/SarService'
+import IndicatorService from '@/services/IndicatorService'
 import Dept from '@/services/DeptService'
 import sarDocRef from '@/components/sarDocRef'
 import otherSar from '@/components/OtherSar'
@@ -115,7 +121,9 @@ export default {
         indicatorId: null,
         indicatorNo: null,
         indicatorName: null,
-        indicatorType: null
+        indicatorType: null,
+        indicatorInfo: null,
+        indicatorGain: null
       },
       sar: {
         sarId: null,
@@ -199,6 +207,14 @@ export default {
     },
     getDocBySar () {
       this.$refs.listDocs.getDocBySar()
+    },
+    async getOneIndicator (id) {
+      try {
+        const response = await IndicatorService.getOneIndicator(id)
+        this.indicator.indicatorInfo = response.data.indicatorInfo
+        this.indicator.indicatorGain = response.data.indicatorGain
+      } catch (e) {
+      }
     }
   },
   watch: {
@@ -213,10 +229,11 @@ export default {
   beforeMount () {
     this.sar.sarLvl = parseInt(this.$route.query.sarLvl)
     this.sar.indicatorId = this.indicator.indicatorId = parseInt(this.$route.query.indicatorId)
-    this.indicator.indicatorNo = parseInt(this.$route.query.indicatorNo)
+    this.indicator.indicatorNo = this.$route.query.indicatorNo
     this.indicator.indicatorName = this.$route.query.indicatorName
     this.indicator.indicatorType = this.$route.query.indicatorType
     this.getSAR()
+    this.getOneIndicator(this.indicator.indicatorId)
   }
 }
 </script>

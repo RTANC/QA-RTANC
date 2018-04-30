@@ -144,10 +144,12 @@ export default {
     },
     async delInd (val) {
       try {
-        await IndicatorService.delIndicator(val.indicatorId)
-        this.snackbar.text = 'ลบตัวบ่งชี้สำเร็จ'
-        this.snackbar.color = 'success'
-        this.snackbar.show = true
+        if (confirm('ยืนยันการลบตัวบ่งชี้')) {
+          await IndicatorService.delIndicator(val.indicatorId)
+          this.snackbar.text = 'ลบตัวบ่งชี้สำเร็จ'
+          this.snackbar.color = 'success'
+          this.snackbar.show = true
+        }
       } catch (error) {
         this.snackbar.text = 'ลบตัวบ่งชี้ล้มเหลว'
         this.snackbar.color = 'error'

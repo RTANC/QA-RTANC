@@ -16,6 +16,18 @@ router.get('/', (req, res, next) => {
     })
 })
 
+router.get('/indicator/:id', (req, res, next) => {
+    indicator.findOne({
+        where: {
+            indicatorId: req.params.id
+        }
+    }).then(inds => {
+        res.status(200).send(inds)
+    }).catch(err =>{
+        next(err)
+    })
+})
+
 router.get('/:param', (req, res, next) => {
     standard.hasMany(indicator, {foreignKey: 'standardId'})
     standard.findAll({
