@@ -31,49 +31,51 @@
         <v-icon>add</v-icon>
       </v-btn>
     </v-flex>
-    <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
-      <v-card>
-        <v-toolbar dark color="primary">
-          <v-btn icon @click.native="clear" dark>
-            <v-icon>close</v-icon>
-          </v-btn>
-          <v-toolbar-title>ข้อมูลตัวบ่งชี้</v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
-        <v-form v-model="valid" ref="form">
-          <v-container fluid>
-            <v-layout row wrap>
-              <v-flex xs1 offset-xs1>
-                <v-text-field v-model.number="ind.indNo" :prefix="std.stdNo+'.'" type="number" label="ลำดับที่่" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
-              </v-flex>
-              <v-flex xs7 offset-xs1>
-                <v-text-field label="ตัวบ่งชี้" v-model="ind.indName" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
-              </v-flex>
-              <v-flex xs5 offset-xs1>
-                <v-radio-group row v-model="ind.indType" label="ชนิดของตัวบ่งชี้*" :rules="[v => !!v]">
-                  <v-radio label="เชิงปริมาณ" value="0" color="primary"></v-radio>
-                  <v-radio label="เชิงคุณภาพ" value="1" color="primary"></v-radio>
-                </v-radio-group>
-              </v-flex>
-              <v-flex xs9 offset-xs1>
-                <!-- <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field> -->
-                <h4 class="subheading mb-1">คำอธิบายตัวบ่งชี้*</h4>
-                <editor v-model="ind.indInfo" :init="opt" api-key="sclhhconedzzd6ze9f3qvqgqlhvie7y2cqykydtyqu3o8qla"></editor>
-              </v-flex>
-              <v-flex xs9 offset-xs1>
-                <!-- <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field> -->
-                <h4 class="subheading mt-3 mb-2">เกณฑ์การประเมิน*</h4>
-                <editor v-model="ind.indGain" :init="opt" api-key="sclhhconedzzd6ze9f3qvqgqlhvie7y2cqykydtyqu3o8qla"></editor>
-              </v-flex>
-              <v-flex xs10 offset-xs1 class="my-2">
-                <v-btn @click="submit" :disabled="!valid" color="primary">ยืนยัน</v-btn>
-                <v-btn @click="clear" color="error">ยกเลิก</v-btn>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-form>
-      </v-card>
-    </v-dialog>
+      <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay="false">
+        <v-card>
+          <v-toolbar dark color="primary">
+            <v-btn icon @click.native="clear" dark>
+              <v-icon>close</v-icon>
+            </v-btn>
+            <v-toolbar-title>ข้อมูลตัวบ่งชี้</v-toolbar-title>
+            <v-spacer></v-spacer>
+          </v-toolbar>
+          <v-card-text>
+            <v-form v-model="valid" ref="form">
+              <v-container fluid>
+                <v-layout row wrap>
+                  <v-flex xs1 offset-xs1>
+                    <v-text-field v-model.number="ind.indNo" :prefix="std.stdNo+'.'" type="number" label="ลำดับที่่" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
+                  </v-flex>
+                  <v-flex xs7 offset-xs1>
+                    <v-text-field label="ตัวบ่งชี้" v-model="ind.indName" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required></v-text-field>
+                  </v-flex>
+                  <v-flex xs5 offset-xs1>
+                    <v-radio-group row v-model="ind.indType" label="ชนิดของตัวบ่งชี้*" :rules="[v => !!v]">
+                      <v-radio label="เชิงปริมาณ" value="0" color="primary"></v-radio>
+                      <v-radio label="เชิงคุณภาพ" value="1" color="primary"></v-radio>
+                    </v-radio-group>
+                  </v-flex>
+                  <v-flex xs9 offset-xs1>
+                    <!-- <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field> -->
+                    <h4 class="subheading mb-1">คำอธิบายตัวบ่งชี้*</h4>
+                    <editor v-model="ind.indInfo" :init="opt" :api-key="key"></editor>
+                  </v-flex>
+                  <v-flex xs9 offset-xs1>
+                    <!-- <v-text-field label="คำอธิบาย" v-model="ind.indInfo" :rules="[v => !!v || 'ท่านจำเป็นต้องกรอกข้อมูลนี้!']" required multi-line></v-text-field> -->
+                    <h4 class="subheading mt-3 mb-2">เกณฑ์การประเมิน*</h4>
+                    <editor v-model="ind.indGain" :init="opt" :api-key="key"></editor>
+                  </v-flex>
+                  <v-flex xs10 offset-xs1 class="my-2">
+                    <v-btn @click="submit" :disabled="!valid" color="primary">ยืนยัน</v-btn>
+                    <v-btn @click="clear" color="error">ยกเลิก</v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-form>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
     <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
         {{snackbar.text}}
     </v-snackbar>
@@ -88,6 +90,7 @@ export default {
   data: () => {
     return {
       dialog: false,
+      key: 'sclhhconedzzd6ze9f3qvqgqlhvie7y2cqykydtyqu3o8qla',
       edit: false,
       valid: false,
       pagination: {
@@ -117,7 +120,8 @@ export default {
       },
       opt: {
         plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
-        height: '300'
+        height: '300',
+        inline: false
       }
     }
   },
