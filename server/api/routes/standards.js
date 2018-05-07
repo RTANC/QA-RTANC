@@ -87,6 +87,9 @@ router.post('/dup', (req, res, next )=> {
                         }
                         indicator.bulkCreate(ind)
                     }
+                    res.status(201).send({
+                        message: 'Duplicate Standard Success'
+                    })
                 })
         }).catch(err => {
             next(err)
