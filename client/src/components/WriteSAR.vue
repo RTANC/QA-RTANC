@@ -4,7 +4,7 @@
         <v-flex xs10 offset-xs1>
           <v-card>
             <v-card-actions>
-              <v-btn color="primary" @click.native="dialogOther = true"><v-icon left>search</v-icon>ดูผลการดำเนินงานอื่นๆ</v-btn>
+              <v-btn color="primary" @click.native="dialogOther = true" v-if="sar.sarLvl < 4"><v-icon left>search</v-icon>ดูผลการดำเนินงานอื่นๆ</v-btn>
               <v-btn color="cyan" dark><v-icon left>description</v-icon>ออกรายงานผลการดำเนินงาน</v-btn>
             </v-card-actions>
           </v-card>
