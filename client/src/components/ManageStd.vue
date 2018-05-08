@@ -1,5 +1,6 @@
 <template>
-<v-container fluid>
+<div>
+  <v-container fluid>
   <v-layout class="pt-5" row wrap>
     <v-flex xs2 offset-xs1>
       <selectYear v-on:onYearChange="getYear($event)"></selectYear>
@@ -28,12 +29,20 @@
         </template>
       </v-data-table>
     </v-flex>
-      <v-btn  fixed dark fab bottom color="indigo">
+  </v-layout>
+</v-container>
+ <v-speed-dial v-model="fab" fixed bottom right direction="top" transition="slide-y-reverse-transition" v-if="(year !== null && institute !== null)">
+      <v-btn fab hover dark color="cyan" slot="activator" v-model="fab">
+        <v-icon>keyboard_arrow_up</v-icon>
+          <v-icon>close</v-icon>
+      </v-btn>
+      <v-btn dark  fab color="indigo">
         <v-icon>content_copy</v-icon>
       </v-btn>
-      <v-btn @click="openAddDialog" fixed dark fab bottom right color="pink">
+      <v-btn @click="openAddDialog" dark fab color="pink">
         <v-icon>add</v-icon>
       </v-btn>
+    </v-speed-dial>
     <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
       <v-card>
         <v-toolbar dark color="primary">
@@ -85,8 +94,7 @@
     <v-snackbar v-model="snackbar.show" :timeout="3000" :color="snackbar.color">
       {{ snackbar.text }}
     </v-snackbar>
-  </v-layout>
-</v-container>
+</div>
 </template>
 
 <script>
@@ -101,6 +109,7 @@ export default {
   },
   data: () => {
     return {
+      fab: false,
       year: null,
       institute: null,
       dialog: false,
