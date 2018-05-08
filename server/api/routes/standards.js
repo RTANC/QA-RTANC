@@ -58,7 +58,7 @@ router.post('/dup', (req, res, next )=> {
         const std = []
         for (var i = 0;i < x.length;i++) {
             std.push({
-                year: x[i].year,
+                year: req.body.year,
                 institute: x[i].institute,
                 standardNo: x[i].standardNo,
                 standardName: x[i].standardName,

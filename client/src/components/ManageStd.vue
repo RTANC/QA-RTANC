@@ -28,11 +28,12 @@
         </template>
       </v-data-table>
     </v-flex>
-    <v-flex xs-12>
+      <v-btn  fixed dark fab bottom color="indigo">
+        <v-icon>content_copy</v-icon>
+      </v-btn>
       <v-btn @click="openAddDialog" fixed dark fab bottom right color="pink">
         <v-icon>add</v-icon>
       </v-btn>
-    </v-flex>
     <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition" :overlay=false>
       <v-card>
         <v-toolbar dark color="primary">
