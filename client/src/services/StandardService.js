@@ -13,6 +13,9 @@ export default {
   addStandard (std) {
     return api().post('api/standards', std)
   },
+  dupStandard (opt) {
+    return api().post('api/standards/dup', opt)
+  },
   editStandard (std) {
     return api().patch('api/standards', std)
   },

@@ -154,6 +154,21 @@ export default {
       this.stdName = std.standardName
       this.stdLvl = (std.standardLvl) ? '1' : '0'
     },
+    async dupStandard () {
+      try {
+        await StandardService.dupStandard({
+          year: this.year,
+          institute: this.institute
+        })
+        this.snackbar.text = 'Copy องค์ประกอบสำเร็จ'
+        this.snackbar.color = 'success'
+      } catch (error) {
+        this.snackbar.text = 'Copy องค์ประกอบล้มเหลว'
+        this.snackbar.color = 'error'
+      } finally {
+        this.snackbar.show = true
+      }
+    },
     async getStd () {
       if (this.year !== null && this.institute !== null && this.stdLvl !== null) {
         const respones = await StandardService.getStandards({
