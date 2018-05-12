@@ -1,0 +1,16 @@
+{
+  "name": "jsreport-server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "jsreport": "jsreport"
+  },
+  "jsreport": {
+    "entryPoint": "server.js"
+  },
+  "dependencies": {
+    "jsreport": "2.0.0",
+    "jsreport-html-embedded-in-docx": "^1.0.0",
+    "jsreport-phantom-pdf": "^2.0.0"
+  }
+}

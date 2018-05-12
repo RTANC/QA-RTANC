@@ -1,0 +1,14 @@
+{
+    "shortid": "Sk4QNy4Cf",
+    "name": "sar",
+    "recipe": "phantom-pdf",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "modificationDate": {
+        "$$date": 1526103837601
+    },
+    "_id": "sjhuyHhixXo0Nl26",
+    "$entitySet": "templates"
+}

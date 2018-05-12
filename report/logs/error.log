@@ -1,0 +1,677 @@
+2018-05-12T03:49:46.291Z - error: Error when processing render request Failed to launch chrome!
+[0512/104946.080289:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a036993 logging::LogMessage::~LogMessage()
+#2 0x556e090a0601 content::ZygoteHostImpl::Init()
+#3 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#7 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#8 0x556e09d6b155 service_manager::Main()
+#9 0x556e09d60104 content::ContentMain()
+#10 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x556e0de22022 headless::HeadlessBrowserMain()
+#12 0x556e09d68189 headless::HeadlessShellMain()
+#13 0x556e083da1ac ChromeMain
+#14 0x7f463a8b606b __libc_start_main
+#15 0x556e083da02a _start
+
+Received signal 6
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a01e6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f464088ea80 <unknown>
+#3 0x7f463a8c986b __GI_raise
+#4 0x7f463a8b440e __GI_abort
+#5 0x556e0a01d175 base::debug::BreakDebugger()
+#6 0x556e0a036ddc logging::LogMessage::~LogMessage()
+#7 0x556e090a0601 content::ZygoteHostImpl::Init()
+#8 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#12 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#13 0x556e09d6b155 service_manager::Main()
+#14 0x556e09d60104 content::ContentMain()
+#15 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x556e0de22022 headless::HeadlessBrowserMain()
+#17 0x556e09d68189 headless::HeadlessShellMain()
+#18 0x556e083da1ac ChromeMain
+#19 0x7f463a8b606b __libc_start_main
+#20 0x556e083da02a _start
+  r8: 0000000000000000  r9: 00007ffc27a50790 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc27a50e98 r13: 0000000000000161 r14: 00007ffc27a50ea0 r15: 00007ffc27a50a39
+  di: 0000000000000002  si: 00007ffc27a50790  bp: 00007ffc27a509e0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f463a8c986b  sp: 00007ffc27a50790
+  ip: 00007f463a8c986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/104946.080289:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a036993 logging::LogMessage::~LogMessage()
+#2 0x556e090a0601 content::ZygoteHostImpl::Init()
+#3 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#7 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#8 0x556e09d6b155 service_manager::Main()
+#9 0x556e09d60104 content::ContentMain()
+#10 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x556e0de22022 headless::HeadlessBrowserMain()
+#12 0x556e09d68189 headless::HeadlessShellMain()
+#13 0x556e083da1ac ChromeMain
+#14 0x7f463a8b606b __libc_start_main
+#15 0x556e083da02a _start
+
+Received signal 6
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a01e6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f464088ea80 <unknown>
+#3 0x7f463a8c986b __GI_raise
+#4 0x7f463a8b440e __GI_abort
+#5 0x556e0a01d175 base::debug::BreakDebugger()
+#6 0x556e0a036ddc logging::LogMessage::~LogMessage()
+#7 0x556e090a0601 content::ZygoteHostImpl::Init()
+#8 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#12 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#13 0x556e09d6b155 service_manager::Main()
+#14 0x556e09d60104 content::ContentMain()
+#15 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x556e0de22022 headless::HeadlessBrowserMain()
+#17 0x556e09d68189 headless::HeadlessShellMain()
+#18 0x556e083da1ac ChromeMain
+#19 0x7f463a8b606b __libc_start_main
+#20 0x556e083da02a _start
+  r8: 0000000000000000  r9: 00007ffc27a50790 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc27a50e98 r13: 0000000000000161 r14: 00007ffc27a50ea0 r15: 00007ffc27a50a39
+  di: 0000000000000002  si: 00007ffc27a50790  bp: 00007ffc27a509e0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f463a8c986b  sp: 00007ffc27a50790
+  ip: 00007f463a8c986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T03:49:46.292Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:48:29.924Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:48:29.925Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:49:19.488Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:49:19.488Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:49:51.279Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:49:51.281Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:49:52.400Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:49:52.400Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:53:17.460Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:53:17.460Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:12.479Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:12.479Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:13.259Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:13.260Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:13.852Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:13.852Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:30.632Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:30.633Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:47.625Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:47.626Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:51.978Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:51.978Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T05:18:27.460Z - error: Error when processing render request Failed to launch chrome!
+[0512/121827.247611:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05e6993 logging::LogMessage::~LogMessage()
+#2 0x563ccf650601 content::ZygoteHostImpl::Init()
+#3 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#7 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#8 0x563cd031b155 service_manager::Main()
+#9 0x563cd0310104 content::ContentMain()
+#10 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x563cd43d2022 headless::HeadlessBrowserMain()
+#12 0x563cd0318189 headless::HeadlessShellMain()
+#13 0x563cce98a1ac ChromeMain
+#14 0x7fb5faed606b __libc_start_main
+#15 0x563cce98a02a _start
+
+Received signal 6
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05ce6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fb600eaea80 <unknown>
+#3 0x7fb5faee986b __GI_raise
+#4 0x7fb5faed440e __GI_abort
+#5 0x563cd05cd175 base::debug::BreakDebugger()
+#6 0x563cd05e6ddc logging::LogMessage::~LogMessage()
+#7 0x563ccf650601 content::ZygoteHostImpl::Init()
+#8 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#12 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#13 0x563cd031b155 service_manager::Main()
+#14 0x563cd0310104 content::ContentMain()
+#15 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x563cd43d2022 headless::HeadlessBrowserMain()
+#17 0x563cd0318189 headless::HeadlessShellMain()
+#18 0x563cce98a1ac ChromeMain
+#19 0x7fb5faed606b __libc_start_main
+#20 0x563cce98a02a _start
+  r8: 0000000000000000  r9: 00007ffc13d93e80 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc13d94588 r13: 0000000000000161 r14: 00007ffc13d94590 r15: 00007ffc13d94129
+  di: 0000000000000002  si: 00007ffc13d93e80  bp: 00007ffc13d940d0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fb5faee986b  sp: 00007ffc13d93e80
+  ip: 00007fb5faee986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/121827.247611:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05e6993 logging::LogMessage::~LogMessage()
+#2 0x563ccf650601 content::ZygoteHostImpl::Init()
+#3 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#7 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#8 0x563cd031b155 service_manager::Main()
+#9 0x563cd0310104 content::ContentMain()
+#10 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x563cd43d2022 headless::HeadlessBrowserMain()
+#12 0x563cd0318189 headless::HeadlessShellMain()
+#13 0x563cce98a1ac ChromeMain
+#14 0x7fb5faed606b __libc_start_main
+#15 0x563cce98a02a _start
+
+Received signal 6
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05ce6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fb600eaea80 <unknown>
+#3 0x7fb5faee986b __GI_raise
+#4 0x7fb5faed440e __GI_abort
+#5 0x563cd05cd175 base::debug::BreakDebugger()
+#6 0x563cd05e6ddc logging::LogMessage::~LogMessage()
+#7 0x563ccf650601 content::ZygoteHostImpl::Init()
+#8 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#12 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#13 0x563cd031b155 service_manager::Main()
+#14 0x563cd0310104 content::ContentMain()
+#15 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x563cd43d2022 headless::HeadlessBrowserMain()
+#17 0x563cd0318189 headless::HeadlessShellMain()
+#18 0x563cce98a1ac ChromeMain
+#19 0x7fb5faed606b __libc_start_main
+#20 0x563cce98a02a _start
+  r8: 0000000000000000  r9: 00007ffc13d93e80 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc13d94588 r13: 0000000000000161 r14: 00007ffc13d94590 r15: 00007ffc13d94129
+  di: 0000000000000002  si: 00007ffc13d93e80  bp: 00007ffc13d940d0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fb5faee986b  sp: 00007ffc13d93e80
+  ip: 00007fb5faee986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T05:18:27.461Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T05:21:05.724Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:21:05.725Z - error: Error occured during reporter init Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:24:26.816Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:24:26.817Z - error: Error occured during reporter init Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:38:28.525Z - error: Error when processing render request Failed to launch chrome!
+[0512/123828.007172:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x565235585993 logging::LogMessage::~LogMessage()
+#2 0x5652345ef601 content::ZygoteHostImpl::Init()
+#3 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#7 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#8 0x5652352ba155 service_manager::Main()
+#9 0x5652352af104 content::ContentMain()
+#10 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x565239371022 headless::HeadlessBrowserMain()
+#12 0x5652352b7189 headless::HeadlessShellMain()
+#13 0x5652339291ac ChromeMain
+#14 0x7fd2f62f606b __libc_start_main
+#15 0x56523392902a _start
+
+Received signal 6
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x56523556d6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fd2fc2cea80 <unknown>
+#3 0x7fd2f630986b __GI_raise
+#4 0x7fd2f62f440e __GI_abort
+#5 0x56523556c175 base::debug::BreakDebugger()
+#6 0x565235585ddc logging::LogMessage::~LogMessage()
+#7 0x5652345ef601 content::ZygoteHostImpl::Init()
+#8 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#12 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#13 0x5652352ba155 service_manager::Main()
+#14 0x5652352af104 content::ContentMain()
+#15 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x565239371022 headless::HeadlessBrowserMain()
+#17 0x5652352b7189 headless::HeadlessShellMain()
+#18 0x5652339291ac ChromeMain
+#19 0x7fd2f62f606b __libc_start_main
+#20 0x56523392902a _start
+  r8: 0000000000000000  r9: 00007ffef52ac5e0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffef52acce8 r13: 0000000000000161 r14: 00007ffef52accf0 r15: 00007ffef52ac889
+  di: 0000000000000002  si: 00007ffef52ac5e0  bp: 00007ffef52ac830  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fd2f630986b  sp: 00007ffef52ac5e0
+  ip: 00007fd2f630986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/123828.007172:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x565235585993 logging::LogMessage::~LogMessage()
+#2 0x5652345ef601 content::ZygoteHostImpl::Init()
+#3 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#7 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#8 0x5652352ba155 service_manager::Main()
+#9 0x5652352af104 content::ContentMain()
+#10 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x565239371022 headless::HeadlessBrowserMain()
+#12 0x5652352b7189 headless::HeadlessShellMain()
+#13 0x5652339291ac ChromeMain
+#14 0x7fd2f62f606b __libc_start_main
+#15 0x56523392902a _start
+
+Received signal 6
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x56523556d6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fd2fc2cea80 <unknown>
+#3 0x7fd2f630986b __GI_raise
+#4 0x7fd2f62f440e __GI_abort
+#5 0x56523556c175 base::debug::BreakDebugger()
+#6 0x565235585ddc logging::LogMessage::~LogMessage()
+#7 0x5652345ef601 content::ZygoteHostImpl::Init()
+#8 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#12 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#13 0x5652352ba155 service_manager::Main()
+#14 0x5652352af104 content::ContentMain()
+#15 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x565239371022 headless::HeadlessBrowserMain()
+#17 0x5652352b7189 headless::HeadlessShellMain()
+#18 0x5652339291ac ChromeMain
+#19 0x7fd2f62f606b __libc_start_main
+#20 0x56523392902a _start
+  r8: 0000000000000000  r9: 00007ffef52ac5e0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffef52acce8 r13: 0000000000000161 r14: 00007ffef52accf0 r15: 00007ffef52ac889
+  di: 0000000000000002  si: 00007ffef52ac5e0  bp: 00007ffef52ac830  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fd2f630986b  sp: 00007ffef52ac5e0
+  ip: 00007fd2f630986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T05:38:28.526Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T05:41:24.666Z - error: Error when processing render request Failed to launch chrome!
+[0512/124124.464030:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d012800993 logging::LogMessage::~LogMessage()
+#2 0x55d01186a601 content::ZygoteHostImpl::Init()
+#3 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#5 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#7 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#8 0x55d012535155 service_manager::Main()
+#9 0x55d01252a104 content::ContentMain()
+#10 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#11 0x55d0165ec022 headless::HeadlessBrowserMain()
+#12 0x55d012532189 headless::HeadlessShellMain()
+#13 0x55d010ba41ac ChromeMain
+#14 0x7f35624eb06b __libc_start_main
+#15 0x55d010ba402a _start
+
+Received signal 6
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d0127e86f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f35684c3a80 <unknown>
+#3 0x7f35624fe86b __GI_raise
+#4 0x7f35624e940e __GI_abort
+#5 0x55d0127e7175 base::debug::BreakDebugger()
+#6 0x55d012800ddc logging::LogMessage::~LogMessage()
+#7 0x55d01186a601 content::ZygoteHostImpl::Init()
+#8 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#10 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#12 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#13 0x55d012535155 service_manager::Main()
+#14 0x55d01252a104 content::ContentMain()
+#15 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#16 0x55d0165ec022 headless::HeadlessBrowserMain()
+#17 0x55d012532189 headless::HeadlessShellMain()
+#18 0x55d010ba41ac ChromeMain
+#19 0x7f35624eb06b __libc_start_main
+#20 0x55d010ba402a _start
+  r8: 0000000000000000  r9: 00007ffebd17cc40 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffebd17d348 r13: 0000000000000161 r14: 00007ffebd17d350 r15: 00007ffebd17cee9
+  di: 0000000000000002  si: 00007ffebd17cc40  bp: 00007ffebd17ce90  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f35624fe86b  sp: 00007ffebd17cc40
+  ip: 00007f35624fe86b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/124124.464030:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d012800993 logging::LogMessage::~LogMessage()
+#2 0x55d01186a601 content::ZygoteHostImpl::Init()
+#3 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#5 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#7 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#8 0x55d012535155 service_manager::Main()
+#9 0x55d01252a104 content::ContentMain()
+#10 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#11 0x55d0165ec022 headless::HeadlessBrowserMain()
+#12 0x55d012532189 headless::HeadlessShellMain()
+#13 0x55d010ba41ac ChromeMain
+#14 0x7f35624eb06b __libc_start_main
+#15 0x55d010ba402a _start
+
+Received signal 6
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d0127e86f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f35684c3a80 <unknown>
+#3 0x7f35624fe86b __GI_raise
+#4 0x7f35624e940e __GI_abort
+#5 0x55d0127e7175 base::debug::BreakDebugger()
+#6 0x55d012800ddc logging::LogMessage::~LogMessage()
+#7 0x55d01186a601 content::ZygoteHostImpl::Init()
+#8 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#10 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#12 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#13 0x55d012535155 service_manager::Main()
+#14 0x55d01252a104 content::ContentMain()
+#15 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#16 0x55d0165ec022 headless::HeadlessBrowserMain()
+#17 0x55d012532189 headless::HeadlessShellMain()
+#18 0x55d010ba41ac ChromeMain
+#19 0x7f35624eb06b __libc_start_main
+#20 0x55d010ba402a _start
+  r8: 0000000000000000  r9: 00007ffebd17cc40 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffebd17d348 r13: 0000000000000161 r14: 00007ffebd17d350 r15: 00007ffebd17cee9
+  di: 0000000000000002  si: 00007ffebd17cc40  bp: 00007ffebd17ce90  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f35624fe86b  sp: 00007ffebd17cc40
+  ip: 00007f35624fe86b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T05:41:24.667Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T06:11:10.141Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T06:11:41.481Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)

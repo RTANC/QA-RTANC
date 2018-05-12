@@ -1,0 +1,2363 @@
+2018-05-12T03:48:15.999Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T03:48:16.000Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T03:48:16.024Z - info: Extensions location cache /tmp/jsreport/core/locations.json contains older information, crawling
+2018-05-12T03:48:16.180Z - info: Found 31 extensions
+2018-05-12T03:48:16.422Z - info: Using extension handlebars
+2018-05-12T03:48:16.427Z - info: Using extension import-export
+2018-05-12T03:48:16.504Z - info: Using extension templates
+2018-05-12T03:48:16.506Z - info: Using extension jsrender
+2018-05-12T03:48:16.507Z - info: Using extension freeze
+2018-05-12T03:48:16.509Z - info: Using extension cli
+2018-05-12T03:48:16.509Z - info: Using extension express
+2018-05-12T03:48:16.576Z - info: Using extension debug
+2018-05-12T03:48:16.579Z - info: Using extension tags
+2018-05-12T03:48:16.581Z - info: Using extension data
+2018-05-12T03:48:16.582Z - info: Using extension fs-store
+2018-05-12T03:48:16.706Z - info: Using extension authorization
+2018-05-12T03:48:16.707Z - info: Using extension html-to-xlsx
+2018-05-12T03:48:16.784Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T03:48:16.784Z - info: Using extension child-templates
+2018-05-12T03:48:16.785Z - info: Using extension browser-client
+2018-05-12T03:48:16.787Z - info: Using extension chrome-pdf
+2018-05-12T03:48:16.790Z - info: Using extension pdf-utils
+2018-05-12T03:48:16.873Z - info: Using extension version-control
+2018-05-12T03:48:16.897Z - info: Using extension reports
+2018-05-12T03:48:16.898Z - info: Using extension text
+2018-05-12T03:48:16.899Z - info: Using extension base
+2018-05-12T03:48:16.901Z - info: Using extension studio
+2018-05-12T03:48:16.917Z - info: Using extension licensing
+2018-05-12T03:48:16.928Z - info: Using extension scripts
+2018-05-12T03:48:16.931Z - info: Using extension assets
+2018-05-12T03:48:16.939Z - info: Using extension scheduling
+2018-05-12T03:48:16.972Z - info: Using extension xlsx
+2018-05-12T03:48:16.991Z - info: Using extension sample-template
+2018-05-12T03:48:16.993Z - info: Using extension resources
+2018-05-12T03:48:16.993Z - info: Using extension public-templates
+2018-05-12T03:48:16.998Z - info: fs store is persisting using fs
+2018-05-12T03:48:16.999Z - info: fs store is synchronizing using fs
+2018-05-12T03:48:17.002Z - info: fs store is loading data
+2018-05-12T03:48:17.027Z - info: fs store is initialized successfully
+2018-05-12T03:48:17.045Z - info: Creating default express app.
+2018-05-12T03:48:17.060Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T03:48:17.060Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T03:48:17.069Z - info: Verifying license key free
+2018-05-12T03:48:17.070Z - info: Using free license
+2018-05-12T03:48:17.071Z - info: reporter initialized
+2018-05-12T03:49:36.150Z - info: fs store is loading data
+2018-05-12T03:49:45.929Z - info: Starting rendering request 1 (user: null)
+2018-05-12T03:49:45.931Z - info: Rendering template { name: sar, recipe: chrome-pdf, engine: handlebars, preview: true }
+2018-05-12T03:49:46.291Z - error: Error when processing render request Failed to launch chrome!
+[0512/104946.080289:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a036993 logging::LogMessage::~LogMessage()
+#2 0x556e090a0601 content::ZygoteHostImpl::Init()
+#3 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#7 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#8 0x556e09d6b155 service_manager::Main()
+#9 0x556e09d60104 content::ContentMain()
+#10 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x556e0de22022 headless::HeadlessBrowserMain()
+#12 0x556e09d68189 headless::HeadlessShellMain()
+#13 0x556e083da1ac ChromeMain
+#14 0x7f463a8b606b __libc_start_main
+#15 0x556e083da02a _start
+
+Received signal 6
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a01e6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f464088ea80 <unknown>
+#3 0x7f463a8c986b __GI_raise
+#4 0x7f463a8b440e __GI_abort
+#5 0x556e0a01d175 base::debug::BreakDebugger()
+#6 0x556e0a036ddc logging::LogMessage::~LogMessage()
+#7 0x556e090a0601 content::ZygoteHostImpl::Init()
+#8 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#12 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#13 0x556e09d6b155 service_manager::Main()
+#14 0x556e09d60104 content::ContentMain()
+#15 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x556e0de22022 headless::HeadlessBrowserMain()
+#17 0x556e09d68189 headless::HeadlessShellMain()
+#18 0x556e083da1ac ChromeMain
+#19 0x7f463a8b606b __libc_start_main
+#20 0x556e083da02a _start
+  r8: 0000000000000000  r9: 00007ffc27a50790 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc27a50e98 r13: 0000000000000161 r14: 00007ffc27a50ea0 r15: 00007ffc27a50a39
+  di: 0000000000000002  si: 00007ffc27a50790  bp: 00007ffc27a509e0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f463a8c986b  sp: 00007ffc27a50790
+  ip: 00007f463a8c986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/104946.080289:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a036993 logging::LogMessage::~LogMessage()
+#2 0x556e090a0601 content::ZygoteHostImpl::Init()
+#3 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#7 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#8 0x556e09d6b155 service_manager::Main()
+#9 0x556e09d60104 content::ContentMain()
+#10 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x556e0de22022 headless::HeadlessBrowserMain()
+#12 0x556e09d68189 headless::HeadlessShellMain()
+#13 0x556e083da1ac ChromeMain
+#14 0x7f463a8b606b __libc_start_main
+#15 0x556e083da02a _start
+
+Received signal 6
+#0 0x556e0a01eb8c base::debug::StackTrace::StackTrace()
+#1 0x556e0a01e6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f464088ea80 <unknown>
+#3 0x7f463a8c986b __GI_raise
+#4 0x7f463a8b440e __GI_abort
+#5 0x556e0a01d175 base::debug::BreakDebugger()
+#6 0x556e0a036ddc logging::LogMessage::~LogMessage()
+#7 0x556e090a0601 content::ZygoteHostImpl::Init()
+#8 0x556e08d163d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x556e08d1c11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x556e0de22eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x556e09d60be0 content::RunNamedProcessTypeMain()
+#12 0x556e09d61518 content::ContentMainRunnerImpl::Run()
+#13 0x556e09d6b155 service_manager::Main()
+#14 0x556e09d60104 content::ContentMain()
+#15 0x556e0de21f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x556e0de22022 headless::HeadlessBrowserMain()
+#17 0x556e09d68189 headless::HeadlessShellMain()
+#18 0x556e083da1ac ChromeMain
+#19 0x7f463a8b606b __libc_start_main
+#20 0x556e083da02a _start
+  r8: 0000000000000000  r9: 00007ffc27a50790 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc27a50e98 r13: 0000000000000161 r14: 00007ffc27a50ea0 r15: 00007ffc27a50a39
+  di: 0000000000000002  si: 00007ffc27a50790  bp: 00007ffc27a509e0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f463a8c986b  sp: 00007ffc27a50790
+  ip: 00007f463a8c986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T03:49:46.292Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T03:50:04.681Z - info: Starting rendering request 2 (user: null)
+2018-05-12T03:50:04.682Z - info: Rendering template { name: sar, recipe: html, engine: handlebars, preview: true }
+2018-05-12T03:50:04.698Z - info: Rendering request 2 finished in 17 ms
+2018-05-12T03:55:00.634Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T03:55:00.635Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T03:55:00.660Z - info: Extensions location cache /tmp/jsreport/core/locations.json contains older information, crawling
+2018-05-12T03:55:00.820Z - info: Found 32 extensions
+2018-05-12T03:55:01.075Z - info: Using extension handlebars
+2018-05-12T03:55:01.080Z - info: Using extension jsrender
+2018-05-12T03:55:01.081Z - info: Using extension templates
+2018-05-12T03:55:01.084Z - info: Using extension import-export
+2018-05-12T03:55:01.162Z - info: Using extension freeze
+2018-05-12T03:55:01.163Z - info: Using extension cli
+2018-05-12T03:55:01.164Z - info: Using extension express
+2018-05-12T03:55:01.234Z - info: Using extension debug
+2018-05-12T03:55:01.235Z - info: Using extension tags
+2018-05-12T03:55:01.237Z - info: Using extension data
+2018-05-12T03:55:01.239Z - info: Using extension fs-store
+2018-05-12T03:55:01.350Z - info: Using extension authorization
+2018-05-12T03:55:01.351Z - info: Using extension html-to-xlsx
+2018-05-12T03:55:01.432Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T03:55:01.433Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T03:55:01.433Z - info: Using extension child-templates
+2018-05-12T03:55:01.435Z - info: Using extension browser-client
+2018-05-12T03:55:01.438Z - info: Using extension licensing
+2018-05-12T03:55:01.449Z - info: Using extension chrome-pdf
+2018-05-12T03:55:01.452Z - info: Using extension phantom-pdf
+2018-05-12T03:55:01.490Z - info: Using extension version-control
+2018-05-12T03:55:01.512Z - info: Using extension reports
+2018-05-12T03:55:01.513Z - info: Using extension text
+2018-05-12T03:55:01.514Z - info: Using extension base
+2018-05-12T03:55:01.516Z - info: Using extension studio
+2018-05-12T03:55:01.532Z - info: Using extension pdf-utils
+2018-05-12T03:55:01.606Z - info: Using extension scripts
+2018-05-12T03:55:01.609Z - info: Using extension assets
+2018-05-12T03:55:01.617Z - info: Using extension scheduling
+2018-05-12T03:55:01.647Z - info: Using extension xlsx
+2018-05-12T03:55:01.664Z - info: Using extension sample-template
+2018-05-12T03:55:01.666Z - info: Using extension resources
+2018-05-12T03:55:01.667Z - info: Using extension public-templates
+2018-05-12T03:55:01.672Z - info: fs store is persisting using fs
+2018-05-12T03:55:01.672Z - info: fs store is synchronizing using fs
+2018-05-12T03:55:01.674Z - info: fs store is loading data
+2018-05-12T03:55:01.711Z - info: fs store is initialized successfully
+2018-05-12T03:55:01.728Z - info: Creating default express app.
+2018-05-12T03:55:01.742Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T03:55:01.742Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T03:55:01.749Z - info: Verifying license key free
+2018-05-12T03:55:01.752Z - info: Using free license
+2018-05-12T03:55:01.756Z - info: reporter initialized
+2018-05-12T03:55:20.560Z - info: Starting rendering request 1 (user: null)
+2018-05-12T03:55:20.562Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T03:55:20.775Z - info: Rendering request 1 finished in 215 ms
+2018-05-12T03:57:26.884Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T03:57:26.885Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T03:57:26.904Z - info: Extensions location cache /tmp/jsreport/core/locations.json contains older information, crawling
+2018-05-12T03:57:27.073Z - info: Found 33 extensions
+2018-05-12T03:57:27.312Z - info: Using extension import-export
+2018-05-12T03:57:27.389Z - info: Using extension tags
+2018-05-12T03:57:27.391Z - info: Using extension templates
+2018-05-12T03:57:27.393Z - info: Using extension jsrender
+2018-05-12T03:57:27.394Z - info: Using extension handlebars
+2018-05-12T03:57:27.397Z - info: Using extension cli
+2018-05-12T03:57:27.398Z - info: Using extension freeze
+2018-05-12T03:57:27.400Z - info: Using extension debug
+2018-05-12T03:57:27.402Z - info: Using extension express
+2018-05-12T03:57:27.466Z - info: Using extension pdf-utils
+2018-05-12T03:57:27.564Z - info: Using extension data
+2018-05-12T03:57:27.565Z - info: Using extension chrome-pdf
+2018-05-12T03:57:27.608Z - info: Using extension authorization
+2018-05-12T03:57:27.610Z - info: Using extension html-to-xlsx
+2018-05-12T03:57:27.672Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T03:57:27.673Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T03:57:27.673Z - info: Using extension child-templates
+2018-05-12T03:57:27.675Z - info: Using extension browser-client
+2018-05-12T03:57:27.676Z - info: Using extension licensing
+2018-05-12T03:57:27.687Z - info: Using extension fs-store
+2018-05-12T03:57:27.817Z - info: Using extension phantom-pdf
+2018-05-12T03:57:27.851Z - info: Using extension version-control
+2018-05-12T03:57:27.870Z - info: Using extension reports
+2018-05-12T03:57:27.872Z - info: Using extension text
+2018-05-12T03:57:27.872Z - info: Using extension base
+2018-05-12T03:57:27.874Z - info: Using extension studio
+2018-05-12T03:57:27.889Z - info: Using extension html-embedded-in-docx
+2018-05-12T03:57:28.019Z - info: Using extension scripts
+2018-05-12T03:57:28.023Z - info: Using extension assets
+2018-05-12T03:57:28.031Z - info: Using extension scheduling
+2018-05-12T03:57:28.066Z - info: Using extension xlsx
+2018-05-12T03:57:28.082Z - info: Using extension sample-template
+2018-05-12T03:57:28.085Z - info: Using extension resources
+2018-05-12T03:57:28.086Z - info: Using extension public-templates
+2018-05-12T03:57:28.092Z - info: fs store is persisting using fs
+2018-05-12T03:57:28.092Z - info: fs store is synchronizing using fs
+2018-05-12T03:57:28.094Z - info: fs store is loading data
+2018-05-12T03:57:28.128Z - info: fs store is initialized successfully
+2018-05-12T03:57:28.155Z - info: Creating default express app.
+2018-05-12T03:57:28.183Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T03:57:28.185Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T03:57:28.196Z - info: Verifying license key free
+2018-05-12T03:57:28.209Z - info: Using free license
+2018-05-12T03:57:28.213Z - info: reporter initialized
+2018-05-12T03:57:47.107Z - info: Starting rendering request 1 (user: null)
+2018-05-12T03:57:47.110Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T03:57:47.243Z - info: Rendering request 1 finished in 136 ms
+2018-05-12T03:58:14.041Z - info: Starting rendering request 2 (user: null)
+2018-05-12T03:58:14.042Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T03:58:14.065Z - info: Rendering request 2 finished in 23 ms
+2018-05-12T03:58:47.329Z - info: Starting rendering request 3 (user: null)
+2018-05-12T03:58:47.330Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T03:58:47.346Z - info: Rendering request 3 finished in 16 ms
+2018-05-12T03:59:14.297Z - info: Starting rendering request 4 (user: null)
+2018-05-12T03:59:14.298Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T03:59:14.313Z - info: Rendering request 4 finished in 16 ms
+2018-05-12T04:03:14.860Z - info: fs store is loading data
+2018-05-12T04:03:14.970Z - info: Starting rendering request 5 (user: null)
+2018-05-12T04:03:14.971Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T04:03:14.990Z - info: Rendering request 5 finished in 20 ms
+2018-05-12T04:03:34.794Z - info: fs store is loading data
+2018-05-12T04:03:34.855Z - info: Starting rendering request 6 (user: null)
+2018-05-12T04:03:34.855Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T04:03:34.869Z - info: Rendering request 6 finished in 15 ms
+2018-05-12T04:04:06.352Z - info: Starting rendering request 7 (user: null)
+2018-05-12T04:04:06.353Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:04:06.490Z - info: Rendering request 7 finished in 138 ms
+2018-05-12T04:13:53.026Z - info: fs store is loading data
+2018-05-12T04:13:53.086Z - info: Starting rendering request 8 (user: null)
+2018-05-12T04:13:53.087Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:13:53.208Z - info: Rendering request 8 finished in 122 ms
+2018-05-12T04:15:04.050Z - info: fs store is loading data
+2018-05-12T04:15:04.108Z - info: Starting rendering request 9 (user: null)
+2018-05-12T04:15:04.108Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:15:04.239Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:15:04.239Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:15:04.242Z - info: Rendering request 9 finished in 135 ms
+2018-05-12T04:15:35.470Z - info: Starting rendering request 10 (user: null)
+2018-05-12T04:15:35.471Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:15:35.586Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:15:35.586Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:15:35.589Z - info: Rendering request 10 finished in 119 ms
+2018-05-12T04:16:13.900Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T04:16:13.902Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T04:16:13.929Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T04:16:13.933Z - info: Found 33 extensions
+2018-05-12T04:16:14.172Z - info: Using extension import-export
+2018-05-12T04:16:14.249Z - info: Using extension tags
+2018-05-12T04:16:14.251Z - info: Using extension templates
+2018-05-12T04:16:14.253Z - info: Using extension jsrender
+2018-05-12T04:16:14.254Z - info: Using extension handlebars
+2018-05-12T04:16:14.255Z - info: Using extension cli
+2018-05-12T04:16:14.256Z - info: Using extension freeze
+2018-05-12T04:16:14.258Z - info: Using extension debug
+2018-05-12T04:16:14.260Z - info: Using extension express
+2018-05-12T04:16:14.326Z - info: Using extension pdf-utils
+2018-05-12T04:16:14.400Z - info: Using extension data
+2018-05-12T04:16:14.401Z - info: Using extension chrome-pdf
+2018-05-12T04:16:14.435Z - info: Using extension authorization
+2018-05-12T04:16:14.437Z - info: Using extension html-to-xlsx
+2018-05-12T04:16:14.497Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T04:16:14.498Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T04:16:14.498Z - info: Using extension child-templates
+2018-05-12T04:16:14.500Z - info: Using extension browser-client
+2018-05-12T04:16:14.501Z - info: Using extension licensing
+2018-05-12T04:16:14.512Z - info: Using extension fs-store
+2018-05-12T04:16:14.627Z - info: Using extension phantom-pdf
+2018-05-12T04:16:14.657Z - info: Using extension version-control
+2018-05-12T04:16:14.675Z - info: Using extension reports
+2018-05-12T04:16:14.676Z - info: Using extension text
+2018-05-12T04:16:14.676Z - info: Using extension base
+2018-05-12T04:16:14.677Z - info: Using extension studio
+2018-05-12T04:16:14.693Z - info: Using extension html-embedded-in-docx
+2018-05-12T04:16:14.804Z - info: Using extension scripts
+2018-05-12T04:16:14.807Z - info: Using extension assets
+2018-05-12T04:16:14.817Z - info: Using extension scheduling
+2018-05-12T04:16:14.849Z - info: Using extension xlsx
+2018-05-12T04:16:14.866Z - info: Using extension sample-template
+2018-05-12T04:16:14.869Z - info: Using extension resources
+2018-05-12T04:16:14.870Z - info: Using extension public-templates
+2018-05-12T04:16:14.875Z - info: fs store is persisting using fs
+2018-05-12T04:16:14.875Z - info: fs store is synchronizing using fs
+2018-05-12T04:16:14.881Z - info: fs store is loading data
+2018-05-12T04:16:14.953Z - info: fs store is initialized successfully
+2018-05-12T04:16:14.973Z - info: Creating default express app.
+2018-05-12T04:16:14.990Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T04:16:14.990Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T04:16:14.997Z - info: Verifying license key free
+2018-05-12T04:16:14.998Z - info: Using free license
+2018-05-12T04:16:15.002Z - info: reporter initialized
+2018-05-12T04:16:21.556Z - info: Starting rendering request 1 (user: null)
+2018-05-12T04:16:21.558Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:16:21.775Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:16:21.776Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:16:21.781Z - info: Rendering request 1 finished in 226 ms
+2018-05-12T04:16:37.484Z - info: fs store is loading data
+2018-05-12T04:16:37.604Z - info: Starting rendering request 2 (user: null)
+2018-05-12T04:16:37.605Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:16:37.745Z - info: Rendering request 2 finished in 140 ms
+2018-05-12T04:16:39.950Z - info: Starting rendering request 3 (user: null)
+2018-05-12T04:16:39.951Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:16:40.115Z - info: Rendering request 3 finished in 165 ms
+2018-05-12T04:17:21.848Z - info: fs store is loading data
+2018-05-12T04:17:21.937Z - info: Starting rendering request 4 (user: null)
+2018-05-12T04:17:21.938Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:17:22.071Z - info: Rendering request 4 finished in 134 ms
+2018-05-12T04:17:59.908Z - info: fs store is loading data
+2018-05-12T04:18:02.812Z - info: fs store is loading data
+2018-05-12T04:18:09.825Z - info: fs store is loading data
+2018-05-12T04:18:09.839Z - info: fs store is loading data
+2018-05-12T04:18:09.839Z - info: fs store is loading data
+2018-05-12T04:18:09.839Z - info: fs store is loading data
+2018-05-12T04:18:09.839Z - info: fs store is loading data
+2018-05-12T04:18:09.839Z - info: fs store is loading data
+2018-05-12T04:18:09.840Z - info: fs store is loading data
+2018-05-12T04:18:09.840Z - info: fs store is loading data
+2018-05-12T04:18:09.840Z - info: fs store is loading data
+2018-05-12T04:18:09.840Z - info: fs store is loading data
+2018-05-12T04:18:09.840Z - info: fs store is loading data
+2018-05-12T04:18:09.840Z - info: fs store is loading data
+2018-05-12T04:18:09.840Z - info: fs store is loading data
+2018-05-12T04:19:33.541Z - info: fs store is loading data
+2018-05-12T04:22:44.314Z - info: fs store is loading data
+2018-05-12T04:22:53.262Z - info: Starting rendering request 5 (user: null)
+2018-05-12T04:22:53.263Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:22:53.273Z - warn: Error when processing render request Unable to find or read file /home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff. ENOENT: no such file or directory, open '/home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff' Error: Unable to find or read file /home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff. ENOENT: no such file or directory, open '/home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff'
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-core/lib/util/createError.js:4:17)
+    at Reporter.createError (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-core/lib/reporter.js:256:12)
+    at readFile (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:110:20)
+caused by: Error: ENOENT: no such file or directory, open '/home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff'
+2018-05-12T04:22:53.274Z - warn: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:26:32.618Z - info: fs store is loading data
+2018-05-12T04:26:32.712Z - info: Starting rendering request 6 (user: null)
+2018-05-12T04:26:32.713Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:26:32.716Z - warn: Error when processing render request Unable to find or read file /home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff. ENOENT: no such file or directory, open '/home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff' Error: Unable to find or read file /home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff. ENOENT: no such file or directory, open '/home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff'
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-core/lib/util/createError.js:4:17)
+    at Reporter.createError (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-core/lib/reporter.js:256:12)
+    at readFile (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:110:20)
+caused by: Error: ENOENT: no such file or directory, open '/home/toeymirumo/QA-RTANC/report/thsarabunnew-webfont.woff'
+2018-05-12T04:26:32.716Z - warn: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:27:19.388Z - info: fs store is loading data
+2018-05-12T04:27:19.396Z - info: fs store is loading data
+2018-05-12T04:27:19.396Z - info: fs store is loading data
+2018-05-12T04:27:19.396Z - info: fs store is loading data
+2018-05-12T04:27:19.396Z - info: fs store is loading data
+2018-05-12T04:27:19.397Z - info: fs store is loading data
+2018-05-12T04:27:19.397Z - info: fs store is loading data
+2018-05-12T04:27:19.397Z - info: fs store is loading data
+2018-05-12T04:27:19.397Z - info: fs store is loading data
+2018-05-12T04:27:19.397Z - info: fs store is loading data
+2018-05-12T04:27:19.398Z - info: fs store is loading data
+2018-05-12T04:27:19.398Z - info: fs store is loading data
+2018-05-12T04:27:37.313Z - info: fs store is loading data
+2018-05-12T04:27:45.033Z - info: Starting rendering request 7 (user: null)
+2018-05-12T04:27:45.034Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:27:45.168Z - info: Rendering request 7 finished in 135 ms
+2018-05-12T04:28:28.399Z - info: fs store is loading data
+2018-05-12T04:28:28.500Z - info: Starting rendering request 8 (user: null)
+2018-05-12T04:28:28.501Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:28:28.666Z - info: Rendering request 8 finished in 166 ms
+2018-05-12T04:32:16.269Z - info: Starting rendering request 9 (user: null)
+2018-05-12T04:32:16.270Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:32:16.410Z - info: Rendering request 9 finished in 141 ms
+2018-05-12T04:34:22.265Z - info: fs store is loading data
+2018-05-12T04:34:22.371Z - info: Starting rendering request 10 (user: null)
+2018-05-12T04:34:22.372Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:34:22.516Z - info: Rendering request 10 finished in 144 ms
+2018-05-12T04:34:27.547Z - info: Starting rendering request 11 (user: null)
+2018-05-12T04:34:27.548Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:34:27.682Z - info: Rendering request 11 finished in 136 ms
+2018-05-12T04:34:44.391Z - info: fs store is loading data
+2018-05-12T04:34:44.478Z - info: Starting rendering request 12 (user: null)
+2018-05-12T04:34:44.479Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:34:44.624Z - info: Rendering request 12 finished in 146 ms
+2018-05-12T04:34:49.280Z - info: Starting rendering request 13 (user: null)
+2018-05-12T04:34:49.282Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:34:49.428Z - info: Rendering request 13 finished in 147 ms
+2018-05-12T04:35:03.921Z - info: fs store is loading data
+2018-05-12T04:35:04.046Z - info: Starting rendering request 14 (user: null)
+2018-05-12T04:35:04.047Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:35:04.178Z - info: Rendering request 14 finished in 132 ms
+2018-05-12T04:35:06.019Z - info: Starting rendering request 15 (user: null)
+2018-05-12T04:35:06.019Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:35:06.150Z - info: Rendering request 15 finished in 132 ms
+2018-05-12T04:38:58.660Z - info: Starting rendering request 16 (user: null)
+2018-05-12T04:38:58.661Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:38:58.819Z - info: Rendering request 16 finished in 159 ms
+2018-05-12T04:40:47.768Z - info: fs store is loading data
+2018-05-12T04:40:47.871Z - info: Starting rendering request 17 (user: null)
+2018-05-12T04:40:47.872Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:40:48.040Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:40:48.041Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:40:48.045Z - info: Rendering request 17 finished in 174 ms
+2018-05-12T04:40:51.209Z - info: Starting rendering request 18 (user: null)
+2018-05-12T04:40:51.209Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:40:51.379Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:40:51.379Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:40:51.382Z - info: Rendering request 18 finished in 173 ms
+2018-05-12T04:41:26.113Z - info: fs store is loading data
+2018-05-12T04:41:26.213Z - info: Starting rendering request 19 (user: null)
+2018-05-12T04:41:26.214Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:41:26.363Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:41:26.363Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:41:26.366Z - info: Rendering request 19 finished in 152 ms
+2018-05-12T04:41:28.983Z - info: Starting rendering request 20 (user: null)
+2018-05-12T04:41:28.983Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:41:29.195Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:41:29.196Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:41:29.202Z - info: Rendering request 20 finished in 220 ms
+2018-05-12T04:41:49.669Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T04:41:49.670Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T04:41:49.704Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T04:41:49.709Z - info: Found 33 extensions
+2018-05-12T04:41:49.943Z - info: Using extension import-export
+2018-05-12T04:41:50.017Z - info: Using extension tags
+2018-05-12T04:41:50.020Z - info: Using extension templates
+2018-05-12T04:41:50.021Z - info: Using extension jsrender
+2018-05-12T04:41:50.022Z - info: Using extension handlebars
+2018-05-12T04:41:50.023Z - info: Using extension cli
+2018-05-12T04:41:50.024Z - info: Using extension freeze
+2018-05-12T04:41:50.025Z - info: Using extension debug
+2018-05-12T04:41:50.027Z - info: Using extension express
+2018-05-12T04:41:50.095Z - info: Using extension pdf-utils
+2018-05-12T04:41:50.171Z - info: Using extension data
+2018-05-12T04:41:50.172Z - info: Using extension chrome-pdf
+2018-05-12T04:41:50.209Z - info: Using extension authorization
+2018-05-12T04:41:50.210Z - info: Using extension html-to-xlsx
+2018-05-12T04:41:50.266Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T04:41:50.267Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T04:41:50.267Z - info: Using extension child-templates
+2018-05-12T04:41:50.269Z - info: Using extension browser-client
+2018-05-12T04:41:50.271Z - info: Using extension licensing
+2018-05-12T04:41:50.281Z - info: Using extension fs-store
+2018-05-12T04:41:50.392Z - info: Using extension phantom-pdf
+2018-05-12T04:41:50.422Z - info: Using extension version-control
+2018-05-12T04:41:50.440Z - info: Using extension reports
+2018-05-12T04:41:50.441Z - info: Using extension text
+2018-05-12T04:41:50.442Z - info: Using extension base
+2018-05-12T04:41:50.443Z - info: Using extension studio
+2018-05-12T04:41:50.458Z - info: Using extension html-embedded-in-docx
+2018-05-12T04:41:50.566Z - info: Using extension scripts
+2018-05-12T04:41:50.569Z - info: Using extension assets
+2018-05-12T04:41:50.580Z - info: Using extension scheduling
+2018-05-12T04:41:50.612Z - info: Using extension xlsx
+2018-05-12T04:41:50.628Z - info: Using extension sample-template
+2018-05-12T04:41:50.630Z - info: Using extension resources
+2018-05-12T04:41:50.631Z - info: Using extension public-templates
+2018-05-12T04:41:50.637Z - info: fs store is persisting using fs
+2018-05-12T04:41:50.638Z - info: fs store is synchronizing using fs
+2018-05-12T04:41:50.643Z - info: fs store is loading data
+2018-05-12T04:41:50.724Z - info: fs store is initialized successfully
+2018-05-12T04:41:50.743Z - info: Creating default express app.
+2018-05-12T04:41:50.758Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T04:41:50.759Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T04:41:50.766Z - info: Verifying license key free
+2018-05-12T04:41:50.767Z - info: Using free license
+2018-05-12T04:41:50.770Z - info: reporter initialized
+2018-05-12T04:41:57.783Z - info: Starting rendering request 1 (user: null)
+2018-05-12T04:41:57.784Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:41:58.017Z - warn: Unable to load resource (#2URL:)
+2018-05-12T04:41:58.017Z - warn: Error code: 301. Description: Protocol "" is unknown
+2018-05-12T04:41:58.025Z - info: Rendering request 1 finished in 242 ms
+2018-05-12T04:42:34.974Z - info: fs store is loading data
+2018-05-12T04:42:35.102Z - info: Starting rendering request 2 (user: null)
+2018-05-12T04:42:35.104Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:42:35.249Z - info: Rendering request 2 finished in 147 ms
+2018-05-12T04:44:15.028Z - info: fs store is loading data
+2018-05-12T04:44:15.151Z - info: Starting rendering request 3 (user: null)
+2018-05-12T04:44:15.153Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:44:15.290Z - info: Rendering request 3 finished in 139 ms
+2018-05-12T04:48:29.824Z - info: fs store is loading data
+2018-05-12T04:48:29.910Z - info: Starting rendering request 4 (user: null)
+2018-05-12T04:48:29.911Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:48:29.923Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:48:29.925Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:49:19.402Z - info: fs store is loading data
+2018-05-12T04:49:19.482Z - info: Starting rendering request 5 (user: null)
+2018-05-12T04:49:19.483Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:49:19.488Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:49:19.488Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:49:41.763Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T04:49:41.764Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T04:49:41.790Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T04:49:41.796Z - info: Found 33 extensions
+2018-05-12T04:49:42.078Z - info: Using extension import-export
+2018-05-12T04:49:42.149Z - info: Using extension tags
+2018-05-12T04:49:42.151Z - info: Using extension templates
+2018-05-12T04:49:42.153Z - info: Using extension jsrender
+2018-05-12T04:49:42.154Z - info: Using extension handlebars
+2018-05-12T04:49:42.156Z - info: Using extension cli
+2018-05-12T04:49:42.156Z - info: Using extension freeze
+2018-05-12T04:49:42.158Z - info: Using extension debug
+2018-05-12T04:49:42.159Z - info: Using extension express
+2018-05-12T04:49:42.225Z - info: Using extension pdf-utils
+2018-05-12T04:49:42.300Z - info: Using extension data
+2018-05-12T04:49:42.301Z - info: Using extension chrome-pdf
+2018-05-12T04:49:42.336Z - info: Using extension authorization
+2018-05-12T04:49:42.338Z - info: Using extension html-to-xlsx
+2018-05-12T04:49:42.388Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T04:49:42.389Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T04:49:42.389Z - info: Using extension child-templates
+2018-05-12T04:49:42.391Z - info: Using extension browser-client
+2018-05-12T04:49:42.393Z - info: Using extension licensing
+2018-05-12T04:49:42.403Z - info: Using extension fs-store
+2018-05-12T04:49:42.517Z - info: Using extension phantom-pdf
+2018-05-12T04:49:42.546Z - info: Using extension version-control
+2018-05-12T04:49:42.564Z - info: Using extension reports
+2018-05-12T04:49:42.565Z - info: Using extension text
+2018-05-12T04:49:42.566Z - info: Using extension base
+2018-05-12T04:49:42.567Z - info: Using extension studio
+2018-05-12T04:49:42.586Z - info: Using extension html-embedded-in-docx
+2018-05-12T04:49:42.690Z - info: Using extension scripts
+2018-05-12T04:49:42.693Z - info: Using extension assets
+2018-05-12T04:49:42.702Z - info: Using extension scheduling
+2018-05-12T04:49:42.731Z - info: Using extension xlsx
+2018-05-12T04:49:42.748Z - info: Using extension sample-template
+2018-05-12T04:49:42.750Z - info: Using extension resources
+2018-05-12T04:49:42.751Z - info: Using extension public-templates
+2018-05-12T04:49:42.755Z - info: fs store is persisting using fs
+2018-05-12T04:49:42.755Z - info: fs store is synchronizing using fs
+2018-05-12T04:49:42.759Z - info: fs store is loading data
+2018-05-12T04:49:42.837Z - info: fs store is initialized successfully
+2018-05-12T04:49:42.855Z - info: Creating default express app.
+2018-05-12T04:49:42.869Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T04:49:42.870Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T04:49:42.878Z - info: Verifying license key free
+2018-05-12T04:49:42.880Z - info: Using free license
+2018-05-12T04:49:42.882Z - info: reporter initialized
+2018-05-12T04:49:51.267Z - info: Starting rendering request 1 (user: null)
+2018-05-12T04:49:51.269Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:49:51.279Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:49:51.281Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:49:52.395Z - info: Starting rendering request 2 (user: null)
+2018-05-12T04:49:52.396Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:49:52.400Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:49:52.400Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:50:00.445Z - info: Starting rendering request 3 (user: null)
+2018-05-12T04:50:00.446Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:50:00.712Z - info: Rendering request 3 finished in 267 ms
+2018-05-12T04:51:30.789Z - info: fs store is loading data
+2018-05-12T04:51:30.915Z - info: Starting rendering request 4 (user: null)
+2018-05-12T04:51:30.916Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:51:31.105Z - info: Rendering request 4 finished in 190 ms
+2018-05-12T04:52:57.130Z - info: Starting rendering request 5 (user: null)
+2018-05-12T04:52:57.131Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:52:57.332Z - info: Rendering request 5 finished in 202 ms
+2018-05-12T04:53:17.303Z - info: fs store is loading data
+2018-05-12T04:53:17.406Z - info: Starting rendering request 6 (user: null)
+2018-05-12T04:53:17.407Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:53:17.459Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:53:17.460Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:12.472Z - info: Starting rendering request 7 (user: null)
+2018-05-12T04:54:12.473Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:54:12.479Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:12.479Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:13.253Z - info: Starting rendering request 8 (user: null)
+2018-05-12T04:54:13.254Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:54:13.259Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:13.259Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:13.847Z - info: Starting rendering request 9 (user: null)
+2018-05-12T04:54:13.848Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:54:13.852Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:13.852Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:22.300Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T04:54:22.301Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T04:54:22.332Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T04:54:22.336Z - info: Found 33 extensions
+2018-05-12T04:54:22.566Z - info: Using extension import-export
+2018-05-12T04:54:22.668Z - info: Using extension tags
+2018-05-12T04:54:22.671Z - info: Using extension templates
+2018-05-12T04:54:22.673Z - info: Using extension jsrender
+2018-05-12T04:54:22.674Z - info: Using extension handlebars
+2018-05-12T04:54:22.676Z - info: Using extension cli
+2018-05-12T04:54:22.676Z - info: Using extension freeze
+2018-05-12T04:54:22.678Z - info: Using extension debug
+2018-05-12T04:54:22.680Z - info: Using extension express
+2018-05-12T04:54:22.748Z - info: Using extension pdf-utils
+2018-05-12T04:54:22.825Z - info: Using extension data
+2018-05-12T04:54:22.826Z - info: Using extension chrome-pdf
+2018-05-12T04:54:22.862Z - info: Using extension authorization
+2018-05-12T04:54:22.864Z - info: Using extension html-to-xlsx
+2018-05-12T04:54:22.922Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T04:54:22.923Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T04:54:22.923Z - info: Using extension child-templates
+2018-05-12T04:54:22.925Z - info: Using extension browser-client
+2018-05-12T04:54:22.926Z - info: Using extension licensing
+2018-05-12T04:54:22.937Z - info: Using extension fs-store
+2018-05-12T04:54:23.052Z - info: Using extension phantom-pdf
+2018-05-12T04:54:23.080Z - info: Using extension version-control
+2018-05-12T04:54:23.098Z - info: Using extension reports
+2018-05-12T04:54:23.099Z - info: Using extension text
+2018-05-12T04:54:23.100Z - info: Using extension base
+2018-05-12T04:54:23.102Z - info: Using extension studio
+2018-05-12T04:54:23.116Z - info: Using extension html-embedded-in-docx
+2018-05-12T04:54:23.226Z - info: Using extension scripts
+2018-05-12T04:54:23.229Z - info: Using extension assets
+2018-05-12T04:54:23.238Z - info: Using extension scheduling
+2018-05-12T04:54:23.268Z - info: Using extension xlsx
+2018-05-12T04:54:23.284Z - info: Using extension sample-template
+2018-05-12T04:54:23.285Z - info: Using extension resources
+2018-05-12T04:54:23.286Z - info: Using extension public-templates
+2018-05-12T04:54:23.292Z - info: fs store is persisting using fs
+2018-05-12T04:54:23.292Z - info: fs store is synchronizing using fs
+2018-05-12T04:54:23.296Z - info: fs store is loading data
+2018-05-12T04:54:23.376Z - info: fs store is initialized successfully
+2018-05-12T04:54:23.395Z - info: Creating default express app.
+2018-05-12T04:54:23.410Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T04:54:23.410Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T04:54:23.418Z - info: Verifying license key free
+2018-05-12T04:54:23.419Z - info: Using free license
+2018-05-12T04:54:23.422Z - info: reporter initialized
+2018-05-12T04:54:30.617Z - info: Starting rendering request 1 (user: null)
+2018-05-12T04:54:30.619Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:54:30.631Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:30.632Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:47.510Z - info: fs store is loading data
+2018-05-12T04:54:47.619Z - info: Starting rendering request 2 (user: null)
+2018-05-12T04:54:47.620Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:54:47.625Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:47.626Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:54:51.971Z - info: Starting rendering request 3 (user: null)
+2018-05-12T04:54:51.973Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:54:51.978Z - error: Error when processing render request Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot Error: Asset encoded as dataURI needs to have file extension jpeg|jpg|gif|png|svg|woff|tff|otf|woff2|eot
+    at convert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:55:15)
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:63:26
+    at /home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:718:13
+    at async.forEachOf.async.eachOf (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:233:13)
+    at _parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:717:9)
+    at Object.async.parallel (/home/toeymirumo/QA-RTANC/report/node_modules/async/lib/async.js:731:9)
+    at module.exports (/home/toeymirumo/QA-RTANC/report/node_modules/async-replace/async-replace.js:71:11)
+    at tryCatcher (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promisify.js:184:12), <anonymous>:13:39)
+    at evaluateAssets (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:67:24)
+    at Object.reporter.beforeRenderListeners.insert (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-assets/lib/assets.js:272:34)
+2018-05-12T04:54:51.978Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T04:55:05.827Z - info: fs store is loading data
+2018-05-12T04:55:05.929Z - info: Starting rendering request 4 (user: null)
+2018-05-12T04:55:05.930Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:55:06.216Z - info: Rendering request 4 finished in 286 ms
+2018-05-12T04:55:09.431Z - info: Starting rendering request 5 (user: null)
+2018-05-12T04:55:09.432Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:55:09.629Z - info: Rendering request 5 finished in 198 ms
+2018-05-12T04:55:31.816Z - info: Starting rendering request 6 (user: null)
+2018-05-12T04:55:31.817Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T04:55:32.038Z - info: Rendering request 6 finished in 222 ms
+2018-05-12T05:04:30.398Z - info: fs store is loading data
+2018-05-12T05:06:13.041Z - info: fs store is loading data
+2018-05-12T05:06:25.370Z - info: Starting rendering request 7 (user: null)
+2018-05-12T05:06:25.371Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:06:25.792Z - info: Rendering request 7 finished in 422 ms
+2018-05-12T05:07:01.509Z - info: fs store is loading data
+2018-05-12T05:07:01.647Z - info: Starting rendering request 8 (user: null)
+2018-05-12T05:07:01.648Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:07:02.157Z - info: Rendering request 8 finished in 509 ms
+2018-05-12T05:07:04.278Z - info: Starting rendering request 9 (user: null)
+2018-05-12T05:07:04.278Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:07:04.726Z - info: Rendering request 9 finished in 449 ms
+2018-05-12T05:07:16.644Z - info: Starting rendering request 10 (user: null)
+2018-05-12T05:07:16.644Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:07:17.101Z - info: Rendering request 10 finished in 458 ms
+2018-05-12T05:07:54.429Z - info: fs store is loading data
+2018-05-12T05:07:54.560Z - info: Starting rendering request 11 (user: null)
+2018-05-12T05:07:54.561Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:07:54.989Z - info: Rendering request 11 finished in 429 ms
+2018-05-12T05:07:57.463Z - info: Starting rendering request 12 (user: null)
+2018-05-12T05:07:57.464Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:07:57.867Z - info: Rendering request 12 finished in 405 ms
+2018-05-12T05:10:19.762Z - info: fs store is loading data
+2018-05-12T05:10:19.891Z - info: Starting rendering request 13 (user: null)
+2018-05-12T05:10:19.892Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:10:20.339Z - info: Rendering request 13 finished in 448 ms
+2018-05-12T05:10:23.257Z - info: Starting rendering request 14 (user: null)
+2018-05-12T05:10:23.258Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:10:23.644Z - info: Rendering request 14 finished in 387 ms
+2018-05-12T05:11:05.423Z - info: fs store is loading data
+2018-05-12T05:11:05.524Z - info: Starting rendering request 15 (user: null)
+2018-05-12T05:11:05.527Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:11:05.955Z - info: Rendering request 15 finished in 430 ms
+2018-05-12T05:11:08.612Z - info: Starting rendering request 16 (user: null)
+2018-05-12T05:11:08.613Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:11:08.994Z - info: Rendering request 16 finished in 382 ms
+2018-05-12T05:11:37.189Z - info: fs store is loading data
+2018-05-12T05:11:37.277Z - info: Starting rendering request 17 (user: null)
+2018-05-12T05:11:37.279Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:11:37.695Z - info: Rendering request 17 finished in 418 ms
+2018-05-12T05:11:40.487Z - info: Starting rendering request 18 (user: null)
+2018-05-12T05:11:40.488Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:11:40.839Z - info: Rendering request 18 finished in 352 ms
+2018-05-12T05:12:07.641Z - info: fs store is loading data
+2018-05-12T05:12:07.759Z - info: Starting rendering request 19 (user: null)
+2018-05-12T05:12:07.761Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:12:08.177Z - info: Rendering request 19 finished in 418 ms
+2018-05-12T05:13:07.749Z - info: fs store is loading data
+2018-05-12T05:13:07.822Z - info: Starting rendering request 20 (user: null)
+2018-05-12T05:13:07.823Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:13:08.231Z - info: Rendering request 20 finished in 409 ms
+2018-05-12T05:13:13.456Z - info: Starting rendering request 21 (user: null)
+2018-05-12T05:13:13.457Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:13:13.833Z - info: Rendering request 21 finished in 377 ms
+2018-05-12T05:16:41.367Z - info: Starting rendering request 22 (user: null)
+2018-05-12T05:16:41.368Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:16:41.817Z - info: Rendering request 22 finished in 450 ms
+2018-05-12T05:16:59.471Z - info: fs store is loading data
+2018-05-12T05:16:59.558Z - info: Starting rendering request 23 (user: null)
+2018-05-12T05:16:59.559Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:17:00.000Z - info: Rendering request 23 finished in 441 ms
+2018-05-12T05:17:06.277Z - info: Starting rendering request 24 (user: null)
+2018-05-12T05:17:06.278Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:17:06.666Z - info: Rendering request 24 finished in 389 ms
+2018-05-12T05:17:32.136Z - info: Starting rendering request 25 (user: null)
+2018-05-12T05:17:32.137Z - info: Rendering template { name: sar, recipe: html, engine: handlebars, preview: true }
+2018-05-12T05:17:32.317Z - info: Rendering request 25 finished in 182 ms
+2018-05-12T05:17:50.893Z - info: fs store is loading data
+2018-05-12T05:17:51.005Z - info: Starting rendering request 26 (user: null)
+2018-05-12T05:17:51.006Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:17:51.510Z - info: Rendering request 26 finished in 505 ms
+2018-05-12T05:17:54.036Z - info: Starting rendering request 27 (user: null)
+2018-05-12T05:17:54.036Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:17:54.486Z - info: Rendering request 27 finished in 451 ms
+2018-05-12T05:18:00.423Z - info: Starting rendering request 28 (user: null)
+2018-05-12T05:18:00.424Z - info: Rendering template { name: sar, recipe: html, engine: handlebars, preview: true }
+2018-05-12T05:18:00.578Z - info: Rendering request 28 finished in 155 ms
+2018-05-12T05:18:27.016Z - info: Starting rendering request 29 (user: null)
+2018-05-12T05:18:27.017Z - info: Rendering template { name: sar, recipe: chrome-pdf, engine: handlebars, preview: true }
+2018-05-12T05:18:27.460Z - error: Error when processing render request Failed to launch chrome!
+[0512/121827.247611:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05e6993 logging::LogMessage::~LogMessage()
+#2 0x563ccf650601 content::ZygoteHostImpl::Init()
+#3 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#7 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#8 0x563cd031b155 service_manager::Main()
+#9 0x563cd0310104 content::ContentMain()
+#10 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x563cd43d2022 headless::HeadlessBrowserMain()
+#12 0x563cd0318189 headless::HeadlessShellMain()
+#13 0x563cce98a1ac ChromeMain
+#14 0x7fb5faed606b __libc_start_main
+#15 0x563cce98a02a _start
+
+Received signal 6
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05ce6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fb600eaea80 <unknown>
+#3 0x7fb5faee986b __GI_raise
+#4 0x7fb5faed440e __GI_abort
+#5 0x563cd05cd175 base::debug::BreakDebugger()
+#6 0x563cd05e6ddc logging::LogMessage::~LogMessage()
+#7 0x563ccf650601 content::ZygoteHostImpl::Init()
+#8 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#12 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#13 0x563cd031b155 service_manager::Main()
+#14 0x563cd0310104 content::ContentMain()
+#15 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x563cd43d2022 headless::HeadlessBrowserMain()
+#17 0x563cd0318189 headless::HeadlessShellMain()
+#18 0x563cce98a1ac ChromeMain
+#19 0x7fb5faed606b __libc_start_main
+#20 0x563cce98a02a _start
+  r8: 0000000000000000  r9: 00007ffc13d93e80 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc13d94588 r13: 0000000000000161 r14: 00007ffc13d94590 r15: 00007ffc13d94129
+  di: 0000000000000002  si: 00007ffc13d93e80  bp: 00007ffc13d940d0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fb5faee986b  sp: 00007ffc13d93e80
+  ip: 00007fb5faee986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/121827.247611:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05e6993 logging::LogMessage::~LogMessage()
+#2 0x563ccf650601 content::ZygoteHostImpl::Init()
+#3 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#7 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#8 0x563cd031b155 service_manager::Main()
+#9 0x563cd0310104 content::ContentMain()
+#10 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x563cd43d2022 headless::HeadlessBrowserMain()
+#12 0x563cd0318189 headless::HeadlessShellMain()
+#13 0x563cce98a1ac ChromeMain
+#14 0x7fb5faed606b __libc_start_main
+#15 0x563cce98a02a _start
+
+Received signal 6
+#0 0x563cd05ceb8c base::debug::StackTrace::StackTrace()
+#1 0x563cd05ce6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fb600eaea80 <unknown>
+#3 0x7fb5faee986b __GI_raise
+#4 0x7fb5faed440e __GI_abort
+#5 0x563cd05cd175 base::debug::BreakDebugger()
+#6 0x563cd05e6ddc logging::LogMessage::~LogMessage()
+#7 0x563ccf650601 content::ZygoteHostImpl::Init()
+#8 0x563ccf2c63d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x563ccf2cc11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x563cd43d2eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x563cd0310be0 content::RunNamedProcessTypeMain()
+#12 0x563cd0311518 content::ContentMainRunnerImpl::Run()
+#13 0x563cd031b155 service_manager::Main()
+#14 0x563cd0310104 content::ContentMain()
+#15 0x563cd43d1f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x563cd43d2022 headless::HeadlessBrowserMain()
+#17 0x563cd0318189 headless::HeadlessShellMain()
+#18 0x563cce98a1ac ChromeMain
+#19 0x7fb5faed606b __libc_start_main
+#20 0x563cce98a02a _start
+  r8: 0000000000000000  r9: 00007ffc13d93e80 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc13d94588 r13: 0000000000000161 r14: 00007ffc13d94590 r15: 00007ffc13d94129
+  di: 0000000000000002  si: 00007ffc13d93e80  bp: 00007ffc13d940d0  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fb5faee986b  sp: 00007ffc13d93e80
+  ip: 00007fb5faee986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T05:18:27.461Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T05:18:35.260Z - info: Starting rendering request 30 (user: null)
+2018-05-12T05:18:35.262Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T05:18:36.100Z - info: Rendering request 30 finished in 839 ms
+2018-05-12T05:19:18.112Z - info: Starting rendering request 31 (user: null)
+2018-05-12T05:19:18.113Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:19:18.560Z - info: Rendering request 31 finished in 448 ms
+2018-05-12T05:19:50.863Z - info: Starting rendering request 32 (user: null)
+2018-05-12T05:19:50.864Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:19:51.333Z - info: Rendering request 32 finished in 470 ms
+2018-05-12T05:20:16.094Z - info: Starting rendering request 33 (user: null)
+2018-05-12T05:20:16.095Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:20:16.545Z - info: Rendering request 33 finished in 451 ms
+2018-05-12T05:20:22.861Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:20:22.863Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:20:22.889Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:20:22.899Z - info: Found 33 extensions
+2018-05-12T05:20:23.164Z - info: Using extension import-export
+2018-05-12T05:20:23.241Z - info: Using extension tags
+2018-05-12T05:20:23.244Z - info: Using extension templates
+2018-05-12T05:20:23.247Z - info: Using extension jsrender
+2018-05-12T05:20:23.248Z - info: Using extension handlebars
+2018-05-12T05:20:23.249Z - info: Using extension cli
+2018-05-12T05:20:23.250Z - info: Using extension freeze
+2018-05-12T05:20:23.252Z - info: Using extension debug
+2018-05-12T05:20:23.253Z - info: Using extension express
+2018-05-12T05:20:23.323Z - info: Using extension pdf-utils
+2018-05-12T05:20:23.398Z - info: Using extension data
+2018-05-12T05:20:23.399Z - info: Using extension chrome-pdf
+2018-05-12T05:20:23.433Z - info: Using extension authorization
+2018-05-12T05:20:23.434Z - info: Using extension html-to-xlsx
+2018-05-12T05:20:23.484Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:20:23.485Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:20:23.485Z - info: Using extension child-templates
+2018-05-12T05:20:23.487Z - info: Using extension browser-client
+2018-05-12T05:20:23.490Z - info: Using extension licensing
+2018-05-12T05:20:23.501Z - info: Using extension fs-store
+2018-05-12T05:20:23.619Z - info: Using extension phantom-pdf
+2018-05-12T05:20:23.647Z - info: Using extension version-control
+2018-05-12T05:20:23.664Z - info: Using extension reports
+2018-05-12T05:20:23.665Z - info: Using extension text
+2018-05-12T05:20:23.666Z - info: Using extension base
+2018-05-12T05:20:23.667Z - info: Using extension studio
+2018-05-12T05:20:23.681Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:20:23.790Z - info: Using extension scripts
+2018-05-12T05:20:23.793Z - info: Using extension assets
+2018-05-12T05:20:23.804Z - info: Using extension scheduling
+2018-05-12T05:20:23.835Z - info: Using extension xlsx
+2018-05-12T05:20:23.849Z - info: Using extension sample-template
+2018-05-12T05:20:23.851Z - info: Using extension resources
+2018-05-12T05:20:23.852Z - info: Using extension public-templates
+2018-05-12T05:20:23.857Z - info: fs store is persisting using fs
+2018-05-12T05:20:23.857Z - info: fs store is synchronizing using fs
+2018-05-12T05:20:23.862Z - info: fs store is loading data
+2018-05-12T05:20:23.938Z - info: fs store is initialized successfully
+2018-05-12T05:20:23.956Z - info: Creating default express app.
+2018-05-12T05:20:23.971Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T05:20:23.972Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T05:20:23.978Z - info: Verifying license key free
+2018-05-12T05:20:23.980Z - info: Using free license
+2018-05-12T05:20:23.982Z - info: reporter initialized
+2018-05-12T05:20:32.561Z - info: Starting rendering request 1 (user: null)
+2018-05-12T05:20:32.564Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:20:33.006Z - info: Rendering request 1 finished in 445 ms
+2018-05-12T05:21:04.650Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:21:04.651Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:21:04.678Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:21:04.683Z - info: Found 33 extensions
+2018-05-12T05:21:04.916Z - info: Using extension import-export
+2018-05-12T05:21:04.988Z - info: Using extension tags
+2018-05-12T05:21:04.991Z - info: Using extension templates
+2018-05-12T05:21:04.993Z - info: Using extension jsrender
+2018-05-12T05:21:04.994Z - info: Using extension handlebars
+2018-05-12T05:21:04.995Z - info: Using extension cli
+2018-05-12T05:21:04.996Z - info: Using extension freeze
+2018-05-12T05:21:04.998Z - info: Using extension debug
+2018-05-12T05:21:04.999Z - info: Using extension express
+2018-05-12T05:21:05.067Z - info: Using extension pdf-utils
+2018-05-12T05:21:05.139Z - info: Using extension data
+2018-05-12T05:21:05.141Z - info: Using extension chrome-pdf
+2018-05-12T05:21:05.175Z - info: Using extension authorization
+2018-05-12T05:21:05.177Z - info: Using extension html-to-xlsx
+2018-05-12T05:21:05.233Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:21:05.234Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:21:05.234Z - info: Using extension child-templates
+2018-05-12T05:21:05.236Z - info: Using extension browser-client
+2018-05-12T05:21:05.237Z - info: Using extension licensing
+2018-05-12T05:21:05.248Z - info: Using extension fs-store
+2018-05-12T05:21:05.362Z - info: Using extension phantom-pdf
+2018-05-12T05:21:05.390Z - info: Using extension version-control
+2018-05-12T05:21:05.407Z - info: Using extension reports
+2018-05-12T05:21:05.408Z - info: Using extension text
+2018-05-12T05:21:05.408Z - info: Using extension base
+2018-05-12T05:21:05.410Z - info: Using extension studio
+2018-05-12T05:21:05.426Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:21:05.532Z - info: Using extension scripts
+2018-05-12T05:21:05.535Z - info: Using extension assets
+2018-05-12T05:21:05.544Z - info: Using extension scheduling
+2018-05-12T05:21:05.577Z - info: Using extension xlsx
+2018-05-12T05:21:05.593Z - info: Using extension sample-template
+2018-05-12T05:21:05.595Z - info: Using extension resources
+2018-05-12T05:21:05.596Z - info: Using extension public-templates
+2018-05-12T05:21:05.600Z - info: fs store is persisting using fs
+2018-05-12T05:21:05.601Z - info: fs store is synchronizing using fs
+2018-05-12T05:21:05.606Z - info: fs store is loading data
+2018-05-12T05:21:05.691Z - info: fs store is initialized successfully
+2018-05-12T05:21:05.708Z - info: Creating default express app.
+2018-05-12T05:21:05.724Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:21:05.725Z - error: Error occured during reporter init Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:24:25.748Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:24:25.749Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:24:25.774Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:24:25.778Z - info: Found 33 extensions
+2018-05-12T05:24:26.030Z - info: Using extension import-export
+2018-05-12T05:24:26.100Z - info: Using extension tags
+2018-05-12T05:24:26.103Z - info: Using extension templates
+2018-05-12T05:24:26.105Z - info: Using extension jsrender
+2018-05-12T05:24:26.105Z - info: Using extension handlebars
+2018-05-12T05:24:26.107Z - info: Using extension cli
+2018-05-12T05:24:26.107Z - info: Using extension freeze
+2018-05-12T05:24:26.109Z - info: Using extension debug
+2018-05-12T05:24:26.111Z - info: Using extension express
+2018-05-12T05:24:26.176Z - info: Using extension pdf-utils
+2018-05-12T05:24:26.250Z - info: Using extension data
+2018-05-12T05:24:26.251Z - info: Using extension chrome-pdf
+2018-05-12T05:24:26.284Z - info: Using extension authorization
+2018-05-12T05:24:26.285Z - info: Using extension html-to-xlsx
+2018-05-12T05:24:26.339Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:24:26.339Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:24:26.339Z - info: Using extension child-templates
+2018-05-12T05:24:26.341Z - info: Using extension browser-client
+2018-05-12T05:24:26.343Z - info: Using extension licensing
+2018-05-12T05:24:26.353Z - info: Using extension fs-store
+2018-05-12T05:24:26.465Z - info: Using extension phantom-pdf
+2018-05-12T05:24:26.493Z - info: Using extension version-control
+2018-05-12T05:24:26.509Z - info: Using extension reports
+2018-05-12T05:24:26.510Z - info: Using extension text
+2018-05-12T05:24:26.511Z - info: Using extension base
+2018-05-12T05:24:26.512Z - info: Using extension studio
+2018-05-12T05:24:26.528Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:24:26.633Z - info: Using extension scripts
+2018-05-12T05:24:26.636Z - info: Using extension assets
+2018-05-12T05:24:26.646Z - info: Using extension scheduling
+2018-05-12T05:24:26.676Z - info: Using extension xlsx
+2018-05-12T05:24:26.692Z - info: Using extension sample-template
+2018-05-12T05:24:26.693Z - info: Using extension resources
+2018-05-12T05:24:26.694Z - info: Using extension public-templates
+2018-05-12T05:24:26.700Z - info: fs store is persisting using fs
+2018-05-12T05:24:26.700Z - info: fs store is synchronizing using fs
+2018-05-12T05:24:26.705Z - info: fs store is loading data
+2018-05-12T05:24:26.782Z - info: fs store is initialized successfully
+2018-05-12T05:24:26.800Z - info: Creating default express app.
+2018-05-12T05:24:26.815Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:24:26.817Z - error: Error occured during reporter init Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T05:31:58.682Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:31:58.684Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:31:58.692Z - info: Extensions location cache not found, crawling directories
+2018-05-12T05:31:59.084Z - info: Found 33 extensions
+2018-05-12T05:31:59.473Z - info: Using extension import-export
+2018-05-12T05:32:01.476Z - info: Using extension tags
+2018-05-12T05:32:01.549Z - info: Using extension templates
+2018-05-12T05:32:01.601Z - info: Using extension jsrender
+2018-05-12T05:32:01.610Z - info: Using extension handlebars
+2018-05-12T05:32:01.625Z - info: Using extension cli
+2018-05-12T05:32:01.637Z - info: Using extension freeze
+2018-05-12T05:32:01.639Z - info: Using extension debug
+2018-05-12T05:32:01.640Z - info: Using extension express
+2018-05-12T05:32:03.294Z - info: Using extension pdf-utils
+2018-05-12T05:32:03.736Z - info: Using extension data
+2018-05-12T05:32:03.782Z - info: Using extension chrome-pdf
+2018-05-12T05:32:04.696Z - info: Using extension authorization
+2018-05-12T05:32:04.729Z - info: Using extension html-to-xlsx
+2018-05-12T05:32:05.550Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:32:05.550Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:32:05.551Z - info: Using extension child-templates
+2018-05-12T05:32:05.593Z - info: Using extension browser-client
+2018-05-12T05:32:05.615Z - info: Using extension licensing
+2018-05-12T05:32:05.711Z - info: Using extension fs-store
+2018-05-12T05:32:08.680Z - info: Using extension phantom-pdf
+2018-05-12T05:32:08.807Z - info: Using extension version-control
+2018-05-12T05:32:09.053Z - info: Using extension reports
+2018-05-12T05:32:09.066Z - info: Using extension text
+2018-05-12T05:32:09.096Z - info: Using extension base
+2018-05-12T05:32:09.104Z - info: Using extension studio
+2018-05-12T05:32:09.397Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:32:10.570Z - info: Using extension scripts
+2018-05-12T05:32:10.591Z - info: Using extension assets
+2018-05-12T05:32:10.700Z - info: Using extension scheduling
+2018-05-12T05:32:10.991Z - info: Using extension xlsx
+2018-05-12T05:32:11.330Z - info: Using extension sample-template
+2018-05-12T05:32:11.344Z - info: Using extension resources
+2018-05-12T05:32:11.357Z - info: Using extension public-templates
+2018-05-12T05:32:11.362Z - info: fs store is persisting using fs
+2018-05-12T05:32:11.363Z - info: fs store is synchronizing using fs
+2018-05-12T05:32:11.364Z - info: fs store is loading data
+2018-05-12T05:32:11.560Z - info: fs store is initialized successfully
+2018-05-12T05:32:11.579Z - info: Creating default express app.
+2018-05-12T05:32:11.776Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T05:32:11.778Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T05:32:11.825Z - info: Verifying license key free
+2018-05-12T05:32:11.828Z - info: Using free license
+2018-05-12T05:32:11.835Z - info: reporter initialized
+2018-05-12T05:32:38.190Z - info: Starting rendering request 1 (user: null)
+2018-05-12T05:32:38.192Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:32:40.689Z - info: Rendering request 1 finished in 2498 ms
+2018-05-12T05:33:50.235Z - info: Starting rendering request 2 (user: null)
+2018-05-12T05:33:50.236Z - info: Rendering template { name: sar, recipe: html, engine: handlebars, preview: true }
+2018-05-12T05:33:50.421Z - info: Rendering request 2 finished in 185 ms
+2018-05-12T05:34:18.268Z - info: Starting rendering request 3 (user: null)
+2018-05-12T05:34:18.269Z - info: Rendering template { name: sar, recipe: html-with-browser-client, engine: handlebars, preview: true }
+2018-05-12T05:34:18.452Z - info: Rendering request 3 finished in 183 ms
+2018-05-12T05:34:29.160Z - info: Starting rendering request 4 (user: null)
+2018-05-12T05:34:29.162Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:34:29.605Z - info: Rendering request 4 finished in 445 ms
+2018-05-12T05:38:18.419Z - info: fs store is loading data
+2018-05-12T05:38:18.508Z - info: Starting rendering request 5 (user: null)
+2018-05-12T05:38:18.508Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:38:18.654Z - info: Rendering request 5 finished in 147 ms
+2018-05-12T05:38:26.680Z - info: Starting rendering request 6 (user: null)
+2018-05-12T05:38:26.681Z - info: Rendering template { name: sar, recipe: chrome-pdf, engine: handlebars, preview: true }
+2018-05-12T05:38:28.525Z - error: Error when processing render request Failed to launch chrome!
+[0512/123828.007172:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x565235585993 logging::LogMessage::~LogMessage()
+#2 0x5652345ef601 content::ZygoteHostImpl::Init()
+#3 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#7 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#8 0x5652352ba155 service_manager::Main()
+#9 0x5652352af104 content::ContentMain()
+#10 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x565239371022 headless::HeadlessBrowserMain()
+#12 0x5652352b7189 headless::HeadlessShellMain()
+#13 0x5652339291ac ChromeMain
+#14 0x7fd2f62f606b __libc_start_main
+#15 0x56523392902a _start
+
+Received signal 6
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x56523556d6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fd2fc2cea80 <unknown>
+#3 0x7fd2f630986b __GI_raise
+#4 0x7fd2f62f440e __GI_abort
+#5 0x56523556c175 base::debug::BreakDebugger()
+#6 0x565235585ddc logging::LogMessage::~LogMessage()
+#7 0x5652345ef601 content::ZygoteHostImpl::Init()
+#8 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#12 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#13 0x5652352ba155 service_manager::Main()
+#14 0x5652352af104 content::ContentMain()
+#15 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x565239371022 headless::HeadlessBrowserMain()
+#17 0x5652352b7189 headless::HeadlessShellMain()
+#18 0x5652339291ac ChromeMain
+#19 0x7fd2f62f606b __libc_start_main
+#20 0x56523392902a _start
+  r8: 0000000000000000  r9: 00007ffef52ac5e0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffef52acce8 r13: 0000000000000161 r14: 00007ffef52accf0 r15: 00007ffef52ac889
+  di: 0000000000000002  si: 00007ffef52ac5e0  bp: 00007ffef52ac830  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fd2f630986b  sp: 00007ffef52ac5e0
+  ip: 00007fd2f630986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/123828.007172:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x565235585993 logging::LogMessage::~LogMessage()
+#2 0x5652345ef601 content::ZygoteHostImpl::Init()
+#3 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#7 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#8 0x5652352ba155 service_manager::Main()
+#9 0x5652352af104 content::ContentMain()
+#10 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x565239371022 headless::HeadlessBrowserMain()
+#12 0x5652352b7189 headless::HeadlessShellMain()
+#13 0x5652339291ac ChromeMain
+#14 0x7fd2f62f606b __libc_start_main
+#15 0x56523392902a _start
+
+Received signal 6
+#0 0x56523556db8c base::debug::StackTrace::StackTrace()
+#1 0x56523556d6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fd2fc2cea80 <unknown>
+#3 0x7fd2f630986b __GI_raise
+#4 0x7fd2f62f440e __GI_abort
+#5 0x56523556c175 base::debug::BreakDebugger()
+#6 0x565235585ddc logging::LogMessage::~LogMessage()
+#7 0x5652345ef601 content::ZygoteHostImpl::Init()
+#8 0x5652342653d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x56523426b11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x565239371eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x5652352afbe0 content::RunNamedProcessTypeMain()
+#12 0x5652352b0518 content::ContentMainRunnerImpl::Run()
+#13 0x5652352ba155 service_manager::Main()
+#14 0x5652352af104 content::ContentMain()
+#15 0x565239370f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x565239371022 headless::HeadlessBrowserMain()
+#17 0x5652352b7189 headless::HeadlessShellMain()
+#18 0x5652339291ac ChromeMain
+#19 0x7fd2f62f606b __libc_start_main
+#20 0x56523392902a _start
+  r8: 0000000000000000  r9: 00007ffef52ac5e0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffef52acce8 r13: 0000000000000161 r14: 00007ffef52accf0 r15: 00007ffef52ac889
+  di: 0000000000000002  si: 00007ffef52ac5e0  bp: 00007ffef52ac830  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fd2f630986b  sp: 00007ffef52ac5e0
+  ip: 00007fd2f630986b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T05:38:28.526Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T05:38:33.883Z - info: Starting rendering request 7 (user: null)
+2018-05-12T05:38:33.884Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: true }
+2018-05-12T05:38:34.001Z - info: Rendering request 7 finished in 118 ms
+2018-05-12T05:39:04.094Z - info: Starting rendering request 8 (user: null)
+2018-05-12T05:39:04.095Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:39:04.220Z - info: Rendering request 8 finished in 126 ms
+2018-05-12T05:39:24.482Z - info: Starting rendering request 9 (user: null)
+2018-05-12T05:39:24.483Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:39:24.836Z - info: Rendering request 9 finished in 355 ms
+2018-05-12T05:40:06.159Z - info: fs store is loading data
+2018-05-12T05:40:06.247Z - info: Starting rendering request 10 (user: null)
+2018-05-12T05:40:06.248Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:40:06.384Z - info: Rendering request 10 finished in 137 ms
+2018-05-12T05:40:19.387Z - info: fs store is loading data
+2018-05-12T05:40:19.496Z - info: Starting rendering request 11 (user: null)
+2018-05-12T05:40:19.496Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:40:19.897Z - info: Rendering request 11 finished in 401 ms
+2018-05-12T05:40:48.427Z - info: fs store is loading data
+2018-05-12T05:40:48.529Z - info: Starting rendering request 12 (user: null)
+2018-05-12T05:40:48.531Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:40:48.988Z - info: Rendering request 12 finished in 458 ms
+2018-05-12T05:41:02.986Z - info: Starting rendering request 13 (user: null)
+2018-05-12T05:41:02.987Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:41:03.410Z - info: Rendering request 13 finished in 424 ms
+2018-05-12T05:41:24.264Z - info: Starting rendering request 14 (user: null)
+2018-05-12T05:41:24.265Z - info: Rendering template { name: sar, recipe: chrome-pdf, engine: handlebars, preview: true }
+2018-05-12T05:41:24.666Z - error: Error when processing render request Failed to launch chrome!
+[0512/124124.464030:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d012800993 logging::LogMessage::~LogMessage()
+#2 0x55d01186a601 content::ZygoteHostImpl::Init()
+#3 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#5 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#7 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#8 0x55d012535155 service_manager::Main()
+#9 0x55d01252a104 content::ContentMain()
+#10 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#11 0x55d0165ec022 headless::HeadlessBrowserMain()
+#12 0x55d012532189 headless::HeadlessShellMain()
+#13 0x55d010ba41ac ChromeMain
+#14 0x7f35624eb06b __libc_start_main
+#15 0x55d010ba402a _start
+
+Received signal 6
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d0127e86f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f35684c3a80 <unknown>
+#3 0x7f35624fe86b __GI_raise
+#4 0x7f35624e940e __GI_abort
+#5 0x55d0127e7175 base::debug::BreakDebugger()
+#6 0x55d012800ddc logging::LogMessage::~LogMessage()
+#7 0x55d01186a601 content::ZygoteHostImpl::Init()
+#8 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#10 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#12 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#13 0x55d012535155 service_manager::Main()
+#14 0x55d01252a104 content::ContentMain()
+#15 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#16 0x55d0165ec022 headless::HeadlessBrowserMain()
+#17 0x55d012532189 headless::HeadlessShellMain()
+#18 0x55d010ba41ac ChromeMain
+#19 0x7f35624eb06b __libc_start_main
+#20 0x55d010ba402a _start
+  r8: 0000000000000000  r9: 00007ffebd17cc40 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffebd17d348 r13: 0000000000000161 r14: 00007ffebd17d350 r15: 00007ffebd17cee9
+  di: 0000000000000002  si: 00007ffebd17cc40  bp: 00007ffebd17ce90  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f35624fe86b  sp: 00007ffebd17cc40
+  ip: 00007f35624fe86b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0512/124124.464030:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d012800993 logging::LogMessage::~LogMessage()
+#2 0x55d01186a601 content::ZygoteHostImpl::Init()
+#3 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#5 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#7 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#8 0x55d012535155 service_manager::Main()
+#9 0x55d01252a104 content::ContentMain()
+#10 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#11 0x55d0165ec022 headless::HeadlessBrowserMain()
+#12 0x55d012532189 headless::HeadlessShellMain()
+#13 0x55d010ba41ac ChromeMain
+#14 0x7f35624eb06b __libc_start_main
+#15 0x55d010ba402a _start
+
+Received signal 6
+#0 0x55d0127e8b8c base::debug::StackTrace::StackTrace()
+#1 0x55d0127e86f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7f35684c3a80 <unknown>
+#3 0x7f35624fe86b __GI_raise
+#4 0x7f35624e940e __GI_abort
+#5 0x55d0127e7175 base::debug::BreakDebugger()
+#6 0x55d012800ddc logging::LogMessage::~LogMessage()
+#7 0x55d01186a601 content::ZygoteHostImpl::Init()
+#8 0x55d0114e03d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55d0114e611f content::BrowserMainRunnerImpl::Initialize()
+#10 0x55d0165eceb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55d01252abe0 content::RunNamedProcessTypeMain()
+#12 0x55d01252b518 content::ContentMainRunnerImpl::Run()
+#13 0x55d012535155 service_manager::Main()
+#14 0x55d01252a104 content::ContentMain()
+#15 0x55d0165ebf9c headless::(anonymous namespace)::RunContentMain()
+#16 0x55d0165ec022 headless::HeadlessBrowserMain()
+#17 0x55d012532189 headless::HeadlessShellMain()
+#18 0x55d010ba41ac ChromeMain
+#19 0x7f35624eb06b __libc_start_main
+#20 0x55d010ba402a _start
+  r8: 0000000000000000  r9: 00007ffebd17cc40 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffebd17d348 r13: 0000000000000161 r14: 00007ffebd17d350 r15: 00007ffebd17cee9
+  di: 0000000000000002  si: 00007ffebd17cc40  bp: 00007ffebd17ce90  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007f35624fe86b  sp: 00007ffebd17cc40
+  ip: 00007f35624fe86b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-12T05:41:24.667Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-12T05:43:58.849Z - info: Starting rendering request 15 (user: null)
+2018-05-12T05:43:58.849Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:43:59.275Z - info: Rendering request 15 finished in 427 ms
+2018-05-12T05:44:59.164Z - info: fs store is loading data
+2018-05-12T05:45:03.280Z - info: Starting rendering request 16 (user: null)
+2018-05-12T05:45:03.281Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:45:03.514Z - info: Rendering request 16 finished in 234 ms
+2018-05-12T05:45:20.536Z - info: Starting rendering request 17 (user: null)
+2018-05-12T05:45:20.537Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:45:20.731Z - info: Rendering request 17 finished in 194 ms
+2018-05-12T05:45:42.733Z - info: fs store is loading data
+2018-05-12T05:45:42.827Z - info: Starting rendering request 18 (user: null)
+2018-05-12T05:45:42.828Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:45:43.090Z - info: Rendering request 18 finished in 262 ms
+2018-05-12T05:45:45.779Z - info: Starting rendering request 19 (user: null)
+2018-05-12T05:45:45.780Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:45:45.968Z - info: Rendering request 19 finished in 189 ms
+2018-05-12T05:46:14.485Z - info: fs store is loading data
+2018-05-12T05:46:14.589Z - info: Starting rendering request 20 (user: null)
+2018-05-12T05:46:14.590Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:46:14.818Z - info: Rendering request 20 finished in 228 ms
+2018-05-12T05:46:43.937Z - info: fs store is loading data
+2018-05-12T05:46:44.039Z - info: Starting rendering request 21 (user: null)
+2018-05-12T05:46:44.040Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:46:44.268Z - info: Rendering request 21 finished in 229 ms
+2018-05-12T05:46:46.506Z - info: Starting rendering request 22 (user: null)
+2018-05-12T05:46:46.507Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:46:46.727Z - info: Rendering request 22 finished in 220 ms
+2018-05-12T05:47:01.562Z - info: fs store is loading data
+2018-05-12T05:47:01.681Z - info: Starting rendering request 23 (user: null)
+2018-05-12T05:47:01.682Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:47:01.920Z - info: Rendering request 23 finished in 239 ms
+2018-05-12T05:47:46.548Z - info: fs store is loading data
+2018-05-12T05:47:46.643Z - info: Starting rendering request 24 (user: null)
+2018-05-12T05:47:46.644Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:47:46.861Z - info: Rendering request 24 finished in 218 ms
+2018-05-12T05:47:50.228Z - info: Starting rendering request 25 (user: null)
+2018-05-12T05:47:50.229Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:47:50.458Z - info: Rendering request 25 finished in 230 ms
+2018-05-12T05:48:16.129Z - info: Starting rendering request 26 (user: null)
+2018-05-12T05:48:16.130Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:48:16.333Z - info: Rendering request 26 finished in 204 ms
+2018-05-12T05:48:34.788Z - info: Starting rendering request 27 (user: null)
+2018-05-12T05:48:34.788Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:48:35.023Z - info: Rendering request 27 finished in 235 ms
+2018-05-12T05:48:43.545Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:48:43.547Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:48:43.558Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:48:43.561Z - info: Found 33 extensions
+2018-05-12T05:48:43.784Z - info: Using extension import-export
+2018-05-12T05:48:43.879Z - info: Using extension tags
+2018-05-12T05:48:43.881Z - info: Using extension templates
+2018-05-12T05:48:43.884Z - info: Using extension jsrender
+2018-05-12T05:48:43.885Z - info: Using extension handlebars
+2018-05-12T05:48:43.887Z - info: Using extension cli
+2018-05-12T05:48:43.887Z - info: Using extension freeze
+2018-05-12T05:48:43.889Z - info: Using extension debug
+2018-05-12T05:48:43.890Z - info: Using extension express
+2018-05-12T05:48:43.960Z - info: Using extension pdf-utils
+2018-05-12T05:48:44.026Z - info: Using extension data
+2018-05-12T05:48:44.027Z - info: Using extension chrome-pdf
+2018-05-12T05:48:44.065Z - info: Using extension authorization
+2018-05-12T05:48:44.066Z - info: Using extension html-to-xlsx
+2018-05-12T05:48:44.113Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:48:44.114Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:48:44.114Z - info: Using extension child-templates
+2018-05-12T05:48:44.117Z - info: Using extension browser-client
+2018-05-12T05:48:44.119Z - info: Using extension licensing
+2018-05-12T05:48:44.129Z - info: Using extension fs-store
+2018-05-12T05:48:44.237Z - info: Using extension phantom-pdf
+2018-05-12T05:48:44.279Z - info: Using extension version-control
+2018-05-12T05:48:44.301Z - info: Using extension reports
+2018-05-12T05:48:44.302Z - info: Using extension text
+2018-05-12T05:48:44.303Z - info: Using extension base
+2018-05-12T05:48:44.304Z - info: Using extension studio
+2018-05-12T05:48:44.319Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:48:44.425Z - info: Using extension scripts
+2018-05-12T05:48:44.429Z - info: Using extension assets
+2018-05-12T05:48:44.436Z - info: Using extension scheduling
+2018-05-12T05:48:44.464Z - info: Using extension xlsx
+2018-05-12T05:48:44.479Z - info: Using extension sample-template
+2018-05-12T05:48:44.481Z - info: Using extension resources
+2018-05-12T05:48:44.482Z - info: Using extension public-templates
+2018-05-12T05:48:44.490Z - info: fs store is persisting using fs
+2018-05-12T05:48:44.491Z - info: fs store is synchronizing using fs
+2018-05-12T05:48:44.493Z - info: fs store is loading data
+2018-05-12T05:48:44.539Z - info: fs store is initialized successfully
+2018-05-12T05:48:44.557Z - info: Creating default express app.
+2018-05-12T05:48:44.572Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T05:48:44.572Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T05:48:44.579Z - info: Verifying license key free
+2018-05-12T05:48:44.580Z - info: Using free license
+2018-05-12T05:48:44.584Z - info: reporter initialized
+2018-05-12T05:48:46.932Z - info: Starting rendering request 1 (user: null)
+2018-05-12T05:48:46.935Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:48:47.222Z - info: Rendering request 1 finished in 290 ms
+2018-05-12T05:48:56.081Z - info: Starting rendering request 2 (user: null)
+2018-05-12T05:48:56.083Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:48:56.302Z - info: Rendering request 2 finished in 221 ms
+2018-05-12T05:49:22.604Z - info: fs store is loading data
+2018-05-12T05:49:22.700Z - info: Starting rendering request 3 (user: null)
+2018-05-12T05:49:22.701Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:49:22.914Z - info: Rendering request 3 finished in 214 ms
+2018-05-12T05:50:03.066Z - info: fs store is loading data
+2018-05-12T05:50:03.166Z - info: Starting rendering request 4 (user: null)
+2018-05-12T05:50:03.167Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:50:03.600Z - info: Rendering request 4 finished in 434 ms
+2018-05-12T05:50:17.010Z - info: fs store is loading data
+2018-05-12T05:50:17.124Z - info: Starting rendering request 5 (user: null)
+2018-05-12T05:50:17.125Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:50:17.600Z - info: Rendering request 5 finished in 475 ms
+2018-05-12T05:51:21.236Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:51:21.238Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:51:21.250Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:51:21.253Z - info: Found 33 extensions
+2018-05-12T05:51:21.477Z - info: Using extension import-export
+2018-05-12T05:51:21.572Z - info: Using extension tags
+2018-05-12T05:51:21.575Z - info: Using extension templates
+2018-05-12T05:51:21.577Z - info: Using extension jsrender
+2018-05-12T05:51:21.577Z - info: Using extension handlebars
+2018-05-12T05:51:21.579Z - info: Using extension cli
+2018-05-12T05:51:21.580Z - info: Using extension freeze
+2018-05-12T05:51:21.581Z - info: Using extension debug
+2018-05-12T05:51:21.582Z - info: Using extension express
+2018-05-12T05:51:21.650Z - info: Using extension pdf-utils
+2018-05-12T05:51:21.721Z - info: Using extension data
+2018-05-12T05:51:21.722Z - info: Using extension chrome-pdf
+2018-05-12T05:51:21.756Z - info: Using extension authorization
+2018-05-12T05:51:21.757Z - info: Using extension html-to-xlsx
+2018-05-12T05:51:21.806Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:51:21.807Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:51:21.807Z - info: Using extension child-templates
+2018-05-12T05:51:21.809Z - info: Using extension browser-client
+2018-05-12T05:51:21.811Z - info: Using extension licensing
+2018-05-12T05:51:21.821Z - info: Using extension fs-store
+2018-05-12T05:51:21.926Z - info: Using extension phantom-pdf
+2018-05-12T05:51:21.963Z - info: Using extension version-control
+2018-05-12T05:51:21.982Z - info: Using extension reports
+2018-05-12T05:51:21.984Z - info: Using extension text
+2018-05-12T05:51:21.984Z - info: Using extension base
+2018-05-12T05:51:21.986Z - info: Using extension studio
+2018-05-12T05:51:22.004Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:51:22.119Z - info: Using extension scripts
+2018-05-12T05:51:22.122Z - info: Using extension assets
+2018-05-12T05:51:22.130Z - info: Using extension scheduling
+2018-05-12T05:51:22.157Z - info: Using extension xlsx
+2018-05-12T05:51:22.173Z - info: Using extension sample-template
+2018-05-12T05:51:22.174Z - info: Using extension resources
+2018-05-12T05:51:22.175Z - info: Using extension public-templates
+2018-05-12T05:51:22.180Z - info: fs store is persisting using fs
+2018-05-12T05:51:22.180Z - info: fs store is synchronizing using fs
+2018-05-12T05:51:22.182Z - info: fs store is loading data
+2018-05-12T05:51:22.229Z - info: fs store is initialized successfully
+2018-05-12T05:51:22.247Z - info: Creating default express app.
+2018-05-12T05:51:22.262Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T05:51:22.263Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T05:51:22.270Z - info: Verifying license key free
+2018-05-12T05:51:22.271Z - info: Using free license
+2018-05-12T05:51:22.274Z - info: reporter initialized
+2018-05-12T05:51:33.232Z - info: Starting rendering request 1 (user: null)
+2018-05-12T05:51:33.233Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:51:33.726Z - info: Rendering request 1 finished in 494 ms
+2018-05-12T05:53:31.615Z - info: fs store is loading data
+2018-05-12T05:53:31.728Z - info: Starting rendering request 2 (user: null)
+2018-05-12T05:53:31.729Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:53:32.175Z - info: Rendering request 2 finished in 446 ms
+2018-05-12T05:53:36.808Z - info: Starting rendering request 3 (user: null)
+2018-05-12T05:53:36.809Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:53:37.231Z - info: Rendering request 3 finished in 423 ms
+2018-05-12T05:53:45.779Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:53:45.780Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:53:45.793Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:53:45.796Z - info: Found 33 extensions
+2018-05-12T05:53:46.015Z - info: Using extension import-export
+2018-05-12T05:53:46.111Z - info: Using extension tags
+2018-05-12T05:53:46.113Z - info: Using extension templates
+2018-05-12T05:53:46.116Z - info: Using extension jsrender
+2018-05-12T05:53:46.117Z - info: Using extension handlebars
+2018-05-12T05:53:46.119Z - info: Using extension cli
+2018-05-12T05:53:46.119Z - info: Using extension freeze
+2018-05-12T05:53:46.121Z - info: Using extension debug
+2018-05-12T05:53:46.122Z - info: Using extension express
+2018-05-12T05:53:46.193Z - info: Using extension pdf-utils
+2018-05-12T05:53:46.285Z - info: Using extension data
+2018-05-12T05:53:46.286Z - info: Using extension chrome-pdf
+2018-05-12T05:53:46.321Z - info: Using extension authorization
+2018-05-12T05:53:46.322Z - info: Using extension html-to-xlsx
+2018-05-12T05:53:46.370Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:53:46.371Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:53:46.371Z - info: Using extension child-templates
+2018-05-12T05:53:46.373Z - info: Using extension browser-client
+2018-05-12T05:53:46.375Z - info: Using extension licensing
+2018-05-12T05:53:46.386Z - info: Using extension fs-store
+2018-05-12T05:53:46.490Z - info: Using extension phantom-pdf
+2018-05-12T05:53:46.530Z - info: Using extension version-control
+2018-05-12T05:53:46.549Z - info: Using extension reports
+2018-05-12T05:53:46.551Z - info: Using extension text
+2018-05-12T05:53:46.551Z - info: Using extension base
+2018-05-12T05:53:46.552Z - info: Using extension studio
+2018-05-12T05:53:46.568Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:53:46.686Z - info: Using extension scripts
+2018-05-12T05:53:46.689Z - info: Using extension assets
+2018-05-12T05:53:46.696Z - info: Using extension scheduling
+2018-05-12T05:53:46.724Z - info: Using extension xlsx
+2018-05-12T05:53:46.739Z - info: Using extension sample-template
+2018-05-12T05:53:46.741Z - info: Using extension resources
+2018-05-12T05:53:46.741Z - info: Using extension public-templates
+2018-05-12T05:53:46.747Z - info: fs store is persisting using fs
+2018-05-12T05:53:46.747Z - info: fs store is synchronizing using fs
+2018-05-12T05:53:46.749Z - info: fs store is loading data
+2018-05-12T05:53:46.797Z - info: fs store is initialized successfully
+2018-05-12T05:53:46.813Z - info: Creating default express app.
+2018-05-12T05:53:46.827Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T05:53:46.828Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T05:53:46.834Z - info: Verifying license key free
+2018-05-12T05:53:46.835Z - info: Using free license
+2018-05-12T05:53:46.838Z - info: reporter initialized
+2018-05-12T05:53:53.253Z - info: Starting rendering request 1 (user: null)
+2018-05-12T05:53:53.254Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:53:53.755Z - info: Rendering request 1 finished in 503 ms
+2018-05-12T05:54:34.675Z - info: fs store is loading data
+2018-05-12T05:54:34.813Z - info: Starting rendering request 2 (user: null)
+2018-05-12T05:54:34.814Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:54:35.198Z - info: Rendering request 2 finished in 386 ms
+2018-05-12T05:55:24.461Z - info: fs store is loading data
+2018-05-12T05:55:24.566Z - info: Starting rendering request 3 (user: null)
+2018-05-12T05:55:24.567Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:55:24.948Z - info: Rendering request 3 finished in 382 ms
+2018-05-12T05:55:52.707Z - info: fs store is loading data
+2018-05-12T05:55:52.818Z - info: Starting rendering request 4 (user: null)
+2018-05-12T05:55:52.819Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:55:53.202Z - info: Rendering request 4 finished in 384 ms
+2018-05-12T05:56:07.041Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:56:07.042Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:56:07.055Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:56:07.058Z - info: Found 33 extensions
+2018-05-12T05:56:07.277Z - info: Using extension import-export
+2018-05-12T05:56:07.371Z - info: Using extension tags
+2018-05-12T05:56:07.373Z - info: Using extension templates
+2018-05-12T05:56:07.376Z - info: Using extension jsrender
+2018-05-12T05:56:07.376Z - info: Using extension handlebars
+2018-05-12T05:56:07.378Z - info: Using extension cli
+2018-05-12T05:56:07.379Z - info: Using extension freeze
+2018-05-12T05:56:07.380Z - info: Using extension debug
+2018-05-12T05:56:07.382Z - info: Using extension express
+2018-05-12T05:56:07.451Z - info: Using extension pdf-utils
+2018-05-12T05:56:07.517Z - info: Using extension data
+2018-05-12T05:56:07.518Z - info: Using extension chrome-pdf
+2018-05-12T05:56:07.559Z - info: Using extension authorization
+2018-05-12T05:56:07.560Z - info: Using extension html-to-xlsx
+2018-05-12T05:56:07.607Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:56:07.608Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:56:07.608Z - info: Using extension child-templates
+2018-05-12T05:56:07.610Z - info: Using extension browser-client
+2018-05-12T05:56:07.612Z - info: Using extension licensing
+2018-05-12T05:56:07.623Z - info: Using extension fs-store
+2018-05-12T05:56:07.727Z - info: Using extension phantom-pdf
+2018-05-12T05:56:07.768Z - info: Using extension version-control
+2018-05-12T05:56:07.791Z - info: Using extension reports
+2018-05-12T05:56:07.792Z - info: Using extension text
+2018-05-12T05:56:07.793Z - info: Using extension base
+2018-05-12T05:56:07.794Z - info: Using extension studio
+2018-05-12T05:56:07.808Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:56:07.914Z - info: Using extension scripts
+2018-05-12T05:56:07.917Z - info: Using extension assets
+2018-05-12T05:56:07.924Z - info: Using extension scheduling
+2018-05-12T05:56:07.952Z - info: Using extension xlsx
+2018-05-12T05:56:07.967Z - info: Using extension sample-template
+2018-05-12T05:56:07.968Z - info: Using extension resources
+2018-05-12T05:56:07.969Z - info: Using extension public-templates
+2018-05-12T05:56:07.975Z - info: fs store is persisting using fs
+2018-05-12T05:56:07.979Z - info: fs store is synchronizing using fs
+2018-05-12T05:56:07.981Z - info: fs store is loading data
+2018-05-12T05:56:08.023Z - info: fs store is initialized successfully
+2018-05-12T05:56:08.040Z - info: Creating default express app.
+2018-05-12T05:56:08.055Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T05:56:08.055Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T05:56:08.062Z - info: Verifying license key free
+2018-05-12T05:56:08.063Z - info: Using free license
+2018-05-12T05:56:08.065Z - info: reporter initialized
+2018-05-12T05:56:16.555Z - info: Starting rendering request 1 (user: null)
+2018-05-12T05:56:16.556Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:56:16.982Z - info: Rendering request 1 finished in 428 ms
+2018-05-12T05:56:47.396Z - info: fs store is loading data
+2018-05-12T05:56:47.528Z - info: Starting rendering request 2 (user: null)
+2018-05-12T05:56:47.529Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:56:47.908Z - info: Rendering request 2 finished in 380 ms
+2018-05-12T05:56:55.805Z - info: fs store is loading data
+2018-05-12T05:56:55.902Z - info: Starting rendering request 3 (user: null)
+2018-05-12T05:56:55.903Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:56:56.301Z - info: Rendering request 3 finished in 399 ms
+2018-05-12T05:57:04.639Z - info: fs store is loading data
+2018-05-12T05:57:04.747Z - info: Starting rendering request 4 (user: null)
+2018-05-12T05:57:04.756Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:57:05.149Z - info: Rendering request 4 finished in 402 ms
+2018-05-12T05:57:19.679Z - info: fs store is loading data
+2018-05-12T05:57:19.790Z - info: Starting rendering request 5 (user: null)
+2018-05-12T05:57:19.791Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:57:20.170Z - info: Rendering request 5 finished in 381 ms
+2018-05-12T05:58:03.947Z - info: fs store is loading data
+2018-05-12T05:58:04.052Z - info: Starting rendering request 6 (user: null)
+2018-05-12T05:58:04.053Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:58:04.479Z - info: Rendering request 6 finished in 426 ms
+2018-05-12T05:58:40.602Z - info: fs store is loading data
+2018-05-12T05:58:40.709Z - info: Starting rendering request 7 (user: null)
+2018-05-12T05:58:40.710Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:58:41.105Z - info: Rendering request 7 finished in 396 ms
+2018-05-12T05:58:50.307Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T05:58:50.310Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T05:58:50.322Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T05:58:50.325Z - info: Found 33 extensions
+2018-05-12T05:58:50.545Z - info: Using extension import-export
+2018-05-12T05:58:50.642Z - info: Using extension tags
+2018-05-12T05:58:50.644Z - info: Using extension templates
+2018-05-12T05:58:50.647Z - info: Using extension jsrender
+2018-05-12T05:58:50.648Z - info: Using extension handlebars
+2018-05-12T05:58:50.649Z - info: Using extension cli
+2018-05-12T05:58:50.650Z - info: Using extension freeze
+2018-05-12T05:58:50.651Z - info: Using extension debug
+2018-05-12T05:58:50.652Z - info: Using extension express
+2018-05-12T05:58:50.720Z - info: Using extension pdf-utils
+2018-05-12T05:58:50.787Z - info: Using extension data
+2018-05-12T05:58:50.788Z - info: Using extension chrome-pdf
+2018-05-12T05:58:50.825Z - info: Using extension authorization
+2018-05-12T05:58:50.827Z - info: Using extension html-to-xlsx
+2018-05-12T05:58:50.875Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T05:58:50.876Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T05:58:50.876Z - info: Using extension child-templates
+2018-05-12T05:58:50.878Z - info: Using extension browser-client
+2018-05-12T05:58:50.880Z - info: Using extension licensing
+2018-05-12T05:58:50.891Z - info: Using extension fs-store
+2018-05-12T05:58:51.001Z - info: Using extension phantom-pdf
+2018-05-12T05:58:51.042Z - info: Using extension version-control
+2018-05-12T05:58:51.063Z - info: Using extension reports
+2018-05-12T05:58:51.065Z - info: Using extension text
+2018-05-12T05:58:51.065Z - info: Using extension base
+2018-05-12T05:58:51.066Z - info: Using extension studio
+2018-05-12T05:58:51.082Z - info: Using extension html-embedded-in-docx
+2018-05-12T05:58:51.187Z - info: Using extension scripts
+2018-05-12T05:58:51.190Z - info: Using extension assets
+2018-05-12T05:58:51.198Z - info: Using extension scheduling
+2018-05-12T05:58:51.225Z - info: Using extension xlsx
+2018-05-12T05:58:51.241Z - info: Using extension sample-template
+2018-05-12T05:58:51.243Z - info: Using extension resources
+2018-05-12T05:58:51.243Z - info: Using extension public-templates
+2018-05-12T05:58:51.249Z - info: fs store is persisting using fs
+2018-05-12T05:58:51.249Z - info: fs store is synchronizing using fs
+2018-05-12T05:58:51.251Z - info: fs store is loading data
+2018-05-12T05:58:51.299Z - info: fs store is initialized successfully
+2018-05-12T05:58:51.315Z - info: Creating default express app.
+2018-05-12T05:58:51.330Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T05:58:51.330Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T05:58:51.336Z - info: Verifying license key free
+2018-05-12T05:58:51.338Z - info: Using free license
+2018-05-12T05:58:51.340Z - info: reporter initialized
+2018-05-12T05:58:57.580Z - info: Starting rendering request 1 (user: null)
+2018-05-12T05:58:57.582Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:58:58.032Z - info: Rendering request 1 finished in 452 ms
+2018-05-12T05:59:15.836Z - info: fs store is loading data
+2018-05-12T05:59:15.962Z - info: Starting rendering request 2 (user: null)
+2018-05-12T05:59:15.963Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:59:16.341Z - info: Rendering request 2 finished in 380 ms
+2018-05-12T05:59:40.583Z - info: fs store is loading data
+2018-05-12T05:59:40.689Z - info: Starting rendering request 3 (user: null)
+2018-05-12T05:59:40.691Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:59:40.912Z - info: Rendering request 3 finished in 223 ms
+2018-05-12T05:59:57.818Z - info: fs store is loading data
+2018-05-12T05:59:57.930Z - info: Starting rendering request 4 (user: null)
+2018-05-12T05:59:57.931Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T05:59:58.127Z - info: Rendering request 4 finished in 198 ms
+2018-05-12T06:00:17.755Z - info: fs store is loading data
+2018-05-12T06:00:17.851Z - info: Starting rendering request 5 (user: null)
+2018-05-12T06:00:17.852Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:00:18.088Z - info: Rendering request 5 finished in 237 ms
+2018-05-12T06:00:54.015Z - info: fs store is loading data
+2018-05-12T06:00:54.121Z - info: Starting rendering request 6 (user: null)
+2018-05-12T06:00:54.122Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:00:54.349Z - info: Rendering request 6 finished in 228 ms
+2018-05-12T06:00:58.145Z - info: Starting rendering request 7 (user: null)
+2018-05-12T06:00:58.146Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:00:58.332Z - info: Rendering request 7 finished in 187 ms
+2018-05-12T06:01:08.135Z - info: fs store is loading data
+2018-05-12T06:01:23.763Z - info: fs store is loading data
+2018-05-12T06:01:33.539Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T06:01:33.540Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T06:01:33.556Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T06:01:33.559Z - info: Found 33 extensions
+2018-05-12T06:01:33.786Z - info: Using extension import-export
+2018-05-12T06:01:33.882Z - info: Using extension tags
+2018-05-12T06:01:33.885Z - info: Using extension templates
+2018-05-12T06:01:33.888Z - info: Using extension jsrender
+2018-05-12T06:01:33.889Z - info: Using extension handlebars
+2018-05-12T06:01:33.890Z - info: Using extension cli
+2018-05-12T06:01:33.891Z - info: Using extension freeze
+2018-05-12T06:01:33.892Z - info: Using extension debug
+2018-05-12T06:01:33.893Z - info: Using extension express
+2018-05-12T06:01:33.961Z - info: Using extension pdf-utils
+2018-05-12T06:01:34.031Z - info: Using extension data
+2018-05-12T06:01:34.033Z - info: Using extension chrome-pdf
+2018-05-12T06:01:34.071Z - info: Using extension authorization
+2018-05-12T06:01:34.072Z - info: Using extension html-to-xlsx
+2018-05-12T06:01:34.119Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T06:01:34.120Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T06:01:34.120Z - info: Using extension child-templates
+2018-05-12T06:01:34.122Z - info: Using extension browser-client
+2018-05-12T06:01:34.123Z - info: Using extension licensing
+2018-05-12T06:01:34.134Z - info: Using extension fs-store
+2018-05-12T06:01:34.241Z - info: Using extension phantom-pdf
+2018-05-12T06:01:34.280Z - info: Using extension version-control
+2018-05-12T06:01:34.299Z - info: Using extension reports
+2018-05-12T06:01:34.301Z - info: Using extension text
+2018-05-12T06:01:34.301Z - info: Using extension base
+2018-05-12T06:01:34.302Z - info: Using extension studio
+2018-05-12T06:01:34.318Z - info: Using extension html-embedded-in-docx
+2018-05-12T06:01:34.432Z - info: Using extension scripts
+2018-05-12T06:01:34.435Z - info: Using extension assets
+2018-05-12T06:01:34.442Z - info: Using extension scheduling
+2018-05-12T06:01:34.469Z - info: Using extension xlsx
+2018-05-12T06:01:34.485Z - info: Using extension sample-template
+2018-05-12T06:01:34.487Z - info: Using extension resources
+2018-05-12T06:01:34.488Z - info: Using extension public-templates
+2018-05-12T06:01:34.492Z - info: fs store is persisting using fs
+2018-05-12T06:01:34.493Z - info: fs store is synchronizing using fs
+2018-05-12T06:01:34.494Z - info: fs store is loading data
+2018-05-12T06:01:34.541Z - info: fs store is initialized successfully
+2018-05-12T06:01:34.558Z - info: Creating default express app.
+2018-05-12T06:01:34.572Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T06:01:34.573Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T06:01:34.580Z - info: Verifying license key free
+2018-05-12T06:01:34.581Z - info: Using free license
+2018-05-12T06:01:34.583Z - info: reporter initialized
+2018-05-12T06:01:40.257Z - info: Starting rendering request 1 (user: null)
+2018-05-12T06:01:40.258Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:01:40.534Z - info: Rendering request 1 finished in 278 ms
+2018-05-12T06:01:52.877Z - info: fs store is loading data
+2018-05-12T06:01:53.027Z - info: Starting rendering request 2 (user: null)
+2018-05-12T06:01:53.028Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:01:53.255Z - info: Rendering request 2 finished in 228 ms
+2018-05-12T06:02:18.713Z - info: fs store is loading data
+2018-05-12T06:02:18.821Z - info: Starting rendering request 3 (user: null)
+2018-05-12T06:02:18.822Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:02:19.022Z - info: Rendering request 3 finished in 202 ms
+2018-05-12T06:03:12.794Z - info: fs store is loading data
+2018-05-12T06:03:12.888Z - info: Starting rendering request 4 (user: null)
+2018-05-12T06:03:12.889Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:03:13.181Z - info: Rendering request 4 finished in 294 ms
+2018-05-12T06:03:22.441Z - info: Starting rendering request 5 (user: null)
+2018-05-12T06:03:22.442Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:03:22.733Z - info: Rendering request 5 finished in 292 ms
+2018-05-12T06:03:36.486Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T06:03:36.487Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T06:03:36.502Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T06:03:36.505Z - info: Found 33 extensions
+2018-05-12T06:03:36.724Z - info: Using extension import-export
+2018-05-12T06:03:36.819Z - info: Using extension tags
+2018-05-12T06:03:36.822Z - info: Using extension templates
+2018-05-12T06:03:36.824Z - info: Using extension jsrender
+2018-05-12T06:03:36.824Z - info: Using extension handlebars
+2018-05-12T06:03:36.825Z - info: Using extension cli
+2018-05-12T06:03:36.826Z - info: Using extension freeze
+2018-05-12T06:03:36.827Z - info: Using extension debug
+2018-05-12T06:03:36.828Z - info: Using extension express
+2018-05-12T06:03:36.898Z - info: Using extension pdf-utils
+2018-05-12T06:03:36.965Z - info: Using extension data
+2018-05-12T06:03:36.966Z - info: Using extension chrome-pdf
+2018-05-12T06:03:37.005Z - info: Using extension authorization
+2018-05-12T06:03:37.006Z - info: Using extension html-to-xlsx
+2018-05-12T06:03:37.054Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T06:03:37.055Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T06:03:37.055Z - info: Using extension child-templates
+2018-05-12T06:03:37.057Z - info: Using extension browser-client
+2018-05-12T06:03:37.059Z - info: Using extension licensing
+2018-05-12T06:03:37.069Z - info: Using extension fs-store
+2018-05-12T06:03:37.175Z - info: Using extension phantom-pdf
+2018-05-12T06:03:37.223Z - info: Using extension version-control
+2018-05-12T06:03:37.239Z - info: Using extension reports
+2018-05-12T06:03:37.240Z - info: Using extension text
+2018-05-12T06:03:37.241Z - info: Using extension base
+2018-05-12T06:03:37.242Z - info: Using extension studio
+2018-05-12T06:03:37.257Z - info: Using extension html-embedded-in-docx
+2018-05-12T06:03:37.361Z - info: Using extension scripts
+2018-05-12T06:03:37.365Z - info: Using extension assets
+2018-05-12T06:03:37.372Z - info: Using extension scheduling
+2018-05-12T06:03:37.398Z - info: Using extension xlsx
+2018-05-12T06:03:37.417Z - info: Using extension sample-template
+2018-05-12T06:03:37.419Z - info: Using extension resources
+2018-05-12T06:03:37.420Z - info: Using extension public-templates
+2018-05-12T06:03:37.425Z - info: fs store is persisting using fs
+2018-05-12T06:03:37.425Z - info: fs store is synchronizing using fs
+2018-05-12T06:03:37.427Z - info: fs store is loading data
+2018-05-12T06:03:37.471Z - info: fs store is initialized successfully
+2018-05-12T06:03:37.489Z - info: Creating default express app.
+2018-05-12T06:03:37.504Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T06:03:37.504Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T06:03:37.511Z - info: Verifying license key free
+2018-05-12T06:03:37.512Z - info: Using free license
+2018-05-12T06:03:37.514Z - info: reporter initialized
+2018-05-12T06:03:42.911Z - info: Starting rendering request 1 (user: null)
+2018-05-12T06:03:42.914Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:03:43.265Z - info: Rendering request 1 finished in 358 ms
+2018-05-12T06:04:15.532Z - info: fs store is loading data
+2018-05-12T06:04:15.654Z - info: Starting rendering request 2 (user: null)
+2018-05-12T06:04:15.655Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:04:15.951Z - info: Rendering request 2 finished in 297 ms
+2018-05-12T06:04:18.665Z - info: Starting rendering request 3 (user: null)
+2018-05-12T06:04:18.666Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:04:18.947Z - info: Rendering request 3 finished in 282 ms
+2018-05-12T06:04:32.952Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T06:04:32.954Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T06:04:32.966Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T06:04:32.969Z - info: Found 33 extensions
+2018-05-12T06:04:33.192Z - info: Using extension import-export
+2018-05-12T06:04:33.286Z - info: Using extension tags
+2018-05-12T06:04:33.289Z - info: Using extension templates
+2018-05-12T06:04:33.292Z - info: Using extension jsrender
+2018-05-12T06:04:33.293Z - info: Using extension handlebars
+2018-05-12T06:04:33.294Z - info: Using extension cli
+2018-05-12T06:04:33.295Z - info: Using extension freeze
+2018-05-12T06:04:33.296Z - info: Using extension debug
+2018-05-12T06:04:33.297Z - info: Using extension express
+2018-05-12T06:04:33.365Z - info: Using extension pdf-utils
+2018-05-12T06:04:33.433Z - info: Using extension data
+2018-05-12T06:04:33.434Z - info: Using extension chrome-pdf
+2018-05-12T06:04:33.476Z - info: Using extension authorization
+2018-05-12T06:04:33.477Z - info: Using extension html-to-xlsx
+2018-05-12T06:04:33.525Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T06:04:33.526Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T06:04:33.526Z - info: Using extension child-templates
+2018-05-12T06:04:33.529Z - info: Using extension browser-client
+2018-05-12T06:04:33.531Z - info: Using extension licensing
+2018-05-12T06:04:33.544Z - info: Using extension fs-store
+2018-05-12T06:04:33.681Z - info: Using extension phantom-pdf
+2018-05-12T06:04:33.735Z - info: Using extension version-control
+2018-05-12T06:04:33.766Z - info: Using extension reports
+2018-05-12T06:04:33.767Z - info: Using extension text
+2018-05-12T06:04:33.768Z - info: Using extension base
+2018-05-12T06:04:33.770Z - info: Using extension studio
+2018-05-12T06:04:33.787Z - info: Using extension html-embedded-in-docx
+2018-05-12T06:04:33.922Z - info: Using extension scripts
+2018-05-12T06:04:33.925Z - info: Using extension assets
+2018-05-12T06:04:33.934Z - info: Using extension scheduling
+2018-05-12T06:04:33.966Z - info: Using extension xlsx
+2018-05-12T06:04:33.983Z - info: Using extension sample-template
+2018-05-12T06:04:33.985Z - info: Using extension resources
+2018-05-12T06:04:33.986Z - info: Using extension public-templates
+2018-05-12T06:04:33.997Z - info: fs store is persisting using fs
+2018-05-12T06:04:33.998Z - info: fs store is synchronizing using fs
+2018-05-12T06:04:34.001Z - info: fs store is loading data
+2018-05-12T06:04:34.057Z - info: fs store is initialized successfully
+2018-05-12T06:04:34.075Z - info: Creating default express app.
+2018-05-12T06:04:34.093Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T06:04:34.094Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T06:04:34.102Z - info: Verifying license key free
+2018-05-12T06:04:34.103Z - info: Using free license
+2018-05-12T06:04:34.106Z - info: reporter initialized
+2018-05-12T06:04:39.442Z - info: Starting rendering request 1 (user: null)
+2018-05-12T06:04:39.444Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:04:39.822Z - info: Rendering request 1 finished in 381 ms
+2018-05-12T06:04:51.274Z - info: fs store is loading data
+2018-05-12T06:04:51.407Z - info: Starting rendering request 2 (user: null)
+2018-05-12T06:04:51.408Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:04:51.694Z - info: Rendering request 2 finished in 287 ms
+2018-05-12T06:05:17.321Z - info: fs store is loading data
+2018-05-12T06:05:17.427Z - info: Starting rendering request 3 (user: null)
+2018-05-12T06:05:17.428Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:05:17.709Z - info: Rendering request 3 finished in 282 ms
+2018-05-12T06:05:50.491Z - info: fs store is loading data
+2018-05-12T06:05:50.596Z - info: Starting rendering request 4 (user: null)
+2018-05-12T06:05:50.597Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:05:50.883Z - info: Rendering request 4 finished in 288 ms
+2018-05-12T06:05:59.088Z - info: Starting rendering request 5 (user: null)
+2018-05-12T06:05:59.090Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:05:59.367Z - info: Rendering request 5 finished in 279 ms
+2018-05-12T06:06:16.167Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T06:06:16.168Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T06:06:16.181Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T06:06:16.185Z - info: Found 33 extensions
+2018-05-12T06:06:16.403Z - info: Using extension import-export
+2018-05-12T06:06:16.499Z - info: Using extension tags
+2018-05-12T06:06:16.502Z - info: Using extension templates
+2018-05-12T06:06:16.504Z - info: Using extension jsrender
+2018-05-12T06:06:16.505Z - info: Using extension handlebars
+2018-05-12T06:06:16.506Z - info: Using extension cli
+2018-05-12T06:06:16.507Z - info: Using extension freeze
+2018-05-12T06:06:16.508Z - info: Using extension debug
+2018-05-12T06:06:16.510Z - info: Using extension express
+2018-05-12T06:06:16.577Z - info: Using extension pdf-utils
+2018-05-12T06:06:16.643Z - info: Using extension data
+2018-05-12T06:06:16.645Z - info: Using extension chrome-pdf
+2018-05-12T06:06:16.683Z - info: Using extension authorization
+2018-05-12T06:06:16.684Z - info: Using extension html-to-xlsx
+2018-05-12T06:06:16.733Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T06:06:16.734Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T06:06:16.734Z - info: Using extension child-templates
+2018-05-12T06:06:16.736Z - info: Using extension browser-client
+2018-05-12T06:06:16.739Z - info: Using extension licensing
+2018-05-12T06:06:16.749Z - info: Using extension fs-store
+2018-05-12T06:06:16.848Z - info: Using extension phantom-pdf
+2018-05-12T06:06:16.889Z - info: Using extension version-control
+2018-05-12T06:06:16.913Z - info: Using extension reports
+2018-05-12T06:06:16.915Z - info: Using extension text
+2018-05-12T06:06:16.916Z - info: Using extension base
+2018-05-12T06:06:16.917Z - info: Using extension studio
+2018-05-12T06:06:16.932Z - info: Using extension html-embedded-in-docx
+2018-05-12T06:06:17.040Z - info: Using extension scripts
+2018-05-12T06:06:17.043Z - info: Using extension assets
+2018-05-12T06:06:17.051Z - info: Using extension scheduling
+2018-05-12T06:06:17.078Z - info: Using extension xlsx
+2018-05-12T06:06:17.094Z - info: Using extension sample-template
+2018-05-12T06:06:17.096Z - info: Using extension resources
+2018-05-12T06:06:17.096Z - info: Using extension public-templates
+2018-05-12T06:06:17.103Z - info: fs store is persisting using fs
+2018-05-12T06:06:17.104Z - info: fs store is synchronizing using fs
+2018-05-12T06:06:17.107Z - info: fs store is loading data
+2018-05-12T06:06:17.163Z - info: fs store is initialized successfully
+2018-05-12T06:06:17.181Z - info: Creating default express app.
+2018-05-12T06:06:17.198Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T06:06:17.199Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T06:06:17.208Z - info: Verifying license key free
+2018-05-12T06:06:17.209Z - info: Using free license
+2018-05-12T06:06:17.212Z - info: reporter initialized
+2018-05-12T06:06:23.380Z - info: Starting rendering request 1 (user: null)
+2018-05-12T06:06:23.382Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:06:23.745Z - info: Rendering request 1 finished in 364 ms
+2018-05-12T06:06:46.914Z - info: fs store is loading data
+2018-05-12T06:06:47.035Z - info: Starting rendering request 2 (user: null)
+2018-05-12T06:06:47.036Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:06:47.333Z - info: Rendering request 2 finished in 298 ms
+2018-05-12T06:07:44.411Z - info: fs store is loading data
+2018-05-12T06:07:44.524Z - info: Starting rendering request 3 (user: null)
+2018-05-12T06:07:44.526Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:07:44.744Z - info: Rendering request 3 finished in 220 ms
+2018-05-12T06:07:49.222Z - info: Starting rendering request 4 (user: null)
+2018-05-12T06:07:49.223Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:07:49.414Z - info: Rendering request 4 finished in 192 ms
+2018-05-12T06:08:10.257Z - info: fs store is loading data
+2018-05-12T06:08:10.362Z - info: Starting rendering request 5 (user: null)
+2018-05-12T06:08:10.364Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:08:10.592Z - info: Rendering request 5 finished in 230 ms
+2018-05-12T06:08:30.588Z - info: fs store is loading data
+2018-05-12T06:08:30.687Z - info: Starting rendering request 6 (user: null)
+2018-05-12T06:08:30.689Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:08:30.886Z - info: Rendering request 6 finished in 199 ms
+2018-05-12T06:09:56.122Z - info: Starting rendering request 7 (user: null)
+2018-05-12T06:09:56.122Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:09:56.358Z - info: Rendering request 7 finished in 235 ms
+2018-05-12T06:10:20.293Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T06:10:20.295Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T06:10:20.308Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T06:10:20.311Z - info: Found 33 extensions
+2018-05-12T06:10:20.550Z - info: Using extension import-export
+2018-05-12T06:10:20.647Z - info: Using extension tags
+2018-05-12T06:10:20.650Z - info: Using extension templates
+2018-05-12T06:10:20.652Z - info: Using extension jsrender
+2018-05-12T06:10:20.653Z - info: Using extension handlebars
+2018-05-12T06:10:20.654Z - info: Using extension cli
+2018-05-12T06:10:20.655Z - info: Using extension freeze
+2018-05-12T06:10:20.656Z - info: Using extension debug
+2018-05-12T06:10:20.657Z - info: Using extension express
+2018-05-12T06:10:20.729Z - info: Using extension pdf-utils
+2018-05-12T06:10:20.801Z - info: Using extension data
+2018-05-12T06:10:20.803Z - info: Using extension chrome-pdf
+2018-05-12T06:10:20.860Z - info: Using extension authorization
+2018-05-12T06:10:20.862Z - info: Using extension html-to-xlsx
+2018-05-12T06:10:20.919Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T06:10:20.920Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T06:10:20.920Z - info: Using extension child-templates
+2018-05-12T06:10:20.922Z - info: Using extension browser-client
+2018-05-12T06:10:20.924Z - info: Using extension licensing
+2018-05-12T06:10:20.936Z - info: Using extension fs-store
+2018-05-12T06:10:21.060Z - info: Using extension phantom-pdf
+2018-05-12T06:10:21.113Z - info: Using extension version-control
+2018-05-12T06:10:21.143Z - info: Using extension reports
+2018-05-12T06:10:21.144Z - info: Using extension text
+2018-05-12T06:10:21.145Z - info: Using extension base
+2018-05-12T06:10:21.146Z - info: Using extension studio
+2018-05-12T06:10:21.161Z - info: Using extension html-embedded-in-docx
+2018-05-12T06:10:21.281Z - info: Using extension scripts
+2018-05-12T06:10:21.284Z - info: Using extension assets
+2018-05-12T06:10:21.291Z - info: Using extension scheduling
+2018-05-12T06:10:21.322Z - info: Using extension xlsx
+2018-05-12T06:10:21.339Z - info: Using extension sample-template
+2018-05-12T06:10:21.340Z - info: Using extension resources
+2018-05-12T06:10:21.341Z - info: Using extension public-templates
+2018-05-12T06:10:21.347Z - info: fs store is persisting using fs
+2018-05-12T06:10:21.347Z - info: fs store is synchronizing using fs
+2018-05-12T06:10:21.350Z - info: fs store is loading data
+2018-05-12T06:10:21.402Z - info: fs store is initialized successfully
+2018-05-12T06:10:21.420Z - info: Creating default express app.
+2018-05-12T06:10:21.435Z - info: jsreport server successfully started on http port: 5488
+2018-05-12T06:10:21.436Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-12T06:10:21.442Z - info: Verifying license key free
+2018-05-12T06:10:21.443Z - info: Using free license
+2018-05-12T06:10:21.447Z - info: reporter initialized
+2018-05-12T06:10:26.242Z - info: Starting rendering request 1 (user: null)
+2018-05-12T06:10:26.244Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-12T06:10:26.536Z - info: Rendering request 1 finished in 294 ms
+2018-05-12T06:11:09.125Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T06:11:09.126Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T06:11:09.137Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T06:11:09.141Z - info: Found 33 extensions
+2018-05-12T06:11:09.361Z - info: Using extension import-export
+2018-05-12T06:11:09.454Z - info: Using extension tags
+2018-05-12T06:11:09.457Z - info: Using extension templates
+2018-05-12T06:11:09.459Z - info: Using extension jsrender
+2018-05-12T06:11:09.460Z - info: Using extension handlebars
+2018-05-12T06:11:09.462Z - info: Using extension cli
+2018-05-12T06:11:09.462Z - info: Using extension freeze
+2018-05-12T06:11:09.463Z - info: Using extension debug
+2018-05-12T06:11:09.465Z - info: Using extension express
+2018-05-12T06:11:09.535Z - info: Using extension pdf-utils
+2018-05-12T06:11:09.602Z - info: Using extension data
+2018-05-12T06:11:09.603Z - info: Using extension chrome-pdf
+2018-05-12T06:11:09.645Z - info: Using extension authorization
+2018-05-12T06:11:09.646Z - info: Using extension html-to-xlsx
+2018-05-12T06:11:09.694Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T06:11:09.695Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T06:11:09.695Z - info: Using extension child-templates
+2018-05-12T06:11:09.697Z - info: Using extension browser-client
+2018-05-12T06:11:09.698Z - info: Using extension licensing
+2018-05-12T06:11:09.708Z - info: Using extension fs-store
+2018-05-12T06:11:09.809Z - info: Using extension phantom-pdf
+2018-05-12T06:11:09.853Z - info: Using extension version-control
+2018-05-12T06:11:09.876Z - info: Using extension reports
+2018-05-12T06:11:09.878Z - info: Using extension text
+2018-05-12T06:11:09.878Z - info: Using extension base
+2018-05-12T06:11:09.880Z - info: Using extension studio
+2018-05-12T06:11:09.894Z - info: Using extension html-embedded-in-docx
+2018-05-12T06:11:09.997Z - info: Using extension scripts
+2018-05-12T06:11:10.000Z - info: Using extension assets
+2018-05-12T06:11:10.008Z - info: Using extension scheduling
+2018-05-12T06:11:10.036Z - info: Using extension xlsx
+2018-05-12T06:11:10.051Z - info: Using extension sample-template
+2018-05-12T06:11:10.052Z - info: Using extension resources
+2018-05-12T06:11:10.057Z - info: Using extension public-templates
+2018-05-12T06:11:10.062Z - info: fs store is persisting using fs
+2018-05-12T06:11:10.062Z - info: fs store is synchronizing using fs
+2018-05-12T06:11:10.065Z - info: fs store is loading data
+2018-05-12T06:11:10.107Z - info: fs store is initialized successfully
+2018-05-12T06:11:10.125Z - info: Creating default express app.
+2018-05-12T06:11:10.141Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T06:11:10.142Z - error: Error occured during reporter init Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T06:11:40.470Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-12T06:11:40.471Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-12T06:11:40.483Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-12T06:11:40.486Z - info: Found 33 extensions
+2018-05-12T06:11:40.706Z - info: Using extension import-export
+2018-05-12T06:11:40.800Z - info: Using extension tags
+2018-05-12T06:11:40.802Z - info: Using extension templates
+2018-05-12T06:11:40.804Z - info: Using extension jsrender
+2018-05-12T06:11:40.805Z - info: Using extension handlebars
+2018-05-12T06:11:40.806Z - info: Using extension cli
+2018-05-12T06:11:40.807Z - info: Using extension freeze
+2018-05-12T06:11:40.809Z - info: Using extension debug
+2018-05-12T06:11:40.811Z - info: Using extension express
+2018-05-12T06:11:40.881Z - info: Using extension pdf-utils
+2018-05-12T06:11:40.946Z - info: Using extension data
+2018-05-12T06:11:40.947Z - info: Using extension chrome-pdf
+2018-05-12T06:11:40.985Z - info: Using extension authorization
+2018-05-12T06:11:40.986Z - info: Using extension html-to-xlsx
+2018-05-12T06:11:41.032Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-12T06:11:41.033Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-12T06:11:41.033Z - info: Using extension child-templates
+2018-05-12T06:11:41.034Z - info: Using extension browser-client
+2018-05-12T06:11:41.036Z - info: Using extension licensing
+2018-05-12T06:11:41.048Z - info: Using extension fs-store
+2018-05-12T06:11:41.148Z - info: Using extension phantom-pdf
+2018-05-12T06:11:41.189Z - info: Using extension version-control
+2018-05-12T06:11:41.208Z - info: Using extension reports
+2018-05-12T06:11:41.215Z - info: Using extension text
+2018-05-12T06:11:41.216Z - info: Using extension base
+2018-05-12T06:11:41.218Z - info: Using extension studio
+2018-05-12T06:11:41.233Z - info: Using extension html-embedded-in-docx
+2018-05-12T06:11:41.338Z - info: Using extension scripts
+2018-05-12T06:11:41.341Z - info: Using extension assets
+2018-05-12T06:11:41.348Z - info: Using extension scheduling
+2018-05-12T06:11:41.375Z - info: Using extension xlsx
+2018-05-12T06:11:41.390Z - info: Using extension sample-template
+2018-05-12T06:11:41.392Z - info: Using extension resources
+2018-05-12T06:11:41.392Z - info: Using extension public-templates
+2018-05-12T06:11:41.398Z - info: fs store is persisting using fs
+2018-05-12T06:11:41.398Z - info: fs store is synchronizing using fs
+2018-05-12T06:11:41.400Z - info: fs store is loading data
+2018-05-12T06:11:41.448Z - info: fs store is initialized successfully
+2018-05-12T06:11:41.464Z - info: Creating default express app.
+2018-05-12T06:11:41.480Z - error: Error when starting http server on port 5488 Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-12T06:11:41.482Z - error: Error occured during reporter init Error: listen EADDRINUSE :::5488
+    at Server.setupListenHandle [as _listen2] (net.js:1330:14)
+    at listenInCluster (net.js:1378:12)
+    at Server.listen (net.js:1466:7)
+    at Promise (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:22:12)
+    at Promise._execute (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/debuggability.js:303:9)
+    at Promise._resolveFromExecutor (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:483:18)
+    at new Promise (/home/toeymirumo/QA-RTANC/report/node_modules/bluebird/js/release/promise.js:79:10)
+    at startAsync (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:16:10)
+    at steps.push (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:50:14)
+    at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
+    at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
