@@ -1,4 +1,5 @@
 const express = require('express')
+const axios = require('axios')
 const multer = require('multer')
 const sar = require('./models/qaSAR')
 const sarDocRef = require('./models/sarDocRef')
@@ -48,6 +49,20 @@ router.post('/upsert', multer().array(), (req, res, next) => {
     }).then(upserted => {
         res.status(200).send(upserted)
     }).catch(err => {
+        next(err)
+    })
+})
+
+router.post('/report', (req, res, next) => {
+    const data = {"template":{"shortid":"Sk4QNy4Cf"}}
+    axios.post('http://localhost:5488/api/report', data).then(x => {
+        // console.log(x)
+        res.setHeader('Content-Type', 'application/pdf')
+        res.setHeader('Content-Disposition', 'inline;filename=sar.pdf')
+        res.status(201).send(x.data)
+        // res.end()
+    }).catch(err => {
+        console.log(err)
         next(err)
     })
 })
