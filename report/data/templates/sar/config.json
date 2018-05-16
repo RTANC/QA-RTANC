@@ -7,8 +7,11 @@
         "printBackground": true
     },
     "modificationDate": {
-        "$$date": 1526103837601
+        "$$date": 1526462436183
     },
     "_id": "sjhuyHhixXo0Nl26",
-    "$entitySet": "templates"
+    "$entitySet": "templates",
+    "data": {
+        "shortid": "SJY6CPtAf"
+    }
 }

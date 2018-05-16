@@ -675,3 +675,117 @@ TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/trou
     at Object.start (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:124:13)
     at Object.reporter.initializeListeners.add (/home/toeymirumo/QA-RTANC/report/node_modules/jsreport-express/lib/reporter.express.js:256:30)
     at process._tickCallback (internal/process/next_tick.js:68:7)
+2018-05-16T09:13:10.409Z - error: Error when processing render request Failed to launch chrome!
+[0516/161310.088116:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec4a993 logging::LogMessage::~LogMessage()
+#2 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#3 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#5 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55575e974be0 content::RunNamedProcessTypeMain()
+#7 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#8 0x55575e97f155 service_manager::Main()
+#9 0x55575e974104 content::ContentMain()
+#10 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x555762a36022 headless::HeadlessBrowserMain()
+#12 0x55575e97c189 headless::HeadlessShellMain()
+#13 0x55575cfee1ac ChromeMain
+#14 0x7fa7b7de306b __libc_start_main
+#15 0x55575cfee02a _start
+
+Received signal 6
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec326f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fa7bddbba80 <unknown>
+#3 0x7fa7b7df686b __GI_raise
+#4 0x7fa7b7de140e __GI_abort
+#5 0x55575ec31175 base::debug::BreakDebugger()
+#6 0x55575ec4addc logging::LogMessage::~LogMessage()
+#7 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#8 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#10 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55575e974be0 content::RunNamedProcessTypeMain()
+#12 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#13 0x55575e97f155 service_manager::Main()
+#14 0x55575e974104 content::ContentMain()
+#15 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x555762a36022 headless::HeadlessBrowserMain()
+#17 0x55575e97c189 headless::HeadlessShellMain()
+#18 0x55575cfee1ac ChromeMain
+#19 0x7fa7b7de306b __libc_start_main
+#20 0x55575cfee02a _start
+  r8: 0000000000000000  r9: 00007fffe80da8d0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007fffe80dafd8 r13: 0000000000000161 r14: 00007fffe80dafe0 r15: 00007fffe80dab79
+  di: 0000000000000002  si: 00007fffe80da8d0  bp: 00007fffe80dab20  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fa7b7df686b  sp: 00007fffe80da8d0
+  ip: 00007fa7b7df686b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0516/161310.088116:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec4a993 logging::LogMessage::~LogMessage()
+#2 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#3 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#5 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55575e974be0 content::RunNamedProcessTypeMain()
+#7 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#8 0x55575e97f155 service_manager::Main()
+#9 0x55575e974104 content::ContentMain()
+#10 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x555762a36022 headless::HeadlessBrowserMain()
+#12 0x55575e97c189 headless::HeadlessShellMain()
+#13 0x55575cfee1ac ChromeMain
+#14 0x7fa7b7de306b __libc_start_main
+#15 0x55575cfee02a _start
+
+Received signal 6
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec326f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fa7bddbba80 <unknown>
+#3 0x7fa7b7df686b __GI_raise
+#4 0x7fa7b7de140e __GI_abort
+#5 0x55575ec31175 base::debug::BreakDebugger()
+#6 0x55575ec4addc logging::LogMessage::~LogMessage()
+#7 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#8 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#10 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55575e974be0 content::RunNamedProcessTypeMain()
+#12 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#13 0x55575e97f155 service_manager::Main()
+#14 0x55575e974104 content::ContentMain()
+#15 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x555762a36022 headless::HeadlessBrowserMain()
+#17 0x55575e97c189 headless::HeadlessShellMain()
+#18 0x55575cfee1ac ChromeMain
+#19 0x7fa7b7de306b __libc_start_main
+#20 0x55575cfee02a _start
+  r8: 0000000000000000  r9: 00007fffe80da8d0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007fffe80dafd8 r13: 0000000000000161 r14: 00007fffe80dafe0 r15: 00007fffe80dab79
+  di: 0000000000000002  si: 00007fffe80da8d0  bp: 00007fffe80dab20  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fa7b7df686b  sp: 00007fffe80da8d0
+  ip: 00007fa7b7df686b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-16T09:13:10.410Z - error: Error during processing request at http://localhost:5488/api/report/sar

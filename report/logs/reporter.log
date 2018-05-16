@@ -2448,3 +2448,300 @@ TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/trou
 2018-05-16T03:40:41.590Z - info: Starting rendering request 13 (user: null)
 2018-05-16T03:40:41.591Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
 2018-05-16T03:40:41.812Z - info: Rendering request 13 finished in 222 ms
+2018-05-16T08:34:07.424Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-16T08:34:07.428Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-16T08:34:07.444Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-16T08:34:07.449Z - info: Found 33 extensions
+2018-05-16T08:34:07.672Z - info: Using extension import-export
+2018-05-16T08:34:07.758Z - info: Using extension tags
+2018-05-16T08:34:07.759Z - info: Using extension templates
+2018-05-16T08:34:07.761Z - info: Using extension jsrender
+2018-05-16T08:34:07.762Z - info: Using extension handlebars
+2018-05-16T08:34:07.763Z - info: Using extension cli
+2018-05-16T08:34:07.763Z - info: Using extension freeze
+2018-05-16T08:34:07.764Z - info: Using extension debug
+2018-05-16T08:34:07.766Z - info: Using extension express
+2018-05-16T08:34:07.832Z - info: Using extension pdf-utils
+2018-05-16T08:34:07.891Z - info: Using extension data
+2018-05-16T08:34:07.892Z - info: Using extension chrome-pdf
+2018-05-16T08:34:07.928Z - info: Using extension authorization
+2018-05-16T08:34:07.929Z - info: Using extension html-to-xlsx
+2018-05-16T08:34:07.976Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-16T08:34:07.977Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-16T08:34:07.977Z - info: Using extension child-templates
+2018-05-16T08:34:07.978Z - info: Using extension browser-client
+2018-05-16T08:34:07.980Z - info: Using extension licensing
+2018-05-16T08:34:07.990Z - info: Using extension fs-store
+2018-05-16T08:34:08.087Z - info: Using extension phantom-pdf
+2018-05-16T08:34:08.124Z - info: Using extension version-control
+2018-05-16T08:34:08.148Z - info: Using extension reports
+2018-05-16T08:34:08.149Z - info: Using extension text
+2018-05-16T08:34:08.149Z - info: Using extension base
+2018-05-16T08:34:08.151Z - info: Using extension studio
+2018-05-16T08:34:08.165Z - info: Using extension html-embedded-in-docx
+2018-05-16T08:34:08.258Z - info: Using extension scripts
+2018-05-16T08:34:08.261Z - info: Using extension assets
+2018-05-16T08:34:08.267Z - info: Using extension scheduling
+2018-05-16T08:34:08.290Z - info: Using extension xlsx
+2018-05-16T08:34:08.305Z - info: Using extension sample-template
+2018-05-16T08:34:08.306Z - info: Using extension resources
+2018-05-16T08:34:08.307Z - info: Using extension public-templates
+2018-05-16T08:34:08.311Z - info: fs store is persisting using fs
+2018-05-16T08:34:08.312Z - info: fs store is synchronizing using fs
+2018-05-16T08:34:08.314Z - info: fs store is loading data
+2018-05-16T08:34:08.364Z - info: fs store is initialized successfully
+2018-05-16T08:34:08.380Z - info: Creating default express app.
+2018-05-16T08:34:08.393Z - info: jsreport server successfully started on http port: 5488
+2018-05-16T08:34:08.393Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-16T08:34:08.399Z - info: Verifying license key free
+2018-05-16T08:34:08.400Z - info: Using free license
+2018-05-16T08:34:08.402Z - info: reporter initialized
+2018-05-16T08:54:27.752Z - info: fs store is loading data
+2018-05-16T08:54:27.988Z - info: Starting rendering request 1 (user: null)
+2018-05-16T08:54:27.989Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:54:28.670Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:54:28.671Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:54:28.677Z - info: Rendering request 1 finished in 689 ms
+2018-05-16T08:55:13.268Z - info: fs store is loading data
+2018-05-16T08:55:13.366Z - info: Starting rendering request 2 (user: null)
+2018-05-16T08:55:13.367Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:55:13.850Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:55:13.851Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:55:13.857Z - info: Rendering request 2 finished in 491 ms
+2018-05-16T08:55:57.048Z - info: Starting rendering request 3 (user: null)
+2018-05-16T08:55:57.052Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:55:57.594Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:55:57.595Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:55:57.605Z - info: Rendering request 3 finished in 557 ms
+2018-05-16T08:56:21.307Z - info: fs store is loading data
+2018-05-16T08:56:21.513Z - info: Starting rendering request 4 (user: null)
+2018-05-16T08:56:21.514Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:56:21.981Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:56:21.984Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:56:21.993Z - info: Rendering request 4 finished in 479 ms
+2018-05-16T08:56:26.514Z - info: fs store is loading data
+2018-05-16T08:56:26.664Z - info: Starting rendering request 5 (user: null)
+2018-05-16T08:56:26.665Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:56:26.851Z - info: Rendering request 5 finished in 187 ms
+2018-05-16T08:57:24.857Z - info: fs store is loading data
+2018-05-16T08:57:25.050Z - info: Starting rendering request 6 (user: null)
+2018-05-16T08:57:25.051Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:57:25.606Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:57:25.606Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:57:25.612Z - info: Rendering request 6 finished in 562 ms
+2018-05-16T08:59:03.498Z - info: Starting rendering request 7 (user: null)
+2018-05-16T08:59:03.498Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:59:04.033Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:59:04.033Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:59:04.036Z - info: Rendering request 7 finished in 538 ms
+2018-05-16T08:59:25.870Z - info: fs store is loading data
+2018-05-16T08:59:26.118Z - info: Starting rendering request 8 (user: null)
+2018-05-16T08:59:26.118Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:59:26.687Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:59:26.687Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:59:26.696Z - info: Rendering request 8 finished in 578 ms
+2018-05-16T08:59:43.321Z - info: fs store is loading data
+2018-05-16T08:59:43.490Z - info: Starting rendering request 9 (user: null)
+2018-05-16T08:59:43.491Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T08:59:44.127Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T08:59:44.127Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T08:59:44.130Z - info: Rendering request 9 finished in 640 ms
+2018-05-16T09:01:00.212Z - info: Starting rendering request 10 (user: null)
+2018-05-16T09:01:00.214Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:01:00.738Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:01:00.742Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:01:00.751Z - info: Rendering request 10 finished in 539 ms
+2018-05-16T09:01:15.619Z - info: fs store is loading data
+2018-05-16T09:01:15.780Z - info: Starting rendering request 11 (user: null)
+2018-05-16T09:01:15.781Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:01:16.351Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:01:16.352Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:01:16.372Z - info: Rendering request 11 finished in 591 ms
+2018-05-16T09:04:27.076Z - info: fs store is loading data
+2018-05-16T09:04:27.235Z - info: Starting rendering request 12 (user: null)
+2018-05-16T09:04:27.236Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:04:27.755Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:04:27.755Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:04:27.765Z - info: Rendering request 12 finished in 530 ms
+2018-05-16T09:04:29.578Z - info: fs store is loading data
+2018-05-16T09:04:29.775Z - info: Starting rendering request 13 (user: null)
+2018-05-16T09:04:29.776Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:04:30.342Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:04:30.343Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:04:30.350Z - info: Rendering request 13 finished in 574 ms
+2018-05-16T09:04:47.508Z - info: fs store is loading data
+2018-05-16T09:04:47.743Z - info: Starting rendering request 14 (user: null)
+2018-05-16T09:04:47.744Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:04:48.285Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:04:48.285Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:04:48.288Z - info: Rendering request 14 finished in 545 ms
+2018-05-16T09:05:02.159Z - info: fs store is loading data
+2018-05-16T09:05:02.349Z - info: Starting rendering request 15 (user: null)
+2018-05-16T09:05:02.350Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:05:02.859Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:05:02.859Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:05:02.865Z - info: Rendering request 15 finished in 516 ms
+2018-05-16T09:05:44.947Z - info: fs store is loading data
+2018-05-16T09:05:45.075Z - info: Starting rendering request 16 (user: null)
+2018-05-16T09:05:45.075Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:05:45.545Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:05:45.545Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:05:45.551Z - info: Rendering request 16 finished in 476 ms
+2018-05-16T09:06:31.729Z - info: fs store is loading data
+2018-05-16T09:06:31.848Z - info: Starting rendering request 17 (user: null)
+2018-05-16T09:06:31.849Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:06:32.354Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:06:32.356Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:06:32.362Z - info: Rendering request 17 finished in 514 ms
+2018-05-16T09:06:37.792Z - info: Starting rendering request 18 (user: null)
+2018-05-16T09:06:37.794Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:06:38.344Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:06:38.344Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:06:38.351Z - info: Rendering request 18 finished in 558 ms
+2018-05-16T09:12:14.888Z - info: fs store is loading data
+2018-05-16T09:12:15.107Z - info: Starting rendering request 19 (user: null)
+2018-05-16T09:12:15.107Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:12:15.722Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:12:15.722Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:12:15.725Z - info: Rendering request 19 finished in 619 ms
+2018-05-16T09:12:48.165Z - info: Starting rendering request 20 (user: null)
+2018-05-16T09:12:48.167Z - info: Rendering template { name: sar, recipe: html, engine: handlebars, preview: true }
+2018-05-16T09:12:48.287Z - info: Rendering request 20 finished in 120 ms
+2018-05-16T09:13:09.978Z - info: Starting rendering request 21 (user: null)
+2018-05-16T09:13:09.979Z - info: Rendering template { name: sar, recipe: chrome-pdf, engine: handlebars, preview: true }
+2018-05-16T09:13:10.409Z - error: Error when processing render request Failed to launch chrome!
+[0516/161310.088116:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec4a993 logging::LogMessage::~LogMessage()
+#2 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#3 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#5 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55575e974be0 content::RunNamedProcessTypeMain()
+#7 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#8 0x55575e97f155 service_manager::Main()
+#9 0x55575e974104 content::ContentMain()
+#10 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x555762a36022 headless::HeadlessBrowserMain()
+#12 0x55575e97c189 headless::HeadlessShellMain()
+#13 0x55575cfee1ac ChromeMain
+#14 0x7fa7b7de306b __libc_start_main
+#15 0x55575cfee02a _start
+
+Received signal 6
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec326f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fa7bddbba80 <unknown>
+#3 0x7fa7b7df686b __GI_raise
+#4 0x7fa7b7de140e __GI_abort
+#5 0x55575ec31175 base::debug::BreakDebugger()
+#6 0x55575ec4addc logging::LogMessage::~LogMessage()
+#7 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#8 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#10 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55575e974be0 content::RunNamedProcessTypeMain()
+#12 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#13 0x55575e97f155 service_manager::Main()
+#14 0x55575e974104 content::ContentMain()
+#15 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x555762a36022 headless::HeadlessBrowserMain()
+#17 0x55575e97c189 headless::HeadlessShellMain()
+#18 0x55575cfee1ac ChromeMain
+#19 0x7fa7b7de306b __libc_start_main
+#20 0x55575cfee02a _start
+  r8: 0000000000000000  r9: 00007fffe80da8d0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007fffe80dafd8 r13: 0000000000000161 r14: 00007fffe80dafe0 r15: 00007fffe80dab79
+  di: 0000000000000002  si: 00007fffe80da8d0  bp: 00007fffe80dab20  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fa7b7df686b  sp: 00007fffe80da8d0
+  ip: 00007fa7b7df686b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0516/161310.088116:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec4a993 logging::LogMessage::~LogMessage()
+#2 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#3 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#5 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x55575e974be0 content::RunNamedProcessTypeMain()
+#7 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#8 0x55575e97f155 service_manager::Main()
+#9 0x55575e974104 content::ContentMain()
+#10 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x555762a36022 headless::HeadlessBrowserMain()
+#12 0x55575e97c189 headless::HeadlessShellMain()
+#13 0x55575cfee1ac ChromeMain
+#14 0x7fa7b7de306b __libc_start_main
+#15 0x55575cfee02a _start
+
+Received signal 6
+#0 0x55575ec32b8c base::debug::StackTrace::StackTrace()
+#1 0x55575ec326f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fa7bddbba80 <unknown>
+#3 0x7fa7b7df686b __GI_raise
+#4 0x7fa7b7de140e __GI_abort
+#5 0x55575ec31175 base::debug::BreakDebugger()
+#6 0x55575ec4addc logging::LogMessage::~LogMessage()
+#7 0x55575dcb4601 content::ZygoteHostImpl::Init()
+#8 0x55575d92a3d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x55575d93011f content::BrowserMainRunnerImpl::Initialize()
+#10 0x555762a36eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x55575e974be0 content::RunNamedProcessTypeMain()
+#12 0x55575e975518 content::ContentMainRunnerImpl::Run()
+#13 0x55575e97f155 service_manager::Main()
+#14 0x55575e974104 content::ContentMain()
+#15 0x555762a35f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x555762a36022 headless::HeadlessBrowserMain()
+#17 0x55575e97c189 headless::HeadlessShellMain()
+#18 0x55575cfee1ac ChromeMain
+#19 0x7fa7b7de306b __libc_start_main
+#20 0x55575cfee02a _start
+  r8: 0000000000000000  r9: 00007fffe80da8d0 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007fffe80dafd8 r13: 0000000000000161 r14: 00007fffe80dafe0 r15: 00007fffe80dab79
+  di: 0000000000000002  si: 00007fffe80da8d0  bp: 00007fffe80dab20  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fa7b7df686b  sp: 00007fffe80da8d0
+  ip: 00007fa7b7df686b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-05-16T09:13:10.410Z - error: Error during processing request at http://localhost:5488/api/report/sar
+2018-05-16T09:13:17.076Z - info: Starting rendering request 22 (user: null)
+2018-05-16T09:13:17.078Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:13:17.652Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:13:17.652Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:13:17.656Z - info: Rendering request 22 finished in 581 ms
+2018-05-16T09:19:21.281Z - info: Starting rendering request 23 (user: null)
+2018-05-16T09:19:21.283Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:19:21.879Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:19:21.880Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:19:21.882Z - info: Rendering request 23 finished in 601 ms
+2018-05-16T09:20:22.244Z - info: Starting rendering request 24 (user: null)
+2018-05-16T09:20:22.244Z - info: Rendering template { name: sar, recipe: html, engine: handlebars, preview: true }
+2018-05-16T09:20:22.291Z - info: Rendering request 24 finished in 47 ms
+2018-05-16T09:20:36.951Z - info: Starting rendering request 25 (user: null)
+2018-05-16T09:20:36.954Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:20:37.589Z - warn: Unable to load resource (#2URL:https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css)
+2018-05-16T09:20:37.589Z - warn: Error code: 99. Description: Error creating SSL context (error:140A90C4:SSL routines:func(169):reason(196))
+2018-05-16T09:20:37.596Z - info: Rendering request 25 finished in 645 ms
+2018-05-16T09:21:05.054Z - info: fs store is loading data
+2018-05-16T09:21:05.283Z - info: Starting rendering request 26 (user: null)
+2018-05-16T09:21:05.285Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-16T09:21:05.504Z - info: Rendering request 26 finished in 220 ms
