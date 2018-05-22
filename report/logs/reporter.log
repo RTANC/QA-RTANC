@@ -3055,3 +3055,58 @@ TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/trou
 2018-05-17T08:10:40.196Z - info: Starting rendering request 2 (user: null)
 2018-05-17T08:10:40.197Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
 2018-05-17T08:10:40.444Z - info: Rendering request 2 finished in 248 ms
+2018-05-22T10:27:00.818Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-22T10:27:00.819Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-22T10:27:00.825Z - info: Extensions location cache not found, crawling directories
+2018-05-22T10:27:00.944Z - info: Found 33 extensions
+2018-05-22T10:27:01.510Z - info: Using extension import-export
+2018-05-22T10:27:04.299Z - info: Using extension tags
+2018-05-22T10:27:04.404Z - info: Using extension templates
+2018-05-22T10:27:04.528Z - info: Using extension jsrender
+2018-05-22T10:27:04.548Z - info: Using extension handlebars
+2018-05-22T10:27:04.594Z - info: Using extension cli
+2018-05-22T10:27:04.626Z - info: Using extension freeze
+2018-05-22T10:27:04.649Z - info: Using extension debug
+2018-05-22T10:27:04.662Z - info: Using extension express
+2018-05-22T10:27:07.894Z - info: Using extension pdf-utils
+2018-05-22T10:27:08.393Z - info: Using extension data
+2018-05-22T10:27:08.450Z - info: Using extension chrome-pdf
+2018-05-22T10:27:09.133Z - info: Using extension authorization
+2018-05-22T10:27:09.153Z - info: Using extension html-to-xlsx
+2018-05-22T10:27:09.923Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-22T10:27:09.924Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-22T10:27:09.925Z - info: Using extension child-templates
+2018-05-22T10:27:09.978Z - info: Using extension browser-client
+2018-05-22T10:27:10.017Z - info: Using extension licensing
+2018-05-22T10:27:10.130Z - info: Using extension fs-store
+2018-05-22T10:27:13.573Z - info: Using extension phantom-pdf
+2018-05-22T10:27:13.714Z - info: Using extension version-control
+2018-05-22T10:27:13.946Z - info: Using extension reports
+2018-05-22T10:27:13.963Z - info: Using extension text
+2018-05-22T10:27:13.970Z - info: Using extension base
+2018-05-22T10:27:13.988Z - info: Using extension studio
+2018-05-22T10:27:14.385Z - info: Using extension html-embedded-in-docx
+2018-05-22T10:27:16.376Z - info: Using extension scripts
+2018-05-22T10:27:16.399Z - info: Using extension assets
+2018-05-22T10:27:16.577Z - info: Using extension scheduling
+2018-05-22T10:27:16.910Z - info: Using extension xlsx
+2018-05-22T10:27:17.318Z - info: Using extension sample-template
+2018-05-22T10:27:17.332Z - info: Using extension resources
+2018-05-22T10:27:17.338Z - info: Using extension public-templates
+2018-05-22T10:27:17.354Z - info: fs store is persisting using fs
+2018-05-22T10:27:17.355Z - info: fs store is synchronizing using fs
+2018-05-22T10:27:17.356Z - info: fs store is loading data
+2018-05-22T10:27:17.685Z - info: fs store is initialized successfully
+2018-05-22T10:27:17.702Z - info: Creating default express app.
+2018-05-22T10:27:18.217Z - info: jsreport server successfully started on http port: 5488
+2018-05-22T10:27:18.218Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-22T10:27:18.345Z - info: Verifying license key free
+2018-05-22T10:27:18.348Z - info: Using free license
+2018-05-22T10:27:18.358Z - info: reporter initialized
+2018-05-22T10:27:39.797Z - info: Starting rendering request 1 (user: null)
+2018-05-22T10:27:39.803Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-22T10:27:42.882Z - info: Rendering request 1 finished in 3085 ms
+2018-05-22T10:29:36.634Z - info: fs store is loading data
+2018-05-22T10:29:36.813Z - info: Starting rendering request 2 (user: null)
+2018-05-22T10:29:36.813Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-22T10:29:37.367Z - info: Rendering request 2 finished in 555 ms

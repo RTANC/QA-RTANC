@@ -16,9 +16,10 @@
     </style>
 </head>
 <body>
-       <h6 style="font-size: 16px;font-weight: bold;margin-left: 150px;">องค์ประกอบที่ &nbsp;{{standardNo}} &nbsp;&nbsp;&nbsp;&nbsp;{{standardName}}</h6>
-        <span style="font-size: 16px;font-weight: bold;">ตัวบ่งชี้ที่&nbsp;&nbsp;{{standardNo}}.{{indicatorNo}}</span><span>&emsp;&emsp;&emsp;{{indicatorName}}</span><br>
+       {{!-- <h6 style="font-size: 16px;font-weight: bold;margin-left: 150px;">องค์ประกอบที่ &nbsp;{{standardNo}} &nbsp;&nbsp;&nbsp;&nbsp;{{standardName}}</h6> --}}
+        <span style="font-size: 16px;font-weight: bold;">ตัวบ่งชี้ที่&nbsp;&nbsp;{{indicatorNo}}</span><span>&emsp;&emsp;&emsp;{{indicatorName}}</span><br>
         <span style="font-size: 16px;font-weight: bold;">ชนิดของตัวบ่งชี้</span><span>&emsp;&emsp;&nbsp;&nbsp;{{indicatorType}}</span><br>
-        <span style="font-size: 16px;font-weight: bold;">คำอธิบายตัวบ่งชี้</span>
+        <span style="font-size: 16px;font-weight: bold;">คำอธิบายตัวบ่งชี้</span><br>
+        {{{indicatorInfo}}}
 </body>
 </html>

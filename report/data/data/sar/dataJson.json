@@ -1,8 +1,19 @@
 {
-    "standardNo": 2,
-    "standardName": "การผลิตบัณฑิต",
-    "indicatorNo": 1,
+    "indicatorId": 3,
+    "standardId": 4,
+    "indicatorNo": 2.1,
     "indicatorName": "คุณภาพบัณฑิตตามกรอบมาตรฐานคุณวุฒิระดับอุดมศึกษาแห่งชาติ",
+    "indicatorInfo": "<p style=\"padding-left: 30px;\">กรอบมาตรฐานคุณวุฒิระดับอุดมศึกษาแห่งชาติ (Thai Qualification Framework for Higher Education: TQF)</p>\r\n<p>ได้มีการกำหนดคุณลักษณะบัณฑิตที่พึงประสงค์ตามที่หลักสูตรกำหนดใว้ใน มคอ.๒ ซึ่งครอบคลุมผลการเรียนรู้อย่างน้อย ๕ ด้านคือ ๑) ด้านคุณธรรมจริยธรรม ๒) ด้านความรู้ ๓) ด้านทักษะทางปัญญา ๔) ด้านทักษะความสัมพันธ์ระหว่างบุคคลและความรับผิดชอบ และ ๕)ด้านทักษะการคิดวิเคราะห์เชิงตัวเลขการสื่อสารและการใช้เทคโนโลยีสารสนเทศตัวบ่งชี้นี้จะเป็นการประเมินคุณภาพบัณฑิตในมุมมองของผู้ใช้บัณฑิต</p>",
     "indicatorType": "ผลลัพธ์",
-    "indicatorInfo": ""
+    "indicatorGain": "<p style=\"padding-left: 30px;\">ใช้ค่าเฉลี่ยของคะแนนประเมินบัณฑิต (คะแนนเต็ม ๕)</p>\r\n<p><strong>สูตรคำนวณ</strong></p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 50%; height: 36px; text-align: center;\" rowspan=\"2\">คะแนนที่ได้</td>\r\n<td style=\"width: 50%; height: 18px; text-align: center;\">ผลรวมของค่าคะแนนที่ได้จากการประเมินบัณฑิต</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 50%; height: 18px; text-align: center;\">จำนวนบัณฑิตที่ได้รับการประเมินทั้งหมด</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p><strong>ข้อมูลประกอบ</strong></p>\r\n<p>จำนวนบัณฑิตที่รับการประเมินจากผู้ใช้บัณฑิตจะต้องไม่น้อยกว่าร้อยละ ๒๐ ของจำนวนบัณฑิตที่สำเร็จการศึกษา</p>",
+    "sarLvl": 1,
+    "sarResult": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 50%; text-align: center;\">ผลการดำเนินงาน</td>\r\n<td style=\"width: 50%; text-align: center;\">เอกสารหลักฐาน</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 50%;\">&nbsp; &nbsp; &nbsp; กองอำนวยการ วิทยาลัยฯ ได้ดำเนินการติดตามคุณภาพบัณฑิต โดยการใช้แบบสอบถาม สอบถามกับตัวบัณฑิต ผู้บังคับบัญชา เพื่อนร่วมงานและผู้รับบริการ เกี่ยวกับคุณภาพบัณฑิตผู้สำเร็จการศึกษา</td>\r\n<td style=\"width: 50%;\">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 50%;\">&nbsp;</td>\r\n<td style=\"width: 50%;\">&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "goal": "ครอบคุมคุณวุฒิอย่างน้อย 5 ด้าน",
+    "sumResult": "ครอบคุมคุณวุฒิ 6 ด้าน",
+    "goalCk": true,
+    "score": 4.11,
+    "str": "1.ผู้บริหารระดับสูง สนับสนุนให้มีการติดตามคุณภาพบัณฑิตอย่างเป็นระบบ",
+    "strEnchance": null,
+    "weak": null,
+    "weakEnchance": "1.นำผลประเมินไปพัฒนาอย่างเป็นรูปธรรม\r\n2.ควรนำผลประเมินมาำัฒนาเป็นวิจัยสถาบัน"
 }
