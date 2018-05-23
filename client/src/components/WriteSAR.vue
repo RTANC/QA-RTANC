@@ -32,7 +32,7 @@
           </v-flex>
           <v-flex xs10 offset-xs1>
             <v-card>
-              <editor v-model="sar.sarResult" :init="editorOption" api-key="sclhhconedzzd6ze9f3qvqgqlhvie7y2cqykydtyqu3o8qla"></editor>
+              <tinymce id="d1" v-model="sar.sarResult" :other_options="editorOption"></tinymce>
             </v-card>
           </v-flex>
           <v-flex xs10 offset-xs1>
@@ -114,7 +114,6 @@ export default {
     return {
       dialogOther: false,
       editorOption: {
-        plugins: ['advlist autolink lists link image charmap print preview anchor textcolor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table contextmenu paste code help wordcount'],
         height: '300'
       },
       indicator: {

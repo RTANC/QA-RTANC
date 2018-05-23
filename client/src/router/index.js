@@ -6,6 +6,7 @@ import ManualUpload from '@/components/ManualUpload'
 import ManualDownload from '@/components/ManualDownload'
 import ManageStd from '@/components/ManageStd'
 import ManageInd from '@/components/ManageInd'
+import ModifiedInd from '@/components/ModifiedInd'
 import MakeSAR from '@/components/MakeSAR'
 import WriteSAR from '@/components/WriteSAR'
 import UserMgr from '@/components/UserMgr'
@@ -38,6 +39,11 @@ export default new Router({
       path: '/ManageInd',
       name: 'ManageInd',
       component: ManageInd
+    },
+    {
+      path: '/ModifiedInd',
+      name: 'Modified',
+      component: ModifiedInd
     },
     {
       path: '/ManualUpload',
