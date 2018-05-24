@@ -95,42 +95,6 @@ export default {
       }
       this.getIndicator()
     },
-    async submit () {
-      if (this.$refs.form.validate()) {
-        const formData = new FormData()
-        formData.append('indicatorNo', this.ind.indNo)
-        formData.append('indicatorName', this.ind.indName)
-        formData.append('indicatorInfo', this.ind.indInfo)
-        formData.append('indicatorType', this.ind.indType)
-        formData.append('indicatorGain', this.ind.indGain)
-        try {
-          if (!this.edit) {
-            formData.append('standardId', this.std.stdId)
-            await IndicatorService.addIndicator(formData)
-            this.snackbar.text = 'เพิ่มตัวบ่งชี้สำเร็จ'
-            this.snackbar.color = 'success'
-            this.snackbar.show = true
-          } else {
-            formData.append('indicatorId', this.ind.indId)
-            await IndicatorService.editIndicator(formData)
-            this.snackbar.text = 'แก้ไขตัวบ่งชี้สำเร็จ'
-            this.snackbar.color = 'success'
-            this.snackbar.show = true
-          }
-          this.getIndicator()
-        } catch (error) {
-          if (!this.edit) {
-            this.snackbar.text = 'เพิ่มตัวบ่งชี้ล้มเหลว'
-            this.snackbar.color = 'error'
-            this.snackbar.show = true
-          } else {
-            this.snackbar.text = 'แก้ไขตัวบ่งชี้ล้มเหลว'
-            this.snackbar.color = 'error'
-            this.snackbar.show = true
-          }
-        }
-      }
-    },
     async getIndicator () {
       const respones = await IndicatorService.getIndicator(this.std.stdId)
       this.items = respones.data

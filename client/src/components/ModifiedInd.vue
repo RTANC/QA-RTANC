@@ -114,6 +114,7 @@ export default {
             this.snackbar.color = 'success'
             this.snackbar.show = true
           }
+          this.$router.go(-1)
         } catch (error) {
           if (!this.edit) {
             this.snackbar.text = 'เพิ่มตัวบ่งชี้ล้มเหลว'

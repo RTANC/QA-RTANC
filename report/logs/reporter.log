@@ -3110,3 +3110,52 @@ TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/trou
 2018-05-22T10:29:36.813Z - info: Starting rendering request 2 (user: null)
 2018-05-22T10:29:36.813Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
 2018-05-22T10:29:37.367Z - info: Rendering request 2 finished in 555 ms
+2018-05-24T00:34:16.908Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-24T00:34:16.910Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-24T00:34:16.925Z - info: Extensions location cache not found, crawling directories
+2018-05-24T00:34:17.064Z - info: Found 33 extensions
+2018-05-24T00:34:17.794Z - info: Using extension import-export
+2018-05-24T00:34:20.846Z - info: Using extension tags
+2018-05-24T00:34:20.943Z - info: Using extension templates
+2018-05-24T00:34:21.075Z - info: Using extension jsrender
+2018-05-24T00:34:21.094Z - info: Using extension handlebars
+2018-05-24T00:34:21.140Z - info: Using extension cli
+2018-05-24T00:34:21.164Z - info: Using extension freeze
+2018-05-24T00:34:21.188Z - info: Using extension debug
+2018-05-24T00:34:21.233Z - info: Using extension express
+2018-05-24T00:34:23.636Z - info: Using extension pdf-utils
+2018-05-24T00:34:24.351Z - info: Using extension data
+2018-05-24T00:34:24.416Z - info: Using extension chrome-pdf
+2018-05-24T00:34:25.412Z - info: Using extension authorization
+2018-05-24T00:34:25.435Z - info: Using extension html-to-xlsx
+2018-05-24T00:34:26.493Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-24T00:34:26.496Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-24T00:34:26.497Z - info: Using extension child-templates
+2018-05-24T00:34:26.548Z - info: Using extension browser-client
+2018-05-24T00:34:26.598Z - info: Using extension licensing
+2018-05-24T00:34:26.698Z - info: Using extension fs-store
+2018-05-24T00:34:31.812Z - info: Using extension phantom-pdf
+2018-05-24T00:34:32.085Z - info: Using extension version-control
+2018-05-24T00:34:32.423Z - info: Using extension reports
+2018-05-24T00:34:32.444Z - info: Using extension text
+2018-05-24T00:34:32.449Z - info: Using extension base
+2018-05-24T00:34:32.460Z - info: Using extension studio
+2018-05-24T00:34:33.006Z - info: Using extension html-embedded-in-docx
+2018-05-24T00:34:35.641Z - info: Using extension scripts
+2018-05-24T00:34:35.718Z - info: Using extension assets
+2018-05-24T00:34:35.903Z - info: Using extension scheduling
+2018-05-24T00:34:36.344Z - info: Using extension xlsx
+2018-05-24T00:34:36.820Z - info: Using extension sample-template
+2018-05-24T00:34:36.887Z - info: Using extension resources
+2018-05-24T00:34:36.896Z - info: Using extension public-templates
+2018-05-24T00:34:36.910Z - info: fs store is persisting using fs
+2018-05-24T00:34:36.911Z - info: fs store is synchronizing using fs
+2018-05-24T00:34:36.912Z - info: fs store is loading data
+2018-05-24T00:34:37.164Z - info: fs store is initialized successfully
+2018-05-24T00:34:37.211Z - info: Creating default express app.
+2018-05-24T00:34:37.611Z - info: jsreport server successfully started on http port: 5488
+2018-05-24T00:34:37.623Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-24T00:34:37.748Z - info: Verifying license key free
+2018-05-24T00:34:37.759Z - info: Using free license
+2018-05-24T00:34:37.771Z - info: reporter initialized
+2018-05-24T00:39:36.363Z - info: fs store is loading data

@@ -138,6 +138,22 @@ export default {
         weak: null,
         weakEnchance: null
       },
+      report: {
+        indicatorNo: null,
+        indicatorName: null,
+        indicatorType: null,
+        indicatorInfo: null,
+        indicatorGain: null,
+        sarResult: null,
+        goal: null,
+        sumResult: null,
+        goalCk: null,
+        score: null,
+        str: null,
+        strEnchance: null,
+        weak: null,
+        weakEnchance: null
+      },
       snackbar: {
         show: false,
         text: null,
@@ -157,6 +173,15 @@ export default {
           this.createSAR()
         } else {
           this.sar = respones.data[0]
+          this.report.sarResult = this.sar.sarResult
+          this.report.goal = this.sar.goal
+          this.report.sumResult = this.sar.sumResult
+          this.report.goalCk = this.sar.goalCk
+          this.report.score = this.sar.score
+          this.report.str = this.sar.str
+          this.report.strEnchance = this.sar.strEnchance
+          this.report.weak = this.sar.weak
+          this.report.weakEnchance = this.sar.weakEnchance
         }
       } catch (error) {
       }
@@ -210,9 +235,17 @@ export default {
     async getOneIndicator (id) {
       try {
         const response = await IndicatorService.getOneIndicator(id)
-        this.indicator.indicatorInfo = response.data.indicatorInfo
-        this.indicator.indicatorGain = response.data.indicatorGain
+        this.report.indicatorNo = this.indicator.indicatorNo
+        this.report.indicatorName = this.indicatorName
+        this.report.indicatorType = (!this.indicator.indicatorType) ? 'เชิงปริมาณ' : 'เชิงคุณภาพ'
+        this.report.indicatorInfo = this.indicator.indicatorInfo = response.data.indicatorInfo
+        this.report.indicatorGain = this.indicator.indicatorGain = response.data.indicatorGain
       } catch (e) {
+      }
+    },
+    async report () {
+      try {
+      } catch (error) {
       }
     }
   },
