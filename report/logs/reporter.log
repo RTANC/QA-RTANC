@@ -3159,3 +3159,87 @@ TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/trou
 2018-05-24T00:34:37.759Z - info: Using free license
 2018-05-24T00:34:37.771Z - info: reporter initialized
 2018-05-24T00:39:36.363Z - info: fs store is loading data
+2018-05-24T23:50:02.151Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-24T23:50:02.154Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-24T23:50:02.167Z - info: Extensions location cache not found, crawling directories
+2018-05-24T23:50:03.860Z - info: Found 33 extensions
+2018-05-24T23:50:04.894Z - info: Using extension import-export
+2018-05-24T23:50:08.501Z - info: Using extension tags
+2018-05-24T23:50:08.590Z - info: Using extension templates
+2018-05-24T23:50:08.722Z - info: Using extension jsrender
+2018-05-24T23:50:08.742Z - info: Using extension handlebars
+2018-05-24T23:50:08.787Z - info: Using extension cli
+2018-05-24T23:50:08.845Z - info: Using extension freeze
+2018-05-24T23:50:08.885Z - info: Using extension debug
+2018-05-24T23:50:08.940Z - info: Using extension express
+2018-05-24T23:50:11.118Z - info: Using extension pdf-utils
+2018-05-24T23:50:11.700Z - info: Using extension data
+2018-05-24T23:50:11.765Z - info: Using extension chrome-pdf
+2018-05-24T23:50:12.518Z - info: Using extension authorization
+2018-05-24T23:50:12.559Z - info: Using extension html-to-xlsx
+2018-05-24T23:50:13.569Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-24T23:50:13.571Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-24T23:50:13.571Z - info: Using extension child-templates
+2018-05-24T23:50:13.675Z - info: Using extension browser-client
+2018-05-24T23:50:13.722Z - info: Using extension licensing
+2018-05-24T23:50:13.811Z - info: Using extension fs-store
+2018-05-24T23:50:19.584Z - info: Using extension phantom-pdf
+2018-05-24T23:50:19.775Z - info: Using extension version-control
+2018-05-24T23:50:20.006Z - info: Using extension reports
+2018-05-24T23:50:20.024Z - info: Using extension text
+2018-05-24T23:50:20.030Z - info: Using extension base
+2018-05-24T23:50:20.041Z - info: Using extension studio
+2018-05-24T23:50:20.453Z - info: Using extension html-embedded-in-docx
+2018-05-24T23:50:22.382Z - info: Using extension scripts
+2018-05-24T23:50:22.412Z - info: Using extension assets
+2018-05-24T23:50:22.580Z - info: Using extension scheduling
+2018-05-24T23:50:22.919Z - info: Using extension xlsx
+2018-05-24T23:50:23.322Z - info: Using extension sample-template
+2018-05-24T23:50:23.336Z - info: Using extension resources
+2018-05-24T23:50:23.342Z - info: Using extension public-templates
+2018-05-24T23:50:23.368Z - info: fs store is persisting using fs
+2018-05-24T23:50:23.370Z - info: fs store is synchronizing using fs
+2018-05-24T23:50:23.373Z - info: fs store is loading data
+2018-05-24T23:50:23.683Z - info: fs store is initialized successfully
+2018-05-24T23:50:23.717Z - info: Creating default express app.
+2018-05-24T23:50:24.076Z - info: jsreport server successfully started on http port: 5488
+2018-05-24T23:50:24.076Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-24T23:50:24.252Z - info: Verifying license key free
+2018-05-24T23:50:24.286Z - info: Using free license
+2018-05-24T23:50:24.291Z - info: reporter initialized
+2018-05-24T23:53:21.797Z - info: fs store is loading data
+2018-05-24T23:53:45.099Z - info: Starting rendering request 1 (user: null)
+2018-05-24T23:53:45.102Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:53:48.354Z - info: Rendering request 1 finished in 3255 ms
+2018-05-24T23:55:30.679Z - info: fs store is loading data
+2018-05-24T23:55:30.888Z - info: Starting rendering request 2 (user: null)
+2018-05-24T23:55:30.889Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:55:31.547Z - info: Rendering request 2 finished in 659 ms
+2018-05-24T23:55:57.217Z - info: fs store is loading data
+2018-05-24T23:55:57.409Z - info: Starting rendering request 3 (user: null)
+2018-05-24T23:55:57.410Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:55:58.011Z - info: Rendering request 3 finished in 596 ms
+2018-05-24T23:56:13.149Z - info: fs store is loading data
+2018-05-24T23:56:13.315Z - info: Starting rendering request 4 (user: null)
+2018-05-24T23:56:13.316Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:56:13.961Z - info: Rendering request 4 finished in 647 ms
+2018-05-24T23:56:25.767Z - info: fs store is loading data
+2018-05-24T23:56:25.905Z - info: Starting rendering request 5 (user: null)
+2018-05-24T23:56:25.905Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:56:26.504Z - info: Rendering request 5 finished in 600 ms
+2018-05-24T23:58:59.841Z - info: fs store is loading data
+2018-05-24T23:58:59.998Z - info: Starting rendering request 6 (user: null)
+2018-05-24T23:58:59.999Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:59:00.584Z - info: Rendering request 6 finished in 586 ms
+2018-05-24T23:59:38.217Z - info: fs store is loading data
+2018-05-24T23:59:38.333Z - info: Starting rendering request 7 (user: null)
+2018-05-24T23:59:38.334Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:59:38.962Z - info: Rendering request 7 finished in 629 ms
+2018-05-24T23:59:51.441Z - info: fs store is loading data
+2018-05-24T23:59:51.648Z - info: Starting rendering request 8 (user: null)
+2018-05-24T23:59:51.649Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-24T23:59:52.221Z - info: Rendering request 8 finished in 573 ms
+2018-05-25T00:00:01.355Z - info: fs store is loading data
+2018-05-25T00:00:01.572Z - info: Starting rendering request 9 (user: null)
+2018-05-25T00:00:01.572Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-25T00:00:02.227Z - info: Rendering request 9 finished in 656 ms

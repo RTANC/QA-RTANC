@@ -13,13 +13,49 @@
         body {
             font-family: "THSarabunNew", sans-serif;
         }
+
+        .title {
+            font-size: 16px;font-weight: bold;
+        }
+
+        .center-justify {
+            text-align: center;
+        }
+
+        table,tr,th,td{
+            border-style: solid;
+            border-width: 1px;  
+        }
     </style>
 </head>
 <body>
        {{!-- <h6 style="font-size: 16px;font-weight: bold;margin-left: 150px;">องค์ประกอบที่ &nbsp;{{standardNo}} &nbsp;&nbsp;&nbsp;&nbsp;{{standardName}}</h6> --}}
-        <span style="font-size: 16px;font-weight: bold;">ตัวบ่งชี้ที่&nbsp;&nbsp;{{indicatorNo}}</span><span>&emsp;&emsp;&emsp;{{indicatorName}}</span><br>
-        <span style="font-size: 16px;font-weight: bold;">ชนิดของตัวบ่งชี้</span><span>&emsp;&emsp;&nbsp;&nbsp;{{indicatorType}}</span><br>
-        <span style="font-size: 16px;font-weight: bold;">คำอธิบายตัวบ่งชี้</span><br>
+        <span class="title">ตัวบ่งชี้ที่&nbsp;&nbsp;{{indicatorNo}}</span><span>&emsp;&emsp;&emsp;{{indicatorName}}</span><br>
+        <span class="title">ชนิดของตัวบ่งชี้</span><span>&emsp;&emsp;&nbsp;&nbsp;{{indicatorType}}</span><br>
+        <span class="title">คำอธิบายตัวบ่งชี้</span><br>
         {{{indicatorInfo}}}
+        <span class="title">เกณฑ์การประเมิน</span><br>
+        {{{indicatorGain}}}
+        <span class="title">ผลการดำเนินงาน</span><br>
+        {{{sarResult}}}
+        <span class="title">ผลการประเมินตนเอง</span><br>
+        <table>
+            <thead>
+                <tr>
+                    <th class="title center-justify">เป้าหมาย</th>
+                    <th class="title center-justify">ผลการดำเนินงาน</th>
+                    <th class="title center-justify">การบรรลุเป้าหมาย</th>
+                    <th class="title center-justify">คะแนนการประเมินตนเอง</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center-justify"></td>
+                    <td class="center-justify"></td>
+                    <td class="center-justify"></td>
+                    <td class="center-justify"></td>
+                </tr>
+            </tbody>
+        </table>
 </body>
 </html>
