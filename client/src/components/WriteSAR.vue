@@ -176,7 +176,7 @@ export default {
           this.report.sarResult = this.sar.sarResult
           this.report.goal = this.sar.goal
           this.report.sumResult = this.sar.sumResult
-          this.report.goalCk = this.sar.goalCk
+          this.report.goalCk = (this.sar.goalCk) ? "&#x2713;" : "&#x2717;"
           this.report.score = this.sar.score
           this.report.str = this.sar.str
           this.report.strEnchance = this.sar.strEnchance

@@ -21,41 +21,44 @@
         .center-justify {
             text-align: center;
         }
-
-        table,tr,th,td{
-            border-style: solid;
-            border-width: 1px;  
-        }
     </style>
 </head>
 <body>
        {{!-- <h6 style="font-size: 16px;font-weight: bold;margin-left: 150px;">องค์ประกอบที่ &nbsp;{{standardNo}} &nbsp;&nbsp;&nbsp;&nbsp;{{standardName}}</h6> --}}
-        <span class="title">ตัวบ่งชี้ที่&nbsp;&nbsp;{{indicatorNo}}</span><span>&emsp;&emsp;&emsp;{{indicatorName}}</span><br>
-        <span class="title">ชนิดของตัวบ่งชี้</span><span>&emsp;&emsp;&nbsp;&nbsp;{{indicatorType}}</span><br>
-        <span class="title">คำอธิบายตัวบ่งชี้</span><br>
-        {{{indicatorInfo}}}
-        <span class="title">เกณฑ์การประเมิน</span><br>
+        <div>
+            <span class="title">ตัวบ่งชี้ที่&nbsp;&nbsp;{{indicatorNo}}</span><span>&emsp;&emsp;&emsp;{{indicatorName}}</span>
+        </div>
+        <div>
+            <span class="title">ชนิดของตัวบ่งชี้</span><span>&emsp;&emsp;&nbsp;&nbsp;{{indicatorType}}</span>
+        </div>
+        <div>
+            <span class="title">คำอธิบายตัวบ่งชี้</span>
+            {{{indicatorInfo}}}
+        </div>
+        <div>
+            <span class="title">เกณฑ์การประเมิน</span>
         {{{indicatorGain}}}
-        <span class="title">ผลการดำเนินงาน</span><br>
+        </div>
+        <div>
+            <span class="title">ผลการดำเนินงาน</span>
         {{{sarResult}}}
-        <span class="title">ผลการประเมินตนเอง</span><br>
-        <table>
-            <thead>
+        </div>
+        <div style="margin-top: 3px;">
+            <span class="title">ผลการประเมินตนเอง</span>
+        <table border="1" cellspacing="0" cellpadding="3" width="100%">
                 <tr>
-                    <th class="title center-justify">เป้าหมาย</th>
-                    <th class="title center-justify">ผลการดำเนินงาน</th>
-                    <th class="title center-justify">การบรรลุเป้าหมาย</th>
-                    <th class="title center-justify">คะแนนการประเมินตนเอง</th>
+                    <td class="center-justify">เป้าหมาย</td>
+                    <td class="center-justify">ผลการดำเนินงาน</td>
+                    <td class="center-justify">การบรรลุเป้าหมาย</td>
+                    <td class="center-justify">คะแนนการประเมินตนเอง</td>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
-                    <td class="center-justify"></td>
-                    <td class="center-justify"></td>
-                    <td class="center-justify"></td>
-                    <td class="center-justify"></td>
+                    <td class="center-justify">{{goal}}</td>
+                    <td class="center-justify">{{sumResult}}</td>
+                    <td class="center-justify">{{{goalCk}}}</td>
+                    <td class="center-justify">{{score}}&ensp;คะแนน</td>
                 </tr>
-            </tbody>
         </table>
+        </div>
 </body>
 </html>
