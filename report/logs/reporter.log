@@ -3629,3 +3629,135 @@ Expecting 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 
 2018-05-26T02:29:02.287Z - info: Starting rendering request 8 (user: null)
 2018-05-26T02:29:02.288Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
 2018-05-26T02:29:03.382Z - info: Rendering request 8 finished in 1095 ms
+2018-05-31T01:41:11.159Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-31T01:41:11.161Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-31T01:41:11.175Z - info: Extensions location cache not found, crawling directories
+2018-05-31T01:41:14.881Z - info: Found 33 extensions
+2018-05-31T01:41:16.838Z - info: Using extension import-export
+2018-05-31T01:41:30.095Z - info: Using extension tags
+2018-05-31T01:41:30.250Z - info: Using extension templates
+2018-05-31T01:41:30.573Z - info: Using extension jsrender
+2018-05-31T01:41:30.610Z - info: Using extension handlebars
+2018-05-31T01:41:30.689Z - info: Using extension cli
+2018-05-31T01:41:30.738Z - info: Using extension freeze
+2018-05-31T01:41:30.778Z - info: Using extension debug
+2018-05-31T01:41:30.824Z - info: Using extension express
+2018-05-31T01:41:39.077Z - info: Using extension pdf-utils
+2018-05-31T01:41:39.619Z - info: Using extension data
+2018-05-31T01:41:39.683Z - info: Using extension chrome-pdf
+2018-05-31T01:41:41.007Z - info: Using extension authorization
+2018-05-31T01:41:41.157Z - info: Using extension html-to-xlsx
+2018-05-31T01:41:42.972Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-31T01:41:42.974Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-31T01:41:42.974Z - info: Using extension child-templates
+2018-05-31T01:41:43.028Z - info: Using extension browser-client
+2018-05-31T01:41:43.068Z - info: Using extension licensing
+2018-05-31T01:41:43.170Z - info: Using extension fs-store
+2018-05-31T01:41:47.087Z - info: Using extension phantom-pdf
+2018-05-31T01:41:47.274Z - info: Using extension version-control
+2018-05-31T01:41:47.483Z - info: Using extension reports
+2018-05-31T01:41:47.506Z - info: Using extension text
+2018-05-31T01:41:47.516Z - info: Using extension base
+2018-05-31T01:41:47.627Z - info: Using extension studio
+2018-05-31T01:41:48.389Z - info: Using extension html-embedded-in-docx
+2018-05-31T01:41:50.383Z - info: Using extension scripts
+2018-05-31T01:41:50.413Z - info: Using extension assets
+2018-05-31T01:41:50.755Z - info: Using extension scheduling
+2018-05-31T01:41:51.105Z - info: Using extension xlsx
+2018-05-31T01:41:51.504Z - info: Using extension sample-template
+2018-05-31T01:41:51.585Z - info: Using extension resources
+2018-05-31T01:41:51.666Z - info: Using extension public-templates
+2018-05-31T01:41:51.719Z - info: fs store is persisting using fs
+2018-05-31T01:41:51.720Z - info: fs store is synchronizing using fs
+2018-05-31T01:41:51.725Z - info: fs store is loading data
+2018-05-31T01:41:51.981Z - info: fs store is initialized successfully
+2018-05-31T01:41:51.994Z - info: Creating default express app.
+2018-05-31T01:41:52.337Z - info: jsreport server successfully started on http port: 5488
+2018-05-31T01:41:52.337Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-31T01:41:52.489Z - info: Verifying license key free
+2018-05-31T01:41:52.492Z - info: Using free license
+2018-05-31T01:41:52.498Z - info: reporter initialized
+2018-05-31T01:43:48.179Z - info: Starting rendering request 1 (user: null)
+2018-05-31T01:43:48.191Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:43:51.861Z - info: Rendering request 1 finished in 3682 ms
+2018-05-31T01:44:43.726Z - info: fs store is loading data
+2018-05-31T01:44:43.935Z - info: Starting rendering request 2 (user: null)
+2018-05-31T01:44:43.937Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:44:44.643Z - info: Rendering request 2 finished in 707 ms
+2018-05-31T01:45:04.067Z - info: Starting rendering request 3 (user: null)
+2018-05-31T01:45:04.069Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:45:04.813Z - info: Rendering request 3 finished in 747 ms
+2018-05-31T01:45:39.255Z - info: fs store is loading data
+2018-05-31T01:45:39.466Z - info: Starting rendering request 4 (user: null)
+2018-05-31T01:45:39.467Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:45:40.172Z - info: Rendering request 4 finished in 706 ms
+2018-05-31T01:46:26.464Z - info: fs store is loading data
+2018-05-31T01:46:26.701Z - info: Starting rendering request 5 (user: null)
+2018-05-31T01:46:26.702Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:46:27.338Z - info: Rendering request 5 finished in 637 ms
+2018-05-31T01:48:45.934Z - info: fs store is loading data
+2018-05-31T01:48:46.060Z - info: Starting rendering request 6 (user: null)
+2018-05-31T01:48:46.061Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:48:46.740Z - info: Rendering request 6 finished in 680 ms
+2018-05-31T01:49:21.760Z - info: Starting rendering request 7 (user: null)
+2018-05-31T01:49:21.762Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:49:22.493Z - info: Rendering request 7 finished in 733 ms
+2018-05-31T01:49:50.543Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-05-31T01:49:50.543Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-05-31T01:49:50.570Z - info: Extensions location cache contains up to date information, skipping crawling in /home/toeymirumo/QA-RTANC/report/node_modules/
+2018-05-31T01:49:50.573Z - info: Found 33 extensions
+2018-05-31T01:49:50.768Z - info: Using extension import-export
+2018-05-31T01:49:50.853Z - info: Using extension tags
+2018-05-31T01:49:50.855Z - info: Using extension templates
+2018-05-31T01:49:50.857Z - info: Using extension jsrender
+2018-05-31T01:49:50.858Z - info: Using extension handlebars
+2018-05-31T01:49:50.859Z - info: Using extension cli
+2018-05-31T01:49:50.859Z - info: Using extension freeze
+2018-05-31T01:49:50.860Z - info: Using extension debug
+2018-05-31T01:49:50.861Z - info: Using extension express
+2018-05-31T01:49:50.926Z - info: Using extension pdf-utils
+2018-05-31T01:49:50.986Z - info: Using extension data
+2018-05-31T01:49:50.987Z - info: Using extension chrome-pdf
+2018-05-31T01:49:51.023Z - info: Using extension authorization
+2018-05-31T01:49:51.024Z - info: Using extension html-to-xlsx
+2018-05-31T01:49:51.068Z - info: html-to-xlsx detected chrome as available html engine
+2018-05-31T01:49:51.069Z - info: html-to-xlsx detected phantom as available html engine
+2018-05-31T01:49:51.069Z - info: Using extension child-templates
+2018-05-31T01:49:51.070Z - info: Using extension browser-client
+2018-05-31T01:49:51.072Z - info: Using extension licensing
+2018-05-31T01:49:51.082Z - info: Using extension fs-store
+2018-05-31T01:49:51.174Z - info: Using extension phantom-pdf
+2018-05-31T01:49:51.210Z - info: Using extension version-control
+2018-05-31T01:49:51.230Z - info: Using extension reports
+2018-05-31T01:49:51.233Z - info: Using extension text
+2018-05-31T01:49:51.235Z - info: Using extension base
+2018-05-31T01:49:51.237Z - info: Using extension studio
+2018-05-31T01:49:51.254Z - info: Using extension html-embedded-in-docx
+2018-05-31T01:49:51.355Z - info: Using extension scripts
+2018-05-31T01:49:51.358Z - info: Using extension assets
+2018-05-31T01:49:51.364Z - info: Using extension scheduling
+2018-05-31T01:49:51.388Z - info: Using extension xlsx
+2018-05-31T01:49:51.402Z - info: Using extension sample-template
+2018-05-31T01:49:51.404Z - info: Using extension resources
+2018-05-31T01:49:51.404Z - info: Using extension public-templates
+2018-05-31T01:49:51.409Z - info: fs store is persisting using fs
+2018-05-31T01:49:51.409Z - info: fs store is synchronizing using fs
+2018-05-31T01:49:51.411Z - info: fs store is loading data
+2018-05-31T01:49:51.460Z - info: fs store is initialized successfully
+2018-05-31T01:49:51.476Z - info: Creating default express app.
+2018-05-31T01:49:51.488Z - info: jsreport server successfully started on http port: 5488
+2018-05-31T01:49:51.488Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-05-31T01:49:51.496Z - info: Verifying license key free
+2018-05-31T01:49:51.496Z - info: Using free license
+2018-05-31T01:49:51.499Z - info: reporter initialized
+2018-05-31T01:50:07.873Z - info: Starting rendering request 1 (user: null)
+2018-05-31T01:50:07.880Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:50:08.611Z - info: Rendering request 1 finished in 739 ms
+2018-05-31T01:52:29.741Z - info: fs store is loading data
+2018-05-31T01:52:29.840Z - info: Starting rendering request 2 (user: null)
+2018-05-31T01:52:29.842Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:52:30.286Z - info: Rendering request 2 finished in 445 ms
+2018-05-31T01:55:39.527Z - info: fs store is loading data
+2018-05-31T01:55:39.704Z - info: Starting rendering request 3 (user: null)
+2018-05-31T01:55:39.706Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-05-31T01:55:40.407Z - info: Rendering request 3 finished in 703 ms
