@@ -1,6 +1,7 @@
 const express = require('express')
-const axios = require('axios')
+const request = require('request')
 const multer = require('multer')
+const indicator = require('./models/indicator')
 const sar = require('./models/qaSAR')
 const sarDocRef = require('./models/sarDocRef')
 const router = express.Router()
@@ -15,6 +16,47 @@ router.get('/', (req, res, next) => {
         }
     }).then(sar => {
         res.status(200).send(sar)
+    }).catch(err => {
+        next(err)
+    })
+})
+
+router.get('/report/:sarId', (req, res, next) => {
+    sar.findAll({
+        where: {
+            sarId: req.params.sarId
+        }
+    }).then(x => {
+        const y =  x[0]
+        indicator.findOne({
+            where: {
+                indicatorId: req.query.indicatorId
+            }
+        }).then(ind => {
+            const report = {
+                indicatorNo: ind.indicatorNo,
+                indicatorName: ind.indicatorName,
+                indicatorType: (ind.indicatorType) ? 'เชิงปริมาณ' : 'เชิงคุณภาพ',
+                indicatorGain: ind.indicatorName,
+                indicatorInfo: ind.indicatorInfo,
+                sarResult: y.sarResult,
+                goal: y.goal,
+                sumResult: y.sumResult,
+                goalCk: (y.goalCk) ? '&#x2713;' : '&#x2717;',
+                score: y.score,
+                str: y.str,
+                strEnchance: y.strEnchance,
+                weak: y.weak,
+                weakEnchance: y.weakEnchance
+            }
+            const data = {"template":{"shortid":"Sk4QNy4Cf"}, data: report}
+            const options = {
+                url: 'http://localhost:5488/api/report',
+                method: 'POST',
+                json: data
+            }
+            request(options).pipe(res)
+        })
     }).catch(err => {
         next(err)
     })
@@ -49,20 +91,6 @@ router.post('/upsert', multer().array(), (req, res, next) => {
     }).then(upserted => {
         res.status(200).send(upserted)
     }).catch(err => {
-        next(err)
-    })
-})
-
-router.post('/report', (req, res, next) => {
-    const data = {"template":{"shortid":"Sk4QNy4Cf"}}
-    axios.post('http://localhost:5488/api/report', data).then(x => {
-        // console.log(x)
-        res.setHeader('Content-Type', 'application/pdf')
-        res.setHeader('Content-Disposition', 'inline;filename=sar.pdf')
-        res.status(201).send(x.data)
-        // res.end()
-    }).catch(err => {
-        console.log(err)
         next(err)
     })
 })

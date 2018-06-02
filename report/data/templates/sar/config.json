@@ -7,11 +7,20 @@
         "printBackground": true
     },
     "modificationDate": {
-        "$$date": 1527300184808
+        "$$date": 1527932055777
     },
     "_id": "sjhuyHhixXo0Nl26",
     "$entitySet": "templates",
     "data": {
         "shortid": "SJY6CPtAf"
+    },
+    "resources": {
+        "items": [
+            {
+                "shortid": "SJY6CPtAf",
+                "entitySet": "data"
+            }
+        ],
+        "defaultLanguage": "th"
     }
 }

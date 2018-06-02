@@ -3761,3 +3761,446 @@ Expecting 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 
 2018-05-31T01:55:39.704Z - info: Starting rendering request 3 (user: null)
 2018-05-31T01:55:39.706Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
 2018-05-31T01:55:40.407Z - info: Rendering request 3 finished in 703 ms
+2018-06-02T01:59:24.666Z - info: Initializing jsreport@2.0.0 in development mode using configuration file: jsreport.config.json
+2018-06-02T01:59:24.668Z - info: Searching for available extensions in /home/toeymirumo/QA-RTANC/report/
+2018-06-02T01:59:24.674Z - info: Extensions location cache not found, crawling directories
+2018-06-02T01:59:25.483Z - info: Found 33 extensions
+2018-06-02T01:59:26.165Z - info: Using extension import-export
+2018-06-02T01:59:34.257Z - info: Using extension tags
+2018-06-02T01:59:34.495Z - info: Using extension templates
+2018-06-02T01:59:39.340Z - info: Using extension jsrender
+2018-06-02T01:59:39.476Z - info: Using extension handlebars
+2018-06-02T01:59:39.639Z - info: Using extension cli
+2018-06-02T01:59:39.737Z - info: Using extension freeze
+2018-06-02T01:59:39.777Z - info: Using extension debug
+2018-06-02T01:59:39.790Z - info: Using extension express
+2018-06-02T01:59:54.258Z - info: Using extension pdf-utils
+2018-06-02T01:59:57.080Z - info: Using extension data
+2018-06-02T01:59:57.481Z - info: Using extension chrome-pdf
+2018-06-02T01:59:59.686Z - info: Using extension authorization
+2018-06-02T01:59:59.716Z - info: Using extension html-to-xlsx
+2018-06-02T02:00:07.083Z - info: html-to-xlsx detected chrome as available html engine
+2018-06-02T02:00:07.085Z - info: html-to-xlsx detected phantom as available html engine
+2018-06-02T02:00:07.085Z - info: Using extension child-templates
+2018-06-02T02:00:07.270Z - info: Using extension browser-client
+2018-06-02T02:00:07.364Z - info: Using extension licensing
+2018-06-02T02:00:07.918Z - info: Using extension fs-store
+2018-06-02T02:00:31.242Z - info: Using extension phantom-pdf
+2018-06-02T02:00:32.089Z - info: Using extension version-control
+2018-06-02T02:00:32.953Z - info: Using extension reports
+2018-06-02T02:00:32.972Z - info: Using extension text
+2018-06-02T02:00:32.978Z - info: Using extension base
+2018-06-02T02:00:32.988Z - info: Using extension studio
+2018-06-02T02:00:34.315Z - info: Using extension html-embedded-in-docx
+2018-06-02T02:00:40.336Z - info: Using extension scripts
+2018-06-02T02:00:40.404Z - info: Using extension assets
+2018-06-02T02:00:40.780Z - info: Using extension scheduling
+2018-06-02T02:00:42.773Z - info: Using extension xlsx
+2018-06-02T02:00:44.386Z - info: Using extension sample-template
+2018-06-02T02:00:44.423Z - info: Using extension resources
+2018-06-02T02:00:44.429Z - info: Using extension public-templates
+2018-06-02T02:00:44.449Z - info: fs store is persisting using fs
+2018-06-02T02:00:44.450Z - info: fs store is synchronizing using fs
+2018-06-02T02:00:44.506Z - info: fs store is loading data
+2018-06-02T02:00:45.126Z - info: fs store is initialized successfully
+2018-06-02T02:00:45.149Z - info: Creating default express app.
+2018-06-02T02:00:45.833Z - info: jsreport server successfully started on http port: 5488
+2018-06-02T02:00:45.835Z - info: fs store emits sockets to synchronize underlying changes with studio
+2018-06-02T02:00:46.049Z - info: Verifying license key free
+2018-06-02T02:00:46.056Z - info: Using free license
+2018-06-02T02:00:46.068Z - info: reporter initialized
+2018-06-02T02:46:29.826Z - info: Starting rendering request 1 (user: null)
+2018-06-02T02:46:29.878Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T02:46:34.146Z - info: Rendering request 1 finished in 4320 ms
+2018-06-02T02:52:04.353Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T02:52:07.512Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T02:59:52.545Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T03:00:22.596Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T03:01:03.886Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T03:02:26.426Z - info: Starting rendering request 2 (user: null)
+2018-06-02T03:02:26.426Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:02:27.131Z - info: Rendering request 2 finished in 706 ms
+2018-06-02T03:03:36.102Z - info: Starting rendering request 3 (user: null)
+2018-06-02T03:03:36.103Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:03:36.785Z - info: Rendering request 3 finished in 683 ms
+2018-06-02T03:06:39.871Z - info: Starting rendering request 4 (user: null)
+2018-06-02T03:06:39.872Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:06:40.679Z - info: Rendering request 4 finished in 808 ms
+2018-06-02T03:08:45.356Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T03:12:10.200Z - info: Starting rendering request 5 (user: null)
+2018-06-02T03:12:10.205Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:12:11.157Z - info: Rendering request 5 finished in 957 ms
+2018-06-02T03:13:59.832Z - info: Starting rendering request 6 (user: null)
+2018-06-02T03:13:59.833Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:14:00.535Z - info: Rendering request 6 finished in 703 ms
+2018-06-02T03:15:05.076Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T03:16:40.398Z - info: Starting rendering request 7 (user: null)
+2018-06-02T03:16:40.400Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:16:41.101Z - info: Rendering request 7 finished in 702 ms
+2018-06-02T03:16:44.543Z - info: Starting rendering request 8 (user: null)
+2018-06-02T03:16:44.544Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:16:45.308Z - info: Rendering request 8 finished in 766 ms
+2018-06-02T03:17:54.956Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?, stack: undefined
+2018-06-02T03:18:21.595Z - info: Starting rendering request 9 (user: null)
+2018-06-02T03:18:21.596Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:18:22.245Z - info: Rendering request 9 finished in 650 ms
+2018-06-02T03:29:11.192Z - info: Starting rendering request 10 (user: null)
+2018-06-02T03:29:11.204Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-06-02T03:29:11.991Z - info: Rendering request 10 finished in 799 ms
+2018-06-02T03:34:43.570Z - info: Starting rendering request 11 (user: null)
+2018-06-02T03:34:43.572Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:34:44.349Z - info: Rendering request 11 finished in 779 ms
+2018-06-02T03:34:50.147Z - info: Starting rendering request 12 (user: null)
+2018-06-02T03:34:50.148Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:34:50.850Z - info: Rendering request 12 finished in 703 ms
+2018-06-02T03:38:02.064Z - info: Starting rendering request 13 (user: null)
+2018-06-02T03:38:02.066Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:38:02.850Z - info: Rendering request 13 finished in 785 ms
+2018-06-02T03:44:51.942Z - info: Starting rendering request 14 (user: null)
+2018-06-02T03:44:51.943Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:44:52.678Z - info: Rendering request 14 finished in 736 ms
+2018-06-02T03:45:11.488Z - info: Starting rendering request 15 (user: null)
+2018-06-02T03:45:11.495Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:45:12.186Z - info: Rendering request 15 finished in 697 ms
+2018-06-02T03:46:41.694Z - info: Starting rendering request 16 (user: null)
+2018-06-02T03:46:41.696Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:46:42.419Z - info: Rendering request 16 finished in 725 ms
+2018-06-02T03:48:58.352Z - info: Starting rendering request 17 (user: null)
+2018-06-02T03:48:58.354Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:48:59.006Z - info: Rendering request 17 finished in 654 ms
+2018-06-02T03:49:30.380Z - info: Starting rendering request 18 (user: null)
+2018-06-02T03:49:30.381Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:49:31.101Z - info: Rendering request 18 finished in 721 ms
+2018-06-02T03:49:39.519Z - info: Starting rendering request 19 (user: null)
+2018-06-02T03:49:39.520Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:49:40.218Z - info: Rendering request 19 finished in 699 ms
+2018-06-02T03:50:26.805Z - info: Starting rendering request 20 (user: null)
+2018-06-02T03:50:26.806Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:50:27.527Z - info: Rendering request 20 finished in 722 ms
+2018-06-02T03:56:08.349Z - info: Starting rendering request 21 (user: null)
+2018-06-02T03:56:08.350Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:56:09.375Z - info: Rendering request 21 finished in 1025 ms
+2018-06-02T03:56:39.505Z - info: Starting rendering request 22 (user: null)
+2018-06-02T03:56:39.507Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:56:40.150Z - info: Rendering request 22 finished in 644 ms
+2018-06-02T03:56:46.168Z - info: Starting rendering request 23 (user: null)
+2018-06-02T03:56:46.170Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:56:46.933Z - info: Rendering request 23 finished in 765 ms
+2018-06-02T03:58:12.937Z - info: Starting rendering request 24 (user: null)
+2018-06-02T03:58:12.939Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:58:13.603Z - info: Rendering request 24 finished in 665 ms
+2018-06-02T03:59:04.342Z - info: Starting rendering request 25 (user: null)
+2018-06-02T03:59:04.343Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T03:59:05.006Z - info: Rendering request 25 finished in 664 ms
+2018-06-02T04:00:58.877Z - info: Starting rendering request 26 (user: null)
+2018-06-02T04:00:58.877Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:00:59.553Z - info: Rendering request 26 finished in 677 ms
+2018-06-02T04:02:25.493Z - info: Starting rendering request 27 (user: null)
+2018-06-02T04:02:25.493Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:02:26.192Z - info: Rendering request 27 finished in 698 ms
+2018-06-02T04:12:29.077Z - info: Starting rendering request 28 (user: null)
+2018-06-02T04:12:29.079Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-06-02T04:12:29.827Z - info: Rendering request 28 finished in 748 ms
+2018-06-02T04:12:43.257Z - info: Starting rendering request 29 (user: null)
+2018-06-02T04:12:43.258Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:12:43.900Z - info: Rendering request 29 finished in 643 ms
+2018-06-02T04:16:13.257Z - info: Starting rendering request 30 (user: null)
+2018-06-02T04:16:13.258Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:16:13.995Z - info: Rendering request 30 finished in 737 ms
+2018-06-02T04:17:38.200Z - info: Starting rendering request 31 (user: null)
+2018-06-02T04:17:38.201Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:17:38.870Z - info: Rendering request 31 finished in 670 ms
+2018-06-02T04:21:55.412Z - info: Starting rendering request 32 (user: null)
+2018-06-02T04:21:55.412Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:21:56.302Z - info: Rendering request 32 finished in 891 ms
+2018-06-02T04:23:09.247Z - info: Starting rendering request 33 (user: null)
+2018-06-02T04:23:09.248Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:23:09.994Z - info: Rendering request 33 finished in 746 ms
+2018-06-02T04:24:59.714Z - info: Starting rendering request 34 (user: null)
+2018-06-02T04:24:59.716Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:25:00.418Z - info: Rendering request 34 finished in 704 ms
+2018-06-02T04:32:44.836Z - info: Starting rendering request 35 (user: null)
+2018-06-02T04:32:44.836Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:32:45.574Z - info: Rendering request 35 finished in 738 ms
+2018-06-02T04:36:50.998Z - info: Starting rendering request 36 (user: null)
+2018-06-02T04:36:50.999Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:36:51.749Z - info: Rendering request 36 finished in 751 ms
+2018-06-02T04:38:25.461Z - info: Starting rendering request 37 (user: null)
+2018-06-02T04:38:25.462Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:38:26.201Z - info: Rendering request 37 finished in 739 ms
+2018-06-02T04:43:51.464Z - info: Starting rendering request 38 (user: null)
+2018-06-02T04:43:51.465Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:43:52.247Z - info: Rendering request 38 finished in 784 ms
+2018-06-02T04:56:20.541Z - info: Starting rendering request 39 (user: null)
+2018-06-02T04:56:20.541Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T04:56:21.309Z - info: Rendering request 39 finished in 767 ms
+2018-06-02T05:01:17.583Z - info: Starting rendering request 40 (user: null)
+2018-06-02T05:01:17.584Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T05:01:18.356Z - info: Rendering request 40 finished in 773 ms
+2018-06-02T05:01:29.326Z - info: Starting rendering request 41 (user: null)
+2018-06-02T05:01:29.328Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T05:01:30.011Z - info: Rendering request 41 finished in 686 ms
+2018-06-02T05:01:59.791Z - info: Starting rendering request 42 (user: null)
+2018-06-02T05:01:59.792Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T05:02:00.450Z - info: Rendering request 42 finished in 659 ms
+2018-06-02T05:02:17.796Z - info: Starting rendering request 43 (user: null)
+2018-06-02T05:02:17.797Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T05:02:18.490Z - info: Rendering request 43 finished in 694 ms
+2018-06-02T07:00:14.542Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?
+undefined
+2018-06-02T07:02:16.368Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?
+undefined
+2018-06-02T07:03:59.934Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?
+undefined
+2018-06-02T07:04:26.628Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?
+undefined
+2018-06-02T07:07:57.420Z - error: Error during processing request at http://localhost:5488/api/report, details: Could not parse report template, aren't you missing content type?
+undefined
+2018-06-02T07:09:21.704Z - info: Starting rendering request 44 (user: null)
+2018-06-02T07:09:21.705Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:09:22.426Z - info: Rendering request 44 finished in 722 ms
+2018-06-02T07:12:45.233Z - info: Starting rendering request 45 (user: null)
+2018-06-02T07:12:45.234Z - info: Rendering template { name: sar, recipe: chrome-pdf, engine: handlebars, preview: false }
+2018-06-02T07:12:48.810Z - error: Error when processing render request Failed to launch chrome!
+[0602/141247.995853:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x56245c0dfb8c base::debug::StackTrace::StackTrace()
+#1 0x56245c0f7993 logging::LogMessage::~LogMessage()
+#2 0x56245b161601 content::ZygoteHostImpl::Init()
+#3 0x56245add73d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x56245addd11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x56245fee3eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x56245be21be0 content::RunNamedProcessTypeMain()
+#7 0x56245be22518 content::ContentMainRunnerImpl::Run()
+#8 0x56245be2c155 service_manager::Main()
+#9 0x56245be21104 content::ContentMain()
+#10 0x56245fee2f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x56245fee3022 headless::HeadlessBrowserMain()
+#12 0x56245be29189 headless::HeadlessShellMain()
+#13 0x56245a49b1ac ChromeMain
+#14 0x7fac9061f06b __libc_start_main
+#15 0x56245a49b02a _start
+
+Received signal 6
+#0 0x56245c0dfb8c base::debug::StackTrace::StackTrace()
+#1 0x56245c0df6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fac965f8a80 <unknown>
+#3 0x7fac9063286b __GI_raise
+#4 0x7fac9061d40e __GI_abort
+#5 0x56245c0de175 base::debug::BreakDebugger()
+#6 0x56245c0f7ddc logging::LogMessage::~LogMessage()
+#7 0x56245b161601 content::ZygoteHostImpl::Init()
+#8 0x56245add73d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x56245addd11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x56245fee3eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x56245be21be0 content::RunNamedProcessTypeMain()
+#12 0x56245be22518 content::ContentMainRunnerImpl::Run()
+#13 0x56245be2c155 service_manager::Main()
+#14 0x56245be21104 content::ContentMain()
+#15 0x56245fee2f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x56245fee3022 headless::HeadlessBrowserMain()
+#17 0x56245be29189 headless::HeadlessShellMain()
+#18 0x56245a49b1ac ChromeMain
+#19 0x7fac9061f06b __libc_start_main
+#20 0x56245a49b02a _start
+  r8: 0000000000000000  r9: 00007ffc4e755840 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc4e755f48 r13: 0000000000000161 r14: 00007ffc4e755f50 r15: 00007ffc4e755ae9
+  di: 0000000000000002  si: 00007ffc4e755840  bp: 00007ffc4e755a90  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fac9063286b  sp: 00007ffc4e755840
+  ip: 00007fac9063286b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+ Error: Failed to launch chrome!
+[0602/141247.995853:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.
+#0 0x56245c0dfb8c base::debug::StackTrace::StackTrace()
+#1 0x56245c0f7993 logging::LogMessage::~LogMessage()
+#2 0x56245b161601 content::ZygoteHostImpl::Init()
+#3 0x56245add73d5 content::BrowserMainLoop::EarlyInitialization()
+#4 0x56245addd11f content::BrowserMainRunnerImpl::Initialize()
+#5 0x56245fee3eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#6 0x56245be21be0 content::RunNamedProcessTypeMain()
+#7 0x56245be22518 content::ContentMainRunnerImpl::Run()
+#8 0x56245be2c155 service_manager::Main()
+#9 0x56245be21104 content::ContentMain()
+#10 0x56245fee2f9c headless::(anonymous namespace)::RunContentMain()
+#11 0x56245fee3022 headless::HeadlessBrowserMain()
+#12 0x56245be29189 headless::HeadlessShellMain()
+#13 0x56245a49b1ac ChromeMain
+#14 0x7fac9061f06b __libc_start_main
+#15 0x56245a49b02a _start
+
+Received signal 6
+#0 0x56245c0dfb8c base::debug::StackTrace::StackTrace()
+#1 0x56245c0df6f1 base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#2 0x7fac965f8a80 <unknown>
+#3 0x7fac9063286b __GI_raise
+#4 0x7fac9061d40e __GI_abort
+#5 0x56245c0de175 base::debug::BreakDebugger()
+#6 0x56245c0f7ddc logging::LogMessage::~LogMessage()
+#7 0x56245b161601 content::ZygoteHostImpl::Init()
+#8 0x56245add73d5 content::BrowserMainLoop::EarlyInitialization()
+#9 0x56245addd11f content::BrowserMainRunnerImpl::Initialize()
+#10 0x56245fee3eb9 headless::HeadlessContentMainDelegate::RunProcess()
+#11 0x56245be21be0 content::RunNamedProcessTypeMain()
+#12 0x56245be22518 content::ContentMainRunnerImpl::Run()
+#13 0x56245be2c155 service_manager::Main()
+#14 0x56245be21104 content::ContentMain()
+#15 0x56245fee2f9c headless::(anonymous namespace)::RunContentMain()
+#16 0x56245fee3022 headless::HeadlessBrowserMain()
+#17 0x56245be29189 headless::HeadlessShellMain()
+#18 0x56245a49b1ac ChromeMain
+#19 0x7fac9061f06b __libc_start_main
+#20 0x56245a49b02a _start
+  r8: 0000000000000000  r9: 00007ffc4e755840 r10: 0000000000000008 r11: 0000000000000246
+ r12: 00007ffc4e755f48 r13: 0000000000000161 r14: 00007ffc4e755f50 r15: 00007ffc4e755ae9
+  di: 0000000000000002  si: 00007ffc4e755840  bp: 00007ffc4e755a90  bx: 0000000000000006
+  dx: 0000000000000000  ax: 0000000000000000  cx: 00007fac9063286b  sp: 00007ffc4e755840
+  ip: 00007fac9063286b efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000
+ trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:246:14)
+    at Interface.helper.addEventListener (/home/toeymirumo/QA-RTANC/report/node_modules/puppeteer/lib/Launcher.js:235:50)
+    at Interface.emit (events.js:187:15)
+    at Interface.close (readline.js:374:8)
+    at Socket.onend (readline.js:152:10)
+    at Socket.emit (events.js:187:15)
+    at endReadableNT (_stream_readable.js:1086:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+2018-06-02T07:12:48.810Z - error: Error during processing request at http://localhost:5488/api/report
+2018-06-02T07:13:15.592Z - info: Starting rendering request 46 (user: null)
+2018-06-02T07:13:15.594Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: false }
+2018-06-02T07:13:16.168Z - info: Rendering request 46 finished in 576 ms
+2018-06-02T07:13:46.413Z - info: Starting rendering request 47 (user: null)
+2018-06-02T07:13:46.414Z - info: Rendering template { name: sar, recipe: html-embedded-in-docx, engine: handlebars, preview: false }
+2018-06-02T07:13:46.777Z - info: Rendering request 47 finished in 364 ms
+2018-06-02T07:15:11.921Z - info: Starting rendering request 48 (user: null)
+2018-06-02T07:15:11.922Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:15:12.610Z - info: Rendering request 48 finished in 689 ms
+2018-06-02T07:25:14.503Z - info: Starting rendering request 49 (user: null)
+2018-06-02T07:25:14.504Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:25:15.163Z - info: Rendering request 49 finished in 660 ms
+2018-06-02T07:27:03.283Z - info: Starting rendering request 50 (user: null)
+2018-06-02T07:27:03.284Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:27:04.042Z - info: Rendering request 50 finished in 759 ms
+2018-06-02T07:42:35.242Z - info: Starting rendering request 51 (user: null)
+2018-06-02T07:42:35.243Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:42:36.094Z - info: Rendering request 51 finished in 852 ms
+2018-06-02T07:49:06.417Z - info: Starting rendering request 52 (user: null)
+2018-06-02T07:49:06.418Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:49:07.200Z - info: Rendering request 52 finished in 784 ms
+2018-06-02T07:53:47.617Z - info: Starting rendering request 53 (user: null)
+2018-06-02T07:53:47.619Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:53:48.447Z - info: Rendering request 53 finished in 829 ms
+2018-06-02T07:54:41.278Z - info: Starting rendering request 54 (user: null)
+2018-06-02T07:54:41.279Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T07:54:41.931Z - info: Rendering request 54 finished in 653 ms
+2018-06-02T08:04:01.266Z - info: Starting rendering request 55 (user: null)
+2018-06-02T08:04:01.266Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T08:04:02.038Z - info: Rendering request 55 finished in 770 ms
+2018-06-02T08:04:46.005Z - info: Starting rendering request 56 (user: null)
+2018-06-02T08:04:46.007Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T08:04:46.680Z - info: Rendering request 56 finished in 675 ms
+2018-06-02T08:11:06.057Z - info: Starting rendering request 57 (user: null)
+2018-06-02T08:11:06.059Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T08:11:06.919Z - info: Rendering request 57 finished in 856 ms
+2018-06-02T09:07:28.756Z - info: Starting rendering request 58 (user: null)
+2018-06-02T09:07:28.757Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:07:29.279Z - info: Rendering request 58 finished in 523 ms
+2018-06-02T09:08:26.627Z - info: Starting rendering request 59 (user: null)
+2018-06-02T09:08:26.627Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:08:27.119Z - info: Rendering request 59 finished in 492 ms
+2018-06-02T09:08:38.219Z - info: Starting rendering request 60 (user: null)
+2018-06-02T09:08:38.219Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:08:38.791Z - info: Rendering request 60 finished in 572 ms
+2018-06-02T09:09:08.090Z - info: Starting rendering request 61 (user: null)
+2018-06-02T09:09:08.091Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:09:08.574Z - info: Rendering request 61 finished in 484 ms
+2018-06-02T09:10:05.593Z - info: Starting rendering request 62 (user: null)
+2018-06-02T09:10:05.594Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:10:06.107Z - info: Rendering request 62 finished in 514 ms
+2018-06-02T09:10:46.579Z - info: Starting rendering request 63 (user: null)
+2018-06-02T09:10:46.579Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:10:47.055Z - info: Rendering request 63 finished in 477 ms
+2018-06-02T09:11:32.257Z - info: Starting rendering request 64 (user: null)
+2018-06-02T09:11:32.257Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:11:32.797Z - info: Rendering request 64 finished in 540 ms
+2018-06-02T09:14:31.718Z - info: Starting rendering request 65 (user: null)
+2018-06-02T09:14:31.719Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:14:32.248Z - info: Rendering request 65 finished in 530 ms
+2018-06-02T09:14:56.536Z - info: Starting rendering request 66 (user: null)
+2018-06-02T09:14:56.538Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: true }
+2018-06-02T09:14:57.284Z - info: Rendering request 66 finished in 746 ms
+2018-06-02T09:15:35.829Z - info: Starting rendering request 67 (user: null)
+2018-06-02T09:15:35.829Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:15:36.341Z - info: Rendering request 67 finished in 511 ms
+2018-06-02T09:15:53.224Z - info: Starting rendering request 68 (user: null)
+2018-06-02T09:15:53.225Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:15:53.713Z - info: Rendering request 68 finished in 489 ms
+2018-06-02T09:17:01.087Z - info: Starting rendering request 69 (user: null)
+2018-06-02T09:17:01.090Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:17:01.617Z - info: Rendering request 69 finished in 530 ms
+2018-06-02T09:17:17.829Z - info: Starting rendering request 70 (user: null)
+2018-06-02T09:17:17.830Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:17:18.329Z - info: Rendering request 70 finished in 500 ms
+2018-06-02T09:17:42.779Z - info: Starting rendering request 71 (user: null)
+2018-06-02T09:17:42.780Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:17:43.266Z - info: Rendering request 71 finished in 487 ms
+2018-06-02T09:18:48.332Z - info: Starting rendering request 72 (user: null)
+2018-06-02T09:18:48.333Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:18:48.849Z - info: Rendering request 72 finished in 517 ms
+2018-06-02T09:19:08.662Z - info: Starting rendering request 73 (user: null)
+2018-06-02T09:19:08.662Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:19:09.144Z - info: Rendering request 73 finished in 482 ms
+2018-06-02T09:19:11.604Z - info: Starting rendering request 74 (user: null)
+2018-06-02T09:19:11.604Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:19:12.122Z - info: Rendering request 74 finished in 518 ms
+2018-06-02T09:30:10.019Z - info: Starting rendering request 75 (user: null)
+2018-06-02T09:30:10.019Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:30:10.636Z - info: Rendering request 75 finished in 617 ms
+2018-06-02T09:30:56.655Z - info: Starting rendering request 76 (user: null)
+2018-06-02T09:30:56.656Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:30:57.236Z - info: Rendering request 76 finished in 581 ms
+2018-06-02T09:33:12.123Z - info: Starting rendering request 77 (user: null)
+2018-06-02T09:33:12.124Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:33:12.708Z - info: Rendering request 77 finished in 585 ms
+2018-06-02T09:34:22.501Z - info: Starting rendering request 78 (user: null)
+2018-06-02T09:34:22.501Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:34:23.113Z - info: Rendering request 78 finished in 611 ms
+2018-06-02T09:36:30.012Z - info: Starting rendering request 79 (user: null)
+2018-06-02T09:36:30.012Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:36:30.580Z - info: Rendering request 79 finished in 568 ms
+2018-06-02T09:43:17.395Z - info: Starting rendering request 80 (user: null)
+2018-06-02T09:43:17.396Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:43:18.087Z - info: Rendering request 80 finished in 692 ms
+2018-06-02T09:43:58.891Z - info: Starting rendering request 81 (user: null)
+2018-06-02T09:43:58.891Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:43:59.512Z - info: Rendering request 81 finished in 621 ms
+2018-06-02T09:44:46.934Z - info: Starting rendering request 82 (user: null)
+2018-06-02T09:44:46.935Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:44:47.557Z - info: Rendering request 82 finished in 623 ms
+2018-06-02T09:45:03.600Z - info: Starting rendering request 83 (user: null)
+2018-06-02T09:45:03.601Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:45:04.216Z - info: Rendering request 83 finished in 616 ms
+2018-06-02T09:54:03.303Z - info: Starting rendering request 84 (user: null)
+2018-06-02T09:54:03.303Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:54:04.054Z - info: Rendering request 84 finished in 752 ms
+2018-06-02T09:56:29.749Z - info: Starting rendering request 85 (user: null)
+2018-06-02T09:56:29.750Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:56:30.360Z - info: Rendering request 85 finished in 611 ms
+2018-06-02T09:56:40.610Z - info: Starting rendering request 86 (user: null)
+2018-06-02T09:56:40.611Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:56:41.275Z - info: Rendering request 86 finished in 664 ms
+2018-06-02T09:59:22.012Z - info: Starting rendering request 87 (user: null)
+2018-06-02T09:59:22.013Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:59:22.656Z - info: Rendering request 87 finished in 644 ms
+2018-06-02T09:59:43.293Z - info: Starting rendering request 88 (user: null)
+2018-06-02T09:59:43.294Z - info: Rendering template { name: sar, recipe: phantom-pdf, engine: handlebars, preview: false }
+2018-06-02T09:59:43.942Z - info: Rendering request 88 finished in 648 ms

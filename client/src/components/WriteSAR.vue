@@ -5,7 +5,7 @@
           <v-card>
             <v-card-actions>
               <v-btn color="primary" @click.native="dialogOther = true" v-if="sar.sarLvl < 4"><v-icon left>search</v-icon>ดูผลการดำเนินงานอื่นๆ</v-btn>
-              <v-btn color="cyan" dark><v-icon left>description</v-icon>ออกรายงานผลการดำเนินงาน</v-btn>
+              <v-btn color="cyan" dark :href="target + sar.sarId + '?indicatorId=' + indicator.indicatorId" target="_blank"><v-icon left>description</v-icon>ออกรายงานผลการดำเนินงาน</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -104,6 +104,7 @@ import IndicatorService from '@/services/IndicatorService'
 import Dept from '@/services/DeptService'
 import sarDocRef from '@/components/sarDocRef'
 import otherSar from '@/components/OtherSar'
+import ReportService from '@/services/Report'
 export default {
   name: 'WriteSAR',
   components: {
@@ -112,6 +113,7 @@ export default {
   },
   data: () => {
     return {
+      target: 'http://localhost:3000/api/sar/report/',
       dialogOther: false,
       editorOption: {
         height: '300'
@@ -176,7 +178,7 @@ export default {
           this.report.sarResult = this.sar.sarResult
           this.report.goal = this.sar.goal
           this.report.sumResult = this.sar.sumResult
-          this.report.goalCk = (this.sar.goalCk) ? "&#x2713;" : "&#x2717;"
+          this.report.goalCk = (this.sar.goalCk) ? '&#x2713;' : '&#x2717;'
           this.report.score = this.sar.score
           this.report.str = this.sar.str
           this.report.strEnchance = this.sar.strEnchance
@@ -243,9 +245,14 @@ export default {
       } catch (e) {
       }
     },
-    async report () {
+    async SAR () {
       try {
+        const response = await ReportService.SAR(this.report)
+        console.log(response.data)
+        // var blob = new Blob([response.data], {type: 'application/pdf'})
+        // console.log(window.URL.createObjectURL(blob))
       } catch (error) {
+        console.log(error)
       }
     }
   },
