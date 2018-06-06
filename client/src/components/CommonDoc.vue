@@ -11,7 +11,7 @@
       <v-subheader>รายการไฟล์เอกสารส่วนกลาง</v-subheader>
       <v-list two-line>
         <template v-for="doc in docs">
-          <v-list-tile avatar>
+          <v-list-tile avatar :key="doc.docRefId">
             <v-list-tile-avatar>
               <v-icon>picture_as_pdf</v-icon>
             </v-list-tile-avatar>
@@ -204,11 +204,6 @@ export default {
       if (this.year !== null && this.catalog !== null) {
         this.getDoc()
       }
-    }
-  },
-  beforeMount () {
-    if (!this.$store.getters.getUser.commonDoc) {
-      this.$router.push('Home')
     }
   }
 }

@@ -102,7 +102,7 @@ export default {
   },
   beforeMount () {
     if (!this.$store.getters.getUser.standardMgr) {
-      this.$router.push('Home')
+      this.$router.push('Root')
     } else {
       this.std.stdId = this.$route.query.stdId
       this.std.stdNo = this.$route.query.stdNo

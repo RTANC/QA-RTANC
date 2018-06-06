@@ -133,7 +133,7 @@ export default {
   },
   beforeMount () {
     if (!this.$store.getters.getUser.standardMgr) {
-      this.$router.push('Home')
+      this.$router.push('Root')
     } else {
       if (typeof this.$route.query.indId === 'undefined') {
         this.edit = false
