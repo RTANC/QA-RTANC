@@ -2,7 +2,7 @@
 <v-app id="inspire" light>
   <v-navigation-drawer clipped fixed v-model="drawer" app>
     <v-list dense>
-      <v-list-tile v-if="user.home" to="/Home">
+      <v-list-tile v-if="user.home" to="/">
         <v-list-tile-action>
           <v-icon>home</v-icon>
         </v-list-tile-action>
