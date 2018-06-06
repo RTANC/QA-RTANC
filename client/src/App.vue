@@ -121,7 +121,7 @@ export default {
           this.user = this.$store.getters.getUser
           this.$route.push('/Home')
         } catch (error) {
-          window.location.href = 'http://192.168.100.10/'
+          // window.location.href = 'http://192.168.100.10/'
         }
       } else {
         window.location.href = 'http://192.168.100.10/'
