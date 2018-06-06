@@ -148,7 +148,7 @@ export default {
   },
   beforeMount () {
     if (!this.$store.getters.getUser.userMgr) {
-      this.$router.push('Home')
+      this.$router.push('Root')
     } else {
       this.getAllUser()
     }

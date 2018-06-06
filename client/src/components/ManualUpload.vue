@@ -120,7 +120,7 @@
     },
     beforeMount () {
       if (!this.$store.getters.getUser.manualUpload) {
-        this.$router.push('/Home')
+        this.$router.push('Root')
       }
     }
   }

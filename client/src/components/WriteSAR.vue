@@ -113,7 +113,7 @@ export default {
   },
   data: () => {
     return {
-      target: 'http://localhost:3000/api/sar/report/',
+      target: 'http://192.168.100.10:3000/api/sar/report/',
       dialogOther: false,
       editorOption: {
         height: '300'

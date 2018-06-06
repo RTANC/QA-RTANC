@@ -18,7 +18,7 @@
                 <v-list-tile-sub-title>ขนาดไฟล์ : {{ (item.fileSize >= 1048567) ? (item.fileSize / 1048567) + "MB" : (item.fileSize / 1024) + " kB"}}</v-list-tile-sub-title>
               </v-list-tile-content>
               <v-list-tile-action>
-                <v-btn :href="'http://localhost:3000/uploads/DocumentRefs/' + item.fileName" target="_blank" icon>
+                <v-btn :href="'http://192.168.100.10:3000/uploads/DocumentRefs/' + item.fileName" target="_blank" icon>
                   <v-icon color="success">launch</v-icon>
                 </v-btn>
               </v-list-tile-action>
