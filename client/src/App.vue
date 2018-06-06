@@ -112,10 +112,15 @@ export default {
     },
     async login () {
       // alert(this.$route.query.pid)
-      const response = await UserService.login(54)
-      const usr = response.data[0]
-      this.$store.dispatch('setUser', usr)
-      this.user = this.$store.getters.getUser
+      if (this.$route.query.pid) {
+        const pid = this.$route.query.pid
+        const response = await UserService.login(pid)
+        const usr = response.data[0]
+        this.$store.dispatch('setUser', usr)
+        this.user = this.$store.getters.getUser
+      } else {
+        window.location.href = 'http://192.168.100.10/'
+      }
     }
   },
   beforeMount () {
