@@ -1,4 +1,4 @@
-const express = require('express')
+﻿const express = require('express')
 const request = require('request')
 const multer = require('multer')
 const indicator = require('./models/indicator')
@@ -51,7 +51,7 @@ router.get('/report/:sarId', (req, res, next) => {
             }
             const data = {"template":{"shortid":"Sk4QNy4Cf"}, data: report}
             const options = {
-                url: 'http://localhost:5488/api/report',
+                url: 'http://192.168.100.10:5488/api/report',
                 method: 'POST',
                 json: data
             }
