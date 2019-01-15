@@ -9,8 +9,6 @@
     "entryPoint": "server.js"
   },
   "dependencies": {
-    "jsreport": "2.0.0",
-    "jsreport-html-embedded-in-docx": "^1.0.0",
-    "jsreport-phantom-pdf": "^2.0.0"
+    "jsreport": "2.2.0"
   }
 }
